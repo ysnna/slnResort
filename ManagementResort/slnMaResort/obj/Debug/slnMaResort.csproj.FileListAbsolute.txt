@@ -1,0 +1,11 @@
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\bin\Debug\slnMaResort.exe.config
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\bin\Debug\slnMaResort.exe
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\bin\Debug\slnMaResort.pdb
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csprojAssemblyReference.cache
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Properties.Resources.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csproj.GenerateResource.cache
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csproj.CoreCompileInputs.cache
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.exe
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.pdb
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.Home.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.Login.resources
