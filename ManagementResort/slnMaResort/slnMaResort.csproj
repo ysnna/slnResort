@@ -88,6 +88,7 @@
     <Compile Include="Forms\MRestaurantForm.Designer.cs">
       <DependentUpon>MRestaurantForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginBLL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
