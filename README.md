@@ -4,9 +4,9 @@ Cách đặt tên ToolBox
 Tên Toolbox + Name
 Ví dụ:  txtFullName
 
-Button                - bt hoặc btn
-CheckBox              - chkb
-Combobox              - cb
+1. Button                - bt hoặc btn
+2. CheckBox              - chkb
+3. Combobox              - cb
 DataGridView          - dgv
 DateTimePicker        - dtp
 FlowLayoutPanel       - flow
