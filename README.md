@@ -47,7 +47,9 @@ _______________________________________________________
 - R + "name" + Form. (Ví dụ: Form đặt món: **ROrderForm**)
 ### Khu vui chơi
 - P + "name" + Form. (Ví dụ: Form đặt vé: **PTicketBookingForm**)
-
+### Khác
 *Những Form khác các bạn đặt là*: "name" + Form. (Ví dụ: Form đổi mật khẩu: **ChangePasswordForm**)
 *Chữ cái đầu tiên của những form này tránh đặt những chữ* **H, R, P**  
 
+- Tất cả các UserControl để ở thư mục ứng với khu vực của UserControl đó
+- Tên của UserControl: "name" + UC. (Ví dụ: UserControl Dịch vụ: **ServiceUC**)
