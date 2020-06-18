@@ -53,3 +53,8 @@ _______________________________________________________
 
 - Tất cả các UserControl để ở thư mục ứng với khu vực của UserControl đó
 - Tên của UserControl: "name" + UC. (Ví dụ: UserControl Dịch vụ: **ServiceUC**)
+
+## Class
+- Tất cả Class để ở thư mục ứng với loại Class muốn tạo: **BLL, DAL, DTO**
+- "name" + BLL/DAL/DTO. (Ví dụ: **LoginDAL**...)
+_________________________________________________________
