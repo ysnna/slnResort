@@ -1,8 +1,8 @@
-#MANAGEMENT RESORT
+# MANAGEMENT RESORT
 ________________________________________________________
-##Cách đặt tên ToolBox
+## Cách đặt tên ToolBox
 - Tên Toolbox + Name
-- Ví dụ:  txtFullName
+- Ví dụ:  **txtFullName**
 
 1. Button                - bt hoặc btn
 2. CheckBox              - chkb
@@ -37,7 +37,17 @@ ________________________________________________________
 31. VScrollBar            - scroll
 
 _______________________________________________________
-##Cách đặt tên Form, Class, UserControl,...
+## Cách đặt tên Form, Class, UserControl,...
+- Tất cả các Form để ở thư mục ***Forms***
+### Admin
+- Home + "name" + Form. (Ví dụ: Form phân quyền: **HomePermissionForm**)
+### Khách sạn
+- H + "name" + Form. (Ví dụ: Form đặt phòng: **HBookingForm**)
+### Nhà hàng
+- R + "name" + Form. (Ví dụ: Form đặt món: **ROrderForm**)
+### Khu vui chơi
+- P + "name" + Form. (Ví dụ: Form đặt vé: **PTicketBookingForm**)
 
-###Form
+*Những Form khác các bạn đặt là*: "name" + Form. (Ví dụ: Form đổi mật khẩu: **ChangePasswordForm**)
+*Chữ cái đầu tiên của những form này tránh đặt những chữ* **H, R, P**  
 
