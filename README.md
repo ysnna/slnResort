@@ -1,8 +1,8 @@
 #MANAGEMENT RESORT
 ________________________________________________________
 ##Cách đặt tên ToolBox
-Tên Toolbox + Name
-Ví dụ:  txtFullName
+. Tên Toolbox + Name
+. Ví dụ:  txtFullName
 
 1. Button                - bt hoặc btn
 2. CheckBox              - chkb
