@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace slnMaResort.Forms
 {
-    public partial class ManagementHotel : Form
+    public partial class HomeForm : Form
     {
-        public ManagementHotel()
+        public HomeForm()
         {
             InitializeComponent();
+        }
+
+        private void FHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

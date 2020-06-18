@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace slnMaResort.Forms
 {
-    public partial class HomeMember : Form
+    public partial class LoginForm : Form
     {
-        public HomeMember()
+        public LoginForm()
         {
             InitializeComponent();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

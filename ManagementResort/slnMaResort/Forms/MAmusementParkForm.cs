@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace slnMaResort.Forms
 {
-    public partial class Login : Form
+    public partial class MAmusementParkForm : Form
     {
-        public Login()
+        public MAmusementParkForm()
         {
             InitializeComponent();
+        }
+
+        private void MAmusementParkForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

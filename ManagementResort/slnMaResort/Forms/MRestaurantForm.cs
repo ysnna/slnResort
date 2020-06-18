@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace slnMaResort.Forms
 {
-    public partial class ManagementRestaurant : Form
+    public partial class MRestaurantForm : Form
     {
-        public ManagementRestaurant()
+        public MRestaurantForm()
         {
             InitializeComponent();
+        }
+
+        private void MRestaurantForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

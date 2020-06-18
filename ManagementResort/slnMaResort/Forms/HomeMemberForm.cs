@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace slnMaResort.Forms
 {
-    public partial class ChangePassword : Form
+    public partial class HomeMemberForm : Form
     {
-        public ChangePassword()
+        public HomeMemberForm()
         {
             InitializeComponent();
+        }
+
+        private void FHomeMember_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

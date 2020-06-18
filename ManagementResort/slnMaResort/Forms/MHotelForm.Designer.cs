@@ -1,6 +1,6 @@
 ﻿namespace slnMaResort.Forms
 {
-    partial class HomeMember
+    partial class MHotelForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // HomeMember
+            // MHotelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(971, 666);
-            this.Name = "HomeMember";
-            this.Text = "Home Member";
+            this.ClientSize = new System.Drawing.Size(1194, 701);
+            this.Name = "MHotelForm";
+            this.Text = "Management Hotel";
+            this.Load += new System.EventHandler(this.MHotelForm_Load);
             this.ResumeLayout(false);
 
         }

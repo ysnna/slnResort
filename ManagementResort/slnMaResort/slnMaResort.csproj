@@ -46,70 +46,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\ChangePassword.cs">
+    <Compile Include="Forms\ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ChangePassword.Designer.cs">
-      <DependentUpon>ChangePassword.cs</DependentUpon>
+    <Compile Include="Forms\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Home.cs">
+    <Compile Include="Forms\HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
+    <Compile Include="Forms\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HomeMember.cs">
+    <Compile Include="Forms\HomeMemberForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HomeMember.Designer.cs">
-      <DependentUpon>HomeMember.cs</DependentUpon>
+    <Compile Include="Forms\HomeMemberForm.Designer.cs">
+      <DependentUpon>HomeMemberForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Login.cs">
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ManagementAmusementPark.cs">
+    <Compile Include="Forms\MAmusementParkForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ManagementAmusementPark.Designer.cs">
-      <DependentUpon>ManagementAmusementPark.cs</DependentUpon>
+    <Compile Include="Forms\MAmusementParkForm.Designer.cs">
+      <DependentUpon>MAmusementParkForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ManagementHotel.cs">
+    <Compile Include="Forms\MHotelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ManagementHotel.Designer.cs">
-      <DependentUpon>ManagementHotel.cs</DependentUpon>
+    <Compile Include="Forms\MHotelForm.Designer.cs">
+      <DependentUpon>MHotelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ManagementRestaurant.cs">
+    <Compile Include="Forms\MRestaurantForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ManagementRestaurant.Designer.cs">
-      <DependentUpon>ManagementRestaurant.cs</DependentUpon>
+    <Compile Include="Forms\MRestaurantForm.Designer.cs">
+      <DependentUpon>MRestaurantForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\ChangePassword.resx">
-      <DependentUpon>ChangePassword.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HomeMember.resx">
-      <DependentUpon>HomeMember.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HomeMemberForm.resx">
+      <DependentUpon>HomeMemberForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ManagementAmusementPark.resx">
-      <DependentUpon>ManagementAmusementPark.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MAmusementParkForm.resx">
+      <DependentUpon>MAmusementParkForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ManagementHotel.resx">
-      <DependentUpon>ManagementHotel.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MHotelForm.resx">
+      <DependentUpon>MHotelForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ManagementRestaurant.resx">
-      <DependentUpon>ManagementRestaurant.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MRestaurantForm.resx">
+      <DependentUpon>MRestaurantForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -137,7 +137,10 @@
     <Folder Include="BLL\" />
     <Folder Include="DAL\" />
     <Folder Include="DTO\" />
-    <Folder Include="UserControls\" />
+    <Folder Include="HomeUC\" />
+    <Folder Include="HotelUC\" />
+    <Folder Include="ParkUC\" />
+    <Folder Include="RestaurantUC\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

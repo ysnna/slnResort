@@ -1,6 +1,6 @@
 ﻿namespace slnMaResort.Forms
 {
-    partial class ChangePassword
+    partial class ChangePasswordForm
     {
         /// <summary>
         /// Required designer variable.
@@ -116,7 +116,7 @@
             this.label1.TabIndex = 36;
             this.label1.Text = "Enter password";
             // 
-            // ChangePassword
+            // ChangePasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,8 +129,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "ChangePassword";
+            this.Name = "ChangePasswordForm";
             this.Text = "Change Password";
+            this.Load += new System.EventHandler(this.ChangePasswordForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

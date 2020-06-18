@@ -1,6 +1,6 @@
 ﻿namespace slnMaResort.Forms
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -116,7 +116,7 @@
             this.txtPassword.Size = new System.Drawing.Size(282, 54);
             this.txtPassword.TabIndex = 40;
             // 
-            // Login
+            // LoginForm
             // 
             this.AcceptButton = this.btSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,8 +124,9 @@
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(651, 420);
             this.Controls.Add(this.groupBoxThongtin);
-            this.Name = "Login";
+            this.Name = "LoginForm";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.groupBoxThongtin.ResumeLayout(false);
             this.groupBoxThongtin.PerformLayout();
             this.ResumeLayout(false);

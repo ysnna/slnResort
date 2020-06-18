@@ -1,6 +1,6 @@
 ﻿namespace slnMaResort.Forms
 {
-    partial class ManagementAmusementPark
+    partial class MAmusementParkForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,16 @@
         {
             this.SuspendLayout();
             // 
-            // ManagementAmusementPark
+            // MAmusementParkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 636);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1194, 701);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Name = "ManagementAmusementPark";
+            this.Name = "MAmusementParkForm";
             this.Text = "Management Amusement Park";
+            this.Load += new System.EventHandler(this.MAmusementParkForm_Load);
             this.ResumeLayout(false);
 
         }

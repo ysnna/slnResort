@@ -1,6 +1,6 @@
 ﻿namespace slnMaResort.Forms
 {
-    partial class Home
+    partial class HomeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -109,7 +109,7 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Home
+            // FHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,10 +119,11 @@
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.Name = "Home";
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Name = "FHome";
             this.Text = "Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FHome_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.tabControl1.ResumeLayout(false);
