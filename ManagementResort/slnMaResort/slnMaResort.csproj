@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\testBLL.cs" />
+    <Compile Include="DAL\testDAL.cs" />
+    <Compile Include="DTO\testDTO.cs" />
     <Compile Include="Forms\ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,9 +91,12 @@
     <Compile Include="Forms\MRestaurantForm.Designer.cs">
       <DependentUpon>MRestaurantForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginBLL.cs" />
+    <Compile Include="HomeUC\testHomeUC.cs" />
+    <Compile Include="HotelUC\testHotelUC.cs" />
+    <Compile Include="ParkUC\testParkUC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestaurantUC\testReztaurantUC.cs" />
     <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,14 +140,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-    <Folder Include="DAL\" />
-    <Folder Include="DTO\" />
-    <Folder Include="HomeUC\" />
-    <Folder Include="HotelUC\" />
-    <Folder Include="ParkUC\" />
-    <Folder Include="RestaurantUC\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
