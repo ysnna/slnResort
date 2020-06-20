@@ -46,8 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\AccountBLL.cs" />
     <Compile Include="BLL\testBLL.cs" />
+    <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\testDAL.cs" />
+    <Compile Include="DTO\AccountDTO.cs" />
+    <Compile Include="DTO\CustomerDTO.cs" />
+    <Compile Include="DTO\EmployeeDTO.cs" />
     <Compile Include="DTO\testDTO.cs" />
     <Compile Include="Forms\ChangePasswordForm.cs">
       <SubType>Form</SubType>
@@ -91,8 +96,10 @@
     <Compile Include="Forms\MRestaurantForm.Designer.cs">
       <DependentUpon>MRestaurantForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GLOBAL.cs" />
     <Compile Include="HomeUC\testHomeUC.cs" />
     <Compile Include="HotelUC\testHotelUC.cs" />
+    <Compile Include="MY_DB.cs" />
     <Compile Include="ParkUC\testParkUC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

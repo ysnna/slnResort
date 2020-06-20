@@ -1,4 +1,6 @@
-﻿using System;
+﻿using slnMaResort.BLL;
+using slnMaResort.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +21,24 @@ namespace slnMaResort.Forms
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btSignIn_Click(object sender, EventArgs e)
+        {     
+            string pass = txtPassword.Text.ToString().Trim();
+            string usrname = txtUsername.Text.ToString().Trim();
+            if (AccountBLL.Instance.DefinePass(pass, usrname) &&
+                AccountBLL.Instance.DefineState(usrname) == "Đang làm việc")
+            {
+                MessageBox.Show("Dang nhap  thanh cong");
+                AccountBLL.Instance.callForm(usrname);
+            }
+            else
+            {
+                MessageBox.Show("Dang nhap khong thanh cong");
+            }
+
 
         }
     }

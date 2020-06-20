@@ -8,5 +8,6 @@ namespace slnMaResort.BLL
 {
     class testBLL
     {
+        
     }
 }
