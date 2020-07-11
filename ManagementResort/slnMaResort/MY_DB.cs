@@ -12,9 +12,9 @@ namespace slnMaResort
 {
     public class MY_DB
     {   //Danh connection
-        SqlConnection conn = new SqlConnection(@"Data Source=ADMIN\DANH;Initial Catalog=ManagementResort;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=ADMIN\DANH;Initial Catalog=ManagementResort;Integrated Security=True");
         //Na connection
-
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-TAAGMFB\NNA;Initial Catalog=ManagementResort;Integrated Security=True");
         //Duc connection
 
         //Vuong connection
