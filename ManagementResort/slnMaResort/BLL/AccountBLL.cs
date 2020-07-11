@@ -102,5 +102,23 @@ namespace slnMaResort.BLL
                     }
             }
         }
+        //Doi password
+        #region ChangePass
+        public bool CheckPassFromDTB(string usr)
+        {
+            string check = "";
+            DataTable dt = new DataTable();
+            dt = AccountDAL.Instance.loadPermission(usr);
+            if (dt.Rows.Count > 0)
+            {
+                check = dt.Rows[0][0].ToString().Trim();        
+            }
+
+            if (check == enterpass) return true;
+
+            return false;
+        }
+
+        #endregion
     }
 }
