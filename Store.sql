@@ -226,6 +226,22 @@ begin
 end
 go
 
+
+--17. Load dữ liệu Employee theo nhóm Area.
+if OBJECT_ID('LOADEMPOYEETOAREA') is not null drop PROC LOADEMPOYEETOAREA
+go
+
+create PROC LOADEMPOYEETOAREA
+@Area int
+as
+begin
+	select  *
+	from  EMPLOYEE
+	where IDArea = @Area
+end
+go
+
+
 --exec LOADACCOUNT
 --exec LOADAREA
 --exec LOADBASESALARY
