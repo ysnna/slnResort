@@ -25,22 +25,11 @@ namespace slnMaResort.Forms
 
         private void btChange_Click(object sender, EventArgs e)
         {
-            LoginForm lgf = new LoginForm();
             string enterpass = txtOldPassword.Text.Trim().ToString();
             string newpass = txtNewPassword.Text.Trim().ToString();
             string comfirm = txtConfirmPassword.Text.Trim().ToString();
 
-            if (AccountBLL.Instance.DefinePass(enterpass,lgf.txtUsername.Text.Trim().ToString())  )
-            {
-                if (newpass == comfirm)
-                {
-                    AccountDAL.Instance.UpdatePass(newpass);
-                }
-                else { MessageBox.Show("Your new pass and comfirm pass are not the same"); }
-            } else
-            {
-                MessageBox.Show("Wrong pass");
-            }
+            AccountBLL.Instance.changePass(enterpass, newpass, comfirm);
         }
     }
 }

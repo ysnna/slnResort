@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using slnMaResort.DAL;
 using slnMaResort.DTO;
 using slnMaResort.Forms;
+using System.Windows.Forms;
 
 namespace slnMaResort.BLL
 {
@@ -26,5 +27,25 @@ namespace slnMaResort.BLL
             private set => EmployeeBLL.instance = value;
         }
 
+        //Load tất cả nhân viên lên dgv
+        public void loadAllEmp(DataGridView dgv)
+        {
+            dgv.RowTemplate.Height = 40;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DataGridViewImageColumn pict = new DataGridViewImageColumn();
+            pict = (DataGridViewImageColumn)dgv.Columns[2];
+            pict.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            DataTable dt = EmployeeDAL.Instance.loadEmp();
+            dgv.DataSource = dt;
+        }
+
+        //Load nhan vien
+        public DataTable loadEmpbyID(string id)
+        {
+            DataTable dt = EmployeeDAL.Instance.loadEmpbyID(id);
+            return dt;
+        }
     }
 }

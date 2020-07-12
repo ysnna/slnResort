@@ -20,5 +20,24 @@ namespace slnMaResort.DAL
             }
             private set => EmployeeDAL.instance = value;
         }
+
+        public DataTable loadEmp()
+        {
+            string sql = @"EXEC LOADEMPLOYEE";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
+
+
+        public DataTable loadEmpbyID(string id)
+        {
+            string sql = @"EXEC CHECKLOGIN  '" + id + "' ";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
     }
 }

@@ -22,16 +22,7 @@ namespace slnMaResort.DAL
             }
             private set => AccountDAL.instance = value;
         }
-        //public DataTable getListAccount(string user)
-        //{
-        //    SqlCommand cmd = new SqlCommand("select * from ACCOUNT where UserName = @user ", MY_DB.Instance.getConnection);
-        //    cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = user;
-        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //    DataTable dt = new DataTable();
-        //    da.Fill(dt);
-        //    MY_DB.Instance.closeConnection();
-        //    return dt;
-        //}
+        
         public DataTable loadPermission(string usr)
         {
             string sql = @"EXEC CHECKLOGIN  '" + usr + "' ";
@@ -50,14 +41,23 @@ namespace slnMaResort.DAL
             return null;
         }
 
+        public DataTable getEmpID(string user)
+        {
+            string sql = @"exec getEmpID '" + user + "'";
+            MY_DB.Instance.executeQuery(sql);
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
+
         // Doi pass word -- chua viet ham stored
-
-       
-
         public void UpdatePass(string pass)
         {
             string sql = @"exec  '" + pass + "'";
             MY_DB.Instance.executeQuery(sql);      
         }
+
+
     }
 }

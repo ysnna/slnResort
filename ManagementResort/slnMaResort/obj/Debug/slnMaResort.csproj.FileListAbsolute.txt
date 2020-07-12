@@ -25,3 +25,19 @@ E:\HK2-2020\OOSD\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csproj.Gener
 E:\HK2-2020\OOSD\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csproj.CoreCompileInputs.cache
 E:\HK2-2020\OOSD\ManagementResort\slnMaResort\obj\Debug\slnMaResort.exe
 E:\HK2-2020\OOSD\ManagementResort\slnMaResort\obj\Debug\slnMaResort.pdb
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\bin\Debug\slnMaResort.exe.config
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\bin\Debug\slnMaResort.exe
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\bin\Debug\slnMaResort.pdb
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csprojAssemblyReference.cache
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.ChangePasswordForm.resources
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.HomeForm.resources
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.HomeMemberForm.resources
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.LoginForm.resources
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.MAmusementParkForm.resources
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.MHotelForm.resources
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.MRestaurantForm.resources
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Properties.Resources.resources
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csproj.GenerateResource.cache
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csproj.CoreCompileInputs.cache
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.exe
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.pdb

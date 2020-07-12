@@ -9,6 +9,8 @@ using System.Security.Cryptography;
 using slnMaResort.DAL;
 using slnMaResort.DTO;
 using slnMaResort.Forms;
+using System.Windows.Forms;
+
 
 namespace slnMaResort.BLL
 {
@@ -33,6 +35,8 @@ namespace slnMaResort.BLL
         //    string dtpass = dt.Rows[0][0].ToString();
         //    return dtpass;
         //}
+
+
         public bool DefinePass(string pass, string usr )
         {
             DataTable dt = new DataTable();
@@ -104,7 +108,21 @@ namespace slnMaResort.BLL
         }
         //Doi password
         #region ChangePass
-       
+        public void changePass(string oldpass, string newpass, string comfirm)
+        {
+            if (AccountBLL.Instance.DefinePass(oldpass, GLOBAL.username))
+            {
+                if (newpass == comfirm)
+                {
+                    AccountDAL.Instance.UpdatePass(newpass);
+                }
+                else { MessageBox.Show("Your new pass and comfirm pass are not the same"); }
+            }
+            else
+            {
+                MessageBox.Show("Wrong pass");
+            }
+        }
 
         #endregion
     }
