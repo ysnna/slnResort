@@ -33,16 +33,16 @@
             // 
             // ucEmployee1
             // 
-            this.ucEmployee1.Location = new System.Drawing.Point(0, -5);
+            this.ucEmployee1.Location = new System.Drawing.Point(-2, -1);
             this.ucEmployee1.Name = "ucEmployee1";
-            this.ucEmployee1.Size = new System.Drawing.Size(997, 851);
+            this.ucEmployee1.Size = new System.Drawing.Size(997, 798);
             this.ucEmployee1.TabIndex = 0;
             // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 795);
+            this.ClientSize = new System.Drawing.Size(1047, 795);
             this.Controls.Add(this.ucEmployee1);
             this.Name = "Employee";
             this.Text = "Employee";
