@@ -344,7 +344,26 @@ begin
 end;
 go
 
---22. Checkout customer cho bảng booktable input(customer)
+--22. Delete Permission cho Account intput(username, Permission)
+if OBJECT_ID('DELETEPERMISSIONTOACCOUNT') is not null drop PROC DELETEPERMISSIONTOACCOUNT
+go 
+
+create  PROC DELETEPERMISSIONTOACCOUNT
+@username varchar(100),
+@permission nvarchar(200)
+as
+begin
+	declare @idPermission int
+	select @idPermission = IDPermission
+	from PERMISSION
+	where Name = @permission 
+	if (@idPermission is not null)
+		DELETE from ACCOUNT_PERMISSION where Username = @username and IDPermission = @idPermission
+	else
+		throw 5000, 'Permission not exist', 1;
+end
+
+--23. Checkout customer cho bảng booktable input(customer)
 if OBJECT_ID('CHECKCUSTOMER') is not null drop PROC CHECKCUSTOMER
 go
 
@@ -366,7 +385,7 @@ begin
 end
 go
 
---exec LOADACCOUNT
+--exec LOADACCOUNT 
 --exec LOADAREA
 --exec LOADBASESALARY
 --exec LOADCUSTOMER
@@ -382,8 +401,10 @@ go
 --exec INSERTEMPLOYEE 'NV1000' , N'LQNVuong', null, null, null, N'Quận 1' , '261548432', '0823048409', null, null, N'Tốt'
 --exec UPDATEEMPLOYEE 'NV1000' , N'Vuong', null, null, null, N'Quận 1' , '261548432', null, null, null, N'Tốt'
 --exec DELETEEMPLOYEE 'NV1000'
+--exec DELETEPERMISSIONTOACCOUNT 'nguyenvuong' , N'In hóa đơn'
 --exec CHECKCUSTOMER N'Hoàng Hiệp'
 go
+
 ---------------------------------------------------------------------------------------------------------------------------------------
 ----3. Thêm Account vào bảng Account.
 --if OBJECT_ID('INSERTAccount') is not null drop proc INSERTAccount;
