@@ -28,12 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.ucEmployee1 = new slnMaResort.HomeUC.ucEmployee();
+            this.SuspendLayout();
+            // 
+            // ucEmployee1
+            // 
+            this.ucEmployee1.Location = new System.Drawing.Point(0, -5);
+            this.ucEmployee1.Name = "ucEmployee1";
+            this.ucEmployee1.Size = new System.Drawing.Size(997, 851);
+            this.ucEmployee1.TabIndex = 0;
+            // 
+            // Employee
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1009, 795);
+            this.Controls.Add(this.ucEmployee1);
+            this.Name = "Employee";
             this.Text = "Employee";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private HomeUC.ucEmployee ucEmployee1;
     }
 }
