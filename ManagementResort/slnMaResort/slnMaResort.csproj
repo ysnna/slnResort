@@ -119,11 +119,44 @@
       <DependentUpon>ucListEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="HotelUC\testHotelUC.cs" />
+    <Compile Include="HotelUC\ucRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelUC\ucRoom.Designer.cs">
+      <DependentUpon>ucRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementResortDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManagementResortDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementResortDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManagementResortDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementResortDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManagementResortDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MY_DB.cs" />
     <Compile Include="ParkUC\testParkUC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestaurantUC\testReztaurantUC.cs" />
+    <Compile Include="RestaurantUC\ucBookTableNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RestaurantUC\ucBookTableNew.Designer.cs">
+      <DependentUpon>ucBookTableNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantUC\ucTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RestaurantUC\ucTable.Designer.cs">
+      <DependentUpon>ucTable.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +187,9 @@
     <EmbeddedResource Include="HomeUC\ucListEmployee.resx">
       <DependentUpon>ucListEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HotelUC\ucRoom.resx">
+      <DependentUpon>ucRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -163,6 +199,45 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RestaurantUC\ucBookTableNew.resx">
+      <DependentUpon>ucBookTableNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestaurantUC\ucTable.resx">
+      <DependentUpon>ucTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ManagementResortDataSet.xsc">
+      <DependentUpon>ManagementResortDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ManagementResortDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ManagementResortDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ManagementResortDataSet.xss">
+      <DependentUpon>ManagementResortDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ManagementResortDataSet1.xsc">
+      <DependentUpon>ManagementResortDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ManagementResortDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ManagementResortDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ManagementResortDataSet1.xss">
+      <DependentUpon>ManagementResortDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ManagementResortDataSet2.xsc">
+      <DependentUpon>ManagementResortDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ManagementResortDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ManagementResortDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ManagementResortDataSet2.xss">
+      <DependentUpon>ManagementResortDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

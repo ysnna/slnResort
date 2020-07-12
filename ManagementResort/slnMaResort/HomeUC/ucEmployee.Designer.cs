@@ -81,8 +81,7 @@
             this.groupBox1.Controls.Add(this.lbIdEm);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.picAva);
-            this.groupBox1.Location = new System.Drawing.Point(19, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(17, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Size = new System.Drawing.Size(989, 529);
@@ -231,13 +230,11 @@
             // 
             // picAva
             // 
-            this.picAva.Location = new System.Drawing.Point(55, 50);
-            this.picAva.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picAva.Location = new System.Drawing.Point(49, 40);
             this.picAva.Name = "picAva";
-            this.picAva.Size = new System.Drawing.Size(303, 412);
+            this.picAva.Size = new System.Drawing.Size(269, 330);
             this.picAva.TabIndex = 16;
             this.picAva.TabStop = false;
-            this.picAva.Click += new System.EventHandler(this.picAva_Click);
             // 
             // groupBox2
             // 
@@ -324,8 +321,7 @@
             // 
             // txtDes
             // 
-            this.txtDes.Location = new System.Drawing.Point(558, 26);
-            this.txtDes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDes.Location = new System.Drawing.Point(505, 21);
             this.txtDes.Multiline = true;
             this.txtDes.Name = "txtDes";
             this.txtDes.ReadOnly = true;
