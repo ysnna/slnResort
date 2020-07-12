@@ -298,6 +298,50 @@ begin
 end
 go
 
+if OBJECT_ID('ADDPERMISSIONTOACCOUNT') is not null drop proc ADDPERMISSIONTOACCOUNT;
+go
+create proc ADDPERMISSIONTOACCOUNT
+@username varchar(50),
+@permission int
+as
+begin
+-----lưu giá trị Group_permission vào bảng tạm
+	If OBJECT_ID('tempđb..#Copy') is not null drop table #Copy;
+	select GROUP_PERMISSION.IDPermission, PERMISSION.Name into #Copy
+	from	((	ACCOUNT join GROUPUSER on ACCOUNT.IDGroup = GROUPUSER.IDGroup)
+				join GROUP_PERMISSION on GROUPUSER.IDGroup = GROUP_PERMISSION.IDGroup
+				join Permission on Group_Permission.IDPermission=Permission.IDPermission
+				)
+	where  Account.UserName= @username;
+
+	declare @checkPermission varchar(50)
+
+---Kiểm tra xem có tồn tại permission cần điền chưa
+	select @checkPermission = 'True'
+	from  #Copy
+	where IDPermission = @Permission
+
+-----lưu giá trị user_permission vào bảng tạm
+	If OBJECT_ID('tempđb..#Copy1') is not null drop table #Copy1;
+	select  IDPermission into #Copy1
+	from	ACCOUNT join ACCOUNT_PERMISSION on ACCOUNT.Username =  ACCOUNT_PERMISSION.Username
+	where  ACCOUNT.Username = @username;
+---Kiểm tra xem có tồn tại permission cần điền chưa
+	select @checkPermission = 'True'
+	from  #Copy1
+	where IDPermission = @Permission
+
+	if (@CheckPermission='True')
+	begin
+		Update User_Permission set Id_Permission=@Permission where UserName=@UserName;
+	end;
+	else
+	begin
+		Insert dbo.User_Permission(UserName,Id_Permission) values (@UserName,@Permission)
+	end;
+end;
+go
+
 
 
 --exec LOADACCOUNT
@@ -543,49 +587,7 @@ go
 
 
 
---if OBJECT_ID('ADDPermissionUserName') is not null drop proc ADDPermissionUserName;
---go
---create proc ADDPermissionUserName
---@UserName nvarchar(50),
---@Permission int
---as
---begin
--------lưu giá trị Group_permission vào bảng tạm
---	If OBJECT_ID('tempđb..#Copy') is not null drop table #Copy;
---	select Group_Permission.Id_Permission, Name_Permission into #Copy
---	from	((	Account join GroupUser on Type_User = Id_Group)
---				join Group_Permission on GroupUser.Id_Group = Group_Permission.Id_Group
---				join Permission on Group_Permission.Id_Permission=Permission.Id_Permission
---				)
---	where  Account.UserName=@UserName;
 
---	declare @CheckPermission varchar(50)
-
------Kiểm tra xem có tồn tại permission cần điền chưa
---	select @CheckPermission = 'True'
---	from  #Copy
---	where Id_Permission=@Permission
-
--------lưu giá trị user_permission vào bảng tạm
---	If OBJECT_ID('tempđb..#Copy1') is not null drop table #Copy1;
---	select  Id_Permission into #Copy1
---	from	Account join User_Permission on Account.UserName=User_Permission.UserName
---	where  Account.UserName=@UserName;
------Kiểm tra xem có tồn tại permission cần điền chưa
---	select @CheckPermission = 'True'
---	from  #Copy1
---	where Id_Permission=@Permission
-
---	if (@CheckPermission='True')
---	begin
---		Update User_Permission set Id_Permission=@Permission where UserName=@UserName;
---	end;
---	else
---	begin
---		Insert dbo.User_Permission(UserName,Id_Permission) values (@UserName,@Permission)
---	end;
---end;
---go
 
 --if OBJECT_ID('SEARCHNameGroup') is not null drop proc SEARCHNameGroup;
 --go
