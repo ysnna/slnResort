@@ -47,7 +47,6 @@ go
 
 create PROC CHANGEPASSWORD
 @username nvarchar(50),
-@passwordCurrent varchar(50),
 @passwordNew varchar(50)
 as
 begin
@@ -57,7 +56,7 @@ begin
 	where Username = @username
 
 	 if (@username is not null and @password is not null)
-		Update ACCOUNT set Password = @passwordNew where Username = @username and @passwordCurrent = @password
+		Update ACCOUNT set Password = @passwordNew where Username = @username
 	else
 		THROW 51000, 'The record does not exist.', 1;  
 		return;	

@@ -33,6 +33,7 @@ namespace slnMaResort.Forms
             {
                 MessageBox.Show("Dang nhap  thanh cong");
                 AccountBLL.Instance.callForm(usrname);
+                GLOBAL.GetUsername(usrname);
             }
             else
             {

@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\AccountBLL.cs" />
+    <Compile Include="BLL\EmployeeBLL.cs" />
     <Compile Include="BLL\testBLL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
+    <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\testDAL.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\CustomerDTO.cs" />
@@ -59,6 +61,12 @@
     </Compile>
     <Compile Include="Forms\ChangePasswordForm.Designer.cs">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HomeForm.cs">
       <SubType>Form</SubType>
@@ -97,7 +105,19 @@
       <DependentUpon>MRestaurantForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GLOBAL.cs" />
+    <Compile Include="HomeUC\ucEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\ucEmployee.Designer.cs">
+      <DependentUpon>ucEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeUC\testHomeUC.cs" />
+    <Compile Include="HomeUC\ucListEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\ucListEmployee.Designer.cs">
+      <DependentUpon>ucListEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="HotelUC\testHotelUC.cs" />
     <Compile Include="MY_DB.cs" />
     <Compile Include="ParkUC\testParkUC.cs" />
@@ -106,6 +126,9 @@
     <Compile Include="RestaurantUC\testReztaurantUC.cs" />
     <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
@@ -124,6 +147,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MRestaurantForm.resx">
       <DependentUpon>MRestaurantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\ucEmployee.resx">
+      <DependentUpon>ucEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\ucListEmployee.resx">
+      <DependentUpon>ucListEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
