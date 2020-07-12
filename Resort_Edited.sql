@@ -1,4 +1,4 @@
-﻿ use master;
+﻿use master;
 go
 -- Tạo Database DangNhap-PhanQuyen
 if DB_ID('ManagementResort') is not null
@@ -31,7 +31,7 @@ create table TABLES
 (
 IDTable int not null ,
 Slot int  not null,
-Time Datetime not null,
+State nvarchar not null,
 Constraint pk_TABLES primary key (IDTable)
 )
 go 
@@ -115,8 +115,8 @@ create table AREA
 (
 IDArea int not null,
 Name nvarchar(200)  null unique,
-IDManager varchar(50) not null unique, ---ID nhân viên
-NameManager nvarchar(200) null unique,
+IDManager varchar(50) not null, ---ID nhân viên
+NameManager nvarchar(200) null,
 constraint pk_AREA primary key (IDArea)
 );
 go
@@ -226,7 +226,7 @@ go
 create table DETAILINVOICESERVICES
 (
 IDInvoice varchar(50) not null,
-Name nvarchar(200) not null,
+Name int not null,
 Quantity int not null,
 Price float not null,
 );
@@ -254,7 +254,7 @@ go
 create table DETAILINVOICEFOOD
 (
 IDInvoice varchar(50) not null,
-Food nvarchar(200) not null,
+Food int not null,
 Quantity int not null,
 Price float not null,
 );
@@ -266,7 +266,7 @@ go
 create table DETAILINVOICEPARK
 (
 IDInvoice varchar(50) not null,
-Ticket nvarchar(20) not null,
+Ticket int not null,
 Quantity int not null,
 Price float not null,
 );
@@ -280,7 +280,7 @@ create table VOUCHER
 (
 IDVoucher int not null,
 Area nvarchar(200) not null,
-Name varchar(50) not null,
+Name nvarchar(200) not null,
 StartDate datetime not null,
 ExprirationDate datetime not null,
 Percents int not null,
@@ -385,7 +385,7 @@ create table TABLES
 (
 IDTable int not null,
 Slot int not null,
-Time datetime not null,
+State nvarchar(200) not null,
 constraint pk_TABLES primary key(IDTable)
 );
 
