@@ -21,5 +21,13 @@ namespace slnMaResort.Forms
             this.Controls.Add(ucEmployee);
 
         }
+
+        private void infomationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var ucEmployee = new ucEmployee();
+            this.Controls.Add(ucEmployee);
+        }
+
+
     }
 }

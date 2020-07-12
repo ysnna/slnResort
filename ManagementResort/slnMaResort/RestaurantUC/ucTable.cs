@@ -1,29 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace slnMaResort.Forms
+namespace slnMaResort.RestaurantUC
 {
-    public partial class HomeForm : Form
+    public partial class ucTable : UserControl
     {
-        public HomeForm()
+        public ucTable()
         {
             InitializeComponent();
         }
 
-        private void FHome_Load(object sender, EventArgs e)
-        {
-
-        }
-
-  
-
-   
+      
     }
 }

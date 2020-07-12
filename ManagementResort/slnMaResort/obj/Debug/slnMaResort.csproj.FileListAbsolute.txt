@@ -28,7 +28,6 @@ E:\HK2-2020\OOSD\ManagementResort\slnMaResort\obj\Debug\slnMaResort.pdb
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\bin\Debug\slnMaResort.exe.config
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\bin\Debug\slnMaResort.exe
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\bin\Debug\slnMaResort.pdb
-D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csprojAssemblyReference.cache
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.ChangePasswordForm.resources
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.HomeForm.resources
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.HomeMemberForm.resources
@@ -42,3 +41,8 @@ D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csproj.CoreCompileInputs.cache
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.exe
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.pdb
+D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.Employee.resources
+D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HomeUC.ucListEmployee.resources
+D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HotelUC.ucRoom.resources
+D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.ucBookTableNew.resources
+D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.ucTable.resources
