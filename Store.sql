@@ -241,7 +241,7 @@ begin
 end
 go
 
---18. Insert Employee
+--18. Insert Employee input(*)
 if OBJECT_ID('INSERTEMPLOYEE') is not null drop PROC INSERTEMPLOYEE
 go
 
@@ -264,6 +264,41 @@ begin
 end
 go
 
+--19. Update Employyee input (*)
+if OBJECT_ID('UPDATEEMPLOYEE') is not null drop PROC UPDATEEMPLOYEE
+go
+
+create PROC UPDATEEMPLOYEE
+@idEmployee nvarchar(50),
+@fullname nvarchar(50),
+@avatar image,
+@birthday date,
+@gender bit,
+@adress nvarchar(200),
+@idCard varchar(10),
+@phone varchar(10),
+@idBaseSalary int,
+@idArea int,
+@state nvarchar(200)
+as
+begin 
+	UPDATE EMPLOYEE set Fullname = @fullname, Avatar = @avatar, Birthday = @birthday, Gender = @gender
+	, Adress = @adress, IDCard = @idCard, Phone = @phone, IDBaseSalary = @idBaseSalary, IDArea = @idArea, State = @state where IDEmployee = @idEmployee
+end
+go
+
+--20. Delete Employee input (IDEmployee)
+if OBJECT_ID('DELETEEMPLOYEE') is not null drop PROC DELETEEMPLOYEE
+go
+create PROC DELETEEMPLOYEE
+@idEmployee nvarchar(50)
+as 
+begin
+	DELETE from EMPLOYEE where IDEmployee = @idEmployee
+end
+go
+
+
 
 --exec LOADACCOUNT
 --exec LOADAREA
@@ -278,9 +313,9 @@ go
 --exec LOADSERVICE
 --exec LOADTABLES
 --exec LOADVOUCHER
-
-
-
+--exec INSERTEMPLOYEE 'NV1000' , N'LQNVuong', null, null, null, N'Quận 1' , '261548432', '0823048409', null, null, N'Tốt'
+--exec UPDATEEMPLOYEE 'NV1000' , N'Vuong', null, null, null, N'Quận 1' , '261548432', null, null, null, N'Tốt'
+--exec DELETEEMPLOYEE 'NV1000'
 ---------------------------------------------------------------------------------------------------------------------------------------
 ----3. Thêm Account vào bảng Account.
 --if OBJECT_ID('INSERTAccount') is not null drop proc INSERTAccount;
