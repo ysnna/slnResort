@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace slnMaResort.DAL
 {
-    class TableDAL
+    public class TableDAL
     {
         private static TableDAL instance;
         private TableDAL() { }
