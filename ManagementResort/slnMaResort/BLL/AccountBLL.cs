@@ -114,7 +114,7 @@ namespace slnMaResort.BLL
             {
                 if (newpass == comfirm)
                 {
-                    AccountDAL.Instance.UpdatePass(newpass);
+                    AccountDAL.Instance.UpdatePass(GLOBAL.username,newpass);
                 }
                 else { MessageBox.Show("Your new pass and comfirm pass are not the same"); }
             }

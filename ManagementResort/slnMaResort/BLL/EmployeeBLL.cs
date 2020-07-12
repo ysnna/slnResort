@@ -39,13 +39,54 @@ namespace slnMaResort.BLL
             pict.ImageLayout = DataGridViewImageCellLayout.Zoom;
             DataTable dt = EmployeeDAL.Instance.loadEmp();
             dgv.DataSource = dt;
+
+        }
+        //Load nhân viên của Khách Sạn
+        public void loadHotelEmp(DataGridView dgv)
+        {
+            dgv.RowTemplate.Height = 40;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DataGridViewImageColumn pict = new DataGridViewImageColumn();
+            pict = (DataGridViewImageColumn)dgv.Columns[2];
+            pict.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            DataTable dt = EmployeeDAL.Instance.loadEmp();
+            dgv.DataSource = dt;
+        }
+        //Load nhân viên của Khu Vui Chơi
+        public void loadParkEmp(DataGridView dgv)
+        {
+            dgv.RowTemplate.Height = 40;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DataGridViewImageColumn pict = new DataGridViewImageColumn();
+            pict = (DataGridViewImageColumn)dgv.Columns[2];
+            pict.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            DataTable dt = EmployeeDAL.Instance.loadEmp();
+            dgv.DataSource = dt;
+        }
+        //Load nhân viên của Nhà Hàng
+        public void loadResEmp(DataGridView dgv)
+        {
+            dgv.RowTemplate.Height = 40;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DataGridViewImageColumn pict = new DataGridViewImageColumn();
+            pict = (DataGridViewImageColumn)dgv.Columns[2];
+            pict.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            DataTable dt = EmployeeDAL.Instance.loadResEmp();
+            dgv.DataSource = dt;
         }
 
-        //Load nhan vien
+        //Load nhan vien theo ID
         public DataTable loadEmpbyID(string id)
         {
             DataTable dt = EmployeeDAL.Instance.loadEmpbyID(id);
             return dt;
         }
+
     }
 }

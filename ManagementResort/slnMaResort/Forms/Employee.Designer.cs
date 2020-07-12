@@ -33,17 +33,19 @@
             // 
             // ucEmployee1
             // 
-            this.ucEmployee1.Location = new System.Drawing.Point(-2, -1);
+            this.ucEmployee1.Location = new System.Drawing.Point(205, 14);
+            this.ucEmployee1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ucEmployee1.Name = "ucEmployee1";
-            this.ucEmployee1.Size = new System.Drawing.Size(997, 798);
+            this.ucEmployee1.Size = new System.Drawing.Size(1122, 998);
             this.ucEmployee1.TabIndex = 0;
             // 
             // Employee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 795);
+            this.ClientSize = new System.Drawing.Size(1178, 994);
             this.Controls.Add(this.ucEmployee1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Employee";
             this.Text = "Employee";
             this.ResumeLayout(false);

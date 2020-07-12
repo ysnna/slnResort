@@ -19,7 +19,8 @@ namespace slnMaResort.Forms
 
             var ucEmployee = new ucEmployee();
             this.Controls.Add(ucEmployee);
-
+            
+            
         }
     }
 }

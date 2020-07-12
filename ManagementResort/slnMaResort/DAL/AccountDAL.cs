@@ -25,7 +25,7 @@ namespace slnMaResort.DAL
         
         public DataTable loadPermission(string usr)
         {
-            string sql = @"EXEC CHECKLOGIN  '" + usr + "' ";
+            string sql = @"EXEC CHECKLOGIN '" + usr + "' ";
             DataTable dt = MY_DB.Instance.createTable(sql);
             if (dt.Rows.Count > 0)
                 return dt;
@@ -52,9 +52,9 @@ namespace slnMaResort.DAL
         }
 
         // Doi pass word -- chua viet ham stored
-        public void UpdatePass(string pass)
+        public void UpdatePass(string usr,string pass)
         {
-            string sql = @"exec  '" + pass + "'";
+            string sql = @"exec CHANGEPASSWORD '" + usr + "' "+pass+"'";
             MY_DB.Instance.executeQuery(sql);      
         }
 

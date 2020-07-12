@@ -20,7 +20,7 @@ namespace slnMaResort.DAL
             }
             private set => EmployeeDAL.instance = value;
         }
-
+        //Load tất cả nhân viên
         public DataTable loadEmp()
         {
             string sql = @"EXEC LOADEMPLOYEE";
@@ -29,8 +29,34 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
-
-
+        //Load nhân viên theo Khách sạn
+        public DataTable loadHotelEmp()
+        {
+            string sql = @"EXEC CHECKLOGIN";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
+        //Load nhân viên theo Nhà Hàng
+        public DataTable loadResEmp()
+        {
+            string sql = @"EXEC CHECKLOGIN";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
+        //Load nhân viên theo Khu Vui Chơi
+        public DataTable loadParkEmp()
+        {
+            string sql = @"EXEC CHECKLOGIN";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
+        //Load nhân viên theo ID
         public DataTable loadEmpbyID(string id)
         {
             string sql = @"EXEC CHECKLOGIN  '" + id + "' ";
