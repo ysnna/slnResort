@@ -44,7 +44,6 @@
             this.lbIdEm = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picAva = new System.Windows.Forms.PictureBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -58,7 +57,6 @@
             this.txtGebder = new System.Windows.Forms.TextBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAva)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -412,7 +410,6 @@
         private System.Windows.Forms.Label lbIdEm;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picAva;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -426,6 +423,5 @@
         private System.Windows.Forms.TextBox txtGebder;
         private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }

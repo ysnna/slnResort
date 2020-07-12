@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // ucBookTableNew
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Name = "ucBookTableNew";
+            this.Size = new System.Drawing.Size(1030, 679);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

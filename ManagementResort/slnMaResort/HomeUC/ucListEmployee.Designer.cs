@@ -31,9 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.managementResortDataSet = new slnMaResort.ManagementResortDataSet();
             this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.eMPLOYEETableAdapter = new slnMaResort.ManagementResortDataSetTableAdapters.EMPLOYEETableAdapter();
             this.iDEmployeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.avatarDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
@@ -45,9 +43,7 @@
             this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.managementResortDataSet1 = new slnMaResort.ManagementResortDataSet1();
             this.pERMISSIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pERMISSIONTableAdapter = new slnMaResort.ManagementResortDataSet1TableAdapters.PERMISSIONTableAdapter();
             this.iDPermissionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,10 +58,8 @@
             this.rdoHotel = new System.Windows.Forms.RadioButton();
             this.rdoPark = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.managementResortDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.managementResortDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERMISSIONBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,17 +98,16 @@
             // 
             // managementResortDataSet
             // 
-            this.managementResortDataSet.DataSetName = "ManagementResortDataSet";
-            this.managementResortDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+           
             // 
             // eMPLOYEEBindingSource
             // 
             this.eMPLOYEEBindingSource.DataMember = "EMPLOYEE";
-            this.eMPLOYEEBindingSource.DataSource = this.managementResortDataSet;
+            
             // 
             // eMPLOYEETableAdapter
             // 
-            this.eMPLOYEETableAdapter.ClearBeforeFill = true;
+            
             // 
             // iDEmployeeDataGridViewTextBoxColumn
             // 
@@ -217,17 +210,13 @@
             // 
             // managementResortDataSet1
             // 
-            this.managementResortDataSet1.DataSetName = "ManagementResortDataSet1";
-            this.managementResortDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pERMISSIONBindingSource
             // 
             this.pERMISSIONBindingSource.DataMember = "PERMISSION";
-            this.pERMISSIONBindingSource.DataSource = this.managementResortDataSet1;
             // 
             // pERMISSIONTableAdapter
             // 
-            this.pERMISSIONTableAdapter.ClearBeforeFill = true;
             // 
             // iDPermissionDataGridViewTextBoxColumn
             // 
@@ -369,10 +358,8 @@
             this.Name = "ucListEmployee";
             this.Size = new System.Drawing.Size(1389, 610);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.managementResortDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.managementResortDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERMISSIONBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -393,16 +380,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource eMPLOYEEBindingSource;
-        private ManagementResortDataSet managementResortDataSet;
-        private ManagementResortDataSetTableAdapters.EMPLOYEETableAdapter eMPLOYEETableAdapter;
+        
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDPermissionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource pERMISSIONBindingSource;
-        private ManagementResortDataSet1 managementResortDataSet1;
-        private ManagementResortDataSet1TableAdapters.PERMISSIONTableAdapter pERMISSIONTableAdapter;
+        
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtUsername;
