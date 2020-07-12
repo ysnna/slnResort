@@ -47,6 +47,7 @@ go
 
 create PROC CHANGEPASSWORD
 @username nvarchar(50),
+@passwordCurrent varchar(50),
 @passwordNew varchar(50)
 as
 begin
@@ -56,7 +57,7 @@ begin
 	where Username = @username
 
 	 if (@username is not null and @password is not null)
-		Update ACCOUNT set Password = @passwordNew where Username = @username
+		Update ACCOUNT set Password = @passwordNew where Username = @username and @passwordCurrent = @password
 	else
 		THROW 51000, 'The record does not exist.', 1;  
 		return;	
@@ -237,6 +238,29 @@ begin
 	select  *
 	from  EMPLOYEE
 	where IDArea = @Area
+end
+go
+
+--18. Insert Employee
+if OBJECT_ID('INSERTEMPLOYEE') is not null drop PROC INSERTEMPLOYEE
+go
+
+create PROC INSERTEMPLOYEE
+@idEmployee nvarchar(50),
+@fullname nvarchar(50),
+@avatar image,
+@birthday date,
+@gender bit,
+@adress nvarchar(200),
+@idCard varchar(10),
+@phone varchar(10),
+@idBaseSalary int,
+@idArea int,
+@state nvarchar(200)
+as
+begin
+	insert into EMPLOYEE(IDEmployee, Fullname, Avatar, Birthday, Gender, Adress, IDCard, Phone, IDBaseSalary, IDArea, State)
+	values (@idEmployee, @fullname, @avatar, @birthday, @gender, @adress, @idCard, @phone, @idBaseSalary, @idArea, @state)
 end
 go
 
