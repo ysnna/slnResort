@@ -298,6 +298,8 @@ begin
 end
 go
 
+
+--21. Insert Permission vào Account input(username, permission)
 if OBJECT_ID('ADDPERMISSIONTOACCOUNT') is not null drop proc ADDPERMISSIONTOACCOUNT;
 go
 create proc ADDPERMISSIONTOACCOUNT
@@ -329,20 +331,40 @@ begin
 ---Kiểm tra xem có tồn tại permission cần điền chưa
 	select @checkPermission = 'True'
 	from  #Copy1
-	where IDPermission = @Permission
+	where @checkPermission = @Permission
 
 	if (@CheckPermission='True')
 	begin
-		Update User_Permission set Id_Permission=@Permission where UserName=@UserName;
+		Update ACCOUNT_PERMISSION set IDPermission = @Permission where Username = @username;
 	end;
 	else
 	begin
-		Insert dbo.User_Permission(UserName,Id_Permission) values (@UserName,@Permission)
+		Insert dbo.ACCOUNT_PERMISSION(UserName,IDPermission) values (@username,@permission)
 	end;
 end;
 go
 
+--22. Checkout customer cho bảng booktable input(customer)
+if OBJECT_ID('CHECKCUSTOMER') is not null drop PROC CHECKCUSTOMER
+go
 
+create PROC CHECKCUSTOMER
+@customer nvarchar(100)
+as
+begin
+	declare @idCustomer varchar(100)
+	select @idCustomer = IDCustomer
+	from CUSTOMER
+	where Name = @customer
+
+	if (@idCustomer is not null)
+		select *
+		from BOOK_TABLE
+		where IDCustomer = @idCustomer
+	else
+		throw 5000,  'Customer not exist', 1;
+end
+go
 
 --exec LOADACCOUNT
 --exec LOADAREA
@@ -360,6 +382,8 @@ go
 --exec INSERTEMPLOYEE 'NV1000' , N'LQNVuong', null, null, null, N'Quận 1' , '261548432', '0823048409', null, null, N'Tốt'
 --exec UPDATEEMPLOYEE 'NV1000' , N'Vuong', null, null, null, N'Quận 1' , '261548432', null, null, null, N'Tốt'
 --exec DELETEEMPLOYEE 'NV1000'
+--exec CHECKCUSTOMER N'Hoàng Hiệp'
+go
 ---------------------------------------------------------------------------------------------------------------------------------------
 ----3. Thêm Account vào bảng Account.
 --if OBJECT_ID('INSERTAccount') is not null drop proc INSERTAccount;
