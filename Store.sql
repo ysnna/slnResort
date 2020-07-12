@@ -227,7 +227,7 @@ go
 
 if OBJECT_ID('LOADEMPOYEETOAREA') is not null drop PROC LOADEMPOYEETOAREA
 go
-
+--17
 create PROC LOADEMPOYEETOAREA
 @Area int
 as
