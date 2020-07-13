@@ -65,5 +65,4 @@ D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HotelUC.ucRoom.resources
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.ucBookTableNew.resources
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.ucTable.resources
-E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.ucBookTableNew.resources
 E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.ucTable.resources

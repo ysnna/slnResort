@@ -126,12 +126,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestaurantUC\testReztaurantUC.cs" />
-    <Compile Include="RestaurantUC\ucBookTableNew.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="RestaurantUC\ucBookTableNew.Designer.cs">
-      <DependentUpon>ucBookTableNew.cs</DependentUpon>
-    </Compile>
     <Compile Include="RestaurantUC\ucTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,9 +171,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RestaurantUC\ucBookTableNew.resx">
-      <DependentUpon>ucBookTableNew.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RestaurantUC\ucTable.resx">
       <DependentUpon>ucTable.cs</DependentUpon>
     </EmbeddedResource>
