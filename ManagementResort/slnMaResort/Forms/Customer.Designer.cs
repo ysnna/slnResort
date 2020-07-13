@@ -1,13 +1,13 @@
-﻿namespace slnMaResort.RestaurantUC
+﻿namespace slnMaResort.Forms
 {
-    partial class ucBookTableNew
+    partial class Customer
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,22 +20,23 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.SuspendLayout();
             // 
-            // ucBookTableNew
+            // Customer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "ucBookTableNew";
-            this.Size = new System.Drawing.Size(1030, 679);
+            this.ClientSize = new System.Drawing.Size(1454, 786);
+            this.Name = "Customer";
+            this.Text = "Customer";
             this.ResumeLayout(false);
 
         }
