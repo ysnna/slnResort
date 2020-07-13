@@ -241,8 +241,151 @@ begin
 end
 go
 
+--18. Insert Employee input(*)
+if OBJECT_ID('INSERTEMPLOYEE') is not null drop PROC INSERTEMPLOYEE
+go
 
---exec LOADACCOUNT
+create PROC INSERTEMPLOYEE
+@idEmployee nvarchar(50),
+@fullname nvarchar(50),
+@avatar image,
+@birthday date,
+@gender bit,
+@adress nvarchar(200),
+@idCard varchar(10),
+@phone varchar(10),
+@idBaseSalary int,
+@idArea int,
+@state nvarchar(200)
+as
+begin
+	insert into EMPLOYEE(IDEmployee, Fullname, Avatar, Birthday, Gender, Adress, IDCard, Phone, IDBaseSalary, IDArea, State)
+	values (@idEmployee, @fullname, @avatar, @birthday, @gender, @adress, @idCard, @phone, @idBaseSalary, @idArea, @state)
+end
+go
+
+--19. Update Employyee input (*)
+if OBJECT_ID('UPDATEEMPLOYEE') is not null drop PROC UPDATEEMPLOYEE
+go
+
+create PROC UPDATEEMPLOYEE
+@idEmployee nvarchar(50),
+@fullname nvarchar(50),
+@avatar image,
+@birthday date,
+@gender bit,
+@adress nvarchar(200),
+@idCard varchar(10),
+@phone varchar(10),
+@idBaseSalary int,
+@idArea int,
+@state nvarchar(200)
+as
+begin 
+	UPDATE EMPLOYEE set Fullname = @fullname, Avatar = @avatar, Birthday = @birthday, Gender = @gender
+	, Adress = @adress, IDCard = @idCard, Phone = @phone, IDBaseSalary = @idBaseSalary, IDArea = @idArea, State = @state where IDEmployee = @idEmployee
+end
+go
+
+--20. Delete Employee input (IDEmployee)
+if OBJECT_ID('DELETEEMPLOYEE') is not null drop PROC DELETEEMPLOYEE
+go
+create PROC DELETEEMPLOYEE
+@idEmployee nvarchar(50)
+as 
+begin
+	DELETE from EMPLOYEE where IDEmployee = @idEmployee
+end
+go
+
+
+--21. Insert Permission vào Account input(username, permission)
+if OBJECT_ID('ADDPERMISSIONTOACCOUNT') is not null drop proc ADDPERMISSIONTOACCOUNT;
+go
+create proc ADDPERMISSIONTOACCOUNT
+@username varchar(50),
+@permission int
+as
+begin
+-----lưu giá trị Group_permission vào bảng tạm
+	If OBJECT_ID('tempđb..#Copy') is not null drop table #Copy;
+	select GROUP_PERMISSION.IDPermission, PERMISSION.Name into #Copy
+	from	((	ACCOUNT join GROUPUSER on ACCOUNT.IDGroup = GROUPUSER.IDGroup)
+				join GROUP_PERMISSION on GROUPUSER.IDGroup = GROUP_PERMISSION.IDGroup
+				join Permission on Group_Permission.IDPermission=Permission.IDPermission
+				)
+	where  Account.UserName= @username;
+
+	declare @checkPermission varchar(50)
+
+---Kiểm tra xem có tồn tại permission cần điền chưa
+	select @checkPermission = 'True'
+	from  #Copy
+	where IDPermission = @Permission
+
+-----lưu giá trị user_permission vào bảng tạm
+	If OBJECT_ID('tempđb..#Copy1') is not null drop table #Copy1;
+	select  IDPermission into #Copy1
+	from	ACCOUNT join ACCOUNT_PERMISSION on ACCOUNT.Username =  ACCOUNT_PERMISSION.Username
+	where  ACCOUNT.Username = @username;
+---Kiểm tra xem có tồn tại permission cần điền chưa
+	select @checkPermission = 'True'
+	from  #Copy1
+	where @checkPermission = @Permission
+
+	if (@CheckPermission='True')
+	begin
+		Update ACCOUNT_PERMISSION set IDPermission = @Permission where Username = @username;
+	end;
+	else
+	begin
+		Insert dbo.ACCOUNT_PERMISSION(UserName,IDPermission) values (@username,@permission)
+	end;
+end;
+go
+
+--22. Delete Permission cho Account intput(username, Permission)
+if OBJECT_ID('DELETEPERMISSIONTOACCOUNT') is not null drop PROC DELETEPERMISSIONTOACCOUNT
+go 
+
+create  PROC DELETEPERMISSIONTOACCOUNT
+@username varchar(100),
+@permission nvarchar(200)
+as
+begin
+	declare @idPermission int
+	select @idPermission = IDPermission
+	from PERMISSION
+	where Name = @permission 
+	if (@idPermission is not null)
+		DELETE from ACCOUNT_PERMISSION where Username = @username and IDPermission = @idPermission
+	else
+		throw 5000, 'Permission not exist', 1;
+end
+
+--23. Checkout customer cho bảng booktable input(customer)
+if OBJECT_ID('CHECKCUSTOMER') is not null drop PROC CHECKCUSTOMER
+go
+
+create PROC CHECKCUSTOMER
+@customer nvarchar(100)
+as
+begin
+	declare @idCustomer varchar(100)
+	select @idCustomer = IDCustomer
+	from CUSTOMER
+	where Name = @customer
+
+	if (@idCustomer is not null)
+		select *
+		from BOOK_TABLE
+		where IDCustomer = @idCustomer
+	else
+		throw 5000,  'Customer not exist', 1;
+end
+go
+
+--exec LOADACCOUNT 
 --exec LOADAREA
 --exec LOADBASESALARY
 --exec LOADCUSTOMER
@@ -255,8 +398,12 @@ go
 --exec LOADSERVICE
 --exec LOADTABLES
 --exec LOADVOUCHER
-
-
+--exec INSERTEMPLOYEE 'NV1000' , N'LQNVuong', null, null, null, N'Quận 1' , '261548432', '0823048409', null, null, N'Tốt'
+--exec UPDATEEMPLOYEE 'NV1000' , N'Vuong', null, null, null, N'Quận 1' , '261548432', null, null, null, N'Tốt'
+--exec DELETEEMPLOYEE 'NV1000'
+--exec DELETEPERMISSIONTOACCOUNT 'nguyenvuong' , N'In hóa đơn'
+--exec CHECKCUSTOMER N'Hoàng Hiệp'
+go
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ----3. Thêm Account vào bảng Account.
@@ -485,49 +632,7 @@ go
 
 
 
---if OBJECT_ID('ADDPermissionUserName') is not null drop proc ADDPermissionUserName;
---go
---create proc ADDPermissionUserName
---@UserName nvarchar(50),
---@Permission int
---as
---begin
--------lưu giá trị Group_permission vào bảng tạm
---	If OBJECT_ID('tempđb..#Copy') is not null drop table #Copy;
---	select Group_Permission.Id_Permission, Name_Permission into #Copy
---	from	((	Account join GroupUser on Type_User = Id_Group)
---				join Group_Permission on GroupUser.Id_Group = Group_Permission.Id_Group
---				join Permission on Group_Permission.Id_Permission=Permission.Id_Permission
---				)
---	where  Account.UserName=@UserName;
 
---	declare @CheckPermission varchar(50)
-
------Kiểm tra xem có tồn tại permission cần điền chưa
---	select @CheckPermission = 'True'
---	from  #Copy
---	where Id_Permission=@Permission
-
--------lưu giá trị user_permission vào bảng tạm
---	If OBJECT_ID('tempđb..#Copy1') is not null drop table #Copy1;
---	select  Id_Permission into #Copy1
---	from	Account join User_Permission on Account.UserName=User_Permission.UserName
---	where  Account.UserName=@UserName;
------Kiểm tra xem có tồn tại permission cần điền chưa
---	select @CheckPermission = 'True'
---	from  #Copy1
---	where Id_Permission=@Permission
-
---	if (@CheckPermission='True')
---	begin
---		Update User_Permission set Id_Permission=@Permission where UserName=@UserName;
---	end;
---	else
---	begin
---		Insert dbo.User_Permission(UserName,Id_Permission) values (@UserName,@Permission)
---	end;
---end;
---go
 
 --if OBJECT_ID('SEARCHNameGroup') is not null drop proc SEARCHNameGroup;
 --go
