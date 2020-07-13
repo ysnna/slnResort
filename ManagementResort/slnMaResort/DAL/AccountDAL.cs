@@ -49,5 +49,15 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
+
+        // Doi pass word -- chua viet ham stored
+
+       
+
+        public void UpdatePass(string pass)
+        {
+            string sql = @"exec  '" + pass + "'";
+            MY_DB.Instance.executeQuery(sql);      
+        }
     }
 }

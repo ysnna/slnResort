@@ -102,5 +102,10 @@ namespace slnMaResort.BLL
                     }
             }
         }
+        //Doi password
+        #region ChangePass
+       
+
+        #endregion
     }
 }
