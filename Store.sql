@@ -401,7 +401,20 @@ begin
 end
 go
 
+--24.1 AUTO INCREMENT Field Customer
+if OBJECT_ID('AUTOINCREMENTCUSTOMER') is not null drop PROC AUTOINCREMENTCUSTOMER
+go
 
+create PROC AUTOINCREMENTCUSTOMER
+as
+begin
+	select top 1 ('C' + Cast(Cast(SUBSTRING((IDCustomer), 2, 47) as int) + 1 as varchar)) as IDNewCustomer
+	from CUSTOMER
+	order by IDCustomer desc
+end
+go
+	
+--25.1 AUTO INCREMENT Field Customer
 
 --exec LOADACCOUNT 
 --exec LOADAREA
