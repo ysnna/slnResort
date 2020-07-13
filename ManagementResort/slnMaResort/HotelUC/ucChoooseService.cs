@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace slnMaResort.RestaurantUC
+namespace slnMaResort.HotelUC
 {
-    public partial class ucBookTableNew : UserControl
+    public partial class ucChoooseService : UserControl
     {
-        public ucBookTableNew()
+        public ucChoooseService()
         {
             InitializeComponent();
         }
+
+     
     }
 }
