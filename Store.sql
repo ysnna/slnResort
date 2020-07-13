@@ -246,7 +246,6 @@ if OBJECT_ID('INSERTEMPLOYEE') is not null drop PROC INSERTEMPLOYEE
 go
 
 create PROC INSERTEMPLOYEE
-@idEmployee nvarchar(50),
 @fullname nvarchar(50),
 @avatar image,
 @birthday date,
@@ -259,8 +258,15 @@ create PROC INSERTEMPLOYEE
 @state nvarchar(200)
 as
 begin
+	declare @idEmployeenew varchar(50)
+	
+	select top 1 @idEmployeenew = 'NV' + Cast(Cast(SUBSTRING((IDEmployee), 3, 47) as int) + 1 as varchar)
+	from EMPLOYEE
+	order by IDEmployee desc
+
+
 	insert into EMPLOYEE(IDEmployee, Fullname, Avatar, Birthday, Gender, Adress, IDCard, Phone, IDBaseSalary, IDArea, State)
-	values (@idEmployee, @fullname, @avatar, @birthday, @gender, @adress, @idCard, @phone, @idBaseSalary, @idArea, @state)
+	values (@idEmployeenew, @fullname, @avatar, @birthday, @gender, @adress, @idCard, @phone, @idBaseSalary, @idArea, @state)
 end
 go
 
@@ -400,7 +406,7 @@ go
 --exec LOADSERVICE
 --exec LOADTABLES
 --exec LOADVOUCHER
---exec INSERTEMPLOYEE 'NV1000' , N'LQNVuong', null, null, null, N'Quận 1' , '261548432', '0823048409', null, null, N'Tốt'
+--exec INSERTEMPLOYEE N'LQNVuong', null, null, null, N'Quận 1' , '261548432', '0823048409', null, null, N'Tốt'
 --exec UPDATEEMPLOYEE 'NV1000' , N'Vuong', null, null, null, N'Quận 1' , '261548432', null, null, null, N'Tốt'
 --exec DELETEEMPLOYEE 'NV1000'
 --exec DELETEPERMISSIONTOACCOUNT 'nguyenvuong' , N'In hóa đơn'
