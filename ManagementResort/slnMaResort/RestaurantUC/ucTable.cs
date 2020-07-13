@@ -17,6 +17,6 @@ namespace slnMaResort.RestaurantUC
             InitializeComponent();
         }
 
-      
+   
     }
 }
