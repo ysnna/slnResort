@@ -241,12 +241,27 @@ begin
 end
 go
 
---18. Insert Employee input(*)
+--18.1 AUTO INCREMENT Field IDEmployee
+if OBJECT_ID('AUTOINCREMENTEMPLOYEE') is not null drop PROC AUTOINCREMENTEMPLOYEE
+go
+
+create PROC AUTOINCREMENTEMPLOYEE
+as
+begin
+	--declare @idEmployeenew varchar(50)
+	
+	select top 1 ('NV' + Cast(Cast(SUBSTRING((IDEmployee), 3, 47) as int) + 1 as varchar)) as IDNewEmployee
+	from EMPLOYEE
+	order by IDEmployee desc
+end
+go
+
+--18.2 Insert Employee input(*)
 if OBJECT_ID('INSERTEMPLOYEE') is not null drop PROC INSERTEMPLOYEE
 go
 
 create PROC INSERTEMPLOYEE
-@idEmployee nvarchar(50),
+@idEmployee varchar(50),
 @fullname nvarchar(50),
 @avatar image,
 @birthday date,
@@ -263,6 +278,7 @@ begin
 	values (@idEmployee, @fullname, @avatar, @birthday, @gender, @adress, @idCard, @phone, @idBaseSalary, @idArea, @state)
 end
 go
+
 
 --19. Update Employyee input (*)
 if OBJECT_ID('UPDATEEMPLOYEE') is not null drop PROC UPDATEEMPLOYEE
@@ -364,10 +380,10 @@ begin
 end
 
 --23. Checkout customer cho bảng booktable input(customer)
-if OBJECT_ID('CHECKCUSTOMER') is not null drop PROC CHECKCUSTOMER
+if OBJECT_ID('CHECKCUSTOMERBOOKTABLE') is not null drop PROC CHECKCUSTOMERBOOKTABLE
 go
 
-create PROC CHECKCUSTOMER
+create PROC CHECKCUSTOMERBOOKTABLE
 @customer nvarchar(100)
 as
 begin
@@ -385,6 +401,8 @@ begin
 end
 go
 
+
+
 --exec LOADACCOUNT 
 --exec LOADAREA
 --exec LOADBASESALARY
@@ -398,12 +416,11 @@ go
 --exec LOADSERVICE
 --exec LOADTABLES
 --exec LOADVOUCHER
---exec INSERTEMPLOYEE 'NV1000' , N'LQNVuong', null, null, null, N'Quận 1' , '261548432', '0823048409', null, null, N'Tốt'
+--exec INSERTEMPLOYEE N'LQNVuong', null, null, null, N'Quận 1' , '261548432', '0823048409', null, null, N'Tốt'
 --exec UPDATEEMPLOYEE 'NV1000' , N'Vuong', null, null, null, N'Quận 1' , '261548432', null, null, null, N'Tốt'
 --exec DELETEEMPLOYEE 'NV1000'
 --exec DELETEPERMISSIONTOACCOUNT 'nguyenvuong' , N'In hóa đơn'
 --exec CHECKCUSTOMER N'Hoàng Hiệp'
-go
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ----3. Thêm Account vào bảng Account.
