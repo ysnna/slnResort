@@ -1,6 +1,6 @@
 ﻿namespace slnMaResort.Forms
 {
-    partial class MRestaurantForm
+    partial class Customer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucTable1 = new slnMaResort.RestaurantUC.ucTable();
             this.SuspendLayout();
             // 
-            // ucTable1
-            // 
-            this.ucTable1.AutoScroll = true;
-            this.ucTable1.Location = new System.Drawing.Point(2, -1);
-            this.ucTable1.Name = "ucTable1";
-            this.ucTable1.Size = new System.Drawing.Size(1463, 554);
-            this.ucTable1.TabIndex = 0;
-            // 
-            // MRestaurantForm
+            // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1592, 558);
-            this.Controls.Add(this.ucTable1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "MRestaurantForm";
-            this.Text = "Management Restaurant";
-            this.Load += new System.EventHandler(this.MRestaurantForm_Load);
+            this.ClientSize = new System.Drawing.Size(1454, 786);
+            this.Name = "Customer";
+            this.Text = "Customer";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private RestaurantUC.ucTable ucTable1;
     }
 }

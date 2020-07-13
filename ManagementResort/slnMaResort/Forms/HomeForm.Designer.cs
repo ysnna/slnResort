@@ -34,20 +34,26 @@
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabEmployee = new System.Windows.Forms.TabPage();
+            this.ucListEmployee1 = new slnMaResort.HomeUC.ucListEmployee();
+            this.tbSalary = new System.Windows.Forms.TabPage();
+            this.tbStatistics = new System.Windows.Forms.TabPage();
+            this.tbService = new System.Windows.Forms.TabPage();
+            this.tbVoucher = new System.Windows.Forms.TabPage();
             this.menuStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabEmployee.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
             // 
             this.menuStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.connectionToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1194, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1866, 28);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -58,75 +64,119 @@
             this.logToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.connectionToolStripMenuItem.Name = "connectionToolStripMenuItem";
-            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.connectionToolStripMenuItem.Text = "Connection";
             // 
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.loginToolStripMenuItem.Text = "Login";
             // 
             // logToolStripMenuItem
             // 
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
-            this.logToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.logToolStripMenuItem.Text = "Logout";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 24);
+            this.tabControl1.Controls.Add(this.tabEmployee);
+            this.tabControl1.Controls.Add(this.tbSalary);
+            this.tabControl1.Controls.Add(this.tbStatistics);
+            this.tabControl1.Controls.Add(this.tbService);
+            this.tabControl1.Controls.Add(this.tbVoucher);
+            this.tabControl1.Location = new System.Drawing.Point(0, 31);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1194, 678);
+            this.tabControl1.Size = new System.Drawing.Size(1866, 936);
             this.tabControl1.TabIndex = 3;
             // 
-            // tabPage1
+            // tabEmployee
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1186, 646);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabEmployee.Controls.Add(this.ucListEmployee1);
+            this.tabEmployee.Location = new System.Drawing.Point(4, 32);
+            this.tabEmployee.Name = "tabEmployee";
+            this.tabEmployee.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEmployee.Size = new System.Drawing.Size(1858, 900);
+            this.tabEmployee.TabIndex = 0;
+            this.tabEmployee.Text = "Employee";
+            this.tabEmployee.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // ucListEmployee1
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1186, 646);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.ucListEmployee1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ucListEmployee1.Location = new System.Drawing.Point(0, 34);
+            this.ucListEmployee1.Margin = new System.Windows.Forms.Padding(4);
+            this.ucListEmployee1.Name = "ucListEmployee1";
+            this.ucListEmployee1.Size = new System.Drawing.Size(1851, 883);
+            this.ucListEmployee1.TabIndex = 0;
             // 
-            // FHome
+            // tbSalary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.tbSalary.Location = new System.Drawing.Point(4, 32);
+            this.tbSalary.Name = "tbSalary";
+            this.tbSalary.Padding = new System.Windows.Forms.Padding(3);
+            this.tbSalary.Size = new System.Drawing.Size(1858, 900);
+            this.tbSalary.TabIndex = 1;
+            this.tbSalary.Text = "Salary";
+            this.tbSalary.UseVisualStyleBackColor = true;
+            // 
+            // tbStatistics
+            // 
+            this.tbStatistics.Location = new System.Drawing.Point(4, 32);
+            this.tbStatistics.Name = "tbStatistics";
+            this.tbStatistics.Padding = new System.Windows.Forms.Padding(3);
+            this.tbStatistics.Size = new System.Drawing.Size(1858, 900);
+            this.tbStatistics.TabIndex = 2;
+            this.tbStatistics.Text = "Statistics";
+            this.tbStatistics.UseVisualStyleBackColor = true;
+            // 
+            // tbService
+            // 
+            this.tbService.Location = new System.Drawing.Point(4, 32);
+            this.tbService.Name = "tbService";
+            this.tbService.Padding = new System.Windows.Forms.Padding(3);
+            this.tbService.Size = new System.Drawing.Size(1858, 900);
+            this.tbService.TabIndex = 3;
+            this.tbService.Text = "Service";
+            this.tbService.UseVisualStyleBackColor = true;
+            // 
+            // tbVoucher
+            // 
+            this.tbVoucher.Location = new System.Drawing.Point(4, 32);
+            this.tbVoucher.Name = "tbVoucher";
+            this.tbVoucher.Padding = new System.Windows.Forms.Padding(3);
+            this.tbVoucher.Size = new System.Drawing.Size(1858, 900);
+            this.tbVoucher.TabIndex = 4;
+            this.tbVoucher.Text = "Voucher";
+            this.tbVoucher.UseVisualStyleBackColor = true;
+            // 
+            // HomeForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1194, 701);
+            this.ClientSize = new System.Drawing.Size(1866, 963);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "FHome";
+            this.Name = "HomeForm";
             this.Text = "Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FHome_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabEmployee.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,7 +190,11 @@
         private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabEmployee;
+        private System.Windows.Forms.TabPage tbSalary;
+        private HomeUC.ucListEmployee ucListEmployee1;
+        private System.Windows.Forms.TabPage tbStatistics;
+        private System.Windows.Forms.TabPage tbService;
+        private System.Windows.Forms.TabPage tbVoucher;
     }
 }

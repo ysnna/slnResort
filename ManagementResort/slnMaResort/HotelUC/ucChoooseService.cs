@@ -1,29 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace slnMaResort.Forms
+namespace slnMaResort.HotelUC
 {
-    public partial class HomeForm : Form
+    public partial class ucChoooseService : UserControl
     {
-        public HomeForm()
+        public ucChoooseService()
         {
             InitializeComponent();
         }
 
-        private void FHome_Load(object sender, EventArgs e)
-        {
-
-        }
-
-  
-
-   
+     
     }
 }

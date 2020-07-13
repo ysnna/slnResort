@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace slnMaResort.Forms
 {
-    public partial class HomeForm : Form
+    public partial class Customer : Form
     {
-        public HomeForm()
+        public Customer()
         {
             InitializeComponent();
         }
-
-        private void FHome_Load(object sender, EventArgs e)
-        {
-
-        }
-
-  
-
-   
     }
 }
