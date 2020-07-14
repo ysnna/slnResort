@@ -35,23 +35,12 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEmployee = new System.Windows.Forms.TabPage();
-            this.ucListEmployee1 = new slnMaResort.HomeUC.ucListEmployee();
             this.tbSalary = new System.Windows.Forms.TabPage();
             this.tbStatistics = new System.Windows.Forms.TabPage();
             this.tbService = new System.Windows.Forms.TabPage();
             this.tbVoucher = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lvVoucherMan = new System.Windows.Forms.ListView();
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ucListEmployee1 = new slnMaResort.HomeUC.ucListEmployee();
+            this.homeVoucherUC = new slnMaResort.HomeUC.HomeVoucherUC();
             this.menuStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabEmployee.SuspendLayout();
@@ -100,6 +89,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabEmployee);
             this.tabControl1.Controls.Add(this.tbSalary);
             this.tabControl1.Controls.Add(this.tbStatistics);
@@ -121,15 +113,6 @@
             this.tabEmployee.TabIndex = 0;
             this.tabEmployee.Text = "Employee";
             this.tabEmployee.UseVisualStyleBackColor = true;
-            // 
-            // ucListEmployee1
-            // 
-            this.ucListEmployee1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ucListEmployee1.Location = new System.Drawing.Point(0, 0);
-            this.ucListEmployee1.Margin = new System.Windows.Forms.Padding(4);
-            this.ucListEmployee1.Name = "ucListEmployee1";
-            this.ucListEmployee1.Size = new System.Drawing.Size(1851, 883);
-            this.ucListEmployee1.TabIndex = 0;
             // 
             // tbSalary
             // 
@@ -163,10 +146,7 @@
             // 
             // tbVoucher
             // 
-            this.tbVoucher.Controls.Add(this.button3);
-            this.tbVoucher.Controls.Add(this.button2);
-            this.tbVoucher.Controls.Add(this.button1);
-            this.tbVoucher.Controls.Add(this.lvVoucherMan);
+            this.tbVoucher.Controls.Add(this.homeVoucherUC);
             this.tbVoucher.Location = new System.Drawing.Point(4, 28);
             this.tbVoucher.Name = "tbVoucher";
             this.tbVoucher.Padding = new System.Windows.Forms.Padding(3);
@@ -175,107 +155,21 @@
             this.tbVoucher.Text = "Voucher";
             this.tbVoucher.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // ucListEmployee1
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Crimson;
-            this.button3.Location = new System.Drawing.Point(1010, 582);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(219, 50);
-            this.button3.TabIndex = 221;
-            this.button3.Text = "Delete Voucher";
-            this.button3.UseVisualStyleBackColor = false;
+            this.ucListEmployee1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ucListEmployee1.Location = new System.Drawing.Point(0, 0);
+            this.ucListEmployee1.Margin = new System.Windows.Forms.Padding(4);
+            this.ucListEmployee1.Name = "ucListEmployee1";
+            this.ucListEmployee1.Size = new System.Drawing.Size(1851, 883);
+            this.ucListEmployee1.TabIndex = 0;
             // 
-            // button2
+            // homeVoucherUC
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Crimson;
-            this.button2.Location = new System.Drawing.Point(682, 582);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(158, 50);
-            this.button2.TabIndex = 220;
-            this.button2.Text = "Add Voucher";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Crimson;
-            this.button1.Location = new System.Drawing.Point(846, 582);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 50);
-            this.button1.TabIndex = 219;
-            this.button1.Text = "Edit Voucher";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // lvVoucherMan
-            // 
-            this.lvVoucherMan.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader14,
-            this.columnHeader15,
-            this.columnHeader22,
-            this.columnHeader16,
-            this.columnHeader18,
-            this.columnHeader19,
-            this.columnHeader20,
-            this.columnHeader21});
-            this.lvVoucherMan.FullRowSelect = true;
-            this.lvVoucherMan.HideSelection = false;
-            this.lvVoucherMan.Location = new System.Drawing.Point(8, 3);
-            this.lvVoucherMan.MultiSelect = false;
-            this.lvVoucherMan.Name = "lvVoucherMan";
-            this.lvVoucherMan.Size = new System.Drawing.Size(1237, 576);
-            this.lvVoucherMan.TabIndex = 1;
-            this.lvVoucherMan.UseCompatibleStateImageBehavior = false;
-            this.lvVoucherMan.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "ID";
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "Code Voucher";
-            this.columnHeader15.Width = 120;
-            // 
-            // columnHeader22
-            // 
-            this.columnHeader22.Text = "Percent";
-            this.columnHeader22.Width = 84;
-            // 
-            // columnHeader16
-            // 
-            this.columnHeader16.Text = "Total";
-            this.columnHeader16.Width = 175;
-            // 
-            // columnHeader18
-            // 
-            this.columnHeader18.Text = "Start Date";
-            this.columnHeader18.Width = 166;
-            // 
-            // columnHeader19
-            // 
-            this.columnHeader19.Text = "Expriration Date";
-            this.columnHeader19.Width = 151;
-            // 
-            // columnHeader20
-            // 
-            this.columnHeader20.Text = "State";
-            this.columnHeader20.Width = 128;
-            // 
-            // columnHeader21
-            // 
-            this.columnHeader21.Text = "ID Invoice Used";
-            this.columnHeader21.Width = 134;
+            this.homeVoucherUC.Location = new System.Drawing.Point(0, 0);
+            this.homeVoucherUC.Name = "homeVoucherUC";
+            this.homeVoucherUC.Size = new System.Drawing.Size(1914, 964);
+            this.homeVoucherUC.TabIndex = 0;
             // 
             // HomeForm
             // 
@@ -316,17 +210,6 @@
         private System.Windows.Forms.TabPage tbStatistics;
         private System.Windows.Forms.TabPage tbService;
         private System.Windows.Forms.TabPage tbVoucher;
-        private System.Windows.Forms.ListView lvVoucherMan;
-        private System.Windows.Forms.ColumnHeader columnHeader14;
-        private System.Windows.Forms.ColumnHeader columnHeader15;
-        private System.Windows.Forms.ColumnHeader columnHeader22;
-        private System.Windows.Forms.ColumnHeader columnHeader16;
-        private System.Windows.Forms.ColumnHeader columnHeader18;
-        private System.Windows.Forms.ColumnHeader columnHeader19;
-        private System.Windows.Forms.ColumnHeader columnHeader20;
-        private System.Windows.Forms.ColumnHeader columnHeader21;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private HomeUC.HomeVoucherUC homeVoucherUC;
     }
 }
