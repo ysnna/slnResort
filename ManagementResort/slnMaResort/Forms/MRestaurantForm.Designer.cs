@@ -32,8 +32,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tablesUC = new slnMaResort.RestaurantUC.TablesUC();
             this.invoiceFoodUC = new slnMaResort.RestaurantUC.InvoiceFoodUC();
+            this.roomUC1 = new slnMaResort.HotelUC.RoomUC();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -43,7 +43,7 @@
             // 
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1194, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -57,16 +57,16 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1194, 674);
+            this.tabControl1.Size = new System.Drawing.Size(1924, 1034);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.tablesUC);
+            this.tabPage1.Controls.Add(this.roomUC1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1186, 648);
+            this.tabPage1.Size = new System.Drawing.Size(1916, 1008);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -77,17 +77,10 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1186, 648);
+            this.tabPage2.Size = new System.Drawing.Size(1916, 1008);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tablesUC
-            // 
-            this.tablesUC.Location = new System.Drawing.Point(3, 3);
-            this.tablesUC.Name = "tablesUC";
-            this.tablesUC.Size = new System.Drawing.Size(1914, 964);
-            this.tablesUC.TabIndex = 0;
             // 
             // invoiceFoodUC
             // 
@@ -97,12 +90,19 @@
             this.invoiceFoodUC.Size = new System.Drawing.Size(1914, 964);
             this.invoiceFoodUC.TabIndex = 0;
             // 
+            // roomUC1
+            // 
+            this.roomUC1.Location = new System.Drawing.Point(-1, 0);
+            this.roomUC1.Name = "roomUC1";
+            this.roomUC1.Size = new System.Drawing.Size(1914, 964);
+            this.roomUC1.TabIndex = 0;
+            // 
             // MRestaurantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1194, 701);
+            this.ClientSize = new System.Drawing.Size(1924, 1061);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -124,7 +124,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private RestaurantUC.TablesUC tablesUC;
         private RestaurantUC.InvoiceFoodUC invoiceFoodUC;
+        private HotelUC.RoomUC roomUC1;
     }
 }
