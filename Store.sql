@@ -624,6 +624,21 @@ begin
 end
 go
 
+--35. Search Food theo ID, Name
+if OBJECT_ID('SEARCHFOOD') is not null drop PROC SEARCHFOOD
+go
+
+create PROC SEARCHFOOD
+@idFood varchar(50),
+@name nvarchar(50)
+as
+begin
+	select *
+	from MENUFOOD
+	where IDFood like '%'+ @idFood +'%' or Name like '%'+ @name +'%'
+end
+go
+
 --exec LOADACCOUNT 
 --exec LOADAREA
 --exec LOADBASESALARY
@@ -655,6 +670,7 @@ go
 --exec CHECKAREAOFIDVOUCHER 2
 --exec SEARCHEMPLOYEE null , N'Vu'
 --exec SEARCHVOUCHER null, N'hải sản'
+--exec SEARCHFOOD null, N'ngừ'
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------
