@@ -105,3 +105,5 @@ D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.c
 D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.exe
 D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.pdb
 D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csprojAssemblyReference.cache
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HotelUC.InvoiceRoomUC.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HotelUC.InvoiceServicesUC.resources
