@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btAddFood = new System.Windows.Forms.Button();
             this.btOrder = new System.Windows.Forms.Button();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -41,13 +41,13 @@
             this.timePicker = new System.Windows.Forms.DateTimePicker();
             this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.btCheckOut = new System.Windows.Forms.Button();
-            this.pnTableLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.nudQuality = new System.Windows.Forms.NumericUpDown();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lvOrder = new System.Windows.Forms.ListView();
+            this.flPicTable = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuality)).BeginInit();
             this.panel1.SuspendLayout();
@@ -115,37 +115,37 @@
             this.dgvMenu.AllowUserToDeleteRows = false;
             this.dgvMenu.AllowUserToResizeColumns = false;
             this.dgvMenu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMenu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMenu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvMenu.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMenu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvMenu.Location = new System.Drawing.Point(930, 94);
             this.dgvMenu.Name = "dgvMenu";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMenu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMenu.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvMenu.RowHeadersVisible = false;
             this.dgvMenu.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMenu.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMenu.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvMenu.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvMenu.Size = new System.Drawing.Size(970, 414);
@@ -183,17 +183,6 @@
             this.btCheckOut.TabIndex = 164;
             this.btCheckOut.Text = "Payment";
             this.btCheckOut.UseVisualStyleBackColor = true;
-            // 
-            // pnTableLayout
-            // 
-            this.pnTableLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnTableLayout.AutoScroll = true;
-            this.pnTableLayout.Location = new System.Drawing.Point(14, 12);
-            this.pnTableLayout.Name = "pnTableLayout";
-            this.pnTableLayout.Size = new System.Drawing.Size(901, 877);
-            this.pnTableLayout.TabIndex = 162;
             // 
             // label5
             // 
@@ -266,10 +255,19 @@
             this.lvOrder.UseCompatibleStateImageBehavior = false;
             this.lvOrder.View = System.Windows.Forms.View.Details;
             // 
+            // flPicTable
+            // 
+            this.flPicTable.AutoScroll = true;
+            this.flPicTable.Location = new System.Drawing.Point(3, 12);
+            this.flPicTable.Name = "flPicTable";
+            this.flPicTable.Size = new System.Drawing.Size(921, 877);
+            this.flPicTable.TabIndex = 174;
+            // 
             // RoomUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.flPicTable);
             this.Controls.Add(this.btAddFood);
             this.Controls.Add(this.btOrder);
             this.Controls.Add(this.txtDescription);
@@ -280,10 +278,10 @@
             this.Controls.Add(this.datePicker);
             this.Controls.Add(this.btCheckOut);
             this.Controls.Add(this.lvOrder);
-            this.Controls.Add(this.pnTableLayout);
             this.Controls.Add(this.panel1);
             this.Name = "RoomUC";
             this.Size = new System.Drawing.Size(1914, 964);
+            this.Load += new System.EventHandler(this.RoomUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuality)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -303,12 +301,12 @@
         private System.Windows.Forms.DateTimePicker timePicker;
         private System.Windows.Forms.DateTimePicker datePicker;
         private System.Windows.Forms.Button btCheckOut;
-        private System.Windows.Forms.FlowLayoutPanel pnTableLayout;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown nudQuality;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView lvOrder;
+        private System.Windows.Forms.FlowLayoutPanel flPicTable;
     }
 }
