@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
+﻿using slnMaResort.DAL;
+using System;
 using System.Data;
-using System.Security.Cryptography;
-using slnMaResort.DAL;
-using slnMaResort.DTO;
-using slnMaResort.Forms;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 namespace slnMaResort.BLL
 {
     public class EmployeeBLL
@@ -42,7 +34,7 @@ namespace slnMaResort.BLL
 
         }
         //Load nhân viên của Khách Sạn
-        public void loadEmpbyArea(DataGridView dgv,int area)
+        public void loadEmpbyArea(DataGridView dgv, int area)
         {
             dgv.RowTemplate.Height = 40;
             dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -54,7 +46,7 @@ namespace slnMaResort.BLL
             DataTable dt = EmployeeDAL.Instance.loadEmpbyArea(area);
             dgv.DataSource = dt;
         }
-     
+
         //Load nhan vien theo ID
         public DataTable loadEmpbyID(string id)
         {

@@ -1,4 +1,5 @@
-﻿using slnMaResort.HomeUC;
+﻿using slnMaResort.BLL;
+using slnMaResort.HomeUC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,6 @@ namespace slnMaResort.Forms
             this.Controls.Add(ucEmployee);
         }
 
-
+      
     }
 }

@@ -107,7 +107,6 @@ go
 --7. Load dữ liệu bảng Employee vào datagridView
 if OBJECT_ID('LOADEMPLOYEE') is not null drop PROC LOADEMPLOYEE
 go
-
 create PROC LOADEMPLOYEE
 as
 begin 
@@ -116,7 +115,18 @@ begin
 	order by Fullname asc
 end
 go
-
+--7.1 Load dữ liệu bảng Employee vào datagridView
+if OBJECT_ID('LOADEMPLOYEEBYID') is not null drop PROC LOADEMPLOYEEBYID
+go
+create PROC LOADEMPLOYEEBYID
+@usr nchar(50)
+as
+begin 
+	select IDEmployee
+	from ACCOUNT
+	where Username = @usr
+end
+go
 --8. Load dữ liệu bảng AREA vào datagridView
 if OBJECT_ID('LOADAREA') is not null drop PROC LOADAREA
 go
