@@ -605,10 +605,10 @@ as
 begin
 	select *
 	from EMPLOYEE
-	where IDEmployee like '%'+ @idEmployee +'%' or Fullname = '%'+ @name +'%'
+	where IDEmployee like '%'+ @idEmployee +'%' or Fullname like '%'+ @name +'%'
 end
 go
-exec SEARCHEMPLOYEE '' , N'Vu'
+
 
 --exec LOADACCOUNT 
 --exec LOADAREA
@@ -639,7 +639,7 @@ exec SEARCHEMPLOYEE '' , N'Vu'
 --EXEC INSERTVOUCHER '22', '2',' sadsa  ','20130128','20130128','2'
 --exec CHECKVOUCHERFORCUSTOMER 'C0001', 1
 --exec CHECKAREAOFIDVOUCHER 2
-
+--exec SEARCHEMPLOYEE null , N'Vu'
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------
