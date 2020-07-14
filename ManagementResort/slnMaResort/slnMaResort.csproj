@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -128,6 +129,18 @@
     <Compile Include="HomeUC\ucListEmployee.Designer.cs">
       <DependentUpon>ucListEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeUC\StatisticsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\StatisticsUC.Designer.cs">
+      <DependentUpon>StatisticsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelUC\CheckBookRoomUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelUC\CheckBookRoomUC.Designer.cs">
+      <DependentUpon>CheckBookRoomUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="HotelUC\InvoiceRoomUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -215,6 +228,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomeUC\ucListEmployee.resx">
       <DependentUpon>ucListEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\StatisticsUC.resx">
+      <DependentUpon>StatisticsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelUC\CheckBookRoomUC.resx">
+      <DependentUpon>CheckBookRoomUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HotelUC\InvoiceRoomUC.resx">
       <DependentUpon>InvoiceRoomUC.cs</DependentUpon>

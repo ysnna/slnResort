@@ -24,5 +24,10 @@ namespace slnMaResort.HotelUC
 
             TableBLL.Instance.LoadTable(flPicTable);
         }
+
+        private void btBooking_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
