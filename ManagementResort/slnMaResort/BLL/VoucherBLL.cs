@@ -23,24 +23,7 @@ namespace slnMaResort.BLL
             }
             private set => VoucherBLL.instance = value;
         }
-        //
-        public DataTable loadAllVouBYID(int ID)
-        {          
-            DataTable dt = VoucherDAL.Instance.loadVoucherbyID(ID);
-            return dt;
-        }
-        public DataTable loadAllVou()
-        {
-            DataTable dt = VoucherDAL.Instance.loadVoucher();
-            return dt;
-        }
-        public void inserVoucher(int IdVoucher,string Area,string NameVoucher,DateTime startDate,DateTime expriration,int precent)
-        {
-            VoucherDAL.Instance.insertVou(IdVoucher, Area, NameVoucher, startDate, expriration, precent);
-        }
-
-
-        public void loadAllVouDGV(DataGridView dgv)
+        public void loadAllVou(DataGridView dgv)
         {
             dgv.RowTemplate.Height = 40;
             dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -48,9 +31,7 @@ namespace slnMaResort.BLL
             dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
 
             DataTable dt = VoucherDAL.Instance.loadVoucher();
-      
             dgv.DataSource = dt;
-        
 
         }
         //Them voucher moi

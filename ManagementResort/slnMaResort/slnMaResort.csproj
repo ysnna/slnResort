@@ -48,17 +48,14 @@
   <ItemGroup>
     <Compile Include="BLL\AccountBLL.cs" />
     <Compile Include="BLL\EmployeeBLL.cs" />
-    <Compile Include="BLL\FoodBLL.cs" />
     <Compile Include="BLL\TableBLL.cs" />
     <Compile Include="BLL\TableOrderBLL.cs" />
     <Compile Include="BLL\testBLL.cs" />
     <Compile Include="BLL\VoucherBLL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
-    <Compile Include="DAL\FoodDAL.cs" />
     <Compile Include="DAL\TableDAL.cs" />
     <Compile Include="DAL\testDAL.cs" />
-    <Compile Include="DAL\VoucherDAL.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\CustomerDTO.cs" />
     <Compile Include="DTO\EmployeeDTO.cs" />
@@ -69,12 +66,6 @@
     </Compile>
     <Compile Include="Forms\ChangePasswordForm.Designer.cs">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Customer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Customer.Designer.cs">
-      <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Employee.cs">
       <SubType>Form</SubType>
@@ -119,6 +110,12 @@
       <DependentUpon>MRestaurantForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GLOBAL.cs" />
+    <Compile Include="HomeUC\StattisticsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\StattisticsUC.Designer.cs">
+      <DependentUpon>StattisticsUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeUC\testHomeUC.cs" />
     <Compile Include="HomeUC\ucListEmployee.cs">
       <SubType>UserControl</SubType>
@@ -145,6 +142,12 @@
       <DependentUpon>RoomUC.cs</DependentUpon>
     </Compile>
     <Compile Include="HotelUC\testHotelUC.cs" />
+    <Compile Include="Invoices\InvoicesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoices\InvoicesUC.Designer.cs">
+      <DependentUpon>InvoicesUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="MY_DB.cs" />
     <Compile Include="ParkUC\testParkUC.cs" />
     <Compile Include="Program.cs" />
@@ -168,18 +171,9 @@
       <DependentUpon>TablesUC.cs</DependentUpon>
     </Compile>
     <Compile Include="RestaurantUC\testReztaurantUC.cs" />
-    <Compile Include="RestaurantUC\ucTable.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="RestaurantUC\ucTable.Designer.cs">
-      <DependentUpon>ucTable.cs</DependentUpon>
-    </Compile>
     <Compile Include="table.cs" />
     <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Customer.resx">
-      <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
@@ -202,6 +196,9 @@
     <EmbeddedResource Include="Forms\MRestaurantForm.resx">
       <DependentUpon>MRestaurantForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\StattisticsUC.resx">
+      <DependentUpon>StattisticsUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeUC\ucListEmployee.resx">
       <DependentUpon>ucListEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HotelUC\RoomUC.resx">
       <DependentUpon>RoomUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\InvoicesUC.resx">
+      <DependentUpon>InvoicesUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -231,9 +231,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RestaurantUC\TablesUC.resx">
       <DependentUpon>TablesUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RestaurantUC\ucTable.resx">
-      <DependentUpon>ucTable.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
