@@ -1,5 +1,4 @@
-﻿using slnMaResort.BLL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,10 +18,6 @@ namespace slnMaResort.Forms
         }
 
         private void MRestaurantForm_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void roomUC1_Load(object sender, EventArgs e)
         {
 
         }

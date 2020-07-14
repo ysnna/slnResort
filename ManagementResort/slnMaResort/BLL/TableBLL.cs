@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using slnMaResort.DTO;
-using slnMaResort.DAL;
-using System.Windows.Forms;
-using System.Drawing;
 
 namespace slnMaResort.BLL
 {
@@ -23,39 +18,6 @@ namespace slnMaResort.BLL
                 return TableBLL.instance;
             }
             private set => TableBLL.instance = value;
-        }
-        public void LoadTable(FlowLayoutPanel flp)
-        {
-            List<TableDTO> tableDTOs = new List<TableDTO>();
-            DataTable dt = new DataTable();
-            dt = TableDAL.Instance.loadTable();
-            if (dt.Rows.Count > 0)
-            {
-                foreach (DataRow item in dt.Rows)
-                {
-                    TableDTO tableDTO = new TableDTO(item);
-                    tableDTOs.Add(tableDTO);
-                }
-                foreach (TableDTO item in tableDTOs)
-                {
-                    // 145, 221
-                    Button bt = new Button()
-                    {
-                        Width = TableDTO.width,
-                        Height = TableDTO.height
-                    };
-                    bt.Font = new Font("Times New Roman", 22F, FontStyle.Regular, GraphicsUnit.Point);
-
-                    bt.ForeColor = Color.Navy;
-                    bt.BackColor = flp.BackColor;
-                    bt.FlatAppearance.BorderColor = Color.Navy;
-                    bt.FlatAppearance.BorderSize = 5;
-                    bt.FlatStyle = FlatStyle.Flat;
-                    bt.Text = item.ID.ToString();
-                    flp.Controls.Add(bt);
-                    flp.Refresh();
-                }
-            }
         }
     }
 }

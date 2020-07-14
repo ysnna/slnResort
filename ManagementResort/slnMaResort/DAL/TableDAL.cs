@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,15 +18,6 @@ namespace slnMaResort.DAL
                 return TableDAL.instance;
             }
             private set => TableDAL.instance = value;
-        }
-        public DataTable loadTable()
-        {
-            string sql = @"exec LOADTABLES  ";
-            MY_DB.Instance.executeQuery(sql);
-            DataTable dt = MY_DB.Instance.createTable(sql);
-            if (dt.Rows.Count > 0)
-                return dt;
-            return null;
         }
     }
 }

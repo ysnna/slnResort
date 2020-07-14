@@ -28,13 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btAddFood = new System.Windows.Forms.Button();
-            this.btOrder = new System.Windows.Forms.Button();
-            this.txtDescription = new System.Windows.Forms.TextBox();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -53,16 +46,10 @@
             this.dgvRoom = new System.Windows.Forms.DataGridView();
             this.timePicker = new System.Windows.Forms.DateTimePicker();
             this.datePicker = new System.Windows.Forms.DateTimePicker();
-            this.btCheckOut = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.pnTableLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lvOrder = new System.Windows.Forms.ListView();
-            this.flPicTable = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQuality)).BeginInit();
             this.btBooking = new System.Windows.Forms.Button();
             this.grBookRoom = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -132,45 +119,6 @@
             // 
             // dgvRoom
             // 
-            this.dgvMenu.AllowUserToAddRows = false;
-            this.dgvMenu.AllowUserToDeleteRows = false;
-            this.dgvMenu.AllowUserToResizeColumns = false;
-            this.dgvMenu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMenu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvMenu.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMenu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvMenu.Location = new System.Drawing.Point(930, 94);
-            this.dgvMenu.Name = "dgvMenu";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMenu.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvMenu.RowHeadersVisible = false;
-            this.dgvMenu.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMenu.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvMenu.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvMenu.Size = new System.Drawing.Size(970, 414);
-            this.dgvMenu.TabIndex = 170;
             this.dgvRoom.AllowUserToAddRows = false;
             this.dgvRoom.AllowUserToDeleteRows = false;
             this.dgvRoom.AllowUserToResizeColumns = false;
@@ -233,26 +181,6 @@
             this.datePicker.Size = new System.Drawing.Size(300, 30);
             this.datePicker.TabIndex = 166;
             // 
-            // btCheckOut
-            // 
-            this.btCheckOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCheckOut.Location = new System.Drawing.Point(1736, 894);
-            this.btCheckOut.Name = "btCheckOut";
-            this.btCheckOut.Size = new System.Drawing.Size(164, 55);
-            this.btCheckOut.TabIndex = 164;
-            this.btCheckOut.Text = "Payment";
-            this.btCheckOut.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(256, 8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 18);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Amount";
             // pnTableLayout
             // 
             this.pnTableLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -679,22 +607,8 @@
             this.label11.TabIndex = 226;
             this.label11.Text = "Select time";
             // 
-            // flPicTable
-            // 
-            this.flPicTable.AutoScroll = true;
-            this.flPicTable.Location = new System.Drawing.Point(3, 12);
-            this.flPicTable.Name = "flPicTable";
-            this.flPicTable.Size = new System.Drawing.Size(921, 877);
-            this.flPicTable.TabIndex = 174;
-            // 
             // RoomUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flPicTable);
-            this.Controls.Add(this.btAddFood);
-            this.Controls.Add(this.btOrder);
-            this.Controls.Add(this.txtDescription);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.Controls.Add(this.button2);
@@ -707,16 +621,10 @@
             this.Controls.Add(this.dgvRoom);
             this.Controls.Add(this.timePicker);
             this.Controls.Add(this.datePicker);
-            this.Controls.Add(this.btCheckOut);
-            this.Controls.Add(this.lvOrder);
             this.Controls.Add(this.pnTableLayout);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvBookRoom);
             this.Name = "RoomUC";
-            this.Size = new System.Drawing.Size(1914, 964);
-            this.Load += new System.EventHandler(this.RoomUC_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQuality)).EndInit();
             this.Size = new System.Drawing.Size(1914, 968);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoom)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -737,14 +645,10 @@
         public System.Windows.Forms.DataGridView dgvRoom;
         private System.Windows.Forms.DateTimePicker timePicker;
         private System.Windows.Forms.DateTimePicker datePicker;
-        private System.Windows.Forms.Button btCheckOut;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.FlowLayoutPanel pnTableLayout;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView lvOrder;
-        private System.Windows.Forms.FlowLayoutPanel flPicTable;
         private System.Windows.Forms.Button btBooking;
         private System.Windows.Forms.GroupBox grBookRoom;
         private System.Windows.Forms.Label label10;
@@ -767,6 +671,7 @@
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.DataGridView dgvBookRoom;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DateTimePicker dateTimePicker8;
         private System.Windows.Forms.DateTimePicker dateTimePicker7;
