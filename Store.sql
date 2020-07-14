@@ -594,6 +594,21 @@ begin
 end
 go
 
+--33. Search Employee theo ID, Name
+if OBJECT_ID('SEARCHEMPLOYEE') is not null drop PROC SEARCHEMPLOYEE
+go
+
+create PROC SEARCHEMPLOYEE
+@idEmployee varchar(50),
+@name nvarchar(50)
+as
+begin
+	select *
+	from EMPLOYEE
+	where IDEmployee like '%'+ @idEmployee +'%' or Fullname = '%'+ @name +'%'
+end
+go
+exec SEARCHEMPLOYEE '' , N'Vu'
 
 --exec LOADACCOUNT 
 --exec LOADAREA
