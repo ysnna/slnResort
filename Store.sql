@@ -279,11 +279,12 @@ begin
 	values (@idvoucher,@area,@name,@startdate,@exptirationdate,@percents)
 end
 go
-EXEC INSERTVOUCHER '22', '2',' sadsa  ','20130128','20130128','2'
+
+
 --17. Load dữ liệu Employee theo nhóm Area.
 if OBJECT_ID('LOADEMPOYEETOAREA') is not null drop PROC LOADEMPOYEETOAREA
 go
---17
+
 create PROC LOADEMPOYEETOAREA
 @Area int
 as
@@ -559,6 +560,41 @@ begin
 end
 go
 
+--31. CHECK Customer đã sài Voucher chưa input(IDVoucher)
+if OBJECT_ID('CHECKVOUCHERFORCUSTOMER') is not null drop PROC CHECKVOUCHERFORCUSTOMER
+go
+
+create PROC CHECKVOUCHERFORCUSTOMER
+@idCustomer varchar(50),
+@idVoucher int
+as
+begin 
+	declare @checkInvoice bit
+	select @checkInvoice = 1
+	from INVOICE
+	where IDCustomer = @idCustomer and IDVoucher = @idVoucher
+	if (@checkInvoice is not null)
+		select 'true' as exist
+	else
+		select 'false' as exist
+end
+go
+
+--32. Check Area theo IDInvoice input(IdInvoice)
+if OBJECT_ID('CHECKAREAOFIDVOUCHER') is not null drop PROC CHECKAREAOFIDVOUCHER
+go
+
+create PROC CHECKAREAOFIDVOUCHER
+@idVoucher int
+as
+begin
+	select Area
+	from VOUCHER
+	where IDVoucher = @idVoucher
+end
+go
+
+
 --exec LOADACCOUNT 
 --exec LOADAREA
 --exec LOADBASESALARY
@@ -585,6 +621,12 @@ go
 --exec SELECTINVOICEPARK
 --exec SELECTINVOICESERVICE
 --exec SELECTDETAILSFROMIDINVOICE 'IV0004'
+--EXEC INSERTVOUCHER '22', '2',' sadsa  ','20130128','20130128','2'
+--exec CHECKVOUCHERFORCUSTOMER 'C0001', 1
+--exec CHECKAREAOFIDVOUCHER 2
+
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------
 ----3. Thêm Account vào bảng Account.
 --if OBJECT_ID('INSERTAccount') is not null drop proc INSERTAccount;
