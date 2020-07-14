@@ -53,18 +53,7 @@ namespace slnMaResort.BLL
             DataTable dt = EmployeeDAL.Instance.loadEmpbyID(id);
             return dt;
         }
-        void insertEmp(string ID, string fullName, MemoryStream ava, DateTime birthday
-            , int Gender, string add, string idcard, string phone,
-          int IDBaseSalary, int Area, string state)
-        {
-            EmployeeDAL.Instance.insertEmployee(ID, fullName, ava, birthday, Gender, add, idcard, phone, IDBaseSalary, Area, state);
-        }
-        void updateEmp(string ID, string fullName, MemoryStream ava, DateTime birthday
-           , int Gender, string add, string idcard, string phone,
-         int IDBaseSalary, int Area, string state)
-        {
-            EmployeeDAL.Instance.insertEmployee(ID, fullName, ava, birthday, Gender, add, idcard, phone, IDBaseSalary, Area, state);
-        }
+        
 
     }
 }

@@ -64,10 +64,11 @@ namespace slnMaResort.DAL
             MY_DB.Instance.executeQuery(sql);
         }
 
-        public void updateEmployee(string ID)
+        public void deleteEmployee(string ID)
         {
-            string sql = @"EXEC UPDATEEMPLOYEE '" + ID + "'";
+            string sql = @"EXEC DELETEEMPLOYEE '" + ID + "'";
             MY_DB.Instance.executeQuery(sql);
         }
+
     }
 }

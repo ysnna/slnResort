@@ -47,8 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\AccountBLL.cs" />
+    <Compile Include="BLL\conCreateHotelEmp.cs" />
+    <Compile Include="BLL\conCreateParkEMp.cs" />
+    <Compile Include="BLL\conCreateResEmp.cs" />
     <Compile Include="BLL\EmployeeBLL.cs" />
     <Compile Include="BLL\FoodBLL.cs" />
+    <Compile Include="DTO\abManager.cs" />
+    <Compile Include="DTO\IEmployee.cs" />
     <Compile Include="BLL\TableBLL.cs" />
     <Compile Include="BLL\testBLL.cs" />
     <Compile Include="BLL\VoucherBLL.cs" />
