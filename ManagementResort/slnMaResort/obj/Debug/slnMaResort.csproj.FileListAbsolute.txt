@@ -7,8 +7,6 @@ E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaRe
 E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csproj.CoreCompileInputs.cache
 E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.exe
 E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.pdb
-E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.Home.resources
-E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.Login.resources
 E:\HK2-2020\OOSD\ManagementResort\slnMaResort\bin\Debug\slnMaResort.exe.config
 E:\HK2-2020\OOSD\ManagementResort\slnMaResort\bin\Debug\slnMaResort.exe
 E:\HK2-2020\OOSD\ManagementResort\slnMaResort\bin\Debug\slnMaResort.pdb
@@ -66,3 +64,18 @@ D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.ucBookTableNew.resources
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.ucTable.resources
 E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.ucTable.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.ChangePasswordForm.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.Employee.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.HomeForm.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.HomeMemberForm.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.LoginForm.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.MAmusementParkForm.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.MHotelForm.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.MRestaurantForm.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HomeUC.ucEmployee.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HomeUC.ucListEmployee.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.ucTable.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.TablesUC.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.InvoiceFoodUC.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.CheckOrderUC.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HotelUC.RoomUC.resources
