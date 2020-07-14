@@ -127,7 +127,7 @@
             this.tbSalary.Location = new System.Drawing.Point(4, 28);
             this.tbSalary.Name = "tbSalary";
             this.tbSalary.Padding = new System.Windows.Forms.Padding(3);
-            this.tbSalary.Size = new System.Drawing.Size(1535, 904);
+            this.tbSalary.Size = new System.Drawing.Size(1858, 904);
             this.tbSalary.TabIndex = 1;
             this.tbSalary.Text = "Salary";
             this.tbSalary.UseVisualStyleBackColor = true;
@@ -137,7 +137,7 @@
             this.tbStatistics.Location = new System.Drawing.Point(4, 28);
             this.tbStatistics.Name = "tbStatistics";
             this.tbStatistics.Padding = new System.Windows.Forms.Padding(3);
-            this.tbStatistics.Size = new System.Drawing.Size(1535, 904);
+            this.tbStatistics.Size = new System.Drawing.Size(1858, 904);
             this.tbStatistics.TabIndex = 2;
             this.tbStatistics.Text = "Statistics";
             this.tbStatistics.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             this.tbService.Location = new System.Drawing.Point(4, 28);
             this.tbService.Name = "tbService";
             this.tbService.Padding = new System.Windows.Forms.Padding(3);
-            this.tbService.Size = new System.Drawing.Size(1535, 904);
+            this.tbService.Size = new System.Drawing.Size(1858, 904);
             this.tbService.TabIndex = 3;
             this.tbService.Text = "Service";
             this.tbService.UseVisualStyleBackColor = true;
@@ -169,7 +169,7 @@
             // ucListEmployee1
             // 
             this.ucListEmployee1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ucListEmployee1.Location = new System.Drawing.Point(0, 34);
+            this.ucListEmployee1.Location = new System.Drawing.Point(0, 0);
             this.ucListEmployee1.Margin = new System.Windows.Forms.Padding(4);
             this.ucListEmployee1.Name = "ucListEmployee1";
             this.ucListEmployee1.Size = new System.Drawing.Size(1851, 883);
