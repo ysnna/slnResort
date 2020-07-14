@@ -767,7 +767,6 @@
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.DataGridView dgvBookRoom;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DateTimePicker dateTimePicker8;
         private System.Windows.Forms.DateTimePicker dateTimePicker7;
