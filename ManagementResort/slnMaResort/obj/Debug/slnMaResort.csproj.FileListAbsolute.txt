@@ -85,3 +85,4 @@ D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.c
 D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.exe
 D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.pdb
 D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.Customer.resources
+E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.Customer.resources

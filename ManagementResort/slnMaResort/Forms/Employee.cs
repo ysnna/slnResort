@@ -1,4 +1,5 @@
 ﻿using slnMaResort.DAL;
+﻿using slnMaResort.BLL;
 using slnMaResort.HomeUC;
 using System;
 using System.Collections.Generic;
@@ -71,5 +72,7 @@ namespace slnMaResort.Forms
             if (open.ShowDialog() == DialogResult.OK)
                 picAva.Image = Image.FromFile(open.FileName);
         }
+
+      
     }
 }
