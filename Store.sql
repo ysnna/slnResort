@@ -609,6 +609,20 @@ begin
 end
 go
 
+--34. Search Voucher theo ID, Name
+if OBJECT_ID('SEARCHVOUCHER') is not null drop PROC SEARCHVOUCHER
+go
+
+create PROC SEARCHVOUCHER
+@idVoucher varchar(50),
+@name nvarchar(50)
+as
+begin
+	select *
+	from VOUCHER
+	where IDVoucher like '%'+ @idVoucher +'%' or Name like '%'+ @name +'%'
+end
+go
 
 --exec LOADACCOUNT 
 --exec LOADAREA
@@ -640,6 +654,7 @@ go
 --exec CHECKVOUCHERFORCUSTOMER 'C0001', 1
 --exec CHECKAREAOFIDVOUCHER 2
 --exec SEARCHEMPLOYEE null , N'Vu'
+--exec SEARCHVOUCHER null, N'hải sản'
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------
