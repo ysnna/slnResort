@@ -52,5 +52,11 @@ namespace slnMaResort.Forms
 
 
         }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            HomeMemberForm homeMemberForm = new HomeMemberForm();
+            homeMemberForm.ShowDialog();
+        }
     }
 }
