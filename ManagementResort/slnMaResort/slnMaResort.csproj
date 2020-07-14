@@ -109,6 +109,12 @@
       <DependentUpon>MRestaurantForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GLOBAL.cs" />
+    <Compile Include="HomeUC\HomeVoucherUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\HomeVoucherUC.Designer.cs">
+      <DependentUpon>HomeVoucherUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeUC\ucEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MRestaurantForm.resx">
       <DependentUpon>MRestaurantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\HomeVoucherUC.resx">
+      <DependentUpon>HomeVoucherUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeUC\ucEmployee.resx">
       <DependentUpon>ucEmployee.cs</DependentUpon>
