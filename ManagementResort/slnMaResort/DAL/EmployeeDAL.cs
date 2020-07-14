@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace slnMaResort.DAL
 {
@@ -30,34 +31,16 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
-        //Load nhân viên theo Khách sạn
-        public DataTable loadHotelEmp()
+        //Load nhân viên theo Khu Vuc
+        public DataTable loadEmpbyArea(int area)
         {
-            string sql = @"EXEC CHECKLOGIN";
+            string sql = @"EXEC LOADEMPOYEETOAREA "+area+"'";
             DataTable dt = MY_DB.Instance.createTable(sql);
             if (dt.Rows.Count > 0)
                 return dt;
             return null;
         }
-        //Load nhân viên theo Nhà Hàng
-        public DataTable loadResEmp()
-        {
-            string sql = @"EXEC CHECKLOGIN";
-            DataTable dt = MY_DB.Instance.createTable(sql);
-            if (dt.Rows.Count > 0)
-                return dt;
-            return null;
-        }
-        //Load nhân viên theo Khu Vui Chơi
-        public DataTable loadParkEmp()
-        {
-            string sql = @"EXEC CHECKLOGIN";
-            DataTable dt = MY_DB.Instance.createTable(sql);
-            if (dt.Rows.Count > 0)
-                return dt;
-            return null;
-        }
-        //Load nhân viên theo ID
+       
         public DataTable loadEmpbyID(string id)
         {
             string sql = @"EXEC CHECKLOGIN  '" + id + "' ";
@@ -65,6 +48,26 @@ namespace slnMaResort.DAL
             if (dt.Rows.Count > 0)
                 return dt;
             return null;
+        }
+        public void insertEmployee(string ID, string fullName, MemoryStream ava, DateTime birthday, int Gender,string add, string idcard,string phone,
+           int IDBaseSalary, int Area, string state) 
+        {
+            string sql = @"EXEC INSERTEMPLOYEE '"+ID+"'"+fullName+"'"+ava+"'"+birthday+"'"+Gender+"'"+add+"'"
+                +idcard+"'"+phone+"'"+IDBaseSalary+"'"+Area+"'"+state+"'";
+            MY_DB.Instance.executeQuery(sql);
+        }
+        public void updateEmployee(string ID, string fullName, MemoryStream ava, DateTime birthday, int Gender, string add, string idcard, string phone,
+          int IDBaseSalary, int Area, string state)
+        {
+            string sql = @"EXEC UPDATEEMPLOYEE '" + ID + "'" + fullName + "'" + ava + "'" + birthday + "'" + Gender + "'" + add + "'"
+                + idcard + "'" + phone + "'" + IDBaseSalary + "'" + Area + "'" + state + "'";
+            MY_DB.Instance.executeQuery(sql);
+        }
+
+        public void updateEmployee(string ID)
+        {
+            string sql = @"EXEC UPDATEEMPLOYEE '" + ID + "'";
+            MY_DB.Instance.executeQuery(sql);
         }
     }
 }
