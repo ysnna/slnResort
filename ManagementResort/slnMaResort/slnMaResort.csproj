@@ -141,6 +141,12 @@
       <DependentUpon>RoomUC.cs</DependentUpon>
     </Compile>
     <Compile Include="HotelUC\testHotelUC.cs" />
+    <Compile Include="Invoices\InvoicesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoices\InvoicesUC.Designer.cs">
+      <DependentUpon>InvoicesUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="MY_DB.cs" />
     <Compile Include="ParkUC\testParkUC.cs" />
     <Compile Include="Program.cs" />
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HotelUC\RoomUC.resx">
       <DependentUpon>RoomUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\InvoicesUC.resx">
+      <DependentUpon>InvoicesUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
