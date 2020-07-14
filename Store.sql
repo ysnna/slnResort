@@ -248,7 +248,38 @@ begin
 end
 go
 
+--16. Load dữ liệu bảng Voucher vào datagridView
+if OBJECT_ID('LOADVOUCHERBYID') is not null drop PROC LOADVOUCHERBYID
+go
+create PROC LOADVOUCHERBYID
+@id int
+as
+begin 
+	select *
+	from VOUCHER
+	where IDVoucher=@id
+	order by Area, Name	
+end
+go
 
+--16.1 Insert Voucher input(*)
+if OBJECT_ID('INSERTVOUCHER') is not null drop PROC INSERTVOUCHER
+go
+
+create PROC INSERTVOUCHER
+@idvoucher int,
+@area nvarchar(50),
+@name varchar(50),
+@startdate datetime,
+@exptirationdate datetime,
+@percents int
+as
+begin
+	insert into VOUCHER(IDVoucher, Area, Name, StartDate, ExprirationDate, Percents)
+	values (@idvoucher,@area,@name,@startdate,@exptirationdate,@percents)
+end
+go
+EXEC INSERTVOUCHER '22', '2',' sadsa  ','20130128','20130128','2'
 --17. Load dữ liệu Employee theo nhóm Area.
 if OBJECT_ID('LOADEMPOYEETOAREA') is not null drop PROC LOADEMPOYEETOAREA
 go

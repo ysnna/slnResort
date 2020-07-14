@@ -545,6 +545,7 @@
             this.btnAddV.TabIndex = 11;
             this.btnAddV.Text = "Add";
             this.btnAddV.UseVisualStyleBackColor = true;
+            this.btnAddV.Click += new System.EventHandler(this.btnAddV_Click);
             // 
             // dtpExprirationDate
             // 
@@ -587,6 +588,7 @@
             this.txtIDVoucher.Name = "txtIDVoucher";
             this.txtIDVoucher.Size = new System.Drawing.Size(208, 31);
             this.txtIDVoucher.TabIndex = 5;
+            this.txtIDVoucher.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDVoucher_KeyPress);
             // 
             // dgvVoucher
             // 
@@ -598,6 +600,7 @@
             this.dgvVoucher.RowTemplate.Height = 24;
             this.dgvVoucher.Size = new System.Drawing.Size(752, 259);
             this.dgvVoucher.TabIndex = 4;
+            this.dgvVoucher.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVoucher_CellClick);
             // 
             // HomeForm
             // 

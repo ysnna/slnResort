@@ -57,5 +57,10 @@ namespace slnMaResort.BLL
                 }
             }
         }
+
+        //public LoadDGV(DataGridView dgvtable)
+        //{
+        //    dgvtable.Rows
+        //}
     }
 }

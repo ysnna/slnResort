@@ -16,7 +16,7 @@ namespace slnMaResort
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.LoginForm());
+            Application.Run(new Forms.HomeForm());
         }
     }
 }
