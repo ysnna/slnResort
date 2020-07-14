@@ -107,7 +107,6 @@ go
 --7. Load dữ liệu bảng Employee vào datagridView
 if OBJECT_ID('LOADEMPLOYEE') is not null drop PROC LOADEMPLOYEE
 go
-
 create PROC LOADEMPLOYEE
 as
 begin 
@@ -116,7 +115,30 @@ begin
 	order by Fullname asc
 end
 go
-
+--7.1 Load dữ liệu bảng Employee vào datagridView
+if OBJECT_ID('LOADEMPLOYEEBYID') is not null drop PROC LOADEMPLOYEEBYID
+go
+create PROC LOADEMPLOYEEBYID
+@usr nchar(50)
+as
+begin 
+	select IDEmployee
+	from ACCOUNT
+	where Username = @usr
+end
+go
+--7.2 Load dữ liệu bảng Employee vào datagridView
+if OBJECT_ID('LOADEMPLOYEEINFO') is not null drop PROC LOADEMPLOYEEINFO
+go
+create PROC LOADEMPLOYEEINFO
+@usr nchar(50)
+as
+begin 
+	select *
+	from EMPLOYEE
+	where IDEmployee = @usr
+end
+go
 --8. Load dữ liệu bảng AREA vào datagridView
 if OBJECT_ID('LOADAREA') is not null drop PROC LOADAREA
 go
@@ -602,18 +624,18 @@ go
 --end;
 --go
 
---if OBJECT_ID('CHECKGROUP') is not null drop proc CHECKGROUP;
---go
+if OBJECT_ID('CHECKGROUP') is not null drop proc CHECKGROUP;
+go
 
---create proc CHECKGROUP
---@UserName nvarchar(50)
---as
---begin
---	select Type_User
---	from Account
---	where UserName=@UserName
---end;
---go
+create proc CHECKGROUP
+@UserName nvarchar(50)
+as
+begin
+	select IDGroup	
+	from Account
+	where UserName=@UserName
+end;
+go
 
 
 --if OBJECT_ID('DETAILUserName') is not null drop proc DETAILUserName;

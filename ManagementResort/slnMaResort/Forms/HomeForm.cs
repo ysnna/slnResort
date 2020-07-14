@@ -1,4 +1,5 @@
-﻿using System;
+﻿using slnMaResort.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,9 +22,5 @@ namespace slnMaResort.Forms
         {
 
         }
-
-   
-
-   
     }
 }

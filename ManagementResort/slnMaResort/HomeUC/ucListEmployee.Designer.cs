@@ -30,23 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvEmployee = new System.Windows.Forms.DataGridView();
             this.eMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDEmployeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avatarDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDCardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvPermission = new System.Windows.Forms.DataGridView();
             this.pERMISSIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDPermissionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -57,9 +45,9 @@
             this.rdoRestaurant = new System.Windows.Forms.RadioButton();
             this.rdoHotel = new System.Windows.Forms.RadioButton();
             this.rdoPark = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPermission)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERMISSIONBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,114 +60,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "List Employees";
             // 
-            // dataGridView1
+            // dgvEmployee
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDEmployeeDataGridViewTextBoxColumn,
-            this.fullnameDataGridViewTextBoxColumn,
-            this.avatarDataGridViewImageColumn,
-            this.birthdayDataGridViewTextBoxColumn,
-            this.genderDataGridViewCheckBoxColumn,
-            this.adressDataGridViewTextBoxColumn,
-            this.iDCardDataGridViewTextBoxColumn,
-            this.phoneDataGridViewTextBoxColumn,
-            this.stateDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.eMPLOYEEBindingSource;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 69);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(904, 525);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // managementResortDataSet
-            // 
-           
+            this.dgvEmployee.AutoGenerateColumns = false;
+            this.dgvEmployee.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployee.DataSource = this.eMPLOYEEBindingSource;
+            this.dgvEmployee.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvEmployee.Location = new System.Drawing.Point(9, 69);
+            this.dgvEmployee.Name = "dgvEmployee";
+            this.dgvEmployee.RowHeadersWidth = 51;
+            this.dgvEmployee.RowTemplate.Height = 24;
+            this.dgvEmployee.Size = new System.Drawing.Size(904, 525);
+            this.dgvEmployee.TabIndex = 1;
             // 
             // eMPLOYEEBindingSource
             // 
             this.eMPLOYEEBindingSource.DataMember = "EMPLOYEE";
-            
-            // 
-            // eMPLOYEETableAdapter
-            // 
-            
-            // 
-            // iDEmployeeDataGridViewTextBoxColumn
-            // 
-            this.iDEmployeeDataGridViewTextBoxColumn.DataPropertyName = "IDEmployee";
-            this.iDEmployeeDataGridViewTextBoxColumn.HeaderText = "IDEmployee";
-            this.iDEmployeeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDEmployeeDataGridViewTextBoxColumn.Name = "iDEmployeeDataGridViewTextBoxColumn";
-            this.iDEmployeeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // fullnameDataGridViewTextBoxColumn
-            // 
-            this.fullnameDataGridViewTextBoxColumn.DataPropertyName = "Fullname";
-            this.fullnameDataGridViewTextBoxColumn.HeaderText = "Fullname";
-            this.fullnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fullnameDataGridViewTextBoxColumn.Name = "fullnameDataGridViewTextBoxColumn";
-            this.fullnameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // avatarDataGridViewImageColumn
-            // 
-            this.avatarDataGridViewImageColumn.DataPropertyName = "Avatar";
-            this.avatarDataGridViewImageColumn.HeaderText = "Avatar";
-            this.avatarDataGridViewImageColumn.MinimumWidth = 6;
-            this.avatarDataGridViewImageColumn.Name = "avatarDataGridViewImageColumn";
-            this.avatarDataGridViewImageColumn.Width = 125;
-            // 
-            // birthdayDataGridViewTextBoxColumn
-            // 
-            this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "Birthday";
-            this.birthdayDataGridViewTextBoxColumn.HeaderText = "Birthday";
-            this.birthdayDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
-            this.birthdayDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // genderDataGridViewCheckBoxColumn
-            // 
-            this.genderDataGridViewCheckBoxColumn.DataPropertyName = "Gender";
-            this.genderDataGridViewCheckBoxColumn.HeaderText = "Gender";
-            this.genderDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.genderDataGridViewCheckBoxColumn.Name = "genderDataGridViewCheckBoxColumn";
-            this.genderDataGridViewCheckBoxColumn.Width = 125;
-            // 
-            // adressDataGridViewTextBoxColumn
-            // 
-            this.adressDataGridViewTextBoxColumn.DataPropertyName = "Adress";
-            this.adressDataGridViewTextBoxColumn.HeaderText = "Adress";
-            this.adressDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
-            this.adressDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // iDCardDataGridViewTextBoxColumn
-            // 
-            this.iDCardDataGridViewTextBoxColumn.DataPropertyName = "IDCard";
-            this.iDCardDataGridViewTextBoxColumn.HeaderText = "IDCard";
-            this.iDCardDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDCardDataGridViewTextBoxColumn.Name = "iDCardDataGridViewTextBoxColumn";
-            this.iDCardDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.phoneDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // stateDataGridViewTextBoxColumn
-            // 
-            this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
-            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
-            this.stateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
-            this.stateDataGridViewTextBoxColumn.Width = 125;
             // 
             // label2
             // 
@@ -190,57 +87,23 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "List Permission";
             // 
-            // dataGridView2
+            // dgvPermission
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDPermissionDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.pERMISSIONBindingSource;
-            this.dataGridView2.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView2.Location = new System.Drawing.Point(933, 69);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(426, 261);
-            this.dataGridView2.TabIndex = 3;
-            // 
-            // managementResortDataSet1
-            // 
+            this.dgvPermission.AutoGenerateColumns = false;
+            this.dgvPermission.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvPermission.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPermission.DataSource = this.pERMISSIONBindingSource;
+            this.dgvPermission.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvPermission.Location = new System.Drawing.Point(933, 69);
+            this.dgvPermission.Name = "dgvPermission";
+            this.dgvPermission.RowHeadersWidth = 51;
+            this.dgvPermission.RowTemplate.Height = 24;
+            this.dgvPermission.Size = new System.Drawing.Size(426, 261);
+            this.dgvPermission.TabIndex = 3;
             // 
             // pERMISSIONBindingSource
             // 
             this.pERMISSIONBindingSource.DataMember = "PERMISSION";
-            // 
-            // pERMISSIONTableAdapter
-            // 
-            // 
-            // iDPermissionDataGridViewTextBoxColumn
-            // 
-            this.iDPermissionDataGridViewTextBoxColumn.DataPropertyName = "IDPermission";
-            this.iDPermissionDataGridViewTextBoxColumn.HeaderText = "IDPermission";
-            this.iDPermissionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDPermissionDataGridViewTextBoxColumn.Name = "iDPermissionDataGridViewTextBoxColumn";
-            this.iDPermissionDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 125;
             // 
             // label3
             // 
@@ -351,15 +214,15 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvPermission);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvEmployee);
             this.Controls.Add(this.label1);
             this.Name = "ucListEmployee";
             this.Size = new System.Drawing.Size(1389, 610);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPermission)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERMISSIONBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -369,7 +232,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEmployee;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDEmployeeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn avatarDataGridViewImageColumn;
@@ -382,7 +245,7 @@
         private System.Windows.Forms.BindingSource eMPLOYEEBindingSource;
         
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvPermission;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDPermissionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;

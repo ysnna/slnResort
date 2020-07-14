@@ -69,36 +69,39 @@ namespace slnMaResort.BLL
             if (dt.Rows.Count > 0)
             {
                 group = dt.Rows[0][0].ToString().Trim();
+                
                 return group;
             }
             else return group;
         }
         public void callForm(string usr)
         {
-
             
             string group = DefineGroup(usr);
+            
             switch (group)
             {
-                case "GROUPA":
+                case "GROUPAD":
                     {
-                        HomeForm f = new HomeForm();
+                        //HomeForm f = new HomeForm();
+                        Employee f = new Employee();
                         f.ShowDialog();
+                        
                         break;
                     }
-                case "GROUPH":
+                case "GROUPMH":
                     {
                         MHotelForm f = new MHotelForm();
                         f.ShowDialog();
                         break;
                     }
-                case "GROUPR":
+                case "GROUPMR":
                     {
                         MRestaurantForm f = new MRestaurantForm();
                         f.ShowDialog();
                         break;
                     }
-                case "GROUPP":
+                case "GROUPMP":
                     {
                         MAmusementParkForm f = new MAmusementParkForm();
                         f.ShowDialog();

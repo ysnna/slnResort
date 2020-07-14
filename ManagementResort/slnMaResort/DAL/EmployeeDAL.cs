@@ -43,7 +43,7 @@ namespace slnMaResort.DAL
        
         public DataTable loadEmpbyID(string id)
         {
-            string sql = @"EXEC CHECKLOGIN  '" + id + "' ";
+            string sql = @"EXEC LOADEMPLOYEEINFO  '" + id + "' ";
             DataTable dt = MY_DB.Instance.createTable(sql);
             if (dt.Rows.Count > 0)
                 return dt;
