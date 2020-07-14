@@ -57,12 +57,19 @@
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\CustomerDTO.cs" />
     <Compile Include="DTO\EmployeeDTO.cs" />
+    <Compile Include="DTO\TableDTO.cs" />
     <Compile Include="DTO\testDTO.cs" />
     <Compile Include="Forms\ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ChangePasswordForm.Designer.cs">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer.Designer.cs">
+      <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Employee.cs">
       <SubType>Form</SubType>
@@ -134,6 +141,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customer.resx">
+      <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>

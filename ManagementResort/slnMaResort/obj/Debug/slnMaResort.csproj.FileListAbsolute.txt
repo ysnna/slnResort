@@ -66,3 +66,23 @@ D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.ucBookTableNew.resources
 D:\Nam3(2)\TKPMHDT\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.ucTable.resources
 E:\HK2-2020\GITHUB OOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.ucTable.resources
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\bin\Debug\slnMaResort.exe.config
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\bin\Debug\slnMaResort.exe
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\bin\Debug\slnMaResort.pdb
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.ChangePasswordForm.resources
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.Employee.resources
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.HomeForm.resources
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.HomeMemberForm.resources
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.LoginForm.resources
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.MAmusementParkForm.resources
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.MHotelForm.resources
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.MRestaurantForm.resources
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HomeUC.ucEmployee.resources
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HomeUC.ucListEmployee.resources
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Properties.Resources.resources
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.ucTable.resources
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csproj.GenerateResource.cache
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csproj.CoreCompileInputs.cache
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.exe
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.pdb
+D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.Customer.resources
