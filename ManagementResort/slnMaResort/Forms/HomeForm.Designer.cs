@@ -35,11 +35,14 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEmployee = new System.Windows.Forms.TabPage();
+            this.ucListEmployee1 = new slnMaResort.HomeUC.ucListEmployee();
             this.tbSalary = new System.Windows.Forms.TabPage();
             this.tbStatistics = new System.Windows.Forms.TabPage();
             this.tbService = new System.Windows.Forms.TabPage();
             this.tbVoucher = new System.Windows.Forms.TabPage();
-            this.ucListEmployee1 = new slnMaResort.HomeUC.ucListEmployee();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.lvVoucherMan = new System.Windows.Forms.ListView();
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -49,9 +52,6 @@
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabEmployee.SuspendLayout();
@@ -83,19 +83,19 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.loginToolStripMenuItem.Text = "Login";
             // 
             // logToolStripMenuItem
             // 
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
-            this.logToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.logToolStripMenuItem.Text = "Logout";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // tabControl1
@@ -121,6 +121,15 @@
             this.tabEmployee.TabIndex = 0;
             this.tabEmployee.Text = "Employee";
             this.tabEmployee.UseVisualStyleBackColor = true;
+            // 
+            // ucListEmployee1
+            // 
+            this.ucListEmployee1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ucListEmployee1.Location = new System.Drawing.Point(0, 0);
+            this.ucListEmployee1.Margin = new System.Windows.Forms.Padding(4);
+            this.ucListEmployee1.Name = "ucListEmployee1";
+            this.ucListEmployee1.Size = new System.Drawing.Size(1851, 883);
+            this.ucListEmployee1.TabIndex = 0;
             // 
             // tbSalary
             // 
@@ -166,14 +175,47 @@
             this.tbVoucher.Text = "Voucher";
             this.tbVoucher.UseVisualStyleBackColor = true;
             // 
-            // ucListEmployee1
+            // button3
             // 
-            this.ucListEmployee1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ucListEmployee1.Location = new System.Drawing.Point(0, 0);
-            this.ucListEmployee1.Margin = new System.Windows.Forms.Padding(4);
-            this.ucListEmployee1.Name = "ucListEmployee1";
-            this.ucListEmployee1.Size = new System.Drawing.Size(1851, 883);
-            this.ucListEmployee1.TabIndex = 0;
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Crimson;
+            this.button3.Location = new System.Drawing.Point(1010, 582);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(219, 50);
+            this.button3.TabIndex = 221;
+            this.button3.Text = "Delete Voucher";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Crimson;
+            this.button2.Location = new System.Drawing.Point(682, 582);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(158, 50);
+            this.button2.TabIndex = 220;
+            this.button2.Text = "Add Voucher";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Crimson;
+            this.button1.Location = new System.Drawing.Point(846, 582);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(158, 50);
+            this.button1.TabIndex = 219;
+            this.button1.Text = "Edit Voucher";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // lvVoucherMan
             // 
@@ -188,7 +230,7 @@
             this.columnHeader21});
             this.lvVoucherMan.FullRowSelect = true;
             this.lvVoucherMan.HideSelection = false;
-            this.lvVoucherMan.Location = new System.Drawing.Point(0, 0);
+            this.lvVoucherMan.Location = new System.Drawing.Point(8, 3);
             this.lvVoucherMan.MultiSelect = false;
             this.lvVoucherMan.Name = "lvVoucherMan";
             this.lvVoucherMan.Size = new System.Drawing.Size(1237, 576);
@@ -234,48 +276,6 @@
             // 
             this.columnHeader21.Text = "ID Invoice Used";
             this.columnHeader21.Width = 134;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Crimson;
-            this.button1.Location = new System.Drawing.Point(846, 582);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 50);
-            this.button1.TabIndex = 219;
-            this.button1.Text = "Edit Voucher";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Crimson;
-            this.button2.Location = new System.Drawing.Point(682, 582);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(158, 50);
-            this.button2.TabIndex = 220;
-            this.button2.Text = "Add Voucher";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Crimson;
-            this.button3.Location = new System.Drawing.Point(1010, 582);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(219, 50);
-            this.button3.TabIndex = 221;
-            this.button3.Text = "Delete Voucher";
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // HomeForm
             // 
