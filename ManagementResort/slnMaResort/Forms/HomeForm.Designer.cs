@@ -41,9 +41,11 @@
             this.tbVoucher = new System.Windows.Forms.TabPage();
             this.ucListEmployee1 = new slnMaResort.HomeUC.ucListEmployee();
             this.homeVoucherUC = new slnMaResort.HomeUC.HomeVoucherUC();
+            this.statisticsUC1 = new slnMaResort.HomeUC.StatisticsUC();
             this.menuStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabEmployee.SuspendLayout();
+            this.tbStatistics.SuspendLayout();
             this.tbVoucher.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,6 +128,7 @@
             // 
             // tbStatistics
             // 
+            this.tbStatistics.Controls.Add(this.statisticsUC1);
             this.tbStatistics.Location = new System.Drawing.Point(4, 28);
             this.tbStatistics.Name = "tbStatistics";
             this.tbStatistics.Padding = new System.Windows.Forms.Padding(3);
@@ -171,6 +174,13 @@
             this.homeVoucherUC.Size = new System.Drawing.Size(1914, 964);
             this.homeVoucherUC.TabIndex = 0;
             // 
+            // statisticsUC1
+            // 
+            this.statisticsUC1.Location = new System.Drawing.Point(0, 0);
+            this.statisticsUC1.Name = "statisticsUC1";
+            this.statisticsUC1.Size = new System.Drawing.Size(1914, 964);
+            this.statisticsUC1.TabIndex = 0;
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -190,6 +200,7 @@
             this.menuStrip.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabEmployee.ResumeLayout(false);
+            this.tbStatistics.ResumeLayout(false);
             this.tbVoucher.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -211,5 +222,6 @@
         private System.Windows.Forms.TabPage tbService;
         private System.Windows.Forms.TabPage tbVoucher;
         private HomeUC.HomeVoucherUC homeVoucherUC;
+        private HomeUC.StatisticsUC statisticsUC1;
     }
 }

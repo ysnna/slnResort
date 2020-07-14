@@ -31,8 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.roomUC = new slnMaResort.HotelUC.RoomUC();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -51,6 +51,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -60,13 +61,20 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.roomUC);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1186, 647);
+            this.tabPage1.Size = new System.Drawing.Size(1186, 638);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Management Room";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // roomUC
+            // 
+            this.roomUC.Location = new System.Drawing.Point(0, 0);
+            this.roomUC.Name = "roomUC";
+            this.roomUC.Size = new System.Drawing.Size(1914, 964);
+            this.roomUC.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -77,13 +85,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Services";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // roomUC
-            // 
-            this.roomUC.Location = new System.Drawing.Point(0, 0);
-            this.roomUC.Name = "roomUC";
-            this.roomUC.Size = new System.Drawing.Size(1914, 964);
-            this.roomUC.TabIndex = 0;
             // 
             // tabPage3
             // 
