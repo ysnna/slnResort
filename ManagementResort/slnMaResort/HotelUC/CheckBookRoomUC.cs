@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace slnMaResort.HotelUC
 {
-    public partial class RoomUC : UserControl
+    public partial class CheckBookRoomUC : UserControl
     {
-        public RoomUC()
+        public CheckBookRoomUC()
         {
             InitializeComponent();
-        }
-
-        private void btBooking_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
