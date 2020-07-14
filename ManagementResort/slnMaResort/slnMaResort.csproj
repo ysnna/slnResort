@@ -49,6 +49,7 @@
     <Compile Include="BLL\AccountBLL.cs" />
     <Compile Include="BLL\EmployeeBLL.cs" />
     <Compile Include="BLL\TableBLL.cs" />
+    <Compile Include="BLL\TableOrderBLL.cs" />
     <Compile Include="BLL\testBLL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
@@ -120,11 +121,47 @@
     <Compile Include="HomeUC\ucListEmployee.Designer.cs">
       <DependentUpon>ucListEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="HotelUC\InvoiceRoomUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelUC\InvoiceRoomUC.Designer.cs">
+      <DependentUpon>InvoiceRoomUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelUC\InvoiceServicesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelUC\InvoiceServicesUC.Designer.cs">
+      <DependentUpon>InvoiceServicesUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelUC\RoomUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelUC\RoomUC.Designer.cs">
+      <DependentUpon>RoomUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="HotelUC\testHotelUC.cs" />
     <Compile Include="MY_DB.cs" />
     <Compile Include="ParkUC\testParkUC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestaurantUC\CheckOrderUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RestaurantUC\CheckOrderUC.Designer.cs">
+      <DependentUpon>CheckOrderUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantUC\InvoiceFoodUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RestaurantUC\InvoiceFoodUC.Designer.cs">
+      <DependentUpon>InvoiceFoodUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantUC\TablesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RestaurantUC\TablesUC.Designer.cs">
+      <DependentUpon>TablesUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="RestaurantUC\testReztaurantUC.cs" />
     <Compile Include="RestaurantUC\ucTable.cs">
       <SubType>UserControl</SubType>
@@ -132,6 +169,7 @@
     <Compile Include="RestaurantUC\ucTable.Designer.cs">
       <DependentUpon>ucTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="table.cs" />
     <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +200,15 @@
     <EmbeddedResource Include="HomeUC\ucListEmployee.resx">
       <DependentUpon>ucListEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HotelUC\InvoiceRoomUC.resx">
+      <DependentUpon>InvoiceRoomUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelUC\InvoiceServicesUC.resx">
+      <DependentUpon>InvoiceServicesUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelUC\RoomUC.resx">
+      <DependentUpon>RoomUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -171,6 +218,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RestaurantUC\CheckOrderUC.resx">
+      <DependentUpon>CheckOrderUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestaurantUC\InvoiceFoodUC.resx">
+      <DependentUpon>InvoiceFoodUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestaurantUC\TablesUC.resx">
+      <DependentUpon>TablesUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RestaurantUC\ucTable.resx">
       <DependentUpon>ucTable.cs</DependentUpon>
     </EmbeddedResource>
