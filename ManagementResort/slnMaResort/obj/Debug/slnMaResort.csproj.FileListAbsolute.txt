@@ -74,7 +74,6 @@ E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaRe
 E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.MRestaurantForm.resources
 E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HomeUC.ucEmployee.resources
 E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HomeUC.ucListEmployee.resources
-E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.ucTable.resources
 E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.TablesUC.resources
 E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.InvoiceFoodUC.resources
 E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.CheckOrderUC.resources
@@ -84,4 +83,6 @@ E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaRe
 E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Invoices.InvoicesUC.resources
 E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HomeUC.HomeVoucherUC.resources
 E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HomeUC.StatisticsUC.resources
-E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HotelUC.CheckBookRoomUC.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HomeUC.ServicesUC.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HotelUC.CheckinRoomUC.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.AddMenuFoodUC.resources

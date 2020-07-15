@@ -360,6 +360,7 @@ Picture image null,
 Description nvarchar(500) not null,
 Price float not null,
 Available int not null,
+State nvarchar(50) null,
 constraint pk_SERVICES primary key(IDService)
 );
 go

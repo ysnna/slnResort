@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace slnMaResort.RestaurantUC
+namespace slnMaResort.HomeUC
 {
-    public partial class ucTable : UserControl
+    public partial class ServicesUC : UserControl
     {
-        public ucTable()
+        public ServicesUC()
         {
             InitializeComponent();
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
