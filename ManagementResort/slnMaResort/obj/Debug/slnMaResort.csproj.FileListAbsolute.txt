@@ -86,3 +86,5 @@ E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaRe
 E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HomeUC.ServicesUC.resources
 E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.HotelUC.CheckinRoomUC.resources
 E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.RestaurantUC.AddMenuFoodUC.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.ParkUC.AddTicketUC.resources
+E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.ParkUC.InvoiceParkUC.resources

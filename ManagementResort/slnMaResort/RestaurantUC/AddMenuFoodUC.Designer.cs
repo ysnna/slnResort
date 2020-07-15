@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMenuFoodUC));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btSignIn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -46,18 +46,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtIDFood = new System.Windows.Forms.TextBox();
-            this.numAcailable = new System.Windows.Forms.NumericUpDown();
+            this.numAvailable = new System.Windows.Forms.NumericUpDown();
             this.txtNameFood = new System.Windows.Forms.TextBox();
             this.txtDescriptions = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
-            this.btEditFood = new System.Windows.Forms.Button();
-            this.btAddFood = new System.Windows.Forms.Button();
-            this.btDeleteFood = new System.Windows.Forms.Button();
+            this.btEdit = new System.Windows.Forms.Button();
+            this.btAdd = new System.Windows.Forms.Button();
+            this.btDelete = new System.Windows.Forms.Button();
             this.btRefresh = new System.Windows.Forms.Button();
             this.dgvMenu = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numAcailable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAvailable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,13 +91,13 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.btRefresh);
-            this.groupBox2.Controls.Add(this.btEditFood);
-            this.groupBox2.Controls.Add(this.btAddFood);
-            this.groupBox2.Controls.Add(this.btDeleteFood);
+            this.groupBox2.Controls.Add(this.btEdit);
+            this.groupBox2.Controls.Add(this.btAdd);
+            this.groupBox2.Controls.Add(this.btDelete);
             this.groupBox2.Controls.Add(this.txtPrice);
             this.groupBox2.Controls.Add(this.txtDescriptions);
             this.groupBox2.Controls.Add(this.txtNameFood);
-            this.groupBox2.Controls.Add(this.numAcailable);
+            this.groupBox2.Controls.Add(this.numAvailable);
             this.groupBox2.Controls.Add(this.txtIDFood);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
@@ -227,25 +227,25 @@
             this.txtIDFood.Text = "100";
             this.txtIDFood.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numAcailable
+            // numAvailable
             // 
-            this.numAcailable.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numAcailable.Location = new System.Drawing.Point(356, 442);
-            this.numAcailable.Maximum = new decimal(new int[] {
+            this.numAvailable.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numAvailable.Location = new System.Drawing.Point(356, 442);
+            this.numAvailable.Maximum = new decimal(new int[] {
             9999,
             0,
             0,
             0});
-            this.numAcailable.Minimum = new decimal(new int[] {
+            this.numAvailable.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numAcailable.Name = "numAcailable";
-            this.numAcailable.Size = new System.Drawing.Size(89, 32);
-            this.numAcailable.TabIndex = 232;
-            this.numAcailable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numAcailable.Value = new decimal(new int[] {
+            this.numAvailable.Name = "numAvailable";
+            this.numAvailable.Size = new System.Drawing.Size(89, 32);
+            this.numAvailable.TabIndex = 232;
+            this.numAvailable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numAvailable.Value = new decimal(new int[] {
             255,
             0,
             0,
@@ -284,50 +284,50 @@
             this.txtPrice.Text = "300.000";
             this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btEditFood
+            // btEdit
             // 
-            this.btEditFood.BackColor = System.Drawing.Color.Transparent;
-            this.btEditFood.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditFood.BackgroundImage")));
-            this.btEditFood.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btEditFood.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btEditFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEditFood.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEditFood.ForeColor = System.Drawing.Color.White;
-            this.btEditFood.Location = new System.Drawing.Point(365, 832);
-            this.btEditFood.Name = "btEditFood";
-            this.btEditFood.Size = new System.Drawing.Size(34, 35);
-            this.btEditFood.TabIndex = 270;
-            this.btEditFood.UseVisualStyleBackColor = false;
+            this.btEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEdit.BackgroundImage")));
+            this.btEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btEdit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEdit.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEdit.ForeColor = System.Drawing.Color.White;
+            this.btEdit.Location = new System.Drawing.Point(365, 832);
+            this.btEdit.Name = "btEdit";
+            this.btEdit.Size = new System.Drawing.Size(34, 35);
+            this.btEdit.TabIndex = 270;
+            this.btEdit.UseVisualStyleBackColor = false;
             // 
-            // btAddFood
+            // btAdd
             // 
-            this.btAddFood.BackColor = System.Drawing.Color.Transparent;
-            this.btAddFood.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btAddFood.BackgroundImage")));
-            this.btAddFood.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btAddFood.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btAddFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAddFood.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAddFood.ForeColor = System.Drawing.Color.White;
-            this.btAddFood.Location = new System.Drawing.Point(320, 832);
-            this.btAddFood.Name = "btAddFood";
-            this.btAddFood.Size = new System.Drawing.Size(39, 35);
-            this.btAddFood.TabIndex = 271;
-            this.btAddFood.UseVisualStyleBackColor = false;
+            this.btAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btAdd.BackgroundImage")));
+            this.btAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdd.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.ForeColor = System.Drawing.Color.White;
+            this.btAdd.Location = new System.Drawing.Point(320, 832);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(39, 35);
+            this.btAdd.TabIndex = 271;
+            this.btAdd.UseVisualStyleBackColor = false;
             // 
-            // btDeleteFood
+            // btDelete
             // 
-            this.btDeleteFood.BackColor = System.Drawing.Color.Transparent;
-            this.btDeleteFood.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btDeleteFood.BackgroundImage")));
-            this.btDeleteFood.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btDeleteFood.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btDeleteFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDeleteFood.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDeleteFood.ForeColor = System.Drawing.Color.White;
-            this.btDeleteFood.Location = new System.Drawing.Point(405, 832);
-            this.btDeleteFood.Name = "btDeleteFood";
-            this.btDeleteFood.Size = new System.Drawing.Size(40, 35);
-            this.btDeleteFood.TabIndex = 272;
-            this.btDeleteFood.UseVisualStyleBackColor = false;
+            this.btDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btDelete.BackgroundImage")));
+            this.btDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btDelete.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDelete.ForeColor = System.Drawing.Color.White;
+            this.btDelete.Location = new System.Drawing.Point(405, 832);
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(40, 35);
+            this.btDelete.TabIndex = 272;
+            this.btDelete.UseVisualStyleBackColor = false;
             // 
             // btRefresh
             // 
@@ -350,36 +350,36 @@
             this.dgvMenu.AllowUserToDeleteRows = false;
             this.dgvMenu.AllowUserToResizeColumns = false;
             this.dgvMenu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMenu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMenu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvMenu.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMenu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvMenu.Location = new System.Drawing.Point(14, 592);
             this.dgvMenu.Name = "dgvMenu";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMenu.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMenu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMenu.RowHeadersVisible = false;
             this.dgvMenu.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMenu.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMenu.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMenu.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvMenu.Size = new System.Drawing.Size(1348, 358);
@@ -398,7 +398,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numAcailable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAvailable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
             this.ResumeLayout(false);
 
@@ -420,12 +420,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDescriptions;
         private System.Windows.Forms.TextBox txtNameFood;
-        private System.Windows.Forms.NumericUpDown numAcailable;
+        private System.Windows.Forms.NumericUpDown numAvailable;
         private System.Windows.Forms.TextBox txtIDFood;
         private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.Button btEditFood;
-        private System.Windows.Forms.Button btAddFood;
-        private System.Windows.Forms.Button btDeleteFood;
+        private System.Windows.Forms.Button btEdit;
+        private System.Windows.Forms.Button btAdd;
+        private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.Button btRefresh;
         public System.Windows.Forms.DataGridView dgvMenu;
     }
