@@ -34,7 +34,7 @@ namespace slnMaResort.DAL
         //Load nhân viên theo Khu Vuc
         public DataTable loadEmpbyArea(int area)
         {
-            string sql = @"EXEC LOADEMPOYEETOAREA "+area+"'";
+            string sql = @"EXEC LOADEMPOYEETOAREA '"+area+"'";
             DataTable dt = MY_DB.Instance.createTable(sql);
             if (dt.Rows.Count > 0)
                 return dt;
@@ -43,7 +43,7 @@ namespace slnMaResort.DAL
        
         public DataTable loadEmpbyID(string id)
         {
-            string sql = @"EXEC CHECKLOGIN  '" + id + "' ";
+            string sql = @"EXEC LOADEMPLOYEEINFO  '" + id + "' ";
             DataTable dt = MY_DB.Instance.createTable(sql);
             if (dt.Rows.Count > 0)
                 return dt;

@@ -27,18 +27,25 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
-
+        public DataTable loadVoucherbyID(int ID)
+        {
+            string sql = @"EXEC LOADVOUCHERBYID '" +ID+"'";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
         public void insertVou(int ID, string Area,string Name, DateTime StartDate, DateTime Expriration, int Percents)
         {
-            string sql = @"EXEC INSERTVOUCHER '" + ID + "'" + Area + "'" + Name + "'" + StartDate
-                + "'" + Expriration + "'" + Percents + "'";
+            string sql = @"EXEC INSERTVOUCHER '" + ID + "','" + Area + "','" + Name + "','" + StartDate
+                + "','" + Expriration + "','" + Percents + "'";
               
             MY_DB.Instance.executeQuery(sql);
         }
 
         public void deleteVou(int ID)
         {
-            string sql = @"EXEC DELETEVOUCHER" + ID + "'";
+            string sql = @"EXEC DELETEVOUCHER'" + ID + "'";
             MY_DB.Instance.executeQuery(sql);
         }
     }

@@ -113,6 +113,7 @@
             this.Text = "Management Restaurant";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MRestaurantForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBookTable)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

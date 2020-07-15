@@ -127,6 +127,18 @@ begin
 	where Username = @usr
 end
 go
+--7.2 Load dữ liệu bảng Employee vào datagridView
+if OBJECT_ID('LOADEMPLOYEEINFO') is not null drop PROC LOADEMPLOYEEINFO
+go
+create PROC LOADEMPLOYEEINFO
+@usr nchar(50)
+as
+begin 
+	select *
+	from EMPLOYEE
+	where IDEmployee = @usr
+end
+go
 --8. Load dữ liệu bảng AREA vào datagridView
 if OBJECT_ID('LOADAREA') is not null drop PROC LOADAREA
 go
@@ -236,11 +248,43 @@ begin
 end
 go
 
+--16. Load dữ liệu bảng Voucher vào datagridView
+if OBJECT_ID('LOADVOUCHERBYID') is not null drop PROC LOADVOUCHERBYID
+go
+create PROC LOADVOUCHERBYID
+@id int
+as
+begin 
+	select *
+	from VOUCHER
+	where IDVoucher=@id
+	order by Area, Name	
+end
+go
+
+--16.1 Insert Voucher input(*)
+if OBJECT_ID('INSERTVOUCHER') is not null drop PROC INSERTVOUCHER
+go
+
+create PROC INSERTVOUCHER
+@idvoucher int,
+@area nvarchar(50),
+@name varchar(50),
+@startdate datetime,
+@exptirationdate datetime,
+@percents int
+as
+begin
+	insert into VOUCHER(IDVoucher, Area, Name, StartDate, ExprirationDate, Percents)
+	values (@idvoucher,@area,@name,@startdate,@exptirationdate,@percents)
+end
+go
+
 
 --17. Load dữ liệu Employee theo nhóm Area.
 if OBJECT_ID('LOADEMPOYEETOAREA') is not null drop PROC LOADEMPOYEETOAREA
 go
---17
+
 create PROC LOADEMPOYEETOAREA
 @Area int
 as
@@ -516,6 +560,85 @@ begin
 end
 go
 
+--31. CHECK Customer đã sài Voucher chưa input(IDVoucher)
+if OBJECT_ID('CHECKVOUCHERFORCUSTOMER') is not null drop PROC CHECKVOUCHERFORCUSTOMER
+go
+
+create PROC CHECKVOUCHERFORCUSTOMER
+@idCustomer varchar(50),
+@idVoucher int
+as
+begin 
+	declare @checkInvoice bit
+	select @checkInvoice = 1
+	from INVOICE
+	where IDCustomer = @idCustomer and IDVoucher = @idVoucher
+	if (@checkInvoice is not null)
+		select 'true' as exist
+	else
+		select 'false' as exist
+end
+go
+
+--32. Check Area theo IDInvoice input(IdInvoice)
+if OBJECT_ID('CHECKAREAOFIDVOUCHER') is not null drop PROC CHECKAREAOFIDVOUCHER
+go
+
+create PROC CHECKAREAOFIDVOUCHER
+@idVoucher int
+as
+begin
+	select Area
+	from VOUCHER
+	where IDVoucher = @idVoucher
+end
+go
+
+--33. Search Employee theo ID, Name
+if OBJECT_ID('SEARCHEMPLOYEE') is not null drop PROC SEARCHEMPLOYEE
+go
+
+create PROC SEARCHEMPLOYEE
+@idEmployee varchar(50),
+@name nvarchar(50)
+as
+begin
+	select *
+	from EMPLOYEE
+	where IDEmployee like '%'+ @idEmployee +'%' or Fullname like '%'+ @name +'%'
+end
+go
+
+--34. Search Voucher theo ID, Name
+if OBJECT_ID('SEARCHVOUCHER') is not null drop PROC SEARCHVOUCHER
+go
+
+create PROC SEARCHVOUCHER
+@idVoucher varchar(50),
+@name nvarchar(50)
+as
+begin
+	select *
+	from VOUCHER
+	where IDVoucher like '%'+ @idVoucher +'%' or Name like '%'+ @name +'%'
+end
+go
+
+--35. Search Food theo ID, Name
+if OBJECT_ID('SEARCHFOOD') is not null drop PROC SEARCHFOOD
+go
+
+create PROC SEARCHFOOD
+@idFood varchar(50),
+@name nvarchar(50)
+as
+begin
+	select *
+	from MENUFOOD
+	where IDFood like '%'+ @idFood +'%' or Name like '%'+ @name +'%'
+end
+go
+
 --exec LOADACCOUNT 
 --exec LOADAREA
 --exec LOADBASESALARY
@@ -542,6 +665,14 @@ go
 --exec SELECTINVOICEPARK
 --exec SELECTINVOICESERVICE
 --exec SELECTDETAILSFROMIDINVOICE 'IV0004'
+--EXEC INSERTVOUCHER '22', '2',' sadsa  ','20130128','20130128','2'
+--exec CHECKVOUCHERFORCUSTOMER 'C0001', 1
+--exec CHECKAREAOFIDVOUCHER 2
+--exec SEARCHEMPLOYEE null , N'Vu'
+--exec SEARCHVOUCHER null, N'hải sản'
+--exec SEARCHFOOD null, N'ngừ'
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------
 ----3. Thêm Account vào bảng Account.
 --if OBJECT_ID('INSERTAccount') is not null drop proc INSERTAccount;
@@ -739,18 +870,18 @@ go
 --end;
 --go
 
---if OBJECT_ID('CHECKGROUP') is not null drop proc CHECKGROUP;
---go
+if OBJECT_ID('CHECKGROUP') is not null drop proc CHECKGROUP;
+go
 
---create proc CHECKGROUP
---@UserName nvarchar(50)
---as
---begin
---	select Type_User
---	from Account
---	where UserName=@UserName
---end;
---go
+create proc CHECKGROUP
+@UserName nvarchar(50)
+as
+begin
+	select IDGroup	
+	from Account
+	where UserName=@UserName
+end;
+go
 
 
 --if OBJECT_ID('DETAILUserName') is not null drop proc DETAILUserName;

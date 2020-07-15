@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using slnMaResort.DAL;
 namespace slnMaResort.Forms
 {
     public partial class LoginForm : Form
@@ -29,11 +29,21 @@ namespace slnMaResort.Forms
             string pass = txtPassword.Text.ToString().Trim();
             string usrname = txtUsername.Text.ToString().Trim();
             if (AccountBLL.Instance.DefinePass(pass, usrname) &&
-                AccountBLL.Instance.DefineState(usrname) == "Đang làm việc")
+                AccountBLL.Instance.DefineState(usrname) == "Working")
+                
             {
+                //MessageBox.Show("Dang nhap  thanh cong");
+                //AccountBLL.Instance.callForm(usrname);
+                //GLOBAL.GetUsername(usrname);
+
                 MessageBox.Show("Dang nhap  thanh cong");
-                AccountBLL.Instance.callForm(usrname);
                 GLOBAL.GetUsername(usrname);
+
+                DataTable dt = AccountDAL.Instance.getEmpID(usrname);
+                string empID = dt.Rows[0][0].ToString();
+                GLOBAL.GetEmpID(empID);
+                AccountBLL.Instance.callForm(usrname);
+               
             }
             else
             {

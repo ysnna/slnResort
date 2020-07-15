@@ -43,7 +43,7 @@ namespace slnMaResort.DAL
 
         public DataTable getEmpID(string user)
         {
-            string sql = @"exec getEmpID '" + user + "'";
+            string sql = @"exec LOADEMPLOYEEBYID '" + user + "'";
             MY_DB.Instance.executeQuery(sql);
             DataTable dt = MY_DB.Instance.createTable(sql);
             if (dt.Rows.Count > 0)
