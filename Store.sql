@@ -238,6 +238,7 @@ begin
 	order by Area, Name	
 end
 go
+
 --16.2. Delete Voucher
 if OBJECT_ID('DELETEVOUCHER') is not null drop PROC DELETEVOUCHER
 go 
@@ -255,25 +256,6 @@ begin
 		throw 5000, 'Permission not exist', 1;
 end
 go
-
-
---16.3 Update Voucher
-if OBJECT_ID('UPDATEVOUCHER') is not null drop PROC UPDATEVOUCHER
-go
-
-create PROC UPDATEVOUCHER
-@Idvou int,
-@area nvarchar(50) ,
-@name varchar(50),
-@startDate datetime,
-@exprirationdate datetime,
-@percent int
-as
-begin 
-	UPDATE VOUCHER set Area= @area, Name = @name, StartDate = @startDate, ExprirationDate = @exprirationdate,Percents=@percent  where IDVoucher = @Idvou
-end
-go
-
 
 
 --17. Load dữ liệu Employee theo nhóm Area.
@@ -427,7 +409,6 @@ begin
 	else
 		throw 5000, 'Permission not exist', 1;
 end
-go
 
 --23. Checkout customer cho bảng booktable input(customer)
 if OBJECT_ID('CHECKCUSTOMERBOOKTABLE') is not null drop PROC CHECKCUSTOMERBOOKTABLE
@@ -451,109 +432,7 @@ begin
 end
 go
 
---24.1 AUTO INCREMENT Field Customer
-if OBJECT_ID('AUTOINCREMENTCUSTOMER') is not null drop PROC AUTOINCREMENTCUSTOMER
-go
 
-create PROC AUTOINCREMENTCUSTOMER
-as
-begin
-	select top 1 ('C' + Cast(Cast(SUBSTRING((IDCustomer), 2, 47) as int) + 1 as varchar)) as IDNewCustomer
-	from CUSTOMER
-	order by IDCustomer desc
-end
-go
-	
---25.1 AUTO INCREMENT Field Invoice
-if OBJECT_ID('AUTOINCREMENTINVOICE') is not null drop PROC AUTOINCREMENTINVOICE
-go
-
-create PROC AUTOINCREMENTINVOICE
-as
-begin
-	select top 1 ('IV' + Cast(Cast(SUBSTRING((IDInvoice), 3, 47) as int) + 1 as varchar)) as IDNewInvoice
-	from INVOICE
-	order by IDInvoice desc
-end
-go
-
---26. Select Invoice theo type = Park
-if OBJECT_ID('SELECTINVOICEPARK') is not null drop PROC SELECTINVOICEPARK
-go
-
-create PROC SELECTINVOICEPARK
-as
-begin
-	select *
-	from INVOICE
-	where Type = 'Park'
-end
-
---27. Select Invoice theo Type = Room
-if OBJECT_ID('SELECTINVOICEROOM') is not null drop PROC SELECTINVOICEROOM
-go
-
-create PROC SELECTINVOICEROOM
-as
-begin
-	select *
-	from INVOICE
-	where Type = 'Room'
-end
-go
---28. Select Invoice theo Type = Service
-if OBJECT_ID('SELECTINVOICESERVICE') is not null drop PROC SELECTINVOICESERVICE
-go
-create PROC SELECTINVOICESERVICE
-as
-begin
-	select *
-	from INVOICE
-	where Type = 'Service'
-end
-go
-
---29. Select Invoice theo Type = Food
-if OBJECT_ID('SELECTINVOICEFOOD') is not null drop PROC SELECTINVOICEFOOD
-go
-create PROC SELECTINVOICEFOOD
-as
-begin
-	select *
-	from INVOICE
-	where Type = 'Food'
-end
-go
---30 Select Details Invoice theo IdInvoice input(IDInvoice)
-if OBJECT_ID('SELECTDETAILSFROMIDINVOICE') is not null drop PROC SELECTDETAILSFROMIDINVOICE
-go
-
-create PROC SELECTDETAILSFROMIDINVOICE
-@idInvoice varchar(50)
-as
-begin
-	declare @type nvarchar(200)
-	select @type = Type
-	from INVOICE
-	where IDInvoice = @idInvoice
-	if (@type = 'Room')
-		select *
-		from DETAILINVOICEROOM
-		where IDInvoice = @idInvoice
-	if (@type = 'Food')
-		select *
-		from DETAILINVOICEFOOD
-		where IDInvoice = @idInvoice
-	if (@type = 'Service')
-		select *
-		from DETAILINVOICESERVICES
-		where IDInvoice = @idInvoice
-	if (@type = 'Park')
-		select *
-		from DETAILINVOICEPARK
-		where IDInvoice = @idInvoice
-end
-go
 
 --exec LOADACCOUNT 
 --exec LOADAREA
@@ -573,14 +452,7 @@ go
 --exec DELETEEMPLOYEE 'NV1000'
 --exec DELETEPERMISSIONTOACCOUNT 'nguyenvuong' , N'In hóa đơn'
 --exec CHECKCUSTOMER N'Hoàng Hiệp'
---exec AUTOINCREMENTEMPLOYEE
---exec AUTOINCREMENTCUSTOMER
---exec AUTOINCREMENTINVOICE
---exec SELECTINVOICEROOM
---exec SELECTINVOICEFOOD
---exec SELECTINVOICEPARK
---exec SELECTINVOICESERVICE
---exec SELECTDETAILSFROMIDINVOICE 'IV0004'
+
 ---------------------------------------------------------------------------------------------------------------------------------------
 ----3. Thêm Account vào bảng Account.
 --if OBJECT_ID('INSERTAccount') is not null drop proc INSERTAccount;

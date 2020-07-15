@@ -18,6 +18,56 @@ namespace slnMaResort.HomeUC
             InitializeComponent();
         }
 
+        private void btnAddVoucher_Click(object sender, EventArgs e)
+        {
+            if (txtIDVoucher.Text == "" || cbxAreaVoucher.Text == "" || txtNameVoucher.Text == "")
+            {
+                MessageBox.Show("Thông tin nhập không được để trống");
+            }
+            else
+            {
+                addVoucher();
+                VoucherBLL.Instance.loadAllVouDGV(dgvVoucher);
+                txtIDVoucher.Text = "";
+                cbxAreaVoucher.Text = "";
+                txtNameVoucher.Text = "";
+                numPercent.Value = 0;
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            int IdVoucher = Int32.Parse(txtIDVoucher.Text);
+            string Area = cbxAreaVoucher.Text;
+            string NameVoucher = txtNameVoucher.Text;
+            DateTime starDate = dtpStareDateVoucher.Value;
+            DateTime expriration = dtpExprirationVoucher.Value;
+            int precent = Int32.Parse(numPercent.Text);
+            DataTable dt = VoucherBLL.Instance.loadAllVou();
+            int i = 0;
+            while (i < dt.Rows.Count)
+            {
+                if (IdVoucher.ToString() != dt.Rows[i][0].ToString())
+                {
+                    i++;
+                }
+                else
+                {
+                    VoucherBLL.Instance.updateVou(IdVoucher, Area, NameVoucher, starDate, expriration, precent);
+                    MessageBox.Show("Update voucher successed");
+                    VoucherBLL.Instance.loadAllVouDGV(dgvVoucher);
+                    return;
+                }
+            }
+            MessageBox.Show("No ID in table");
+        }
+
+        private void btnDeleteVoucher_Click(object sender, EventArgs e)
+        {
+            int Id = Int32.Parse(txtIDVoucher.Text);
+            DeleteVoucher(Id);
+        }
+
         private void dgvVoucher_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int id;
@@ -35,9 +85,7 @@ namespace slnMaResort.HomeUC
         private void HomeVoucherUC_Load(object sender, EventArgs e)
         {
             VoucherBLL.Instance.loadAllVouDGV(dgvVoucher);
-            
         }
-
         void addVoucher()
         {
             int IdVoucher = Int32.Parse(txtIDVoucher.Text);
@@ -55,28 +103,13 @@ namespace slnMaResort.HomeUC
                     return;
                 }
             }
+
+
             VoucherBLL.Instance.insertVou(IdVoucher, Area, NameVoucher, starDate, expriration, precent);
             MessageBox.Show("Thêm voucher thành công");
-        
-        
 
-        }
 
-        private void btnAddVoucher_Click(object sender, EventArgs e)
-        {
-            if (txtIDVoucher.Text == "" || cbxAreaVoucher.Text == "" || txtNameVoucher.Text == "")
-            {
-                MessageBox.Show("Thông tin nhập không được để trống");
-            }
-            else
-            {
-                addVoucher();
-                VoucherBLL.Instance.loadAllVouDGV(dgvVoucher);
-                txtIDVoucher.Text = "";
-                cbxAreaVoucher.Text = "";
-                txtNameVoucher.Text = "";
-                numPercent.Value = 0;
-            }
+
         }
         void DeleteVoucher(int ID)
         {
@@ -86,42 +119,6 @@ namespace slnMaResort.HomeUC
             VoucherBLL.Instance.loadAllVouDGV(dgvVoucher);
 
         }
-
-        private void btnDeleteVoucher_Click(object sender, EventArgs e)
-        {
-            int Id = Int32.Parse(txtIDVoucher.Text);
-            DeleteVoucher(Id);
-       }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-           
-            int IdVoucher = Int32.Parse(txtIDVoucher.Text);
-            string Area = cbxAreaVoucher.Text;
-            string NameVoucher = txtNameVoucher.Text;
-            DateTime starDate = dtpStareDateVoucher.Value;
-            DateTime expriration = dtpExprirationVoucher.Value;
-            int precent = Int32.Parse(numPercent.Text);
-            DataTable dt = VoucherBLL.Instance.loadAllVou();
-            int i = 0;
-            while   (  i  < dt.Rows.Count)          
-            {
-                if (IdVoucher.ToString() != dt.Rows[i][0].ToString())
-                {
-                    i++;
-                }
-                else
-                {
-                    VoucherBLL.Instance.updateVou(IdVoucher, Area, NameVoucher, starDate, expriration, precent);
-                    MessageBox.Show("Update voucher successed");
-                    VoucherBLL.Instance.loadAllVouDGV(dgvVoucher);
-                    return;
-                }
-            }
-            MessageBox.Show("No ID in table");
-
-        
-        }
         private void txtIDVoucher_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
@@ -130,4 +127,5 @@ namespace slnMaResort.HomeUC
                 MessageBox.Show("Enter number");
             }
         }
+    }
 }

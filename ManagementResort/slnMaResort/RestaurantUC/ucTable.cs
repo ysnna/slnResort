@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace slnMaResort.Forms
+namespace slnMaResort.RestaurantUC
 {
-    public partial class MRestaurantForm : Form
+    public partial class ucTable : UserControl
     {
-        public MRestaurantForm()
+        public ucTable()
         {
             InitializeComponent();
         }
 
-        private void MRestaurantForm_Load(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
 
         }

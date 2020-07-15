@@ -39,7 +39,7 @@ namespace slnMaResort.BLL
             VoucherDAL.Instance.insertVou(IdVoucher, Area, NameVoucher, startDate, expriration, precent);
         }
 
-        
+
         public void loadAllVouDGV(DataGridView dgv)
         {
             dgv.RowTemplate.Height = 40;

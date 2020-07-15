@@ -31,7 +31,5 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
-
-
     }
 }

@@ -1,25 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace slnMaResort.Forms
+namespace slnMaResort.HotelUC
 {
-    public partial class MRestaurantForm : Form
+    public partial class CheckBookRoomUC : UserControl
     {
-        public MRestaurantForm()
+        public CheckBookRoomUC()
         {
             InitializeComponent();
-        }
-
-        private void MRestaurantForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
