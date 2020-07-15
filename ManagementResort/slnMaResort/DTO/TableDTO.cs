@@ -14,8 +14,8 @@ namespace slnMaResort.DTO
     {
         public int ID { get; set; }
         public string Sate { get; set; }
-        public static int width = 220;
-        public static int height = 235;
+        public static int width = 210;
+        public static int height = 229;
         public TableDTO(int id, string state)
         {
             this.ID = id;
