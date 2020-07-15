@@ -22,6 +22,24 @@ namespace slnMaResort.DAL
             }
             private set => TableDAL.instance = value;
         }
+        public DataTable loadTables()
+        {
+            string sql = @"EXEC LOADMENUFOODNOTDESCRIPTION ";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
+
+        public DataTable loadDesciptionID(int ID)
+        {
+            string sql = @"EXEC SEARCHMENUFOODDESCRIPTIONBYID '" + ID + "'";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
+
         public DataTable loadTable()
         {
             string sql = @"exec LOADTABLES  ";
@@ -31,7 +49,5 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
-
-
     }
 }

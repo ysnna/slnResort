@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using slnMaResort.RestaurantUC;
 
 namespace slnMaResort.BLL
 {
@@ -47,16 +48,34 @@ namespace slnMaResort.BLL
                     };
                     bt.Font = new Font("Times New Roman", 22F, FontStyle.Regular, GraphicsUnit.Point);
 
-                    bt.ForeColor = Color.Navy;
+                    bt.ForeColor = Color.White;
                     bt.BackColor = flp.BackColor;
-                    bt.FlatAppearance.BorderColor = Color.Navy;
-                    bt.FlatAppearance.BorderSize = 5;
+                    bt.FlatAppearance.BorderColor = Color.White;
+                    bt.FlatAppearance.BorderSize = 3;
                     bt.FlatStyle = FlatStyle.Flat;
-                    bt.Text = item.ID.ToString();
+
+                    if (item.State == "Empty")
+                        bt.BackColor = Color.MediumAquamarine;
+                    else
+                    if (item.State == "Full")
+                        bt.BackColor = Color.DarkKhaki;
+                    else
+                        bt.BackColor = Color.LightSkyBlue;
+                    bt.Click += btTable_Click;
+                    bt.Tag = item;
+                    bt.Text = item.ID.ToString() + Environment.NewLine + item.State;
                     flp.Controls.Add(bt);
                     flp.Refresh();
                 }
             }
         }
+
+        void btTable_Click(object sender, EventArgs e)
+        {
+            int TableID = ((sender as Button).Tag as TableDTO).ID;
+            TableDTO.IDTableSelected = TableID;
+            //MessageBox.Show(TableDTO.IDTableSelected.ToString());
+        }
+        */
     }
 }

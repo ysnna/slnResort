@@ -51,7 +51,7 @@ namespace slnMaResort.DAL
 
         public void updateVou(int ID, string Area, string Name, DateTime StartDate, DateTime Expriration, int Percents)
         {
-            string sql= @"EXEC UPDATEVOUCHER '" + ID + "','" + Area + "','" + Name + "','" + StartDate
+            string sql = @"EXEC UPDATEVOUCHER '" + ID + "','" + Area + "','" + Name + "','" + StartDate
                 + "','" + Expriration + "','" + Percents + "'";
             MY_DB.Instance.executeQuery(sql);
         }

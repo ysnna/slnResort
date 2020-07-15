@@ -39,7 +39,6 @@ namespace slnMaResort.BLL
             VoucherDAL.Instance.insertVou(IdVoucher, Area, NameVoucher, startDate, expriration, precent);
         }
 
-        
         public void loadAllVouDGV(DataGridView dgv)
         {
             dgv.RowTemplate.Height = 40;
@@ -67,6 +66,14 @@ namespace slnMaResort.BLL
         public void updateVou(int ID, string Area, string Name, DateTime StartDate, DateTime Expriration, int Percents)
         {
             VoucherDAL.Instance.updateVou(ID, Area, Name, StartDate, Expriration, Percents);
+        }
+        public void DeleteVoucher(int ID, DataGridView dgv)
+        {
+
+            VoucherBLL.Instance.deleteVou(ID);
+            MessageBox.Show("Delete succsessed");
+            VoucherBLL.Instance.loadAllVouDGV(dgv);
+
         }
     }
 }
