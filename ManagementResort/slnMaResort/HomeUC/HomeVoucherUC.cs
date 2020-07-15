@@ -55,8 +55,6 @@ namespace slnMaResort.HomeUC
                     return;
                 }
             }
-            
-            
             VoucherBLL.Instance.insertVou(IdVoucher, Area, NameVoucher, starDate, expriration, precent);
             MessageBox.Show("Thêm voucher thành công");
         
@@ -80,19 +78,9 @@ namespace slnMaResort.HomeUC
                 numPercent.Value = 0;
             }
         }
-
-        private void txtIDVoucher_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("Enter number");
-            }
-        }
-
         void DeleteVoucher(int ID)
         {
- 
+
             VoucherBLL.Instance.deleteVou(ID);
             MessageBox.Show("Delete succsessed");
             VoucherBLL.Instance.loadAllVouDGV(dgvVoucher);
@@ -132,6 +120,14 @@ namespace slnMaResort.HomeUC
             }
             MessageBox.Show("No ID in table");
 
+        
         }
-    }
+        private void txtIDVoucher_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Enter number");
+            }
+        }
 }

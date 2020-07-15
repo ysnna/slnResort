@@ -51,6 +51,7 @@
     <Compile Include="BLL\EmployeeBLL.cs" />
     <Compile Include="BLL\TableBLL.cs" />
     <Compile Include="BLL\TableOrderBLL.cs" />
+    <Compile Include="BLL\VoucherBLL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\TableDAL.cs" />

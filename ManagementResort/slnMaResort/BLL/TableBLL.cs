@@ -24,7 +24,6 @@ namespace slnMaResort.BLL
             }
             private set => TableBLL.instance = value;
         }
-
         public void LoadTable(FlowLayoutPanel flp)
         {
             List<TableDTO> tableDTOs = new List<TableDTO>();

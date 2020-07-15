@@ -16,7 +16,6 @@ namespace slnMaResort.RestaurantUC
         public TablesUC()
         {
             InitializeComponent();
-
             TableBLL.Instance.LoadTable(pnTableLayout);
         }
 
@@ -67,6 +66,9 @@ namespace slnMaResort.RestaurantUC
 
         #endregion
 
-   
+        private void TablesUC_Load(object sender, EventArgs e)
+        {
+            //TableListLoad();
+        }
     }
 }
