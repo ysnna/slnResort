@@ -65,7 +65,7 @@ namespace slnMaResort.HomeUC
         private void btnDeleteVoucher_Click(object sender, EventArgs e)
         {
             int Id = Int32.Parse(txtIDVoucher.Text);
-            DeleteVoucher(Id);
+            VoucherBLL.Instance.DeleteVoucher(Id,dgvVoucher);
         }
 
         private void dgvVoucher_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -111,14 +111,7 @@ namespace slnMaResort.HomeUC
 
 
         }
-        void DeleteVoucher(int ID)
-        {
-
-            VoucherBLL.Instance.deleteVou(ID);
-            MessageBox.Show("Delete succsessed");
-            VoucherBLL.Instance.loadAllVouDGV(dgvVoucher);
-
-        }
+       
         private void txtIDVoucher_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))

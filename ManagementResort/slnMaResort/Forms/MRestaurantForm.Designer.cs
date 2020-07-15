@@ -31,8 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tablesUC1 = new slnMaResort.RestaurantUC.TablesUC();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.invoiceFoodUC1 = new slnMaResort.RestaurantUC.InvoiceFoodUC();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.addMenuFoodUC1 = new slnMaResort.RestaurantUC.AddMenuFoodUC();
@@ -76,6 +76,14 @@
             this.tabPage1.Text = "Home";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // tablesUC1
+            // 
+            this.tablesUC1.AutoSize = true;
+            this.tablesUC1.Location = new System.Drawing.Point(0, 0);
+            this.tablesUC1.Name = "tablesUC1";
+            this.tablesUC1.Size = new System.Drawing.Size(1914, 964);
+            this.tablesUC1.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.invoiceFoodUC1);
@@ -86,14 +94,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Invoice";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tablesUC1
-            // 
-            this.tablesUC1.AutoSize = true;
-            this.tablesUC1.Location = new System.Drawing.Point(0, 0);
-            this.tablesUC1.Name = "tablesUC1";
-            this.tablesUC1.Size = new System.Drawing.Size(1914, 964);
-            this.tablesUC1.TabIndex = 0;
             // 
             // invoiceFoodUC1
             // 

@@ -68,5 +68,14 @@ namespace slnMaResort.BLL
         {
             VoucherDAL.Instance.updateVou(ID, Area, Name, StartDate, Expriration, Percents);
         }
+
+      public  void DeleteVoucher(int ID,DataGridView dgv)
+        {
+
+            VoucherBLL.Instance.deleteVou(ID);
+            MessageBox.Show("Delete succsessed");
+            VoucherBLL.Instance.loadAllVouDGV(dgv);
+
+        }
     }
 }
