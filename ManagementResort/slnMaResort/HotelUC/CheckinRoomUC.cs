@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace slnMaResort.HotelUC
 {
-    public partial class CheckBookRoomUC : UserControl
+    public partial class CheckinRoomUC : UserControl
     {
-        public CheckBookRoomUC()
+        public CheckinRoomUC()
         {
             InitializeComponent();
         }
