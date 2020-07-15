@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,18 +48,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\AccountBLL.cs" />
-    <Compile Include="BLL\testBLL.cs" />
+    <Compile Include="BLL\EmployeeBLL.cs" />
+    <Compile Include="BLL\TableBLL.cs" />
+    <Compile Include="BLL\TableOrderBLL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
-    <Compile Include="DAL\testDAL.cs" />
+    <Compile Include="DAL\EmployeeDAL.cs" />
+    <Compile Include="DAL\TableDAL.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\CustomerDTO.cs" />
     <Compile Include="DTO\EmployeeDTO.cs" />
-    <Compile Include="DTO\testDTO.cs" />
     <Compile Include="Forms\ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ChangePasswordForm.Designer.cs">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HomeForm.cs">
       <SubType>Form</SubType>
@@ -97,15 +106,111 @@
       <DependentUpon>MRestaurantForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GLOBAL.cs" />
-    <Compile Include="HomeUC\testHomeUC.cs" />
-    <Compile Include="HotelUC\testHotelUC.cs" />
+    <Compile Include="HomeUC\HomeVoucherUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\HomeVoucherUC.Designer.cs">
+      <DependentUpon>HomeVoucherUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUC\ServicesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\ServicesUC.Designer.cs">
+      <DependentUpon>ServicesUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUC\ucEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\ucEmployee.Designer.cs">
+      <DependentUpon>ucEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUC\ucListEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\ucListEmployee.Designer.cs">
+      <DependentUpon>ucListEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUC\StatisticsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\StatisticsUC.Designer.cs">
+      <DependentUpon>StatisticsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelUC\CheckinRoomUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelUC\CheckinRoomUC.Designer.cs">
+      <DependentUpon>CheckinRoomUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelUC\InvoiceRoomUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelUC\InvoiceRoomUC.Designer.cs">
+      <DependentUpon>InvoiceRoomUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelUC\InvoiceServicesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelUC\InvoiceServicesUC.Designer.cs">
+      <DependentUpon>InvoiceServicesUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelUC\RoomUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelUC\RoomUC.Designer.cs">
+      <DependentUpon>RoomUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices\InvoicesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoices\InvoicesUC.Designer.cs">
+      <DependentUpon>InvoicesUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="MY_DB.cs" />
-    <Compile Include="ParkUC\testParkUC.cs" />
+    <Compile Include="ParkUC\AddTicketUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParkUC\AddTicketUC.Designer.cs">
+      <DependentUpon>AddTicketUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkUC\InvoiceParkUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParkUC\InvoiceParkUC.Designer.cs">
+      <DependentUpon>InvoiceParkUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RestaurantUC\testReztaurantUC.cs" />
+    <Compile Include="RestaurantUC\AddMenuFoodUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RestaurantUC\AddMenuFoodUC.Designer.cs">
+      <DependentUpon>AddMenuFoodUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantUC\CheckOrderUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RestaurantUC\CheckOrderUC.Designer.cs">
+      <DependentUpon>CheckOrderUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantUC\InvoiceFoodUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RestaurantUC\InvoiceFoodUC.Designer.cs">
+      <DependentUpon>InvoiceFoodUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantUC\TablesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RestaurantUC\TablesUC.Designer.cs">
+      <DependentUpon>TablesUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="table.cs" />
     <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
@@ -125,6 +230,42 @@
     <EmbeddedResource Include="Forms\MRestaurantForm.resx">
       <DependentUpon>MRestaurantForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\HomeVoucherUC.resx">
+      <DependentUpon>HomeVoucherUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\ServicesUC.resx">
+      <DependentUpon>ServicesUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\ucEmployee.resx">
+      <DependentUpon>ucEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\ucListEmployee.resx">
+      <DependentUpon>ucListEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\StatisticsUC.resx">
+      <DependentUpon>StatisticsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelUC\CheckinRoomUC.resx">
+      <DependentUpon>CheckinRoomUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelUC\InvoiceRoomUC.resx">
+      <DependentUpon>InvoiceRoomUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelUC\InvoiceServicesUC.resx">
+      <DependentUpon>InvoiceServicesUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelUC\RoomUC.resx">
+      <DependentUpon>RoomUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\InvoicesUC.resx">
+      <DependentUpon>InvoicesUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkUC\AddTicketUC.resx">
+      <DependentUpon>AddTicketUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkUC\InvoiceParkUC.resx">
+      <DependentUpon>InvoiceParkUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -134,6 +275,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RestaurantUC\AddMenuFoodUC.resx">
+      <DependentUpon>AddMenuFoodUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestaurantUC\CheckOrderUC.resx">
+      <DependentUpon>CheckOrderUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestaurantUC\InvoiceFoodUC.resx">
+      <DependentUpon>InvoiceFoodUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestaurantUC\TablesUC.resx">
+      <DependentUpon>TablesUC.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace slnMaResort.RestaurantUC
+namespace slnMaResort.BLL
 {
-    class testReztaurantUC
+    class TableOrderBLL
     {
+
+
+
     }
 }

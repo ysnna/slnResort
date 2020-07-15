@@ -15,6 +15,13 @@ namespace slnMaResort
             return username;
         }
 
+        public static string empID = "";
+        public static string GetEmpID(string id)
+        {
+            empID = id ;
+            return empID;
+        }
+
         public static string grID = "0";
         public static string getID(string grid)
         {
