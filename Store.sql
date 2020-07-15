@@ -225,6 +225,23 @@ begin
 	order by Area, Name
 end
 go
+--16.2. Delete Voucher
+if OBJECT_ID('DELETEVOUCHER') is not null drop PROC DELETEVOUCHER
+go 
+
+create  PROC DELETEVOUCHER
+@ID int
+as
+begin
+	select @ID = IDVoucher
+	from VOUCHER
+	where IDVoucher = @ID
+	if (@ID is not null)
+		DELETE from VOUCHER where IDVoucher = @ID
+	else
+		throw 5000, 'Permission not exist', 1;
+end
+go
 
 
 --17. Load dữ liệu Employee theo nhóm Area.
