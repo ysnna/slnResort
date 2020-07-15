@@ -299,7 +299,7 @@ Name nvarchar(100) not null,
 Birthday date null,
 Gender bit not null,
 Phone int null,
-IDCard varchar(10) not null,
+IDCard varchar(10) not null unique,
 IDRoom varchar(50) not null,
 constraint pk_CUSTOMER primary key(IDCustomer)
 );
@@ -339,7 +339,7 @@ go
 --create BOOK_ROOM
 create table BOOK_ROOM
 (
-IDCustomer varchar(50) not null,
+IDCard varchar(10) not null,
 IDRoom varchar(50) not null,
 DateBooked datetime not null,
 DateCheckin datetime not null,
@@ -559,11 +559,6 @@ with nocheck add constraint fk_BOOK_ROOM_ROOMS
 foreign key (IDRoom) references ROOMS(IDRoom);
 go
 
-
-alter table  BOOK_ROOM
-with nocheck add constraint fk_BOOK_ROOM_CUSTOMER
-foreign key (IDCustomer) references CUSTOMER(IDCustomer);
-go
 
 alter table  ROOM_SERVICE
 with nocheck add constraint fk_ROOM_SERVICE_ROOMS
