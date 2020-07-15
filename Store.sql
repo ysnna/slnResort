@@ -179,6 +179,29 @@ begin
 end
 go
 
+if OBJECT_ID('LOADROOMSNOTREQUIMENT') is not null drop PROC LOADROOMSNOTREQUIMENT
+go
+create PROC LOADROOMSNOTREQUIMENT
+as
+begin 
+	select IDRoom, Type, KindOf, Price , State
+	from ROOMS
+	order by Type, KindOf
+end
+go
+
+if OBJECT_ID('SEARCHROOMREQUIMENTBYID') is not null drop PROC SEARCHROOMREQUIMENTBYID
+go
+create PROC SEARCHROOMREQUIMENTBYID
+@id varchar(50)
+as
+begin 
+	select Requirement
+	from ROOMS
+	where IDRoom=@id
+end
+go
+
 --13. Load dữ liệu bảng Service vào datagridView
 if OBJECT_ID('LOADSERVICE') is not null drop PROC LOADSERVICE
 go
@@ -210,7 +233,30 @@ as
 begin
 	select *
 	from MENUFOOD
-	order by Name
+	order by IDFood
+end
+go
+
+if OBJECT_ID('LOADMENUFOODNOTDESCRIPTION') is not null drop PROC LOADMENUFOODNOTDESCRIPTION
+go
+create PROC LOADMENUFOODNOTDESCRIPTION
+as
+begin
+	select IDFood, Name, Price, Available
+	from MENUFOOD
+	order by IDFood
+end
+go
+
+if OBJECT_ID('SEARCHMENUFOODDESCRIPTIONBYID') is not null drop PROC SEARCHMENUFOODDESCRIPTIONBYID
+go
+create PROC SEARCHMENUFOODDESCRIPTIONBYID
+@id int
+as
+begin 
+	select Description
+	from MENUFOOD
+	where IDFood=@id
 end
 go
 
