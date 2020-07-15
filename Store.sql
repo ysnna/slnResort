@@ -260,6 +260,27 @@ begin
 end
 go
 
+-- Load dữ liệu bảng Voucher vào datagridView
+
+
+-- Insert Voucher input(*)
+if OBJECT_ID('INSERTVOUCHER') is not null drop PROC INSERTVOUCHER
+go
+
+create PROC INSERTVOUCHER
+@idvoucher int,
+@area nvarchar(50),
+@name varchar(50),
+@startdate datetime,
+@exptirationdate datetime,
+@percents int
+as
+begin
+	insert into VOUCHER(IDVoucher, Area, Name, StartDate, ExprirationDate, Percents)
+	values (@idvoucher,@area,@name,@startdate,@exptirationdate,@percents)
+end
+go
+
 --16. Load dữ liệu bảng Voucher vào datagridView
 if OBJECT_ID('LOADVOUCHER') is not null drop PROC LOADVOUCHER
 go
@@ -300,6 +321,22 @@ begin
 		DELETE from VOUCHER where IDVoucher = @ID
 	else
 		throw 5000, 'Permission not exist', 1;
+end
+go
+
+--16.3 update Voucher
+if OBJECT_ID('UPDATEVOUCHER') is not null drop PROC UPDATEVOUCHER
+go
+create PROC UPDATEVOUCHER
+@ID int,
+@area nvarchar(50),
+@name nvarchar(200),
+@startDate datetime,
+@expriration datetime,
+@percents int
+as
+begin 
+	UPDATE VOUCHER set Area = @area, Name = @startDate, ExprirationDate = @expriration, Percents = @percents where IDVoucher = @ID
 end
 go
 
@@ -478,6 +515,85 @@ begin
 end
 go
 
+
+--24.Load food
+
+if OBJECT_ID('LOADMENUFOOD') is not null drop PROC LOADMENUFOOD
+go
+create PROC LOADMENUFOOD
+as
+begin
+	select *
+	from MENUFOOD
+	order by Name
+end
+go
+
+--24.1 InsertFood
+if OBJECT_ID('INSERTFOOD') is not null drop PROC INSERTFOOD
+go
+
+create PROC INSERTFOOD
+@idFood int,
+@name nvarchar(200),
+@price float,
+@description nvarchar(200),
+@picture image,
+@available int
+as
+begin
+	insert into MENUFOOD(IDFood, Name, Price, Description,Picture, Available)
+	values (@idFood,@name,@price,@description,@picture,@available)
+end
+go
+
+--24.2 DeleteFood
+if OBJECT_ID('DELETEFOOD') is not null drop PROC DELETEFOOD
+go 
+
+create  PROC DELETEFOOD
+@ID int
+as
+begin
+	select @ID = IDFood
+	from MENUFOOD
+	where IDFood = @ID
+	if (@ID is not null)
+		DELETE from MENUFOOD where IDFood= @ID
+	else
+		throw 5000, 'Permission not exist', 1;
+end
+go
+
+--24.3 updateFood
+if OBJECT_ID('UPDATEFOOD') is not null drop PROC UPDATEFOOD
+go
+
+create PROC UPDATEFOOD
+@idFood int,
+@name nvarchar(50),
+@price float,
+@description nvarchar(200),
+@picture image,
+@available int
+as
+begin 
+	UPDATE MENUFOOD set Name = @name, Price = @price, Description = @description, Picture = @picture ,Available=@available where IDFood = @idFood
+end
+go
+--16.5 Load dữ liệu bảng Voucher vào datagridView
+if OBJECT_ID('LOADFOODBYID') is not null drop PROC LOADFOODBYID
+go
+create PROC LOADFOODBYID
+@id int
+as
+begin 
+	select *
+	from MENUFOOD
+	where IDFood=@id
+	order by IDFood, Name	
+end
+go
 
 
 --exec LOADACCOUNT 
