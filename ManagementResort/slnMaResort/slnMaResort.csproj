@@ -54,9 +54,12 @@
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\TableDAL.cs" />
+    <Compile Include="DAL\VoucherDAL.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\CustomerDTO.cs" />
     <Compile Include="DTO\EmployeeDTO.cs" />
+    <Compile Include="DTO\TableDTO.cs" />
+    <Compile Include="DTO\testDTO.cs" />
     <Compile Include="Forms\ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +303,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="BLL\VoucherBLL.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
