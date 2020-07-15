@@ -268,7 +268,7 @@ go
 
 create PROC INSERTVOUCHER
 @idvoucher int,
-@area nvarchar(50),
+@area int,
 @name varchar(50),
 @startdate datetime,
 @exptirationdate datetime,
@@ -279,7 +279,21 @@ begin
 	values (@idvoucher,@area,@name,@startdate,@exptirationdate,@percents)
 end
 go
-
+--16.3 update Voucher
+if OBJECT_ID('UPDATEVOUCHER') is not null drop PROC UPDATEVOUCHER
+go
+create PROC UPDATEVOUCHER
+@ID int,
+@area int,
+@name nvarchar(200),
+@startDate datetime,
+@expriration datetime,
+@percents int
+as
+begin 
+	UPDATE VOUCHER set Area = @area, Name = @startDate, ExprirationDate = @expriration, Percents = @percents where IDVoucher = @ID
+end
+go
 
 --17. Load dữ liệu Employee theo nhóm Area.
 if OBJECT_ID('LOADEMPOYEETOAREA') is not null drop PROC LOADEMPOYEETOAREA

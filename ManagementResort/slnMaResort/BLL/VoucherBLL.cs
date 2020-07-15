@@ -34,10 +34,7 @@ namespace slnMaResort.BLL
             DataTable dt = VoucherDAL.Instance.loadVoucher();
             return dt;
         }
-        public void inserVoucher(int IdVoucher,string Area,string NameVoucher,DateTime startDate,DateTime expriration,int precent)
-        {
-            VoucherDAL.Instance.insertVou(IdVoucher, Area, NameVoucher, startDate, expriration, precent);
-        }
+       
 
 
         public void loadAllVouDGV(DataGridView dgv)
@@ -54,9 +51,14 @@ namespace slnMaResort.BLL
 
         }
         //Them voucher moi
-        public void insertVou(int ID, string Area, string Name, DateTime StartDate, DateTime Expriration, int Percents)
+        public void insertVou(int ID, int Area, string Name, DateTime StartDate, DateTime Expriration, int Percents)
         {
             VoucherDAL.Instance.insertVou(ID, Area, Name, StartDate, Expriration, Percents);
+        }
+
+        public void updateVou(int ID, int Area, string Name, DateTime StartDate, DateTime Expriration, int Percents)
+        {
+            VoucherDAL.Instance.updateVou(ID, Area, Name, StartDate, Expriration, Percents);
         }
         //XOa voucher
         public void deleteVou(int ID)

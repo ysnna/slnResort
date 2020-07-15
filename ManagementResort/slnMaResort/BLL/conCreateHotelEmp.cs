@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using slnMaResort.BLL;
 using slnMaResort.DAL;
 using System.IO;
+using System.Data;
 namespace slnMaResort.BLL
 {
     //FACTORY METHOD
-    class conCreateHotelEmp: IEmployee
+    class conCreateHotelEmp : IEmployee
     {
         public void insertEmp(string ID, string fullName, MemoryStream ava, DateTime birthday
               , int Gender, string add, string idcard, string phone,
@@ -27,4 +28,11 @@ namespace slnMaResort.BLL
         {
             EmployeeDAL.Instance.deleteEmployee(ID);
         }
+        public DataTable loadEmployee()
+        {
+            DataTable dt = EmployeeDAL.Instance.loadEmpbyArea(2);
+            return dt;
+        }
+
     }
+}

@@ -35,14 +35,20 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
-        public void insertVou(int ID, string Area,string Name, DateTime StartDate, DateTime Expriration, int Percents)
+        public void insertVou(int ID, int Area,string Name, DateTime StartDate, DateTime Expriration, int Percents)
         {
             string sql = @"EXEC INSERTVOUCHER '" + ID + "','" + Area + "','" + Name + "','" + StartDate
                 + "','" + Expriration + "','" + Percents + "'";
               
             MY_DB.Instance.executeQuery(sql);
         }
+        public void updateVou(int ID, int Area, string Name, DateTime StartDate, DateTime Expriration, int Percents)
+        {
+            string sql = @"EXEC UPDATEVOUCHER '" + ID + "','" + Area + "','" + Name + "','" + StartDate
+                + "','" + Expriration + "','" + Percents + "'";
 
+            MY_DB.Instance.executeQuery(sql);
+        }
         public void deleteVou(int ID)
         {
             string sql = @"EXEC DELETEVOUCHER'" + ID + "'";

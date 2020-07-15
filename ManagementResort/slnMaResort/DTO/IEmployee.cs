@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using slnMaResort.BLL;
 using slnMaResort.DAL;
 using System.IO;
+using System.Data;
+
 namespace slnMaResort.BLL
 {
     //FACTORY METHOD
@@ -22,7 +24,8 @@ namespace slnMaResort.BLL
          int IDBaseSalary, int Area, string state);
 
         void deleteEmployee(string ID);
-            //EmployeeDAL.Instance.insertEmployee(ID, fullName, ava, birthday, Gender, add, idcard, phone, IDBaseSalary, Area, state);
+
+        DataTable loadEmployee();
 
     }
 }

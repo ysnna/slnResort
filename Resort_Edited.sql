@@ -279,7 +279,7 @@ go
 create table VOUCHER
 (
 IDVoucher int not null,
-Area nvarchar(200) not null,
+Area int not null,
 Name nvarchar(200) not null,
 StartDate datetime not null,
 ExprirationDate datetime not null,
@@ -641,6 +641,7 @@ alter table  INVOICE
 with nocheck add constraint fk_INVOICE_VOUCHER
 foreign key (IDVoucher) references VOUCHER(IDVoucher);
 go
+
 
 
 alter table  ACCOUNT_PERMISSION

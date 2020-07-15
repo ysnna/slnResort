@@ -69,6 +69,11 @@ namespace slnMaResort.DAL
             string sql = @"EXEC DELETEEMPLOYEE '" + ID + "'";
             MY_DB.Instance.executeQuery(sql);
         }
+        public void loadIDAREAEMP()
+        {
+            string sql = "Select * From AREA, EMPLOYEE Where AREA.IDArea = EMPLOYEE.IDArea";
+            MY_DB.Instance.executeQuery(sql);
+        }
 
     }
 }

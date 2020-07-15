@@ -1,22 +1,21 @@
 ﻿using slnMaResort.BLL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace slnMaResort.DTO
 {
-    abstract class abManager
+    public abstract class abManager
     {
         public abstract IEmployee CallEmployee();
 
-        public void SomeOperation()
+        public DataTable SomeOperation()
         {
-            // Call the factory method to create a Product object.
-            //var product = CallEmployee();
-            //int ID;
-            //var result = product.deleteEmployee(ID);
+            DataTable dt = CallEmployee().loadEmployee();
+            return dt;
         }
 
     }
