@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using slnMaResort.BLL;
+using slnMaResort.DTO;
+using slnMaResort.DAL;
 
 namespace slnMaResort.RestaurantUC
 {
@@ -16,59 +18,97 @@ namespace slnMaResort.RestaurantUC
         public TablesUC()
         {
             InitializeComponent();
-            TableBLL.Instance.LoadTable(pnTableLayout);
+            LoadTable(pnTableLayout);
+            TableBLL.Instance.loadTableDGV(dgvMenu);
+        }
+
+        public void LoadTable(FlowLayoutPanel flp)
+        {
+            List<TableDTO> tableDTOs = new List<TableDTO>();
+            DataTable dt = new DataTable();
+            dt = TableDAL.Instance.loadTable();
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    TableDTO tableDTO = new TableDTO(item);
+                    tableDTOs.Add(tableDTO);
+                }
+                foreach (TableDTO item in tableDTOs)
+                {
+                    // 145, 221
+                    Button bt = new Button()
+                    {
+                        Width = TableDTO.width,
+                        Height = TableDTO.height
+                    };
+                    bt.Font = new Font("Times New Roman", 22F, FontStyle.Regular, GraphicsUnit.Point);
+
+                    bt.ForeColor = Color.White;
+                    bt.BackColor = flp.BackColor;
+                    bt.FlatAppearance.BorderColor = Color.White;
+                    bt.FlatAppearance.BorderSize = 3;
+                    bt.FlatStyle = FlatStyle.Flat;
+
+                    if (item.State == "Empty")
+                        bt.BackColor = Color.MediumAquamarine;
+                    else
+                    if (item.State == "Full")
+                        bt.BackColor = Color.DarkKhaki;
+                    else
+                        bt.BackColor = Color.LightSkyBlue;
+                    bt.Click += btTable_Click;
+                    bt.Tag = item;
+                    bt.Text = item.ID.ToString() + Environment.NewLine + item.State;
+                    flp.Controls.Add(bt);
+                    flp.Refresh();
+                }
+            }
+        }
+
+        void btTable_Click(object sender, EventArgs e)
+        {
+            int TableID = ((sender as Button).Tag as TableDTO).ID;
+            TableDTO.IDTableSelected = TableID;
+            txtTableID.Text = TableID.ToString();
+
         }
 
         private void btOrder_Click(object sender, EventArgs e)
         {
             if (checkOrderUC.Visible == true)
+            {
                 checkOrderUC.Visible = false;
+                btAddFood.Enabled = true;
+            }
             else
             {
                 checkOrderUC.Visible = true;
-               
+                checkOrderUC.BringToFront();
+                btAddFood.Enabled = false;
             }
         }
 
-        #region TableOrder
-        public void TableListLoad()
-        {
-            pnTableLayout.Controls.Clear();
-            List<table> tableList = new List<table>();
-            //TableOrder tbO = new TableOrder();
-            DataTable dt = new DataTable();
-            //dt = tbO.LoadTable();
-            foreach (DataRow item in dt.Rows)
-            {
-                table table = new table(item);
-                tableList.Add(table);
-            }
-
-            foreach (table item in tableList)
-            {
-                Button bnt = new Button() { Width = table.TableWidth, Height = table.tableHeight };
-                bnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                bnt.ForeColor = Color.Yellow;
-                if (item.Status == "Trống")
-                    bnt.BackColor = Color.Blue;
-                else
-                    if (item.Status == "Bận")
-                    bnt.BackColor = Color.Red;
-                else
-                    bnt.BackColor = Color.Chocolate;
-                bnt.Text = item.Name + Environment.NewLine + item.Status;
-                //bnt.Click += bntTable_Click;
-                bnt.Tag = item;
-                pnTableLayout.Controls.Add(bnt);
-                pnTableLayout.Refresh();
-            }
-        }
-
-        #endregion
-
-        private void TablesUC_Load(object sender, EventArgs e)
+        public void TablesUC_Load(object sender, EventArgs e)
         {
             //TableListLoad();
+        }
+
+        private void btAddFood_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void dgvMenu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id;
+            id = Convert.ToInt32(dgvMenu.CurrentRow.Cells[0].Value);
+            DataTable dt = TableBLL.Instance.loadDesciptrionByID(id);
+            txtDescription.Text = dt.Rows[0][0].ToString();
+        }
+
+        private void pnTableLayout_Click(object sender, EventArgs e)
+        {
+            txtTableID.Text = TableDTO.IDTableSelected.ToString();
         }
     }
 }
