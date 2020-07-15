@@ -30,53 +30,64 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEmployee = new System.Windows.Forms.TabPage();
-            this.ucListEmployee1 = new slnMaResort.HomeUC.ucListEmployee();
             this.tbSalary = new System.Windows.Forms.TabPage();
             this.tbStatistics = new System.Windows.Forms.TabPage();
             this.tbVoucher = new System.Windows.Forms.TabPage();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtPrecents = new System.Windows.Forms.TextBox();
-            this.txtIDVoucher = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtArea = new System.Windows.Forms.TextBox();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpExprirationDate = new System.Windows.Forms.DateTimePicker();
-            this.btnAddV = new System.Windows.Forms.Button();
-            this.btnExitV = new System.Windows.Forms.Button();
-            this.btnDeleteV = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.picService = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.tbService = new System.Windows.Forms.TabPage();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btnAddS = new System.Windows.Forms.Button();
-            this.btnEditS = new System.Windows.Forms.Button();
-            this.btnDeleteS = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.ucListEmployee1 = new slnMaResort.HomeUC.ucListEmployee();
+            this.homeVoucherUC = new slnMaResort.HomeUC.HomeVoucherUC();
+            this.statisticsUC1 = new slnMaResort.HomeUC.StatisticsUC();
+            this.menuStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabEmployee.SuspendLayout();
+            this.tbStatistics.SuspendLayout();
             this.tbVoucher.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picService)).BeginInit();
-            this.tbService.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // menuStrip
+            // 
+            this.menuStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.connectionToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(1245, 24);
+            this.menuStrip.TabIndex = 1;
+            this.menuStrip.Text = "menuStrip1";
+            // 
+            // connectionToolStripMenuItem
+            // 
+            this.connectionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loginToolStripMenuItem,
+            this.logToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.connectionToolStripMenuItem.Name = "connectionToolStripMenuItem";
+            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.connectionToolStripMenuItem.Text = "Connection";
+            // 
+            // loginToolStripMenuItem
+            // 
+            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.loginToolStripMenuItem.Text = "Login";
+            // 
+            // logToolStripMenuItem
+            // 
+            this.logToolStripMenuItem.Name = "logToolStripMenuItem";
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.logToolStripMenuItem.Text = "Logout";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabEmployee);
             this.tabControl1.Controls.Add(this.tbSalary);
             this.tabControl1.Controls.Add(this.tbStatistics);
@@ -91,39 +102,31 @@
             // tabEmployee
             // 
             this.tabEmployee.Controls.Add(this.ucListEmployee1);
-            this.tabEmployee.Location = new System.Drawing.Point(4, 32);
+            this.tabEmployee.Location = new System.Drawing.Point(4, 28);
             this.tabEmployee.Name = "tabEmployee";
             this.tabEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmployee.Size = new System.Drawing.Size(1858, 900);
+            this.tabEmployee.Size = new System.Drawing.Size(1858, 904);
             this.tabEmployee.TabIndex = 0;
             this.tabEmployee.Text = "Employee";
             this.tabEmployee.UseVisualStyleBackColor = true;
             // 
-            // ucListEmployee1
-            // 
-            this.ucListEmployee1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ucListEmployee1.Location = new System.Drawing.Point(0, 34);
-            this.ucListEmployee1.Margin = new System.Windows.Forms.Padding(4);
-            this.ucListEmployee1.Name = "ucListEmployee1";
-            this.ucListEmployee1.Size = new System.Drawing.Size(1027, 481);
-            this.ucListEmployee1.TabIndex = 0;
-            // 
             // tbSalary
             // 
-            this.tbSalary.Location = new System.Drawing.Point(4, 32);
+            this.tbSalary.Location = new System.Drawing.Point(4, 28);
             this.tbSalary.Name = "tbSalary";
             this.tbSalary.Padding = new System.Windows.Forms.Padding(3);
-            this.tbSalary.Size = new System.Drawing.Size(1858, 900);
+            this.tbSalary.Size = new System.Drawing.Size(1858, 904);
             this.tbSalary.TabIndex = 1;
             this.tbSalary.Text = "Salary";
             this.tbSalary.UseVisualStyleBackColor = true;
             // 
             // tbStatistics
             // 
-            this.tbStatistics.Location = new System.Drawing.Point(4, 32);
+            this.tbStatistics.Controls.Add(this.statisticsUC1);
+            this.tbStatistics.Location = new System.Drawing.Point(4, 28);
             this.tbStatistics.Name = "tbStatistics";
             this.tbStatistics.Padding = new System.Windows.Forms.Padding(3);
-            this.tbStatistics.Size = new System.Drawing.Size(1858, 900);
+            this.tbStatistics.Size = new System.Drawing.Size(1858, 904);
             this.tbStatistics.TabIndex = 2;
             this.tbStatistics.Text = "Statistics";
             this.tbStatistics.UseVisualStyleBackColor = true;
@@ -322,9 +325,10 @@
             this.tbService.Controls.Add(this.textBox1);
             this.tbService.Controls.Add(this.picService);
             this.tbService.Location = new System.Drawing.Point(4, 32);
+            this.tbService.Location = new System.Drawing.Point(4, 28);
             this.tbService.Name = "tbService";
             this.tbService.Padding = new System.Windows.Forms.Padding(3);
-            this.tbService.Size = new System.Drawing.Size(1858, 900);
+            this.tbService.Size = new System.Drawing.Size(1858, 904);
             this.tbService.TabIndex = 3;
             this.tbService.Text = "Service";
             this.tbService.UseVisualStyleBackColor = true;
@@ -443,13 +447,44 @@
             this.label11.Size = new System.Drawing.Size(88, 23);
             this.label11.TabIndex = 14;
             this.label11.Text = "Available";
+            this.tbVoucher.Controls.Add(this.homeVoucherUC);
+            this.tbVoucher.Location = new System.Drawing.Point(4, 28);
+            this.tbVoucher.Name = "tbVoucher";
+            this.tbVoucher.Padding = new System.Windows.Forms.Padding(3);
+            this.tbVoucher.Size = new System.Drawing.Size(1858, 904);
+            this.tbVoucher.TabIndex = 4;
+            this.tbVoucher.Text = "Voucher";
+            this.tbVoucher.UseVisualStyleBackColor = true;
+            // 
+            // ucListEmployee1
+            // 
+            this.ucListEmployee1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ucListEmployee1.Location = new System.Drawing.Point(0, 0);
+            this.ucListEmployee1.Margin = new System.Windows.Forms.Padding(4);
+            this.ucListEmployee1.Name = "ucListEmployee1";
+            this.ucListEmployee1.Size = new System.Drawing.Size(1851, 883);
+            this.ucListEmployee1.TabIndex = 0;
+            // 
+            // homeVoucherUC
+            // 
+            this.homeVoucherUC.Location = new System.Drawing.Point(0, 0);
+            this.homeVoucherUC.Name = "homeVoucherUC";
+            this.homeVoucherUC.Size = new System.Drawing.Size(1914, 964);
+            this.homeVoucherUC.TabIndex = 0;
+            // 
+            // statisticsUC1
+            // 
+            this.statisticsUC1.Location = new System.Drawing.Point(0, 0);
+            this.statisticsUC1.Name = "statisticsUC1";
+            this.statisticsUC1.Size = new System.Drawing.Size(1914, 964);
+            this.statisticsUC1.TabIndex = 0;
             // 
             // HomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1037, 614);
+            this.ClientSize = new System.Drawing.Size(1245, 703);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
@@ -467,6 +502,8 @@
             this.tbService.ResumeLayout(false);
             this.tbService.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tbStatistics.ResumeLayout(false);
+            this.tbVoucher.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -510,5 +547,7 @@
         private System.Windows.Forms.TextBox txtPrecents;
         private System.Windows.Forms.TextBox txtIDVoucher;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private HomeUC.HomeVoucherUC homeVoucherUC;
+        private HomeUC.StatisticsUC statisticsUC1;
     }
 }

@@ -14,17 +14,16 @@ namespace slnMaResort.DTO
     {
         public int ID { get; set; }
         public string Sate { get; set; }
-        public static int width = 145;
-        public static int height = 221;
-        public TableDTO(int id,string state)
-        { 
+        public static int width = 220;
+        public static int height = 235;
+        public TableDTO(int id, string state)
+        {
             this.ID = id;
             this.Sate = state;
         }
         public TableDTO(DataRow row)
         {
             this.ID = Convert.ToInt32(row["IDTable"]);
-            
         }
     }
 }

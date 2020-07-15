@@ -30,6 +30,9 @@ namespace slnMaResort.Forms
             this.Controls.Add(ucEmployee);
         }
 
-      
+        private void ucEmployee1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
