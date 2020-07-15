@@ -244,6 +244,25 @@ end
 go
 
 
+--16.3 Update Voucher
+if OBJECT_ID('UPDATEVOUCHER') is not null drop PROC UPDATEVOUCHER
+go
+
+create PROC UPDATEVOUCHER
+@Idvou int,
+@area nvarchar(50) ,
+@name varchar(50),
+@startDate datetime,
+@exprirationdate datetime,
+@percent int
+as
+begin 
+	UPDATE VOUCHER set Area= @area, Name = @name, StartDate = @startDate, ExprirationDate = @exprirationdate,Percents=@percent  where IDVoucher = @Idvou
+end
+go
+
+
+
 --17. Load dữ liệu Employee theo nhóm Area.
 if OBJECT_ID('LOADEMPOYEETOAREA') is not null drop PROC LOADEMPOYEETOAREA
 go

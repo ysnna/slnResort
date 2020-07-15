@@ -104,6 +104,7 @@ Phone varchar(10)  null,
 IDBaseSalary int null,
 IDArea int null,
 State nvarchar(200) not null,
+Gamil nvarchar(200)  null,
 constraint pk_EMPLOYEE primary key (IDEmployee)
 );
 go
