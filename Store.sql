@@ -849,6 +849,24 @@ begin
 end
 go
 
+--40. insert bookroom.
+if OBJECT_ID('INSERTBOOKROOM') is not null drop PROC INSERTBOOKROOM
+go
+
+create PROC INSERTBOOKROOM
+@idCard varchar(10),
+@idRoom varchar(50),
+@dateBooked datetime,
+@dateCheckin datetime,
+@dateCheckout datetime
+as
+begin
+	insert into BOOK_ROOM(IDCard,IDRoom,DateBooked,DateCheckin,DateCheckout)
+values (@idCard,@idRoom, @dateBooked, @dateCheckin, @dateCheckout)
+end
+go
+--exec INSERTBOOKROOM '0988876567','R0022','05/23/2020 12:00','05/30/2020 12:00','06/10/2020 13:00' --mm/dd/yyyy
+
 
 --exec LOADACCOUNT 
 --exec LOADAREA
