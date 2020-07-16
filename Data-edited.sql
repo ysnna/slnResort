@@ -320,38 +320,38 @@ values
 
 insert into ROOMS(IDRoom,Requirement,KindOf,Type,Price,State)
 values
-('R0001',N'Phòng thuộc hạng vip vip',N'Phòng đơn',N'Phòng Suite (SUT)','25000000','Null'),
+('R0001',N'Phòng thuộc hạng vip vip',N'Phòng đơn',N'Phòng Suite (SUT)','25000000','Empty'),
 ('R0002',N'Phòng thuộc hạng vip vip',N'Phòng đôi',N'Phòng Deluxe (DLX)','40000000','Booked'),
 ('R0003',N'Phòng thuộc hạng vip vip',N'Phòng đơn',N'Phòng Suite (SUT)','25000000','Booked'),
-('R0004',N'Phòng thuộc hạng vip vip',N'Phòng đơn',N'Phòng Suite (SUT)','25000000','Null'),
+('R0004',N'Phòng thuộc hạng vip vip',N'Phòng đơn',N'Phòng Suite (SUT)','25000000','Empty'),
 ('R0005',N'Phòng thuộc hạng vip vip',N'Phòng đơn',N'Phòng Suite (SUT)','25000000','Full'),
-('R0006',N'Phòng thuộc hạng dành cho doanh nghiệp',N'Phòng tập thể (8 giường)',N'Phòng Suite (SUT)','55000000','Null'),
+('R0006',N'Phòng thuộc hạng dành cho doanh nghiệp',N'Phòng tập thể (8 giường)',N'Phòng Suite (SUT)','55000000','Empty'),
 ('R0007',N'Phòng thuộc hạng dành cho doanh nghiệp',N'Phòng tập thể (8 giường)',N'Phòng Suite (SUT)','55000000','Full'),
-('R0008',N'Phòng thuộc hạng dành cho doanh nghiệp',N'Phòng tập thể (8 giường)',N'Phòng Suite (SUT)','55000000','Null'),
-('R0009',N'Phòng thuộc hạng dành cho doanh nghiệp',N'Phòng tập thể (8 giường)',N'Phòng Suite (SUT)','55000000','Null'),
+('R0008',N'Phòng thuộc hạng dành cho doanh nghiệp',N'Phòng tập thể (8 giường)',N'Phòng Suite (SUT)','55000000','Empty'),
+('R0009',N'Phòng thuộc hạng dành cho doanh nghiệp',N'Phòng tập thể (8 giường)',N'Phòng Suite (SUT)','55000000','Empty'),
 ('R0010',N'Phòng thuộc hạng dành cho doanh nghiệp',N'Phòng tập thể (8 giường)',N'Phòng Suite (SUT)','55000000','Full'),
 ('R0011',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Suite (SUT)','5000000','Full'),
-('R0012',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Suite (SUT)','5000000','Null'),
+('R0012',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Suite (SUT)','5000000','Empty'),
 ('R0013',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Standard (STD)','2500000','Full'),
 ('R0014',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Suite (SUT)','5000000','Full'),
-('R0015',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Suite (SUT)','5000000','Null'),
-('R0016',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Standard (STD)','2500000','Null'),
-('R0017',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Standard (STD)','2500000','Null'),
-('R0018',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Suite (SUT)','5000000','Null'),
+('R0015',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Suite (SUT)','5000000','Empty'),
+('R0016',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Standard (STD)','2500000','Empty'),
+('R0017',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Standard (STD)','2500000','Empty'),
+('R0018',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Suite (SUT)','5000000','Empty'),
 ('R0019',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Suite (SUT)','5000000','Full'),
 ('R0020',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Standard (STD)','2500000','Full'),
-('R0021',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Standard (STD)','2500000','Null'),
-('R0022',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Standard (STD)','3500000','Null'),
-('R0023',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Standard (STD)','3500000','Null'),
+('R0021',N'Phòng dành cho khách du lịch',N'Phòng đơn',N'Phòng Standard (STD)','2500000','Empty'),
+('R0022',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Standard (STD)','3500000','Empty'),
+('R0023',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Standard (STD)','3500000','Empty'),
 ('R0024',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Standard (STD)','3500000','Full'),
-('R0025',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Standard (STD)','3500000','Null'),
-('R0026',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Suite (SUT)','4500000','Null'),
-('R0027',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Suite (SUT)','4500000','Null'),
+('R0025',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Standard (STD)','3500000','Empty'),
+('R0026',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Suite (SUT)','4500000','Empty'),
+('R0027',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Suite (SUT)','4500000','Empty'),
 ('R0028',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Suite (SUT)','4500000','Full'),
 ('R0029',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Suite (SUT)','4500000','Full'),
-('R0030',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Suite (SUT)','4500000','Null'),
+('R0030',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Suite (SUT)','4500000','Empty'),
 ('R0031',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Suite (SUT)','4500000','Full'),
-('R0032',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Suite (SUT)','4500000','Null')
+('R0032',N'Phòng dành cho khách du lịch',N'Phòng đôi',N'Phòng Suite (SUT)','4500000','Empty')
 
 insert into CUSTOMER(IDCustomer,Name,Gender,IDCard,IDRoom)
 values
@@ -368,16 +368,16 @@ values
 ('C0011',N'Thiên Tài','0','7654333456','R0014'),
 ('C0012',N'Minh Thiên','0','0278766272','R0029')
 
-insert into BOOK_ROOM(IDCustomer,IDRoom,DateBooked,DateCheckin,DateCheckout)
+insert into BOOK_ROOM(IDCard,IDRoom,DateBooked,DateCheckin,DateCheckout)
 values
-('C0001','R0001','05/05/2020 12:00','05/06/2020 12:00','05/16/2020 13:00'),
-('C0002','R0003','05/15/2020 15:20','05/16/2020 18:00','05/20/2020 12:00'),
-('C0003','R0006','05/05/2020 08:20','05/05/2020 08:00','05/25/2020 15:30'),
-('C0004','R0009','05/05/2020 09:00','05/05/2020 09:00','05/20/2020 16:00'),
-('C0005','R0010','05/05/2020 07:45','05/06/2020 08:00','05/21/2020 20:00'),
-('C0006','R0011','05/05/2020 06:30','05/05/2020 06:35','05/22/2020 11:30'),
-('C0011','R0002','05/05/2020 06:30','05/07/2020 06:35','05/22/2020 11:30'),
-('C0012','R0031','05/05/2020 06:30','05/08/2020 06:35','05/22/2020 11:30')
+('0988876567','R0001','05/05/2020 12:00','05/06/2020 12:00','05/16/2020 13:00'),
+('9898272625','R0003','05/15/2020 15:20','05/16/2020 18:00','05/20/2020 12:00'),
+('8737363533','R0006','05/05/2020 08:20','05/05/2020 08:00','05/25/2020 15:30'),
+('0980989878','R0009','05/05/2020 09:00','05/05/2020 09:00','05/20/2020 16:00'),
+('8766543456','R0010','05/05/2020 07:45','05/06/2020 08:00','05/21/2020 20:00'),
+('8871616151','R0011','05/05/2020 06:30','05/05/2020 06:35','05/22/2020 11:30'),
+('7654333456','R0002','05/05/2020 06:30','05/07/2020 06:35','05/22/2020 11:30'),
+('0278766272','R0031','05/05/2020 06:30','05/08/2020 06:35','05/22/2020 11:30')
 
 insert into COMMENTS(IDComment,Comment,IDCustomer,Rating)
 values
@@ -400,12 +400,12 @@ values
 
 insert into TABLES(IDTable,Slot,State)
 values
-('1','2','Pre oder'),
-('2','2','Pre oder'),
-('3','2','Pre oder'),
-('4','2','Pre oder'),
-('5','2','Pre oder'),
-('6','2','Pre oder'),
+('1','2','Pre order'),
+('2','2','Pre order'),
+('3','2','Pre order'),
+('4','2','Pre order'),
+('5','2','Pre order'),
+('6','2','Pre order'),
 ('7','2','Empty'),
 ('8','2','Empty'),
 ('9','2','Full'),
@@ -415,16 +415,16 @@ values
 ('13','4','Empty'),
 ('14','4','Empty'),
 ('15','4','Empty'),
-('16','4','Pre oder'),
-('17','4','Pre oder'),
-('18','4','Pre oder'),
+('16','4','Pre order'),
+('17','4','Pre order'),
+('18','4','Pre order'),
 ('19','4','Empty'),
 ('20','4','Empty'),
 ('21','6','Empty'),
 ('22','6','Empty'),
 ('23','6','Full'),
 ('24','6','Full'),
-('25','6','Pre oder'),
+('25','6','Pre order'),
 ('26','6','Empty'),
 ('27','6','Empty'),
 ('28','6','Empty'),
@@ -441,8 +441,8 @@ values
 ('39','8','Empty'),
 ('40','8','Empty'),
 ('41','16','Empty'),
-('42','16','Pre oder'),
-('43','16','Pre oder'),
+('42','16','Pre order'),
+('43','16','Pre order'),
 ('44','16','Empty'),
 ('45','16','Empty'),
 ('46','16','Empty'),
@@ -451,20 +451,20 @@ values
 ('49','16','Full'),
 ('50','16','Full')
 
-insert into BOOK_TABLE(IDTable,IDCustomer,DateBooked,Timeline,State)			----------------------------------------------------
+insert into BOOK_TABLE(IDTable,Phone,DateBooked,Timeline,State)			----------------------------------------------------
 values
-('1','C0001','05/22/2020 20:00','05/22/2020 21:30','off'),
-('2','C0002','05/01/2020 19:30','05/01/2020 20:30','off'),
-('3','C0003','05/01/2020 18:00','05/01/2020 19:00','off'),
-('4','C0004','05/01/2020 18:00','05/01/2020 19:00','off'),
-('5','C0005','05/05/2020 16:00','05/05/2020 17:00','off'),
-('6','C0006','05/05/2020 16:00','05/05/2020 17:00','off'),
-('16','C0007','05/05/2020 16:00','05/05/2020 17:00','off'),
-('17','C0008','05/01/2020 19:30','05/01/2020 20:30','off'),
-('18','C0009','05/01/2020 19:30','05/01/2020 20:30','off'),
-('42','C0010','05/22/2020 20:00','05/22/2020 21:30','off'),
-('43','C0011','05/22/2020 20:00','05/22/2020 21:30','off'),
-('25','C0012','05/22/2020 20:00','05/22/2020 21:30','off')
+('1','0988876567','05/22/2020 20:00','05/22/2020 21:30','off'),
+('2','9898272625','05/01/2020 19:30','05/01/2020 20:30','off'),
+('3','8737363533','05/01/2020 18:00','05/01/2020 19:00','off'),
+('4','0980989878','05/01/2020 18:00','05/01/2020 19:00','off'),
+('5','8766543456','05/05/2020 16:00','05/05/2020 17:00','off'),
+('6','8871616151','05/05/2020 16:00','05/05/2020 17:00','off'),
+('16','5465555656','05/05/2020 16:00','05/05/2020 17:00','off'),
+('17','8762726252','05/01/2020 19:30','05/01/2020 20:30','off'),
+('18','8777272727','05/01/2020 19:30','05/01/2020 20:30','off'),
+('42','8787878787','05/22/2020 20:00','05/22/2020 21:30','off'),
+('43','7654333456','05/22/2020 20:00','05/22/2020 21:30','off'),
+('25','0278766272','05/22/2020 20:00','05/22/2020 21:30','off')
 
 insert into VOUCHER(IDVoucher,Area,Name,StartDate,ExprirationDate,Percents)		---bổ sung thêm thời gian. tạo mã code cho ID Voucher
 values
@@ -603,5 +603,3 @@ values
 ('IV0008',3,'3','300000'),
 ('IV0012',5,'3','300000'),
 ('IV0012',4,'3','300000')
-
-

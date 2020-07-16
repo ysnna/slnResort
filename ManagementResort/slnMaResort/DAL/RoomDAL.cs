@@ -37,5 +37,39 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
+        public DataTable searchStateRoom(string state)
+        {
+            string sql = @"EXEC SELETESTATEROOM '" + state + "'";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
+        public DataTable searchIDcard(string IDCard)
+        {
+            string sql = @"EXEC SEARCHCUSTOMERBOOKROOM '" + IDCard + "'";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
+
+        public DataTable searchDataBookRoom(string ID)
+        {
+            string sql = @"EXEC SEARCHDATABOOKROOM '" + ID + "'";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
+        public DataTable loadBooked()
+        {
+            string sql = @"EXEC LOADBOOKROOM ";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
+
     }
 }

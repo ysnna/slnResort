@@ -22,13 +22,15 @@ namespace slnMaResort.HotelUC
 
         private void btBooking_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void RoomUC_Load(object sender, EventArgs e)
         {
             LoadRoom(pnTableLayout);
             RoomBLL.Instance.loadTableDGV(dgvRoom);
+            RoomBLL.Instance.loadBooked(dgvRoomBooked);
+            btBooking.Enabled = false;
         }
         public void LoadRoom(FlowLayoutPanel flp)
         {
@@ -78,8 +80,8 @@ namespace slnMaResort.HotelUC
         {
             string RoomID = ((sender as Button).Tag as RoomDTO).ID;
             RoomDTO.IDRoomSelected = RoomID;
-            txtTableID.Text = RoomID.ToString();
-
+            txtRoomID.Text = RoomID.ToString();
+            //RoomBLL.Instance.searchDataBookRoom(dgvRoomBooked, txtSearchIDCard.Text);
         }
 
         private void dgvRoom_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -87,7 +89,52 @@ namespace slnMaResort.HotelUC
             string id;
             id = dgvRoom.CurrentRow.Cells[0].Value.ToString();
             DataTable dt = RoomBLL.Instance.loadRequimentByID(id);
-            txtRequiment.Text = dt.Rows[0][0].ToString();
+            if (dt.Rows.Count > 0)
+            {
+                txtRoomID.Text = dt.Rows[0][0].ToString();
+                txtRequiment.Text = dt.Rows[0][1].ToString();
+                string checkState = dt.Rows[0][5].ToString();
+                if (checkState == "Empty")
+                    btBooking.Enabled = true;
+                else btBooking.Enabled = false;
+            }
+        }
+        private void txtSearchIDCard_KeyUp(object sender, KeyEventArgs e)
+        {
+            RoomBLL.Instance.searchMember(dgvRoomBooked, txtSearchIDCard.Text);
+        }
+
+        private void btSearch_Click(object sender, EventArgs e)
+        {
+            RoomBLL.Instance.searchMember(dgvRoomBooked, txtSearchIDCard.Text);
+        }
+
+        private void dgvRoomBooked_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string id;
+            id = dgvRoomBooked.CurrentRow.Cells[0].Value.ToString();
+            DataTable dt = RoomBLL.Instance.searchDataBookRoom(id);
+            if (dt.Rows.Count > 0)
+            {
+                txtIDCardCustomer.Text = dt.Rows[0][0].ToString();
+                txtRoomID.Text = dt.Rows[0][1].ToString();
+                dtpDataBooked.Value = Convert.ToDateTime(dt.Rows[0][2].ToString());
+                dtpTimeBooked.Value = Convert.ToDateTime(dt.Rows[0][2].ToString());
+                dtpArrivalDate.Value = Convert.ToDateTime(dt.Rows[0][3].ToString());
+                dtpArrivalTime.Value = Convert.ToDateTime(dt.Rows[0][3].ToString());
+                dtpCheckoutDate.Value = Convert.ToDateTime(dt.Rows[0][4].ToString());
+                dtpCheckoutTime.Value = Convert.ToDateTime(dt.Rows[0][4].ToString());
+                datePicker.Value = Convert.ToDateTime(dt.Rows[0][3].ToString());
+                timePicker.Value = Convert.ToDateTime(dt.Rows[0][3].ToString());
+                cbRent.Checked = true;
+            }
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string index = cbCategory.Text.ToLower();
+            if (index=="all") RoomBLL.Instance.loadTableDGV(dgvRoom);
+            else RoomBLL.Instance.searchStateRoom(dgvRoom,index);
         }
     }
 }

@@ -29,7 +29,6 @@ namespace slnMaResort.BLL
         public void loadTableDGV(DataGridView dgv)
         {
             dgv.RowTemplate.Height = 40;
-            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgv.AllowUserToAddRows = false;
             dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
             DataTable dt = TableDAL.Instance.loadTables();
@@ -38,11 +37,33 @@ namespace slnMaResort.BLL
         public void loadTableDGVOCheckOrder(DataGridView dgv)
         {
             dgv.RowTemplate.Height = 40;
-            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgv.AllowUserToAddRows = false;
             dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
             DataTable dt = TableDAL.Instance.loadTable();
             dgv.DataSource = dt;
+        }
+
+        public void loadTableBookTable(DataGridView dgv)
+        {
+            dgv.RowTemplate.Height = 40;
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DataTable dt = TableDAL.Instance.loadTableBookTable();
+            dgv.DataSource = dt;
+        }
+        public void searchMember(DataGridView dgv, string phone)
+        {
+            dgv.RowTemplate.Height = 40;
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DataTable dt = TableDAL.Instance.searchMemberByPhone(phone);
+            dgv.DataSource = dt;
+        }
+
+        public DataTable searchIDTable(int ID)
+        {
+            DataTable dt = TableDAL.Instance.searchIDTable(ID);
+            return dt;
         }
 
         public DataTable loadDesciptrionByID(int ID)

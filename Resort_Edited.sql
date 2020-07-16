@@ -298,7 +298,7 @@ IDCustomer varchar(50) not null,
 Name nvarchar(100) not null,
 Birthday date null,
 Gender bit not null,
-Phone int null,
+Phone varchar(10) null,
 IDCard varchar(10) not null,
 IDRoom varchar(50) not null,
 constraint pk_CUSTOMER primary key(IDCustomer)
@@ -339,7 +339,7 @@ go
 --create BOOK_ROOM
 create table BOOK_ROOM
 (
-IDCustomer varchar(50) not null,
+IDCard varchar(10) not null,
 IDRoom varchar(50) not null,
 DateBooked datetime not null,
 DateCheckin datetime not null,
@@ -360,7 +360,6 @@ Picture image null,
 Description nvarchar(500) not null,
 Price float not null,
 Available int not null,
-State nvarchar(50) null,
 constraint pk_SERVICES primary key(IDService)
 );
 go
@@ -397,7 +396,7 @@ go
 create table BOOK_TABLE
 (
 IDTable int not null,
-IDCustomer varchar(50) not null,
+Phone varchar(10) not null,
 DateBooked datetime null,
 Timeline datetime null,
 State nvarchar(200) null,

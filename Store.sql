@@ -196,7 +196,7 @@ create PROC SEARCHROOMREQUIMENTBYID
 @id varchar(50)
 as
 begin 
-	select Requirement
+	select *
 	from ROOMS
 	where IDRoom=@id
 end
@@ -492,9 +492,10 @@ begin
 	else
 		throw 5000, 'Permission not exist', 1;
 end
+go
 
 --23. Checkout customer cho bảng booktable input(customer)
-if OBJECT_ID('CHECKCUSTOMERBOOKTABLE') is not null drop PROC CHECKCUSTOMERBOOKTABLE
+/*if OBJECT_ID('CHECKCUSTOMERBOOKTABLE') is not null drop PROC CHECKCUSTOMERBOOKTABLE
 go
 
 create PROC CHECKCUSTOMERBOOKTABLE
@@ -508,13 +509,33 @@ begin
 
 	if (@idCustomer is not null)
 		select *
-		from BOOK_TABLE
+		from BOOK_TABLE										--phone chứ không phải idcustomer
 		where IDCustomer = @idCustomer
 	else
 		throw 5000,  'Customer not exist', 1;
 end
-go
+go*/
 
+--==============================================================================================================================
+if OBJECT_ID('CHECKCUSTOMERBOOKTABLES') is not null drop PROC CHECKCUSTOMERBOOKTABLES
+go
+create PROC CHECKCUSTOMERBOOKTABLES
+@customer nvarchar(100)
+as
+begin
+	declare @phoneCustomer varchar(100)
+	select @phoneCustomer = Phone
+	from CUSTOMER
+	where Name = @customer
+
+	if (@phoneCustomer is not null)
+		select *
+		from BOOK_TABLE
+		where Phone = @phoneCustomer
+	else
+		throw 5000,  'Customer not exist', 1;
+end
+go
 
 --24.Load food
 
@@ -596,6 +617,293 @@ end
 go
 
 
+--24.1 AUTO INCREMENT Field Customer
+if OBJECT_ID('AUTOINCREMENTCUSTOMER') is not null drop PROC AUTOINCREMENTCUSTOMER
+go
+
+create PROC AUTOINCREMENTCUSTOMER
+as
+begin
+	select top 1 ('C' + Cast(Cast(SUBSTRING((IDCustomer), 2, 47) as int) + 1 as varchar)) as IDNewCustomer
+	from CUSTOMER
+	order by IDCustomer desc
+end
+go
+	
+--25.1 AUTO INCREMENT Field Invoice
+if OBJECT_ID('AUTOINCREMENTINVOICE') is not null drop PROC AUTOINCREMENTINVOICE
+go
+
+create PROC AUTOINCREMENTINVOICE
+as
+begin
+	select top 1 ('IV' + Cast(Cast(SUBSTRING((IDInvoice), 3, 47) as int) + 1 as varchar)) as IDNewInvoice
+	from INVOICE
+	order by IDInvoice desc
+end
+go
+
+--26. Select Invoice theo type = Park
+if OBJECT_ID('SELECTINVOICEPARK') is not null drop PROC SELECTINVOICEPARK
+go
+
+create PROC SELECTINVOICEPARK
+as
+begin
+	select *
+	from INVOICE
+	where Type = 'Park'
+end
+go
+--27. Select Invoice theo Type = Room
+if OBJECT_ID('SELECTINVOICEROOM') is not null drop PROC SELECTINVOICEROOM
+go
+
+create PROC SELECTINVOICEROOM
+as
+begin
+	select *
+	from INVOICE
+	where Type = 'Room'
+end
+go
+--28. Select Invoice theo Type = Service
+if OBJECT_ID('SELECTINVOICESERVICE') is not null drop PROC SELECTINVOICESERVICE
+go
+create PROC SELECTINVOICESERVICE
+as
+begin
+	select *
+	from INVOICE
+	where Type = 'Service'
+end
+go
+
+--29. Select Invoice theo Type = Food
+if OBJECT_ID('SELECTINVOICEFOOD') is not null drop PROC SELECTINVOICEFOOD
+go
+create PROC SELECTINVOICEFOOD
+as
+begin
+	select *
+	from INVOICE
+	where Type = 'Food'
+end
+go
+--30 Select Details Invoice theo IdInvoice input(IDInvoice)
+if OBJECT_ID('SELECTDETAILSFROMIDINVOICE') is not null drop PROC SELECTDETAILSFROMIDINVOICE
+go
+
+create PROC SELECTDETAILSFROMIDINVOICE
+@idInvoice varchar(50)
+as
+begin
+	declare @type nvarchar(200)
+	select @type = Type
+	from INVOICE
+	where IDInvoice = @idInvoice
+	if (@type = 'Room')
+		select *
+		from DETAILINVOICEROOM
+		where IDInvoice = @idInvoice
+	if (@type = 'Food')
+		select *
+		from DETAILINVOICEFOOD
+		where IDInvoice = @idInvoice
+	if (@type = 'Service')
+		select *
+		from DETAILINVOICESERVICES
+		where IDInvoice = @idInvoice
+	if (@type = 'Park')
+		select *
+		from DETAILINVOICEPARK
+		where IDInvoice = @idInvoice
+end
+go
+
+--31. CHECK Customer đã sài Voucher chưa input(IDVoucher)
+if OBJECT_ID('CHECKVOUCHERFORCUSTOMER') is not null drop PROC CHECKVOUCHERFORCUSTOMER
+go
+
+create PROC CHECKVOUCHERFORCUSTOMER
+@idCustomer varchar(50),
+@idVoucher int
+as
+begin 
+	declare @checkInvoice bit
+	select @checkInvoice = 1
+	from INVOICE
+	where IDCustomer = @idCustomer and IDVoucher = @idVoucher
+	if (@checkInvoice is not null)
+		select 'true' as exist
+	else
+		select 'false' as exist
+end
+go
+
+--32. Check Area theo IDInvoice input(IdInvoice)
+if OBJECT_ID('CHECKAREAOFIDVOUCHER') is not null drop PROC CHECKAREAOFIDVOUCHER
+go
+
+create PROC CHECKAREAOFIDVOUCHER
+@idVoucher int
+as
+begin
+	select Area
+	from VOUCHER
+	where IDVoucher = @idVoucher
+end
+go
+
+--33. Search Employee theo ID, Name
+if OBJECT_ID('SEARCHEMPLOYEE') is not null drop PROC SEARCHEMPLOYEE
+go
+
+create PROC SEARCHEMPLOYEE
+@idEmployee varchar(50),
+@name nvarchar(50)
+as
+begin
+	select *
+	from EMPLOYEE
+	where IDEmployee like '%'+ @idEmployee +'%' or Fullname like '%'+ @name +'%'
+end
+go
+
+--34. Search Voucher theo ID, Name
+if OBJECT_ID('SEARCHVOUCHER') is not null drop PROC SEARCHVOUCHER
+go
+
+create PROC SEARCHVOUCHER
+@idVoucher varchar(50),
+@name nvarchar(50)
+as
+begin
+	select *
+	from VOUCHER
+	where IDVoucher like '%'+ @idVoucher +'%' or Name like '%'+ @name +'%'
+end
+go
+
+--35. Search Food theo ID, Name
+if OBJECT_ID('SEARCHFOOD') is not null drop PROC SEARCHFOOD
+go
+
+create PROC SEARCHFOOD
+@idFood varchar(50),
+@name nvarchar(50)
+as
+begin
+	select *
+	from MENUFOOD
+	where IDFood like '%'+ @idFood +'%' or Name like '%'+ @name +'%'
+end
+go
+
+
+--36. Search IdCustomer trong bảng BookRoom
+
+if OBJECT_ID('SEARCHCUSTOMERBOOKROOM') is not null drop PROC SEARCHCUSTOMERBOOKROOM
+go
+
+create PROC SEARCHCUSTOMERBOOKROOM
+@idCard varchar(10)
+as
+begin
+	select *
+	From BOOK_ROOM
+	where IDCard like @idCard + '%'
+end
+go
+
+
+if OBJECT_ID('LOADBOOKROOM') is not null drop PROC LOADBOOKROOM
+go
+create PROC LOADBOOKROOM
+as
+begin 
+	select *
+	from BOOK_ROOM
+	order by IDRoom
+end
+go
+
+if OBJECT_ID('LOADBOOKTABLE') is not null drop PROC LOADBOOKTABLE
+go
+create PROC LOADBOOKTABLE
+as
+begin 
+	select *
+	from BOOK_TABLE
+	order by IDTable
+end
+go
+
+--37. Check Room trống trong bảng Book_Room input(DateCheckin, Datecheckout)
+if OBJECT_ID('CHECKTIMEROOM') is not null drop PROC CHECKTIMEROOM
+go
+
+create PROC CHECKTIMEROOM
+@dateCheckin datetime,
+@dateCheckout datetime
+as
+begin
+	If OBJECT_ID('tempđb..#Copy') is not null drop table #Copy;
+	select * into #Copy
+	from  BOOK_ROOM 
+	where (DateCheckin <= @dateCheckin and DateCheckout >= @dateCheckout) 
+	or (@dateCheckin <= DateCheckout)
+	or (DateCheckin <= @dateCheckout)
+
+	select ROOMS.IDRoom
+	from ROOMS FULL OUTER JOIN #Copy on ROOMS.IDRoom = #Copy.IDRoom
+	where #Copy.IDRoom is null and ROOMS.IDRoom is not null
+end
+go
+
+--38. Load State Room.
+if OBJECT_ID('SELETESTATEROOM') is not null drop PROC SELETESTATEROOM
+go
+
+create PROC SELETESTATEROOM
+@state nvarchar(200)
+as
+begin
+	select IDRoom, Type, KindOf, Price , State
+	from ROOMS
+	where State like '%' + @state + '%'
+end
+go
+
+--Search Customer trong bảng BookTable
+if OBJECT_ID('SEARCHCUSTOMERBOOKTABLES') is not null drop PROC SEARCHCUSTOMERBOOKTABLES
+go
+
+create PROC SEARCHCUSTOMERBOOKTABLES
+@phone varchar(10)
+as
+begin
+	select *
+	From BOOK_Table
+	where Phone like @phone + '%'
+end
+go
+
+if OBJECT_ID('SEARCHPHONEBOOKTABLES') is not null drop PROC SEARCHPHONEBOOKTABLES
+go
+
+create PROC SEARCHPHONEBOOKTABLES
+@phone varchar(10)
+as
+begin
+	select *
+	From BOOK_Table
+	where Phone =@phone
+end
+go
+
+
+
 --exec LOADACCOUNT 
 --exec LOADAREA
 --exec LOADBASESALARY
@@ -614,7 +922,22 @@ go
 --exec DELETEEMPLOYEE 'NV1000'
 --exec DELETEPERMISSIONTOACCOUNT 'nguyenvuong' , N'In hóa đơn'
 --exec CHECKCUSTOMER N'Hoàng Hiệp'
-
+--exec AUTOINCREMENTEMPLOYEE
+--exec AUTOINCREMENTCUSTOMER
+--exec AUTOINCREMENTINVOICE
+--exec SELECTINVOICEROOM
+--exec SELECTINVOICEFOOD
+--exec SELECTINVOICEPARK
+--exec SELECTINVOICESERVICE
+--exec SELECTDETAILSFROMIDINVOICE 'IV0004'
+--EXEC INSERTVOUCHER '22', '2',' sadsa  ','20130128','20130128','2'
+--exec CHECKVOUCHERFORCUSTOMER 'C0001', 1
+--exec CHECKAREAOFIDVOUCHER 2
+--exec SEARCHEMPLOYEE null , N'Vu'
+--exec SEARCHVOUCHER null, N'hải sản'
+--exec SEARCHFOOD null, N'ngừ'
+--exec SEARCHCUSTOMERBOOKROOM '9898272625'
+--exec CHECKTIMEROOM '05/06/2020 08:00' , '05/21/2020 20:00'
 ---------------------------------------------------------------------------------------------------------------------------------------
 ----3. Thêm Account vào bảng Account.
 --if OBJECT_ID('INSERTAccount') is not null drop proc INSERTAccount;
@@ -868,6 +1191,3 @@ go
 --	order by Ho_Ten asc;
 --end;
 --go
-
-
-
