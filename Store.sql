@@ -858,14 +858,44 @@ create PROC INSERTBOOKROOM
 @idRoom varchar(50),
 @dateBooked datetime,
 @dateCheckin datetime,
-@dateCheckout datetime
+@dateCheckout datetime,
+@state nvarchar(200)
 as
 begin
-	insert into BOOK_ROOM(IDCard,IDRoom,DateBooked,DateCheckin,DateCheckout)
-values (@idCard,@idRoom, @dateBooked, @dateCheckin, @dateCheckout)
+	insert into BOOK_ROOM(IDCard,IDRoom,DateBooked,DateCheckin,DateCheckout, State)
+values (@idCard,@idRoom, @dateBooked, @dateCheckin, @dateCheckout, @state)
 end
 go
---exec INSERTBOOKROOM '0988876567','R0022','05/23/2020 12:00','05/30/2020 12:00','06/10/2020 13:00' --mm/dd/yyyy
+
+
+--41. Search Customer đang ở trong Room và hóa đơn của khách đó.
+If OBJECT_ID('SEARCHCUSTOMERANDINVOICEINTABLE') is not null drop PROC SEARCHCUSTOMERANDINVOICEINTABLE
+go
+
+create PROC SEARCHCUSTOMERANDINVOICEINTABLE
+@idTable int
+as
+begin
+	declare @customer varchar(50),
+	@idInvoice varchar(50),
+	@state nvarchar(200)
+
+	select @customer = IDCustomer , @state = State
+	from BOOK_TABLE
+	where IDTable = @idTable and State = 'Full'
+
+	select top 1 @idInvoice = IDInvoice
+	from INVOICE
+	where IDCustomer = @customer and Payment is null and Type = 'Food'
+	order by IDInvoice desc
+
+	select @idTable as IDTable, @state as State, @customer as IDCustomer, * 
+	from DETAILINVOICEFOOD
+	where IDInvoice = @idInvoice
+end
+go
+exec SEARCHCUSTOMERANDINVOICEINTABLE 1
+
 
 
 --exec LOADACCOUNT 
@@ -904,260 +934,5 @@ go
 --exec CHECKTIMEROOM '05/06/2020 08:00' , '05/21/2020 20:00'
 --exec SEARCHCUSTOMERBOOKROOM '0'
 --exec SEARCHCUSTOMERANDINVOICEINROOM 'R0001'
-
+--exec INSERTBOOKROOM '0988876567','R0022','05/23/2020 12:00','05/30/2020 12:00','06/10/2020 13:00' --mm/dd/yyyy
 ---------------------------------------------------------------------------------------------------------------------------------------
-----3. Thêm Account vào bảng Account.
---if OBJECT_ID('INSERTAccount') is not null drop proc INSERTAccount;
---go
-
---create proc INSERTAccount
---@UserName varchar(50),
---@Password_new varchar(50),
---@Ho_Ten varchar(50),
---@Type_User int,
---@Description_User varchar (50)
---as
---begin
---	declare @CheckUser varchar(50)
---	select @CheckUser=UserName
---	from Account
---	where @UserName=UserName;
-
---	if @UserName=@CheckUser or @UserName is null
---		Throw 50001,'Not insert Account.',1;
---	else
---		Insert Account (UserName,Password_new,Password_old,Ho_Ten,Type_User,Description_User)
---		values (@UserName,@Password_new,'0',@Ho_Ten,@Type_User,@Description_User)
---end
---go
-
-
---if OBJECT_ID('UPDATEAccount') is not null drop proc UPDATEAccount
---go
-----4. Thay Đổi PassWord của Account đã chọn trong bảng Account.
---create proc UPDATEAccount
---@UseName varchar(50),
---@Password_new varchar(50)
---as
---begin
---	declare @CheckPassword varchar(50)
---	select @CheckPassword=Password_new
---	from Account
---	where @UseName=UserName
-
---	UPDATE Account Set Password_new=@Password_new, Password_old=@CheckPassword where UserName=@UseName;
---end;
---go
-
-
---if OBJECT_ID('DELETEAccount') is not null drop proc DELETEAccount;
---go
-----5. Xóa Account đã chọn trong bảng Account.
---create proc DELETEAccount
---@UserName varchar(50)
---as
---begin
---	Delete Account where UserName=@UserName;
---end
---go
-
-
-
-----Bảng Group--
-
---if OBJECT_ID('LOADGroupUser') is not null drop PROC LOADGroupUser;
---go
-----6. Load dữ liệu bảng GroupUser vào datagridView.
---create PROC LOADGroupUser 
---as
---begin 
---	select Id_Group,Group_Name,Description_Group
---	from GroupUser
---	order by Id_Group asc
---end
---go
-
---if OBJECT_ID('INSERTGroupUser') is not null drop proc INSERTGroupUser;
---go
-----7. Thêm GroupUser vào bảng GroupUser.
---create proc INSERTGroupUser
---@Name varchar(50),
---@Description_Group varchar(50)
---as
---begin
---	declare @CheckNameGroup varchar(50)
---	select @CheckNameGroup=Group_Name
---	from GroupUser
---	where @Name=Group_Name;
-
---	if @Name=@CheckNameGroup or @Name is null
---		Throw 50001,'Not insert Account.',1;
---	else
---		Insert GroupUser(Group_Name,Description_Group)
---		values (@Name,@Description_Group)
---end
---go
-
-
---if OBJECT_ID('UPDATEGroupUser') is not null drop proc UPDATEGroupUser
---go
-----8. Thay Đổi PassWord của GroupUser đã chọn trong bảng GroupUser.
---create proc UPDATEGroupUser
---@Id int,
---@Name varchar(50),
---@Description_Group varchar (50)
---as
---begin
-	
---	UPDATE GroupUser Set Group_Name=@Name, Description_Group=@Description_Group where Id_Group=@Id;
---end;
---go
-
-
---if OBJECT_ID('DELETEGroupUser') is not null drop proc DELETEGroupUser;
---go
-----9. Xóa Account đã chọn trong bảng Account.
---create proc DELETEGroupUser
---@Name varchar(50)
---as
---begin
---	Delete GroupUser where Group_Name=@Name;
---end
---go
-
-
-
-----Bảng Permission--
-
---if OBJECT_ID('LOADPermission') is not null drop PROC LOADPermission;
---go
-----6. Load dữ liệu bảng GroupUser vào datagridView.
---create PROC LOADPermission 
---as
---begin 
---	select Id_Permission,Name_Permission,Description_Permission
---	from Permission
---	order by Name_Permission asc
---end
---go
-
---if OBJECT_ID('INSERTPermission') is not null drop proc INSERTPermission;
---go
-
-----7. Thêm Permission vào bảng Permission.
---create proc INSERTPermission
---@Name varchar(50),
---@Description_Permission varchar(50)
---as
---begin
---	declare @CheckNamePermission varchar(50)
---	select @CheckNamePermission=Name_Permission
---	from Permission
---	where @Name=Name_Permission;
-
---	if @Name=@CheckNamePermission or @Name is null
---		Throw 50001,'Not insert Account.',1;
---	else
---		Insert Permission(Name_Permission,Description_Permission)
---		values (@Name,@Description_Permission)
---end
---go
-
-
---if OBJECT_ID('UPDATEPermission') is not null drop proc UPDATEPermission
---go
-----8. Thay Đổi PassWord của GroupUser đã chọn trong bảng GroupUser.
---create proc UPDATEPermission
---@Id int,
---@Name varchar(50),
---@Description_Permission varchar (50)
---as
---begin
---	UPDATE Permission Set Name_Permission=@Name, Description_Permission=@Description_Permission where Id_Permission=@Id;
---end;
---go
-
-
---if OBJECT_ID('DELETEPermission') is not null drop proc DELETEPermission;
---go
-----9. Xóa Account đã chọn trong bảng Account.
---create proc DELETEPermission
---@Name varchar(50)
---as
---begin
---	Delete Permission where Name_Permission=@Name;
---end;
---go
-
---if OBJECT_ID('SEARCHGroup') is not null drop proc SEARCHGroup;
---go
-----10
---create proc SEARCHGroup
---@Type_User int
---as
---begin
---	select *
---	from Account
---	where Type_User=@Type_User;
---end;
---go
-
---if OBJECT_ID('CHECKGROUP') is not null drop proc CHECKGROUP;
---go
-
---create proc CHECKGROUP
---@UserName nvarchar(50)
---as
---begin
---	select Type_User
---	from Account
---	where UserName=@UserName
---end;
---go
-
-
---if OBJECT_ID('DETAILUserName') is not null drop proc DETAILUserName;
---go
-
---create proc DETAILUserName
---@UserName nvarchar(50)
---as
---begin
---	select Ho_Ten,UserName, Password_new, Type_User, Group_Name, Description_User
---	from Account join GroupUser on Type_User = Id_Group
---	where UserName = @UserName;
---end;
---go
-
-
-
-
-
-
---if OBJECT_ID('SEARCHNameGroup') is not null drop proc SEARCHNameGroup;
---go
---create proc SEARCHNameGroup
---@id int
---as
---begin
---	select Group_Name
---	from GroupUser
---	where Id_Group=@id
---end;
---go
-
-
---If OBJECT_ID('LOADListAccount') is not null drop proc LOADListAccount;
---go
-
---create proc LOADListAccount
---as
---begin
---	select UserName, Ho_Ten, Description_User
---	from Account
---	order by Ho_Ten asc;
---end;
---go
-
-
-
