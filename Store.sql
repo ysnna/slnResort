@@ -817,6 +817,39 @@ begin
 end
 go
 
+--38. Load State Room.
+if OBJECT_ID('SELETESTATEROOM') is not null drop PROC SELETESTATEROOM
+go
+
+create PROC SELETESTATEROOM
+@state nvarchar(200)
+as
+begin
+	select *
+	from ROOMS
+	where State like '%' + @state + '%'
+end
+go
+--39. Search Customer đang ở trong Room và hóa đơn của khách đó.
+If OBJECT_ID('SEARCHCUSTOMERANDINVOICEINROOM') is not null drop PROC SEARCHCUSTOMERANDINVOICEINROOM
+go
+
+create PROC SEARCHCUSTOMERANDINVOICEINROOM
+@idRoom varchar(50)
+as
+begin
+
+	select CUSTOMER.IDCustomer, CUSTOMER.Name , DETAILINVOICEROOM.IDRoom 
+	, DETAILINVOICEROOM.IDInvoice, DETAILINVOICEROOM.DateBooked
+	, DETAILINVOICEROOM.DateCheckOut , DETAILINVOICEROOM.CheckedOut
+	, DETAILINVOICEROOM.Price
+	from	(CUSTOMER join INVOICE on CUSTOMER.IDCustomer = INVOICE.IDCustomer)
+			join DETAILINVOICEROOM on INVOICE.IDInvoice = DETAILINVOICEROOM.IDInvoice
+	where DETAILINVOICEROOM.IDRoom = @idRoom and CheckedOut is null
+end
+go
+
+
 --exec LOADACCOUNT 
 --exec LOADAREA
 --exec LOADBASESALARY
@@ -852,6 +885,8 @@ go
 --exec SEARCHCUSTOMERBOOKROOM '9898272625'
 --exec CHECKTIMEROOM '05/06/2020 08:00' , '05/21/2020 20:00'
 --exec SEARCHCUSTOMERBOOKROOM '0'
+--exec SEARCHCUSTOMERANDINVOICEINROOM 'R0001'
+
 ---------------------------------------------------------------------------------------------------------------------------------------
 ----3. Thêm Account vào bảng Account.
 --if OBJECT_ID('INSERTAccount') is not null drop proc INSERTAccount;

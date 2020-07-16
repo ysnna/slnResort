@@ -242,7 +242,7 @@ IDInvoice varchar(50) not null,
 IDRoom varchar(50) not null, 
 DateBooked datetime not null,
 DateCheckOut datetime not null,
-CheckedOut datetime not null,
+CheckedOut datetime null,
 Price float not null,
 );
 go
@@ -300,7 +300,7 @@ Birthday date null,
 Gender bit not null,
 Phone int null,
 IDCard varchar(10) not null unique,
-IDRoom varchar(50) not null,
+--IDRoom varchar(50) not null,
 constraint pk_CUSTOMER primary key(IDCustomer)
 );
 
