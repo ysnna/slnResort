@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -155,6 +156,8 @@
     <Compile Include="BLL\TableBLL.cs" />
     <Compile Include="BLL\TableOrderBLL.cs" />
     <Compile Include="BLL\testBLL.cs" />
+    <Compile Include="BLL\TableBLL.cs" />
+    <Compile Include="BLL\TableOrderBLL.cs" />
     <Compile Include="BLL\VoucherBLL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
@@ -229,13 +232,18 @@
     <Compile Include="HomeUC\HomeVoucherUC.Designer.cs">
       <DependentUpon>HomeVoucherUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeUC\ServicesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\ServicesUC.Designer.cs">
+      <DependentUpon>ServicesUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeUC\ucEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="HomeUC\ucEmployee.Designer.cs">
       <DependentUpon>ucEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomeUC\testHomeUC.cs" />
     <Compile Include="HomeUC\ucListEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -248,11 +256,11 @@
     <Compile Include="HomeUC\StatisticsUC.Designer.cs">
       <DependentUpon>StatisticsUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="HotelUC\CheckBookRoomUC.cs">
+    <Compile Include="HotelUC\CheckinRoomUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HotelUC\CheckBookRoomUC.Designer.cs">
-      <DependentUpon>CheckBookRoomUC.cs</DependentUpon>
+    <Compile Include="HotelUC\CheckinRoomUC.Designer.cs">
+      <DependentUpon>CheckinRoomUC.cs</DependentUpon>
     </Compile>
     <Compile Include="HotelUC\InvoiceRoomUC.cs">
       <SubType>UserControl</SubType>
@@ -272,7 +280,6 @@
     <Compile Include="HotelUC\RoomUC.Designer.cs">
       <DependentUpon>RoomUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="HotelUC\testHotelUC.cs" />
     <Compile Include="Invoices\InvoicesUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -280,9 +287,26 @@
       <DependentUpon>InvoicesUC.cs</DependentUpon>
     </Compile>
     <Compile Include="MY_DB.cs" />
-    <Compile Include="ParkUC\testParkUC.cs" />
+    <Compile Include="ParkUC\AddTicketUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParkUC\AddTicketUC.Designer.cs">
+      <DependentUpon>AddTicketUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkUC\InvoiceParkUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParkUC\InvoiceParkUC.Designer.cs">
+      <DependentUpon>InvoiceParkUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestaurantUC\AddMenuFoodUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RestaurantUC\AddMenuFoodUC.Designer.cs">
+      <DependentUpon>AddMenuFoodUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="RestaurantUC\CheckOrderUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -300,13 +324,6 @@
     </Compile>
     <Compile Include="RestaurantUC\TablesUC.Designer.cs">
       <DependentUpon>TablesUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RestaurantUC\testReztaurantUC.cs" />
-    <Compile Include="RestaurantUC\ucTable.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="RestaurantUC\ucTable.Designer.cs">
-      <DependentUpon>ucTable.cs</DependentUpon>
     </Compile>
     <Compile Include="table.cs" />
     <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
@@ -339,6 +356,9 @@
     <EmbeddedResource Include="HomeUC\HomeVoucherUC.resx">
       <DependentUpon>HomeVoucherUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\ServicesUC.resx">
+      <DependentUpon>ServicesUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeUC\ucEmployee.resx">
       <DependentUpon>ucEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -348,8 +368,8 @@
     <EmbeddedResource Include="HomeUC\StatisticsUC.resx">
       <DependentUpon>StatisticsUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HotelUC\CheckBookRoomUC.resx">
-      <DependentUpon>CheckBookRoomUC.cs</DependentUpon>
+    <EmbeddedResource Include="HotelUC\CheckinRoomUC.resx">
+      <DependentUpon>CheckinRoomUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HotelUC\InvoiceRoomUC.resx">
       <DependentUpon>InvoiceRoomUC.cs</DependentUpon>
@@ -363,6 +383,12 @@
     <EmbeddedResource Include="Invoices\InvoicesUC.resx">
       <DependentUpon>InvoicesUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ParkUC\AddTicketUC.resx">
+      <DependentUpon>AddTicketUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkUC\InvoiceParkUC.resx">
+      <DependentUpon>InvoiceParkUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -372,6 +398,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RestaurantUC\AddMenuFoodUC.resx">
+      <DependentUpon>AddMenuFoodUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RestaurantUC\CheckOrderUC.resx">
       <DependentUpon>CheckOrderUC.cs</DependentUpon>
     </EmbeddedResource>

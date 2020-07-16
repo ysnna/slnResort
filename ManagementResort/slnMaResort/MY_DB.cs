@@ -16,6 +16,7 @@ namespace slnMaResort
         //Na connection
         SqlConnection conn = new SqlConnection(@"Data Source=MSI\SQLEXPRESS;Initial Catalog=ManagementResort;Integrated Security=True");
         //Duc connection
+         SqlConnection conn = new SqlConnection(@"Data Source=MSI\SQLEXPRESS;Initial Catalog=ManagementResort;Integrated Security=True");
 
         //Vuong connection
 

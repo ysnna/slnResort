@@ -2,6 +2,9 @@
 go
 --Bảng Account--
 
+select *
+from AREA,VOUCHER
+where Area.IDArea=VOUCHER.IDVoucher
 --1. Kiểm tra đăng nhập khi login vào.
  if OBJECT_ID('CHECKLOGIN') is not null drop PROC CHECKLOGIN;
  go
@@ -224,7 +227,7 @@ begin
 end
 go
 
---15. Load dữ liệu bảng MenuFood vào datagridView
+ --Load dữ liệu bảng MenuFood vào datagridView
 if OBJECT_ID('LOADMENUFOOD') is not null drop PROC LOADMENUFOOD
 go
 create PROC LOADMENUFOOD
@@ -233,6 +236,27 @@ begin
 	select *
 	from MENUFOOD
 	order by Name
+end
+go
+
+-- Load dữ liệu bảng Voucher vào datagridView
+
+
+-- Insert Voucher input(*)
+if OBJECT_ID('INSERTVOUCHER') is not null drop PROC INSERTVOUCHER
+go
+
+create PROC INSERTVOUCHER
+@idvoucher int,
+@area nvarchar(50),
+@name varchar(50),
+@startdate datetime,
+@exptirationdate datetime,
+@percents int
+as
+begin
+	insert into VOUCHER(IDVoucher, Area, Name, StartDate, ExprirationDate, Percents)
+	values (@idvoucher,@area,@name,@startdate,@exptirationdate,@percents)
 end
 go
 
@@ -247,6 +271,54 @@ begin
 	order by Area, Name
 end
 go
+--16. Load dữ liệu bảng Voucher vào datagridView
+if OBJECT_ID('LOADVOUCHERBYID') is not null drop PROC LOADVOUCHERBYID
+go
+create PROC LOADVOUCHERBYID
+@id int
+as
+begin 
+	select *
+	from VOUCHER
+	where IDVoucher=@id
+	order by Area, Name	
+end
+go
+
+--16.2. Delete Voucher
+if OBJECT_ID('DELETEVOUCHER') is not null drop PROC DELETEVOUCHER
+go 
+
+create  PROC DELETEVOUCHER
+@ID int
+as
+begin
+	select @ID = IDVoucher
+	from VOUCHER
+	where IDVoucher = @ID
+	if (@ID is not null)
+		DELETE from VOUCHER where IDVoucher = @ID
+	else
+		throw 5000, 'Permission not exist', 1;
+end
+go
+
+--16.3 update Voucher
+if OBJECT_ID('UPDATEVOUCHER') is not null drop PROC UPDATEVOUCHER
+go
+create PROC UPDATEVOUCHER
+@ID int,
+@area nvarchar(50),
+@name nvarchar(200),
+@startDate datetime,
+@expriration datetime,
+@percents int
+as
+begin 
+	UPDATE VOUCHER set Area = @area, Name = @startDate, ExprirationDate = @expriration, Percents = @percents where IDVoucher = @ID
+end
+go
+
 
 --16. Load dữ liệu bảng Voucher vào datagridView
 if OBJECT_ID('LOADVOUCHERBYID') is not null drop PROC LOADVOUCHERBYID
@@ -446,7 +518,6 @@ begin
 	else
 		throw 5000, 'Permission not exist', 1;
 end
-go
 
 --23. Checkout customer cho bảng booktable input(customer)
 if OBJECT_ID('CHECKCUSTOMERBOOKTABLE') is not null drop PROC CHECKCUSTOMERBOOKTABLE
@@ -470,109 +541,87 @@ begin
 end
 go
 
---24.1 AUTO INCREMENT Field Customer
-if OBJECT_ID('AUTOINCREMENTCUSTOMER') is not null drop PROC AUTOINCREMENTCUSTOMER
-go
+--24.Load food
 
-create PROC AUTOINCREMENTCUSTOMER
-as
-begin
-	select top 1 ('C' + Cast(Cast(SUBSTRING((IDCustomer), 2, 47) as int) + 1 as varchar)) as IDNewCustomer
-	from CUSTOMER
-	order by IDCustomer desc
-end
+if OBJECT_ID('LOADMENUFOOD') is not null drop PROC LOADMENUFOOD
 go
-	
---25.1 AUTO INCREMENT Field Invoice
-if OBJECT_ID('AUTOINCREMENTINVOICE') is not null drop PROC AUTOINCREMENTINVOICE
-go
-
-create PROC AUTOINCREMENTINVOICE
-as
-begin
-	select top 1 ('IV' + Cast(Cast(SUBSTRING((IDInvoice), 3, 47) as int) + 1 as varchar)) as IDNewInvoice
-	from INVOICE
-	order by IDInvoice desc
-end
-go
-
---26. Select Invoice theo type = Park
-if OBJECT_ID('SELECTINVOICEPARK') is not null drop PROC SELECTINVOICEPARK
-go
-
-create PROC SELECTINVOICEPARK
+create PROC LOADMENUFOOD
 as
 begin
 	select *
-	from INVOICE
-	where Type = 'Park'
+	from MENUFOOD
+	order by Name
 end
-
---27. Select Invoice theo Type = Room
-if OBJECT_ID('SELECTINVOICEROOM') is not null drop PROC SELECTINVOICEROOM
 go
 
-create PROC SELECTINVOICEROOM
+--24.1 InsertFood
+if OBJECT_ID('INSERTFOOD') is not null drop PROC INSERTFOOD
+go
+
+create PROC INSERTFOOD
+@idFood int,
+@name nvarchar(200),
+@price float,
+@description nvarchar(200),
+@picture image,
+@available int
 as
 begin
+	insert into MENUFOOD(IDFood, Name, Price, Description,Picture, Available)
+	values (@idFood,@name,@price,@description,@picture,@available)
+end
+go
+
+--24.2 DeleteFood
+if OBJECT_ID('DELETEFOOD') is not null drop PROC DELETEFOOD
+go 
+
+create  PROC DELETEFOOD
+@ID int
+as
+begin
+	select @ID = IDFood
+	from MENUFOOD
+	where IDFood = @ID
+	if (@ID is not null)
+		DELETE from MENUFOOD where IDFood= @ID
+	else
+		throw 5000, 'Permission not exist', 1;
+end
+go
+
+--24.3 updateFood
+if OBJECT_ID('UPDATEFOOD') is not null drop PROC UPDATEFOOD
+go
+
+create PROC UPDATEFOOD
+@idFood int,
+@name nvarchar(50),
+@price float,
+@description nvarchar(200),
+@picture image,
+@available int
+as
+begin 
+	UPDATE MENUFOOD set Name = @name, Price = @price, Description = @description, Picture = @picture ,Available=@available where IDFood = @idFood
+end
+go
+--16.5 Load dữ liệu bảng Voucher vào datagridView
+if OBJECT_ID('LOADFOODBYID') is not null drop PROC LOADFOODBYID
+go
+create PROC LOADFOODBYID
+@id int
+as
+begin 
 	select *
-	from INVOICE
-	where Type = 'Room'
-end
-go
---28. Select Invoice theo Type = Service
-if OBJECT_ID('SELECTINVOICESERVICE') is not null drop PROC SELECTINVOICESERVICE
-go
-create PROC SELECTINVOICESERVICE
-as
-begin
-	select *
-	from INVOICE
-	where Type = 'Service'
+	from MENUFOOD
+	where IDFood=@id
+	order by IDFood, Name	
 end
 go
 
---29. Select Invoice theo Type = Food
-if OBJECT_ID('SELECTINVOICEFOOD') is not null drop PROC SELECTINVOICEFOOD
-go
-create PROC SELECTINVOICEFOOD
-as
-begin
-	select *
-	from INVOICE
-	where Type = 'Food'
-end
-go
---30 Select Details Invoice theo IdInvoice input(IDInvoice)
-if OBJECT_ID('SELECTDETAILSFROMIDINVOICE') is not null drop PROC SELECTDETAILSFROMIDINVOICE
-go
+--24.
 
-create PROC SELECTDETAILSFROMIDINVOICE
-@idInvoice varchar(50)
-as
-begin
-	declare @type nvarchar(200)
-	select @type = Type
-	from INVOICE
-	where IDInvoice = @idInvoice
-	if (@type = 'Room')
-		select *
-		from DETAILINVOICEROOM
-		where IDInvoice = @idInvoice
-	if (@type = 'Food')
-		select *
-		from DETAILINVOICEFOOD
-		where IDInvoice = @idInvoice
-	if (@type = 'Service')
-		select *
-		from DETAILINVOICESERVICES
-		where IDInvoice = @idInvoice
-	if (@type = 'Park')
-		select *
-		from DETAILINVOICEPARK
-		where IDInvoice = @idInvoice
-end
-go
 
 --31. CHECK Customer đã sài Voucher chưa input(IDVoucher)
 if OBJECT_ID('CHECKVOUCHERFORCUSTOMER') is not null drop PROC CHECKVOUCHERFORCUSTOMER
@@ -671,6 +720,7 @@ go
 --exec DELETEEMPLOYEE 'NV1000'
 --exec DELETEPERMISSIONTOACCOUNT 'nguyenvuong' , N'In hóa đơn'
 --exec CHECKCUSTOMER N'Hoàng Hiệp'
+
 --exec AUTOINCREMENTEMPLOYEE
 --exec AUTOINCREMENTCUSTOMER
 --exec AUTOINCREMENTINVOICE
@@ -685,6 +735,8 @@ go
 --exec SEARCHEMPLOYEE null , N'Vu'
 --exec SEARCHVOUCHER null, N'hải sản'
 --exec SEARCHFOOD null, N'ngừ'
+
+
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------

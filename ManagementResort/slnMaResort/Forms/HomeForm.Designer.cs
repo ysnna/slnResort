@@ -30,8 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabEmployee = new System.Windows.Forms.TabPage();
+            this.ucListEmployee1 = new slnMaResort.HomeUC.ucListEmployee();
             this.tbSalary = new System.Windows.Forms.TabPage();
             this.tbStatistics = new System.Windows.Forms.TabPage();
+            this.statisticsUC1 = new slnMaResort.HomeUC.StatisticsUC();
             this.tbService = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -49,11 +51,15 @@
             this.txtIDService = new System.Windows.Forms.TextBox();
             this.picService = new System.Windows.Forms.PictureBox();
             this.tbVoucher = new System.Windows.Forms.TabPage();
-            this.txt6 = new System.Windows.Forms.TextBox();
+            this.homeVoucherUC = new slnMaResort.HomeUC.HomeVoucherUC();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.addMenuFoodUC1 = new slnMaResort.RestaurantUC.AddMenuFoodUC();
+            this.menuStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tbService.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picService)).BeginInit();
+            this.tabEmployee.SuspendLayout();
+            this.tbStatistics.SuspendLayout();
+            this.tbVoucher.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -66,10 +72,11 @@
             this.tabControl1.Controls.Add(this.tbStatistics);
             this.tabControl1.Controls.Add(this.tbService);
             this.tabControl1.Controls.Add(this.tbVoucher);
-            this.tabControl1.Location = new System.Drawing.Point(0, 31);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1866, 936);
+            this.tabControl1.Size = new System.Drawing.Size(1866, 940);
             this.tabControl1.TabIndex = 3;
             // 
             // tabEmployee
@@ -81,6 +88,15 @@
             this.tabEmployee.TabIndex = 0;
             this.tabEmployee.Text = "Employee";
             this.tabEmployee.UseVisualStyleBackColor = true;
+            // 
+            // ucListEmployee1
+            // 
+            this.ucListEmployee1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ucListEmployee1.Location = new System.Drawing.Point(0, 0);
+            this.ucListEmployee1.Margin = new System.Windows.Forms.Padding(4);
+            this.ucListEmployee1.Name = "ucListEmployee1";
+            this.ucListEmployee1.Size = new System.Drawing.Size(1851, 883);
+            this.ucListEmployee1.TabIndex = 0;
             // 
             // tbSalary
             // 
@@ -101,6 +117,13 @@
             this.tbStatistics.TabIndex = 2;
             this.tbStatistics.Text = "Statistics";
             this.tbStatistics.UseVisualStyleBackColor = true;
+            // 
+            // statisticsUC1
+            // 
+            this.statisticsUC1.Location = new System.Drawing.Point(0, 0);
+            this.statisticsUC1.Name = "statisticsUC1";
+            this.statisticsUC1.Size = new System.Drawing.Size(1914, 964);
+            this.statisticsUC1.TabIndex = 0;
             // 
             // tbService
             // 
@@ -270,13 +293,30 @@
             this.tbVoucher.Text = "Voucher";
             this.tbVoucher.UseVisualStyleBackColor = true;
             // 
-            // txt6
+            // homeVoucherUC
             // 
-            this.txt6.Location = new System.Drawing.Point(267, 413);
-            this.txt6.Multiline = true;
-            this.txt6.Name = "txt6";
-            this.txt6.Size = new System.Drawing.Size(185, 42);
-            this.txt6.TabIndex = 5;
+            this.homeVoucherUC.Location = new System.Drawing.Point(0, 0);
+            this.homeVoucherUC.Name = "homeVoucherUC";
+            this.homeVoucherUC.Size = new System.Drawing.Size(1914, 964);
+            this.homeVoucherUC.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.addMenuFoodUC1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1858, 908);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "Foods";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // addMenuFoodUC1
+            // 
+            this.addMenuFoodUC1.AutoSize = true;
+            this.addMenuFoodUC1.Location = new System.Drawing.Point(0, 0);
+            this.addMenuFoodUC1.Name = "addMenuFoodUC1";
+            this.addMenuFoodUC1.Size = new System.Drawing.Size(1914, 964);
+            this.addMenuFoodUC1.TabIndex = 0;
             // 
             // HomeForm
             // 
@@ -286,17 +326,17 @@
             this.ClientSize = new System.Drawing.Size(1245, 703);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "HomeForm";
             this.Text = "Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FHome_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tbService.ResumeLayout(false);
-            this.tbService.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picService)).EndInit();
+            this.tabEmployee.ResumeLayout(false);
+            this.tbStatistics.ResumeLayout(false);
+            this.tbVoucher.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }

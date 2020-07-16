@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using slnMaResort.BLL;
 
 namespace slnMaResort.RestaurantUC
 {
@@ -15,6 +16,7 @@ namespace slnMaResort.RestaurantUC
         public TablesUC()
         {
             InitializeComponent();
+            TableBLL.Instance.LoadTable(pnTableLayout);
         }
 
         private void btOrder_Click(object sender, EventArgs e)
@@ -66,7 +68,7 @@ namespace slnMaResort.RestaurantUC
 
         private void TablesUC_Load(object sender, EventArgs e)
         {
-            TableListLoad();
+            //TableListLoad();
         }
     }
 }

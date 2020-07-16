@@ -324,7 +324,6 @@
             this.Controls.Add(this.btCheckOut);
             this.Name = "TablesUC";
             this.Size = new System.Drawing.Size(1210, 843);
-            this.Load += new System.EventHandler(this.TablesUC_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuality)).EndInit();
