@@ -61,20 +61,25 @@ namespace slnMaResort.RestaurantUC
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            MemoryStream picture = new MemoryStream();
-            try
-            {
+
+             MemoryStream picture = new MemoryStream();
+            //try
+            //{
                 picFood.Image.Save(picture, picFood.Image.RawFormat);
-            }
-            catch (Exception Exc)
-            {
-                MessageBox.Show("Please insert an Avatar");
-            }
+            byte[] a = picture.GetBuffer();
+            //}
+            //catch (Exception Exc)
+            //{
+            //    MessageBox.Show("Please insert an Avatar");
+            //}
+         
+        
+
             FoodBLL.Instance.insertFood(int.Parse(txtIDFood.Text),
                 txtNameFood.Text,
                 int.Parse(txtPrice.Text),
-                txtDescriptions.Text,
-                picture,int.Parse( numAvailable.Value.ToString()));
+                txtDescriptions.Text,picture
+                ,int.Parse( numAvailable.Value.ToString()));
         }
     }
 }
