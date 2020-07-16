@@ -791,7 +791,7 @@ as
 begin
 	select *
 	From BOOK_ROOM
-	where IDCard = @idCard
+	where IDCard like @idCard + '%'
 end
 go
 
@@ -851,6 +851,7 @@ go
 --exec SEARCHFOOD null, N'ngừ'
 --exec SEARCHCUSTOMERBOOKROOM '9898272625'
 --exec CHECKTIMEROOM '05/06/2020 08:00' , '05/21/2020 20:00'
+--exec SEARCHCUSTOMERBOOKROOM '0'
 ---------------------------------------------------------------------------------------------------------------------------------------
 ----3. Thêm Account vào bảng Account.
 --if OBJECT_ID('INSERTAccount') is not null drop proc INSERTAccount;
