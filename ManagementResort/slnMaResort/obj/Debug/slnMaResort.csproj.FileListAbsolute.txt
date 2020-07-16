@@ -91,7 +91,6 @@ E:\HK6\OOSD\ProjectOOSD\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaRe
 D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\bin\Debug\slnMaResort.exe.config
 D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\bin\Debug\slnMaResort.exe
 D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\bin\Debug\slnMaResort.pdb
-D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csprojAssemblyReference.cache
 D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.ChangePasswordForm.resources
 D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.Employee.resources
 D:\Nam3(2)\Github\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.Forms.HomeForm.resources

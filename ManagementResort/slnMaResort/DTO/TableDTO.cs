@@ -12,6 +12,7 @@ namespace slnMaResort.DTO
 {
     class TableDTO
     {
+
         public int ID { get; set; }
         public string Sate { get; set; }
         public static int width = 210;

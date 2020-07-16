@@ -1,4 +1,5 @@
-﻿using System;
+﻿using slnMaResort.HomeUC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,11 +20,12 @@ namespace slnMaResort.Forms
 
         private void FHome_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-   
+        private void addMenuFoodUC1_Load(object sender, EventArgs e)
+        {
 
-   
+        }
     }
 }

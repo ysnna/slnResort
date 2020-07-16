@@ -115,7 +115,7 @@
             this.tabEmployee.Location = new System.Drawing.Point(4, 28);
             this.tabEmployee.Name = "tabEmployee";
             this.tabEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmployee.Size = new System.Drawing.Size(1858, 904);
+            this.tabEmployee.Size = new System.Drawing.Size(1858, 908);
             this.tabEmployee.TabIndex = 0;
             this.tabEmployee.Text = "Employee";
             this.tabEmployee.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@
             this.tbSalary.Location = new System.Drawing.Point(4, 28);
             this.tbSalary.Name = "tbSalary";
             this.tbSalary.Padding = new System.Windows.Forms.Padding(3);
-            this.tbSalary.Size = new System.Drawing.Size(1858, 904);
+            this.tbSalary.Size = new System.Drawing.Size(1858, 908);
             this.tbSalary.TabIndex = 1;
             this.tbSalary.Text = "Salary";
             this.tbSalary.UseVisualStyleBackColor = true;
@@ -145,7 +145,7 @@
             this.tbStatistics.Location = new System.Drawing.Point(4, 28);
             this.tbStatistics.Name = "tbStatistics";
             this.tbStatistics.Padding = new System.Windows.Forms.Padding(3);
-            this.tbStatistics.Size = new System.Drawing.Size(1858, 904);
+            this.tbStatistics.Size = new System.Drawing.Size(1858, 908);
             this.tbStatistics.TabIndex = 2;
             this.tbStatistics.Text = "Statistics";
             this.tbStatistics.UseVisualStyleBackColor = true;
@@ -162,7 +162,7 @@
             this.tbService.Location = new System.Drawing.Point(4, 28);
             this.tbService.Name = "tbService";
             this.tbService.Padding = new System.Windows.Forms.Padding(3);
-            this.tbService.Size = new System.Drawing.Size(1858, 904);
+            this.tbService.Size = new System.Drawing.Size(1858, 908);
             this.tbService.TabIndex = 3;
             this.tbService.Text = "Service";
             this.tbService.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@
             this.tbVoucher.Location = new System.Drawing.Point(4, 28);
             this.tbVoucher.Name = "tbVoucher";
             this.tbVoucher.Padding = new System.Windows.Forms.Padding(3);
-            this.tbVoucher.Size = new System.Drawing.Size(1858, 904);
+            this.tbVoucher.Size = new System.Drawing.Size(1858, 908);
             this.tbVoucher.TabIndex = 4;
             this.tbVoucher.Text = "Voucher";
             this.tbVoucher.UseVisualStyleBackColor = true;
@@ -198,10 +198,11 @@
             // addMenuFoodUC1
             // 
             this.addMenuFoodUC1.AutoSize = true;
-            this.addMenuFoodUC1.Location = new System.Drawing.Point(0, 0);
+            this.addMenuFoodUC1.Location = new System.Drawing.Point(0, 3);
             this.addMenuFoodUC1.Name = "addMenuFoodUC1";
             this.addMenuFoodUC1.Size = new System.Drawing.Size(1914, 964);
             this.addMenuFoodUC1.TabIndex = 0;
+            this.addMenuFoodUC1.Load += new System.EventHandler(this.addMenuFoodUC1_Load);
             // 
             // HomeForm
             // 

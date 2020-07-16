@@ -524,6 +524,23 @@ values
 ('14',N'Bánh phượng hoàng','30000000',N'Hãy thử đi rồi biết cảm giác thật tuyệt với loại bánh đặc biệt của nhà hàng','100'),
 ('15',N'Sushi làm bởi Angelito Araneta (con)','50000000',N'đường Muscovado, cá hồi hồng Na Uy, cá trứng hồng, dưa chuột, xoài, gan ngỗng, hải sâm (hun khói rồi ngâm rượu và hấp), thịt cua nguyên chất, nghệ tây dại,','100')
 
+--insert into MENUFOOD(IDFood,Name,Price,Description,Picture,Available)
+--values 
+--('1',N'Cá ngừ sốt đại dương','200000',N'Cá ngừ được tươi sống được rướt nước sốt đặt biệt tại cửa hàng',(select*from Openrowset(Bulk N'D:\Hinh\1.png',SINGLE_BLOB)as Images),'100'),
+--('2',N'Vy cá mập hấp','1500000',N'Vy cá mập được hấp với các loại nhân sâm biển',(select*from Openrowset(Bulk N'D:\Hinh\2.png',SINGLE_BLOB)as Images),'50'),
+--('3',N'Tôm hùm hấp rượu van','2000000',N'Rượu van hảo hạn được hấp với tôm hùm bắc cực ',(select*from Openrowset(Bulk N'D:\Hinh\3.png',SINGLE_BLOB)as Images),'78'),
+--('4',N'Bào ngư lướt sóng','1500000',N'Trên đĩa sẽ được trang trí như một cơn sóng cuống trôi bào ngư hương vị của biển',(select*from Openrowset(Bulk N'D:\Hinh\4.png',SINGLE_BLOB)as Images),'100'),
+--('5',N'Mì ý Tomyum phủ phô mai','300000',N'sốt đặc biệt được chiếc xuất từ miếng bọt của cá heo',(select*from Openrowset(Bulk N'D:\Hinh\5.png',SINGLE_BLOB)as Images),'100'),
+--('6',N'Phở','100000',N'Đặc sản của Việt Nam ',(select*from Openrowset(Bulk N'D:\Hinh\7.png',SINGLE_BLOB)as Images),'100'),
+--('7',N'Cao lầu','100000',N'Đặc sản Việt Nam',(select*from Openrowset(Bulk N'D:\Hinh\6.png',SINGLE_BLOB)as Images),'100'),
+--('8',N'Bún bò Nam bộ','100000',N'Đặc sản Việt Nam',(select*from Openrowset(Bulk N'D:\Hinh\5.png',SINGLE_BLOB)as Images),'100'),
+--('9',N'Hoa quả dầm','30000',N'Hoa quả dầm',(select*from Openrowset(Bulk N'D:\Hinh\5.png',SINGLE_BLOB)as Images),'100'),
+--('10',N'Cà phê trứng','300000',N'Đặc sản Việt Nam',(select*from Openrowset(Bulk N'D:\Hinh\5.png',SINGLE_BLOB)as Images),'100'),
+--('11',N'Bánh donut vàng 24K','30000000',N'dát vàng',(select*from Openrowset(Bulk N'D:\Hinh\5.png',SINGLE_BLOB)as Images),'30'),
+--('12',N'Bánh Twinkie với trứng cá tầm','300000',N'Trứng cá tầm được làm thành bánh với hương vị khó tả',(select*from Openrowset(Bulk N'D:\Hinh\5.png',SINGLE_BLOB)as Images),'100'),
+--('13',N'Pizza nấm truffle','40000000',N'nấm truffle loại nấm đắt nhất được làm với pizza hòa quyện',(select*from Openrowset(Bulk N'D:\Hinh\5.png',SINGLE_BLOB)as Images),'100'),
+--('14',N'Bánh phượng hoàng','30000000',N'Hãy thử đi rồi biết cảm giác thật tuyệt với loại bánh đặc biệt của nhà hàng',(select*from Openrowset(Bulk N'D:\Hinh\5.png',SINGLE_BLOB)as Images),'100'),
+--('15',N'Sushi làm bởi Angelito Araneta (con)','50000000',N'đường Muscovado, cá hồi hồng Na Uy, cá trứng hồng
 insert into ORDER_FOOD(IDFood,IDInvoice,IDTable,Quantity)
 values
 (1,'IV0004','1','2'),

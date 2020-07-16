@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
+﻿using slnMaResort.DAL;
+using System;
 using System.Data;
-using System.Security.Cryptography;
-using slnMaResort.DAL;
-using slnMaResort.DTO;
-using slnMaResort.Forms;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 namespace slnMaResort.BLL
 {
     public class EmployeeBLL
@@ -42,7 +34,7 @@ namespace slnMaResort.BLL
 
         }
         //Load nhân viên của Khách Sạn
-        public void loadEmpbyArea(DataGridView dgv,int area)
+        public void loadEmpbyArea(DataGridView dgv, int area)
         {
             dgv.RowTemplate.Height = 40;
             dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -54,25 +46,14 @@ namespace slnMaResort.BLL
             DataTable dt = EmployeeDAL.Instance.loadEmpbyArea(area);
             dgv.DataSource = dt;
         }
-     
+
         //Load nhan vien theo ID
         public DataTable loadEmpbyID(string id)
         {
             DataTable dt = EmployeeDAL.Instance.loadEmpbyID(id);
             return dt;
         }
-        void insertEmp(string ID, string fullName, MemoryStream ava, DateTime birthday
-            , int Gender, string add, string idcard, string phone,
-          int IDBaseSalary, int Area, string state)
-        {
-            EmployeeDAL.Instance.insertEmployee(ID, fullName, ava, birthday, Gender, add, idcard, phone, IDBaseSalary, Area, state);
-        }
-        void updateEmp(string ID, string fullName, MemoryStream ava, DateTime birthday
-           , int Gender, string add, string idcard, string phone,
-         int IDBaseSalary, int Area, string state)
-        {
-            EmployeeDAL.Instance.insertEmployee(ID, fullName, ava, birthday, Gender, add, idcard, phone, IDBaseSalary, Area, state);
-        }
+        
 
     }
 }
