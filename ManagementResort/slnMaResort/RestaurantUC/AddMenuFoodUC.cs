@@ -25,6 +25,8 @@ namespace slnMaResort.RestaurantUC
 
         private void AddMenuFoodUC_Load(object sender, EventArgs e)
         {
+            
+
             FoodBLL.Instance.loadmenufood(dgvMenu);
             FoodBLL.Instance.LoadFoody(flFood);
         }
@@ -53,7 +55,16 @@ namespace slnMaResort.RestaurantUC
             dgvMenu.EditMode = DataGridViewEditMode.EditProgrammatically;
             DataGridViewImageColumn pict = new DataGridViewImageColumn();
             pict = (DataGridViewImageColumn)dgvMenu.Columns[4];
-            pict.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            pict.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            dgvMenu.Columns.Add(pict);
+
+            dgvMenu.RowTemplate.Height = 250;
+
+            dgvMenu.AllowUserToAddRows = false;
+
+
+
+
             int index = dgvMenu.CurrentCell.RowIndex;
             int id =    int.Parse(dgvMenu.Rows[index].Cells[0].Value.ToString());
             txtIDFood.Text = id.ToString();
@@ -98,7 +109,8 @@ namespace slnMaResort.RestaurantUC
             MemoryStream picture = new MemoryStream();
           
             picFood.Image.Save(picture, picFood.Image.RawFormat);
-
+            byte[] img = picture.ToArray();
+            dgvMenu.Rows.Add(img);
             FoodBLL.Instance.insertFood(int.Parse(txtIDFood.Text),
                 txtNameFood.Text,
                 int.Parse(txtPrice.Text),

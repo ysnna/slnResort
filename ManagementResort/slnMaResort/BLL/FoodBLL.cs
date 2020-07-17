@@ -35,13 +35,13 @@ namespace slnMaResort.BLL
             DataTable dt = FoodDAL.Instance.loadMenuFood();
             dgv.DataSource = dt;
 
-            dgv.RowTemplate.Height = 40;
-            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            dgv.AllowUserToAddRows = false;
-            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
-            DataGridViewImageColumn pic = new DataGridViewImageColumn();
-            pic = (DataGridViewImageColumn)dgv.Columns[4];
-            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            //dgv.RowTemplate.Height = 40;
+            //dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            //dgv.AllowUserToAddRows = false;
+            //dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+            //DataGridViewImageColumn pic = new DataGridViewImageColumn();
+            //pic = (DataGridViewImageColumn)dgv.Columns[4];
+            //pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
 
 
         }

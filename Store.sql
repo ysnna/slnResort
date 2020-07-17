@@ -496,11 +496,12 @@ create PROC INSERTFOOD
 @price float,
 @description nvarchar(200),
 @picture image,
+@filePath nvarchar(500),
 @available int
 as
 begin
-	insert into MENUFOOD(IDFood, Name, Price, Description,Picture, Available)
-	values (@idFood,@name,@price,@description,@picture,@available)
+	insert into MENUFOOD(IDFood, Name, Price, Description,Picture,FilePath, Available)
+	values (@idFood,@name,@price,@description,@picture,@filePath,@available)
 end
 go
 
@@ -532,10 +533,11 @@ create PROC UPDATEFOOD
 @price float,
 @description nvarchar(200),
 @picture image,
+@filePath nvarchar(500),
 @available int
 as
 begin 
-	UPDATE MENUFOOD set Name = @name, Price = @price, Description = @description, Picture = @picture ,Available=@available where IDFood = @idFood
+	UPDATE MENUFOOD set Name = @name, Price = @price, Description = @description, Picture = @picture ,FilePath=@filePath,Available=@available where IDFood = @idFood
 end
 go
 --16.5 Load dữ liệu bảng Voucher vào datagridView
