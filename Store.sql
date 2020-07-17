@@ -893,15 +893,52 @@ if OBJECT_ID('SEARCHPHONEBOOKTABLES') is not null drop PROC SEARCHPHONEBOOKTABLE
 go
 
 create PROC SEARCHPHONEBOOKTABLES
-@phone varchar(10)
+@id varchar(10)
 as
 begin
 	select *
-	From BOOK_Table
-	where Phone =@phone
+	From BOOK_TABLE
+	where IDTable =@id
 end
 go
 
+if OBJECT_ID('SEARCHIDTABLES') is not null drop PROC SEARCHIDTABLES
+go
+
+create PROC SEARCHIDTABLES
+@id varchar(10)
+as
+begin
+	select *
+	From TABLES
+	where IDTable =@id
+end
+go
+
+--42. Insert BookTable
+If OBJECT_ID('INSERTBOOKTABLE') is not null drop PROC INSERTBOOKTABLE
+go
+
+create PROC INSERTBOOKTABLE
+@idTable int,
+@Phone varchar(10),
+@dateBooked datetime,
+@timeLine datetime,
+@State nvarchar(200)
+as
+begin
+	declare @checkStateRoom bit
+	select @checkStateRoom = 1
+	from TABLES
+	where State = 'Empty' and IDTable = @idTable
+
+	if (@checkStateRoom is not null)
+		Insert into BOOK_TABLE (IDTable, Phone, DateBooked, Timeline, State)
+		values (@idTable, @Phone, @dateBooked, @timeLine, @State)
+	else
+		throw 50000, 'State table diffrent Empty' , 0;
+end
+go
 
 
 --exec LOADACCOUNT 

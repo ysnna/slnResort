@@ -559,11 +559,6 @@ foreign key (IDRoom) references ROOMS(IDRoom);
 go
 
 
-alter table  BOOK_ROOM
-with nocheck add constraint fk_BOOK_ROOM_CUSTOMER
-foreign key (IDCustomer) references CUSTOMER(IDCustomer);
-go
-
 alter table  ROOM_SERVICE
 with nocheck add constraint fk_ROOM_SERVICE_ROOMS
 foreign key (IDRoom) references ROOMS(IDRoom);
@@ -572,11 +567,6 @@ go
 alter table  ROOM_SERVICE
 with nocheck add constraint fk_ROOM_SERVICE_SERVICES
 foreign key (IDService) references SERVICES(IDService);
-go
-
-alter table  BOOK_TABLE
-with nocheck add constraint fk_BOOK_TABLE_CUSTOMER
-foreign key (IDCustomer) references CUSTOMER(IDCustomer);
 go
 
 alter table  BOOK_TABLE

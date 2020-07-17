@@ -66,62 +66,20 @@ namespace slnMaResort.BLL
             return dt;
         }
 
+        public DataTable searchIDTableEmpty(int ID)
+        {
+            DataTable dt = TableDAL.Instance.searchIDTableEmpty(ID);
+            return dt;
+        }
+
         public DataTable loadDesciptrionByID(int ID)
         {
             DataTable dt = TableDAL.Instance.loadDesciptionID(ID);
             return dt;
         }
-        /*
-        public void LoadTable(FlowLayoutPanel flp)
+        public void insertBookTable(int idTable, string phone, DateTime dateBook, DateTime dateCheckin, string state)
         {
-            List<TableDTO> tableDTOs = new List<TableDTO>();
-            DataTable dt = new DataTable();
-            dt = TableDAL.Instance.loadTable();
-            if (dt.Rows.Count > 0)
-            {
-                foreach (DataRow item in dt.Rows)
-                {
-                    TableDTO tableDTO = new TableDTO(item);
-                    tableDTOs.Add(tableDTO);
-                }
-                foreach (TableDTO item in tableDTOs)
-                {
-                    // 145, 221
-                    Button bt = new Button()
-                    {
-                        Width = TableDTO.width,
-                        Height = TableDTO.height
-                    };
-                    bt.Font = new Font("Times New Roman", 22F, FontStyle.Regular, GraphicsUnit.Point);
-
-                    bt.ForeColor = Color.White;
-                    bt.BackColor = flp.BackColor;
-                    bt.FlatAppearance.BorderColor = Color.White;
-                    bt.FlatAppearance.BorderSize = 3;
-                    bt.FlatStyle = FlatStyle.Flat;
-
-                    if (item.State == "Empty")
-                        bt.BackColor = Color.MediumAquamarine;
-                    else
-                    if (item.State == "Full")
-                        bt.BackColor = Color.DarkKhaki;
-                    else
-                        bt.BackColor = Color.LightSkyBlue;
-                    bt.Click += btTable_Click;
-                    bt.Tag = item;
-                    bt.Text = item.ID.ToString() + Environment.NewLine + item.State;
-                    flp.Controls.Add(bt);
-                    flp.Refresh();
-                }
-            }
+            TableDAL.Instance.insertBookTable(idTable, phone, dateBook, dateCheckin, state);
         }
-
-        void btTable_Click(object sender, EventArgs e)
-        {
-            int TableID = ((sender as Button).Tag as TableDTO).ID;
-            TableDTO.IDTableSelected = TableID;
-            //MessageBox.Show(TableDTO.IDTableSelected.ToString());
-        }
-        */
     }
 }

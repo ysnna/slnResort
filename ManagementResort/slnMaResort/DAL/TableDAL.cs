@@ -77,5 +77,19 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
+        public DataTable searchIDTableEmpty(int id)
+        {
+            string sql = @"EXEC SEARCHIDTABLES '" + id + "'";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
+        public void insertBookTable(int idTable, string phone, DateTime dateBook, DateTime dateCheckin, string state)
+        {
+            string sql = @"EXEC INSERTBOOKTABLE '" + idTable + "','" + phone + "','" + dateBook + "','" + dateCheckin
+                + "','" + state + "'";
+            MY_DB.Instance.executeQuery(sql);
+        }
     }
 }
