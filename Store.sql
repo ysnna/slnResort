@@ -496,12 +496,12 @@ create PROC INSERTFOOD
 @price float,
 @description nvarchar(200),
 @picture image,
-@filePath nvarchar(500),
+
 @available int
 as
 begin
-	insert into MENUFOOD(IDFood, Name, Price, Description,Picture,FilePath, Available)
-	values (@idFood,@name,@price,@description,@picture,@filePath,@available)
+	insert into MENUFOOD(IDFood, Name, Price, Description,Picture, Available)
+	values (@idFood,@name,@price,@description,@picture,@available)
 end
 go
 
@@ -533,11 +533,11 @@ create PROC UPDATEFOOD
 @price float,
 @description nvarchar(200),
 @picture image,
-@filePath nvarchar(500),
+
 @available int
-as
+as	
 begin 
-	UPDATE MENUFOOD set Name = @name, Price = @price, Description = @description, Picture = @picture ,FilePath=@filePath,Available=@available where IDFood = @idFood
+	UPDATE MENUFOOD set Name = @name, Price = @price, Description = @description, Picture = @picture ,Available=@available where IDFood = @idFood
 end
 go
 --16.5 Load dữ liệu bảng Voucher vào datagridView
@@ -551,6 +551,30 @@ begin
 	from MENUFOOD
 	where IDFood=@id
 	order by IDFood, Name	
+end
+go
+--17 Load dữ liệu bảng ticketbooking 
+if OBJECT_ID('LOADTICKETBOOKING') is not null drop PROC LOADTICKETBOOKING
+go
+create PROC LOADTICKETBOOKING
+as
+begin 
+	select *
+	from TICKETBOOKING	
+	order by IDTicketbooking, Name	
+end
+go
+EXEC LOADTICKETBOOKING
+--17.1 Load dữ liệu bảng ticketbooking by ID
+if OBJECT_ID('LOADTICKETBOOKINGBYID') is not null drop PROC LOADTICKETBOOKINGBYID
+go
+create PROC LOADTICKETBOOKINGBYID
+@id int
+as
+begin 
+	select *
+	from TICKETBOOKING
+	where IDTicketbooking = @id
 end
 go
 
