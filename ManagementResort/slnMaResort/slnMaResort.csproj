@@ -57,6 +57,7 @@
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\FoodDAL.cs" />
+    <Compile Include="DAL\InvoiceDAL.cs" />
     <Compile Include="DAL\RoomDAL.cs" />
     <Compile Include="DAL\TableDAL.cs" />
     <Compile Include="DAL\VoucherDAL.cs" />
