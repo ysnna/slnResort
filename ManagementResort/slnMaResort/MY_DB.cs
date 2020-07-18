@@ -14,11 +14,11 @@ namespace slnMaResort
     {   //Danh connection
         //SqlConnection conn = new SqlConnection(@"Data Source=ADMIN\DANH;Initial Catalog=ManagementResort;Integrated Security=True");
         //Na connection
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-TAAGMFB\NNA;Initial Catalog=ManagementResort;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-TAAGMFB\NNA;Initial Catalog=ManagementResort;Integrated Security=True");
         //Duc connection
 
         //Vuong connection
-
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KSVV6FR;Initial Catalog=ManagementResort;Integrated Security=True");
         private static MY_DB instance;
         private MY_DB() { }
         public static MY_DB Instance
