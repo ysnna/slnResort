@@ -19,7 +19,8 @@ namespace slnMaResort.HotelUC
         {
             InitializeComponent();
         }
-
+        string IDRoom = "";
+        int IDService = 0;
         private void btBooking_Click(object sender, EventArgs e)
         {
 
@@ -81,6 +82,20 @@ namespace slnMaResort.HotelUC
             string RoomID = ((sender as Button).Tag as RoomDTO).ID;
             RoomDTO.IDRoomSelected = RoomID;
             txtRoomID.Text = RoomID.ToString();
+            IDRoom = RoomID;
+            RoomBLL.Instance.loadServiceAvailable(dgvServiceAvailable, RoomID);
+            //DataTable timeCheckin = TableDAL.Instance.searchCheckinTime(TableID);
+            //if (stateNull == "Pre order")
+            //{
+            //    pnBooked.Visible = true;
+            //    cbRent.Checked = true;
+            //    datePicker.Value = Convert.ToDateTime(timeCheckin.Rows[0][3].ToString());
+            //    timePicker.Value = Convert.ToDateTime(timeCheckin.Rows[0][3].ToString());
+            //}
+            //else pnBooked.Visible = false;
+            //TableDTO.IDTableSelected = TableID;
+            //txtTableID.Text = TableID.ToString();
+            //TableBLL.Instance.loadDetailsInvoiceFood(dgvOrder, TableID);
             //RoomBLL.Instance.searchDataBookRoom(dgvRoomBooked, txtSearchIDCard.Text);
         }
 
@@ -133,8 +148,36 @@ namespace slnMaResort.HotelUC
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             string index = cbCategory.Text.ToLower();
-            if (index=="all") RoomBLL.Instance.loadTableDGV(dgvRoom);
-            else RoomBLL.Instance.searchStateRoom(dgvRoom,index);
+            if (index == "all") RoomBLL.Instance.loadTableDGV(dgvRoom);
+            else RoomBLL.Instance.searchStateRoom(dgvRoom, index);
+        }
+
+        private void btBookOrService_Click(object sender, EventArgs e)
+        {
+            if (dgvBookRoom.Visible == true)
+            {
+                dgvBookRoom.Visible = false;
+            }
+            else
+            {
+                dgvBookRoom.Visible = true;
+            }
+        }
+
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            RoomBLL.Instance.loadServiceAvailable(dgvServiceAvailable, IDRoom);
+        }
+
+        private void btEdit_Click(object sender, EventArgs e)
+        {
+            RoomBLL.Instance.updateServiceState(IDRoom, IDService, cbStateService.Text);
+            MessageBox.Show("Insert thành công");
+        }
+
+        private void dgvServiceAvailable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IDService = Convert.ToInt32(dgvServiceAvailable.CurrentRow.Cells[0].Value);
         }
     }
 }

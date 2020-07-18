@@ -34,6 +34,13 @@ namespace slnMaResort.BLL
             DataTable dt = TableDAL.Instance.loadTables();
             dgv.DataSource = dt;
         }
+
+        public DataTable searchCheckinTime(int idTable)
+        {
+            DataTable dt = TableDAL.Instance.searchCheckinTime(idTable);
+            return dt;
+        }
+
         public void loadTableDGVOCheckOrder(DataGridView dgv)
         {
             dgv.RowTemplate.Height = 40;
@@ -77,9 +84,24 @@ namespace slnMaResort.BLL
             DataTable dt = TableDAL.Instance.loadDesciptionID(ID);
             return dt;
         }
+        public void loadDetailsInvoiceFood(DataGridView dgv, int idTable)
+        {
+            dgv.RowTemplate.Height = 40;
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DataTable dt = TableDAL.Instance.loadDetailsInvoiceFood(idTable);
+            //MessageBox.Show(dt.Rows[0][0].ToString());
+            //MessageBox.Show(dt.Rows[0][2].ToString());
+            //MessageBox.Show(dt.Rows[0][3].ToString());
+            dgv.DataSource = dt;
+        }
         public void insertBookTable(int idTable, string phone, DateTime dateBook, DateTime dateCheckin, string state)
         {
             TableDAL.Instance.insertBookTable(idTable, phone, dateBook, dateCheckin, state);
+        }
+        public void updateTable(int idTable, string state)
+        {
+            TableDAL.Instance.updateTable(idTable, state);
         }
     }
 }

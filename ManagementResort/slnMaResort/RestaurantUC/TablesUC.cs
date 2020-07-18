@@ -20,6 +20,7 @@ namespace slnMaResort.RestaurantUC
             InitializeComponent();
             LoadTable(pnTableLayout);
             TableBLL.Instance.loadTableDGV(dgvMenu);
+            pnBooked.Visible = false;
         }
 
         public void LoadTable(FlowLayoutPanel flp)
@@ -27,6 +28,7 @@ namespace slnMaResort.RestaurantUC
             List<TableDTO> tableDTOs = new List<TableDTO>();
             DataTable dt = new DataTable();
             dt = TableDAL.Instance.loadTable();
+            
             if (dt.Rows.Count > 0)
             {
                 foreach (DataRow item in dt.Rows)
@@ -69,9 +71,19 @@ namespace slnMaResort.RestaurantUC
         void btTable_Click(object sender, EventArgs e)
         {
             int TableID = ((sender as Button).Tag as TableDTO).ID;
+            string stateNull = ((sender as Button).Tag as TableDTO).State;
+            DataTable timeCheckin = TableDAL.Instance.searchCheckinTime(TableID);
+            if (stateNull == "Pre order")
+            {
+                pnBooked.Visible = true;
+                cbRent.Checked = true;
+                datePicker.Value = Convert.ToDateTime(timeCheckin.Rows[0][3].ToString());
+                timePicker.Value = Convert.ToDateTime(timeCheckin.Rows[0][3].ToString());
+            }
+            else pnBooked.Visible = false;
             TableDTO.IDTableSelected = TableID;
             txtTableID.Text = TableID.ToString();
-
+            TableBLL.Instance.loadDetailsInvoiceFood(dgvOrder, TableID);
         }
 
         private void btOrder_Click(object sender, EventArgs e)
@@ -91,7 +103,7 @@ namespace slnMaResort.RestaurantUC
 
         public void TablesUC_Load(object sender, EventArgs e)
         {
-            //TableListLoad();
+            
         }
 
         private void btAddFood_Click(object sender, EventArgs e)

@@ -34,8 +34,10 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.roomUC = new slnMaResort.HotelUC.RoomUC();
+            this.checkinRoomUC1 = new slnMaResort.HotelUC.CheckinRoomUC();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -74,12 +76,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.checkinRoomUC1);
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1186, 638);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Services";
+            this.tabPage2.Text = "Check-in";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
@@ -100,6 +103,14 @@
             this.roomUC.Size = new System.Drawing.Size(1914, 964);
             this.roomUC.TabIndex = 0;
             // 
+            // checkinRoomUC1
+            // 
+            this.checkinRoomUC1.AutoSize = true;
+            this.checkinRoomUC1.Location = new System.Drawing.Point(0, 0);
+            this.checkinRoomUC1.Name = "checkinRoomUC1";
+            this.checkinRoomUC1.Size = new System.Drawing.Size(1914, 964);
+            this.checkinRoomUC1.TabIndex = 0;
+            // 
             // MHotelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,6 +127,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,5 +142,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private HotelUC.RoomUC roomUC;
         private System.Windows.Forms.TabPage tabPage3;
+        private HotelUC.CheckinRoomUC checkinRoomUC1;
     }
 }

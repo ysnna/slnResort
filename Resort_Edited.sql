@@ -637,3 +637,61 @@ alter table  ACCOUNT_PERMISSION
 with nocheck add constraint fk_ACCOUNT_PERMISSION_ACCOUNT
 foreign key (Username) references ACCOUNT(Username);
 go
+
+if OBJECT_ID('CUSTOMER_TABLE') is not null drop table CUSTOMER_TABLE
+go
+
+create table CUSTOMER_TABLE
+(
+IDCustomer varchar(50),
+IDTable int
+);
+go
+
+
+alter table CUSTOMER_TABLE
+with nocheck add constraint fk_CUSTOMER_TABLE_TABLES
+foreign key (IDTable) references TABLES (IDTable)
+go
+
+alter table CUSTOMER_TABLE
+with nocheck add constraint fk_CUSTOMER_TABLE_CUSTOMER
+foreign key (IDCustomer) references CUSTOMER (IDCustomer)
+go
+
+if OBJECT_ID('SERVICE_AVAILABLE') is not null drop table SERVICE_AVAILABLE
+go
+--create SERVICE_AVAILABLE
+create table SERVICE_AVAILABLE
+(
+IDRoom varchar(50),
+IDService int,
+State nvarchar(200)
+);
+alter table SERVICE_AVAILABLE
+with nocheck add constraint fk_SERVICE_AVAILABLE_ROOM
+foreign key (IDRoom) references ROOMS (IDRoom)
+alter table SERVICE_AVAILABLE
+with nocheck add constraint fk_SERVICE_AVAILABLE_SERVICE
+foreign key (IDService) references SERVICES (IDService)
+
+if OBJECT_ID('CUSTOMER_ROOM') is not null drop table CUSTOMER_ROOM
+go
+
+create table CUSTOMER_ROOM
+(
+IDCustomer varchar(50),
+IDRoom varchar(50)
+);
+go
+
+
+alter table CUSTOMER_ROOM
+with nocheck add constraint fk_CUSTOMER_ROOM_ROOMS
+foreign key (IDRoom) references ROOMS (IDRoom)
+go
+
+alter table CUSTOMER_ROOM
+with nocheck add constraint fk_CUSTOMER_ROOM_CUSTOMER
+foreign key (IDCustomer) references CUSTOMER (IDCustomer)
+go

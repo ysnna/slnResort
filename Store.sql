@@ -839,6 +839,18 @@ begin
 end
 go
 
+if OBJECT_ID('SEARCHCHECKINBOOKTABLE') is not null drop PROC SEARCHCHECKINBOOKTABLE
+go
+create PROC SEARCHCHECKINBOOKTABLE
+@idtable int
+as
+begin 
+	select *
+	from BOOK_TABLE
+	where @idtable = IDTable
+end
+go
+
 --37. Check Room trống trong bảng Book_Room input(DateCheckin, Datecheckout)
 if OBJECT_ID('CHECKTIMEROOM') is not null drop PROC CHECKTIMEROOM
 go
@@ -939,6 +951,114 @@ begin
 		throw 50000, 'State table diffrent Empty' , 0;
 end
 go
+
+--43. update state trong bảng Tables
+if OBJECT_ID('UPDATESTATETABLES') is not null drop PROC UPDATESTATETABLES
+go
+
+create PROC UPDATESTATETABLES
+@idTable int,
+@state nvarchar(200)
+as
+begin
+	UPDATE TABLES SET State = @state where IDTable = @idTable
+end
+go
+
+--41. Search Customer đang ở trong Table và hóa đơn của khách đó.
+If OBJECT_ID('SEARCHCUSTOMERANDINVOICEINTABLE') is not null drop PROC SEARCHCUSTOMERANDINVOICEINTABLE
+go
+
+create PROC SEARCHCUSTOMERANDINVOICEINTABLE
+@idTable int
+as
+begin
+	declare @customer nvarchar(50),
+	@idInvoice varchar(50),
+	@state nvarchar(200),
+	@idCustomer varchar(50)
+
+	select @idCustomer = IDCustomer , @state = State
+	from TABLES join CUSTOMER_TABLE on TABLES.IDTable = CUSTOMER_TABLE.IDTable
+	where TABLES.IDTable = @idTable and State = 'Full'
+
+	select @customer = Name
+	from CUSTOMER
+	where IDCustomer = @idCustomer
+
+
+	select top 1 @idInvoice = IDInvoice
+	from INVOICE
+	where IDCustomer = @idCustomer and Payment is null and Type = 'Food'
+	order by IDInvoice desc
+
+	select @idTable as IDTable, @state as State, @idCustomer as IDCustomer, @customer as NameCustomer, * 
+	from DETAILINVOICEFOOD
+	where IDInvoice = @idInvoice
+end
+go
+
+--56. Select Service room. input(idRoom)
+if OBJECT_ID('SELECTSERVICEAVAILABLE') is not null drop PROC SELECTSERVICEAVAILABLE
+go
+
+create PROC SELECTSERVICEAVAILABLE
+@idRoom varchar(50)
+as
+begin
+	select SERVICES.IDService, Name, SERVICE_AVAILABLE.State
+	from SERVICE_AVAILABLE join SERVICES on SERVICE_AVAILABLE.IDService = SERVICES.IDService
+	where IDRoom = @idRoom
+end
+go
+
+--57. Update State Service Room input(idRoom, idService, state)
+if OBJECT_ID('UPDATESTATESERVICEROOM') is not null drop PROC UPDATESTATESERVICEROOM
+go
+
+create PROC UPDATESTATESERVICEROOM
+@idRoom varchar(50),
+@idService int,
+@state nvarchar(200)
+as
+begin
+	declare @checkUpdateService bit,
+	@checkIdCustomer varchar(50),
+	@checkInvoice varchar(50),
+	@checkDetailService bit
+		UPDATE SERVICE_AVAILABLE SET State = @state  where IDRoom = @idRoom and IDService = @idService
+		select @checkUpdateService = 1
+		from SERVICE_AVAILABLE
+		where IDRoom = @idRoom and IDService = @idService and State = 'Failed'
+	
+	if (@checkUpdateService is not null)
+	begin
+		select @checkIdCustomer = IDCustomer
+		from CUSTOMER_ROOM
+		where IDRoom = @idRoom
+
+		select top 1 @checkInvoice = IDInvoice
+		from INVOICE
+		where IDCustomer = @checkIdCustomer and Payment is null and Type = 'Service'
+
+		declare @priceService float
+		select  @priceService = Price 
+		from SERVICES
+		where IDService = @idService
+
+		select @checkDetailService = 1
+		from DETAILINVOICESERVICES
+		where IDInvoice = @checkInvoice
+			if (@checkDetailService is not null)
+				Insert into DETAILINVOICESERVICES (IDInvoice, Name, Quantity, Price)
+				values (@checkInvoice, @idService, 1, @priceService)
+			else
+				throw 5000, 'Not find Invoice of customer',0;
+	end
+end
+go
+
+
 
 
 --exec LOADACCOUNT 

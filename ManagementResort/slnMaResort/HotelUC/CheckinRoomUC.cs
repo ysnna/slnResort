@@ -16,5 +16,21 @@ namespace slnMaResort.HotelUC
         {
             InitializeComponent();
         }
+        bool checkView = false;
+        private void btView_Click(object sender, EventArgs e)
+        {
+            if (checkView==true)
+            { 
+                dgvRooms.BringToFront();
+                btView.Text = "Rooms";
+                checkView = false;
+            }
+            else
+            {
+                dgvCustomer.BringToFront();
+                btView.Text = "Customers";
+                checkView = true;
+            }
+        }
     }
 }

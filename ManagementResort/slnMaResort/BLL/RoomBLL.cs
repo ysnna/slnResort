@@ -51,7 +51,17 @@ namespace slnMaResort.BLL
             DataTable dt = RoomDAL.Instance.searchIDcard(IDCard);
             dgv.DataSource = dt;
         }
-        
+
+        public void loadServiceAvailable(DataGridView dgv, string idRoom)
+        {
+            dgv.RowTemplate.Height = 40;
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DataTable dt = RoomDAL.Instance.loadServiceAvailable(idRoom);
+            dgv.DataSource = dt;
+        }
+
+
         public void loadBooked(DataGridView dgv)
         {
             dgv.RowTemplate.Height = 40;
@@ -70,6 +80,10 @@ namespace slnMaResort.BLL
         {
             DataTable dt = RoomDAL.Instance.searchDataBookRoom(ID);
             return dt;
+        }
+        public void updateServiceState(string idRoom, int idService, string state)
+        {
+            RoomDAL.Instance.updateServiceState(idRoom, idService, state);
         }
     }
 }

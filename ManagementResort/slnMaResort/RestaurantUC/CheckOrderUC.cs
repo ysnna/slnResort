@@ -65,8 +65,11 @@ namespace slnMaResort.RestaurantUC
                 DateTime dateBooked = Convert.ToDateTime(booked);
                 string checkin = dtpCheckinDate.Value.ToShortDateString() + " " + dtpCheckinTime.Value.ToLongTimeString();
                 DateTime dateCheckin = Convert.ToDateTime(checkin);
-                TableBLL.Instance.insertBookTable(SelectIDTable, txtPhoneCustomer.Text, dateBooked, dateCheckin, "Full");
-                MessageBox.Show("insert thành công");
+                TableBLL.Instance.insertBookTable(SelectIDTable, txtPhoneCustomer.Text, dateBooked, dateCheckin, "Pre order");
+                MessageBox.Show("Order success");
+                TableBLL.Instance.updateTable(SelectIDTable, "Pre order");
+                TableBLL.Instance.loadTableDGVOCheckOrder(dgvListTable);
+                TableBLL.Instance.loadTableBookTable(dgvBookTable);
             }
         }
 

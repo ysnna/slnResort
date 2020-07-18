@@ -53,6 +53,14 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
+        public DataTable loadServiceAvailable(string idRoom)
+        {
+            string sql = @"EXEC SELECTSERVICEAVAILABLE '" + idRoom + "'";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
 
         public DataTable searchDataBookRoom(string ID)
         {
@@ -62,6 +70,13 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
+
+        public void updateServiceState(string idRoom, int idService, string state)
+        {
+            string sql = @"EXEC UPDATESTATESERVICEROOM '" + idRoom + "','" + idService + "','" + state + "'";
+            MY_DB.Instance.executeQuery(sql);
+        }
+
         public DataTable loadBooked()
         {
             string sql = @"EXEC LOADBOOKROOM ";
@@ -70,6 +85,5 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
-
     }
 }

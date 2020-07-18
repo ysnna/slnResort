@@ -49,6 +49,15 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
+        public DataTable searchCheckinTime(int id)
+        {
+            string sql = @"exec SEARCHCHECKINBOOKTABLE '" + id + "'";
+            MY_DB.Instance.executeQuery(sql);
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
 
         public DataTable loadTableBookTable()
         {
@@ -90,6 +99,20 @@ namespace slnMaResort.DAL
             string sql = @"EXEC INSERTBOOKTABLE '" + idTable + "','" + phone + "','" + dateBook + "','" + dateCheckin
                 + "','" + state + "'";
             MY_DB.Instance.executeQuery(sql);
+        }
+
+        public void updateTable(int idTable, string state)
+        {
+            string sql = @"EXEC UPDATESTATETABLES '" + idTable + "','" + state + "'";
+            MY_DB.Instance.executeQuery(sql);
+        }
+        public DataTable loadDetailsInvoiceFood(int id)
+        {
+            string sql = @"EXEC SEARCHCUSTOMERANDINVOICEINTABLE '" + id + "'";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
         }
     }
 }
