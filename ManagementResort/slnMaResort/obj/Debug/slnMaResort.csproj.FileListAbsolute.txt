@@ -120,3 +120,4 @@ D:\Nam3(2)\Github\slnResort\slnResort\ManagementResort\slnMaResort\obj\Debug\sln
 D:\Nam3(2)\Github\slnResort\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csproj.CoreCompileInputs.cache
 D:\Nam3(2)\Github\slnResort\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.exe
 D:\Nam3(2)\Github\slnResort\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.pdb
+D:\Nam3(2)\Github\slnResort\slnResort\ManagementResort\slnMaResort\obj\Debug\slnMaResort.csprojAssemblyReference.cache

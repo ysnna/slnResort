@@ -61,16 +61,25 @@ namespace slnMaResort.RestaurantUC
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            MemoryStream ms = new MemoryStream();
-            picFood.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            byte[] pic = ms.ToArray();
+            int idFood = Convert.ToInt32(txtIDFood.Text);
+            string name = txtNameFood.Text;
+            float price = Convert.ToSingle(txtPrice.Text);
+            string description = txtDescriptions.Text;
+            int amount = Convert.ToInt32(numAvailable.Value);
+            MemoryStream pic = new MemoryStream();
+            picFood.Image.Save(pic, picFood.Image.RawFormat);
 
-            FoodBLL.Instance.insertFood(int.Parse(txtIDFood.Text),
-                txtNameFood.Text,
-                int.Parse(txtPrice.Text),
-                txtDescriptions.Text, ms
-                , int.Parse(numAvailable.Value.ToString()));
+            if (pictureDAL.insertFood(idFood, name, description, price, pic, amount))
+            {
+                //loadServiceMachine();
+                MessageBox.Show("Insert to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FoodBLL.Instance.loadmenufood(dgvMenu);
+                FoodBLL.Instance.LoadFoody(flFood);
+                //ClearFormAddMachine();
+            }
+            else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+    
 
         private void btEdit_Click(object sender, EventArgs e)
         {
@@ -91,10 +100,12 @@ namespace slnMaResort.RestaurantUC
             MemoryStream pic = new MemoryStream();
             picFood.Image.Save(pic, picFood.Image.RawFormat);
 
-            if (pictureDAL.updateMenuFood(idFood, name, price, description, pic, amount))
+            if (pictureDAL.updateMenuFood(idFood, name, price ,description, pic, amount))
             {
                 //loadServiceMachine();
                 MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FoodBLL.Instance.loadmenufood(dgvMenu);
+                FoodBLL.Instance.LoadFoody(flFood);
                 //ClearFormAddMachine();
             }
             else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -112,6 +123,8 @@ namespace slnMaResort.RestaurantUC
         {
             int ID = int.Parse(txtIDFood.Text);
             FoodBLL.Instance.deleteFood(ID);
+            FoodBLL.Instance.loadmenufood(dgvMenu);
+            FoodBLL.Instance.LoadFoody(flFood);
         }
     }
 }
