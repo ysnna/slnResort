@@ -10,12 +10,22 @@ namespace slnMaResort.DTO
 {
     class FoodDTO
     {
+<<<<<<< Updated upstream
         private int _idfood;
         private string _name;
         private int _price;
         private string _description;
         private Image _avata;
         private int _available;
+=======
+
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public float Price { get; set; }
+      //  public string Descriptipn { get; set; }
+        public Image picture { get; set; }
+    //    public int Avalible { get; set; }
+>>>>>>> Stashed changes
 
         public static int width = 300;
         public static int height = 250;

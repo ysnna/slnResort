@@ -103,6 +103,7 @@ IDCard varchar(10) not null,
 Phone varchar(10)  null,
 IDBaseSalary int null,
 IDArea int null,
+email nchar(200) null,
 State nvarchar(200) not null,
 constraint pk_EMPLOYEE primary key (IDEmployee)
 );

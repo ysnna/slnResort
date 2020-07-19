@@ -165,12 +165,20 @@
     <Compile Include="DAL\TableDAL.cs" />
     <Compile Include="DAL\testDAL.cs" />
     <Compile Include="DAL\VoucherDAL.cs" />
+    <Compile Include="DTO\abManager.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\CustomerDTO.cs" />
     <Compile Include="DTO\EmployeeDTO.cs" />
+<<<<<<< Updated upstream
     <Compile Include="DTO\TableDTO.cs" />
     <Compile Include="DTO\testDTO.cs" />
     <Compile Include="DTO\voucherDTO.cs" />
+=======
+    <Compile Include="DTO\FoodDTO.cs" />
+    <Compile Include="DTO\IEmployee.cs" />
+    <Compile Include="DTO\TableDTO.cs" />
+    <Compile Include="DTO\VoucherDTO.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Forms\ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +293,11 @@
     </Compile>
     <Compile Include="Invoices\InvoicesUC.Designer.cs">
       <DependentUpon>InvoicesUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementResortDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManagementResortDataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Include="MY_DB.cs" />
     <Compile Include="ParkUC\AddTicketUC.cs">
@@ -410,10 +423,24 @@
     <EmbeddedResource Include="RestaurantUC\TablesUC.resx">
       <DependentUpon>TablesUC.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< Updated upstream
     <EmbeddedResource Include="RestaurantUC\ucTable.resx">
       <DependentUpon>ucTable.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+=======
+    <None Include="ManagementResortDataSet3.xsc">
+      <DependentUpon>ManagementResortDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ManagementResortDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ManagementResortDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ManagementResortDataSet3.xss">
+      <DependentUpon>ManagementResortDataSet3.xsd</DependentUpon>
+    </None>
+>>>>>>> Stashed changes
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

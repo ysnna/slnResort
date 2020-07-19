@@ -54,12 +54,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 14);
+            this.label1.Location = new System.Drawing.Point(7, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 17);
+            this.label1.Size = new System.Drawing.Size(116, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "List Employees";
             // 
+<<<<<<< Updated upstream
             // dgvEmployee
             // 
             this.dgvEmployee.AutoGenerateColumns = false;
@@ -73,6 +74,20 @@
             this.dgvEmployee.RowTemplate.Height = 24;
             this.dgvEmployee.Size = new System.Drawing.Size(904, 525);
             this.dgvEmployee.TabIndex = 1;
+=======
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 86);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1017, 656);
+            this.dataGridView1.TabIndex = 1;
+>>>>>>> Stashed changes
             // 
             // eMPLOYEEBindingSource
             // 
@@ -81,12 +96,13 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(948, 14);
+            this.label2.Location = new System.Drawing.Point(1066, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 17);
+            this.label2.Size = new System.Drawing.Size(115, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "List Permission";
             // 
+<<<<<<< Updated upstream
             // dgvPermission
             // 
             this.dgvPermission.AutoGenerateColumns = false;
@@ -100,6 +116,22 @@
             this.dgvPermission.RowTemplate.Height = 24;
             this.dgvPermission.Size = new System.Drawing.Size(426, 261);
             this.dgvPermission.TabIndex = 3;
+=======
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.DataSource = this.pERMISSIONBindingSource;
+            this.dataGridView2.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView2.Location = new System.Drawing.Point(1050, 86);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(479, 326);
+            this.dataGridView2.TabIndex = 3;
+>>>>>>> Stashed changes
             // 
             // pERMISSIONBindingSource
             // 
@@ -108,60 +140,65 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(936, 384);
+            this.label3.Location = new System.Drawing.Point(1053, 480);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 17);
+            this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Username";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(936, 442);
+            this.label4.Location = new System.Drawing.Point(1053, 552);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 17);
+            this.label4.Size = new System.Drawing.Size(91, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Permissson";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(1038, 371);
+            this.txtUsername.Location = new System.Drawing.Point(1168, 464);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(158, 30);
+            this.txtUsername.Size = new System.Drawing.Size(177, 36);
             this.txtUsername.TabIndex = 6;
             // 
             // txtPermission
             // 
-            this.txtPermission.Location = new System.Drawing.Point(1038, 426);
+            this.txtPermission.Location = new System.Drawing.Point(1168, 532);
+            this.txtPermission.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPermission.Multiline = true;
             this.txtPermission.Name = "txtPermission";
-            this.txtPermission.Size = new System.Drawing.Size(158, 33);
+            this.txtPermission.Size = new System.Drawing.Size(177, 40);
             this.txtPermission.TabIndex = 7;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(1246, 426);
+            this.btnCancel.Location = new System.Drawing.Point(1402, 532);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 33);
+            this.btnCancel.Size = new System.Drawing.Size(84, 41);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(1297, 371);
+            this.btnXoa.Location = new System.Drawing.Point(1459, 464);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(45, 49);
+            this.btnXoa.Size = new System.Drawing.Size(51, 61);
             this.btnXoa.TabIndex = 12;
             this.btnXoa.Text = "Xoa";
             this.btnXoa.UseVisualStyleBackColor = true;
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(1227, 371);
+            this.btnThem.Location = new System.Drawing.Point(1380, 464);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(48, 49);
+            this.btnThem.Size = new System.Drawing.Size(54, 61);
             this.btnThem.TabIndex = 11;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -169,9 +206,10 @@
             // rdoRestaurant
             // 
             this.rdoRestaurant.AutoSize = true;
-            this.rdoRestaurant.Location = new System.Drawing.Point(221, 30);
+            this.rdoRestaurant.Location = new System.Drawing.Point(249, 38);
+            this.rdoRestaurant.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoRestaurant.Name = "rdoRestaurant";
-            this.rdoRestaurant.Size = new System.Drawing.Size(99, 21);
+            this.rdoRestaurant.Size = new System.Drawing.Size(114, 24);
             this.rdoRestaurant.TabIndex = 13;
             this.rdoRestaurant.TabStop = true;
             this.rdoRestaurant.Text = "Restaurant";
@@ -180,9 +218,10 @@
             // rdoHotel
             // 
             this.rdoHotel.AutoSize = true;
-            this.rdoHotel.Location = new System.Drawing.Point(501, 30);
+            this.rdoHotel.Location = new System.Drawing.Point(564, 38);
+            this.rdoHotel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoHotel.Name = "rdoHotel";
-            this.rdoHotel.Size = new System.Drawing.Size(62, 21);
+            this.rdoHotel.Size = new System.Drawing.Size(72, 24);
             this.rdoHotel.TabIndex = 14;
             this.rdoHotel.TabStop = true;
             this.rdoHotel.Text = "Hotel";
@@ -191,9 +230,10 @@
             // rdoPark
             // 
             this.rdoPark.AutoSize = true;
-            this.rdoPark.Location = new System.Drawing.Point(826, 30);
+            this.rdoPark.Location = new System.Drawing.Point(929, 38);
+            this.rdoPark.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoPark.Name = "rdoPark";
-            this.rdoPark.Size = new System.Drawing.Size(58, 21);
+            this.rdoPark.Size = new System.Drawing.Size(66, 24);
             this.rdoPark.TabIndex = 15;
             this.rdoPark.TabStop = true;
             this.rdoPark.Text = "Park";
@@ -201,7 +241,7 @@
             // 
             // ucListEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.rdoPark);
@@ -218,9 +258,15 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvEmployee);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ucListEmployee";
+<<<<<<< Updated upstream
             this.Size = new System.Drawing.Size(1389, 610);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
+=======
+            this.Size = new System.Drawing.Size(1563, 762);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+>>>>>>> Stashed changes
             ((System.ComponentModel.ISupportInitialize)(this.eMPLOYEEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermission)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERMISSIONBindingSource)).EndInit();

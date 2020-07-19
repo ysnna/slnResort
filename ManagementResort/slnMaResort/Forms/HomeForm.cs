@@ -113,5 +113,10 @@ namespace slnMaResort.Forms
             //sp.updateProduct(id, idcate, name, price, des);
             //loadgridproduct();
         }
+
+        private void homeVoucherUC_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

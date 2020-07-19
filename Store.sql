@@ -554,6 +554,22 @@ begin
 end
 go
 
+--24.2 LOADVOUCHER by AREA
+if OBJECT_ID('LOADVOUCHERBYAREA') is not null drop PROC LOADVOUCHERBYAREA
+go
+create PROC LOADVOUCHERBYAREA
+@area int
+as
+begin
+	select EMPLOYEE.IDArea, EMPLOYEE.IDEmployee, EMPLOYEE.email
+	from EMPLOYEE, AREA
+	where EMPLOYEE.IDArea = @area
+	order by Name
+end
+go
+
+EXEC LOADVOUCHERBYAREA 3
+
 --24.1 InsertFood
 if OBJECT_ID('INSERTFOOD') is not null drop PROC INSERTFOOD
 go
@@ -619,6 +635,7 @@ begin
 	order by IDFood, Name	
 end
 go
+
 
 --24.
 

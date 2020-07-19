@@ -26,12 +26,13 @@ namespace slnMaResort.BLL
             private set => FoodBLL.instance = value;
         }
 
-        void loadMenuFoody(DataGridView dgv) { }
+        void loadMenuFoody(DataGridView dgv, PictureBox ptb) { }
 
         //load lên datagridview
 
         public void loadmenufood(DataGridView dgv)
         {
+<<<<<<< Updated upstream
             dgv.RowTemplate.Height = 40;
             dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgv.AllowUserToAddRows = false;
@@ -42,12 +43,27 @@ namespace slnMaResort.BLL
             DataTable dt = FoodDAL.Instance.loadMenuFood();
             dgv.DataSource = dt;
             
+=======
+           // dgv.Rows.Clear();
+            DataTable dt = FoodDAL.Instance.loadMenuFood();  
+            dgv.DataSource = dt;
+            
+            dgv.RowTemplate.Height = 70;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+            DataGridViewImageColumn pic = (DataGridViewImageColumn)dgv.Columns[4];
+            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
+
+>>>>>>> Stashed changes
         }
         public DataTable loadfoodbyid(int id)
         {
             DataTable dt = FoodDAL.Instance.LoadFoodByID(id);
             return dt;
         }
+        
         public void LoadFoody(FlowLayoutPanel flp)
         {
             List<FoodDTO> foodDTOs = new List<FoodDTO>();

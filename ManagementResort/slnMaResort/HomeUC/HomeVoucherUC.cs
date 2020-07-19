@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using slnMaResort.BLL;
+using slnMaResort.DTO;
+using System.Data.SqlClient;
 
 namespace slnMaResort.HomeUC
 {
@@ -38,18 +40,24 @@ namespace slnMaResort.HomeUC
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int IdVoucher = Int32.Parse(txtIDVoucher.Text);
-            string Area = cbxAreaVoucher.Text;
+            int Area = int.Parse(cbxAreaVoucher.Text);
             string NameVoucher = txtNameVoucher.Text;
             DateTime starDate = dtpStareDateVoucher.Value;
             DateTime expriration = dtpExprirationVoucher.Value;
             int precent = Int32.Parse(numPercent.Text);
-            DataTable dt = VoucherBLL.Instance.loadAllVou();
+
             int i = 0;
+            VoucherBLL.Instance.ObserUpdateVoucher(NameVoucher, Area, starDate, expriration);
+
+
+            DataTable dt = VoucherBLL.Instance.loadAllVou();
+          
             while (i < dt.Rows.Count)
             {
                 if (IdVoucher.ToString() != dt.Rows[i][0].ToString())
                 {
                     i++;
+
                 }
                 else
                 {
@@ -89,7 +97,7 @@ namespace slnMaResort.HomeUC
         void addVoucher()
         {
             int IdVoucher = Int32.Parse(txtIDVoucher.Text);
-            string Area = cbxAreaVoucher.Text;
+            int Area = int.Parse(cbxAreaVoucher.Text);
             string NameVoucher = txtNameVoucher.Text;
             DateTime starDate = dtpStareDateVoucher.Value;
             DateTime expriration = dtpExprirationVoucher.Value;

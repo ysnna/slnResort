@@ -35,7 +35,7 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
-        public void insertVou(int ID, string Area, string Name, DateTime StartDate, DateTime Expriration, int Percents)
+        public void insertVou(int ID, int Area, string Name, DateTime StartDate, DateTime Expriration, int Percents)
         {
             string sql = @"EXEC INSERTVOUCHER '" + ID + "','" + Area + "','" + Name + "','" + StartDate
                 + "','" + Expriration + "','" + Percents + "'";
@@ -49,11 +49,21 @@ namespace slnMaResort.DAL
             MY_DB.Instance.executeQuery(sql);
         }
 
-        public void updateVou(int ID, string Area, string Name, DateTime StartDate, DateTime Expriration, int Percents)
+        public void updateVou(int ID, int Area, string Name, DateTime StartDate, DateTime Expriration, int Percents)
         {
             string sql = @"EXEC UPDATEVOUCHER '" + ID + "','" + Area + "','" + Name + "','" + StartDate
                 + "','" + Expriration + "','" + Percents + "'";
             MY_DB.Instance.executeQuery(sql);
+        }
+
+        public DataTable loadVoucherbyArea(int Area)
+        {
+            string sql = @"EXEC LOADVOUCHERBYAREA '" + Area + "'";
+
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
         }
     }
 }
