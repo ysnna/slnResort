@@ -1,6 +1,6 @@
 ﻿namespace slnMaResort.HotelUC
 {
-    partial class InvoiceServicesUC
+    partial class InvoiceHotelUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -38,6 +38,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -68,12 +73,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvInvoiceRoom = new System.Windows.Forms.DataGridView();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -84,21 +84,20 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.dgvPermission = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvListRoom = new System.Windows.Forms.DataGridView();
             this.btPayment = new System.Windows.Forms.Button();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.btSignIn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvInvoiceService = new System.Windows.Forms.DataGridView();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPermission)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListRoom)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceService)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox8
@@ -121,7 +120,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(453, 59);
             this.textBox1.TabIndex = 107;
-            this.textBox1.Text = "Số 1 Võ Văn Ngân, Thủ Đức";
             // 
             // textBox2
             // 
@@ -131,7 +129,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(153, 33);
             this.textBox2.TabIndex = 107;
-            this.textBox2.Text = "0443344560";
             // 
             // txtName
             // 
@@ -141,7 +138,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(294, 33);
             this.txtName.TabIndex = 107;
-            this.txtName.Text = "Nguyễn Lê Nguyên Anh";
             // 
             // textBox6
             // 
@@ -194,7 +190,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(181, 135);
+            this.label10.Location = new System.Drawing.Point(187, 88);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(133, 25);
             this.label10.TabIndex = 106;
@@ -227,7 +223,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(181, 86);
+            this.label5.Location = new System.Drawing.Point(187, 39);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(131, 25);
             this.label5.TabIndex = 106;
@@ -238,7 +234,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(26, 135);
+            this.label9.Location = new System.Drawing.Point(32, 88);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(137, 25);
             this.label9.TabIndex = 106;
@@ -287,7 +283,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(26, 39);
+            this.label2.Location = new System.Drawing.Point(32, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 25);
             this.label2.TabIndex = 106;
@@ -310,7 +306,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(26, 86);
+            this.label3.Location = new System.Drawing.Point(32, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 25);
             this.label3.TabIndex = 106;
@@ -334,7 +330,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Crimson;
-            this.label4.Location = new System.Drawing.Point(181, 39);
+            this.label4.Location = new System.Drawing.Point(187, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 25);
             this.label4.TabIndex = 106;
@@ -418,7 +414,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(453, 40);
             this.textBox3.TabIndex = 107;
-            this.textBox3.Text = "Note";
             // 
             // textBox4
             // 
@@ -453,17 +448,17 @@
             this.label26.TabIndex = 214;
             this.label26.Text = "VND";
             // 
-            // dataGridView1
+            // dgvInvoiceRoom
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dgvInvoiceRoom.AllowUserToAddRows = false;
+            this.dgvInvoiceRoom.AllowUserToDeleteRows = false;
+            this.dgvInvoiceRoom.AllowUserToResizeColumns = false;
+            this.dgvInvoiceRoom.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dgvInvoiceRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvInvoiceRoom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvInvoiceRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvInvoiceRoom.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -471,14 +466,8 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8});
+            this.dgvInvoiceRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvInvoiceRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -486,10 +475,10 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(505, 277);
-            this.dataGridView1.Name = "dataGridView1";
+            this.dgvInvoiceRoom.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvInvoiceRoom.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvInvoiceRoom.Location = new System.Drawing.Point(505, 277);
+            this.dgvInvoiceRoom.Name = "dgvInvoiceRoom";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -497,48 +486,18 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvInvoiceRoom.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvInvoiceRoom.RowHeadersVisible = false;
+            this.dgvInvoiceRoom.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.RowTemplate.Height = 50;
-            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(921, 674);
-            this.dataGridView1.TabIndex = 238;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "ID Food";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 95;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.HeaderText = "Name";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Quantity";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 104;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column7.HeaderText = "Price";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Discount";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 104;
+            this.dgvInvoiceRoom.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvInvoiceRoom.RowTemplate.Height = 50;
+            this.dgvInvoiceRoom.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInvoiceRoom.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvInvoiceRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInvoiceRoom.Size = new System.Drawing.Size(921, 304);
+            this.dgvInvoiceRoom.TabIndex = 238;
             // 
             // label25
             // 
@@ -591,9 +550,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(14, 251);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 23);
+            this.label1.Size = new System.Drawing.Size(98, 23);
             this.label1.TabIndex = 239;
-            this.label1.Text = "Menu Food";
+            this.label1.Text = "List Room";
             // 
             // label14
             // 
@@ -624,9 +583,9 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(510, 251);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 23);
+            this.label6.Size = new System.Drawing.Size(72, 23);
             this.label6.TabIndex = 240;
-            this.label6.Text = "Order Food";
+            this.label6.Text = "Invoice";
             // 
             // label7
             // 
@@ -652,16 +611,16 @@
             this.button3.Text = "PRINT AN INVOICE";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // dgvPermission
+            // dgvListRoom
             // 
-            this.dgvPermission.AllowUserToAddRows = false;
-            this.dgvPermission.AllowUserToDeleteRows = false;
-            this.dgvPermission.AllowUserToResizeColumns = false;
-            this.dgvPermission.AllowUserToResizeRows = false;
+            this.dgvListRoom.AllowUserToAddRows = false;
+            this.dgvListRoom.AllowUserToDeleteRows = false;
+            this.dgvListRoom.AllowUserToResizeColumns = false;
+            this.dgvListRoom.AllowUserToResizeRows = false;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPermission.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvPermission.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvPermission.BackgroundColor = System.Drawing.Color.White;
+            this.dgvListRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvListRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvListRoom.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -669,12 +628,8 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPermission.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvPermission.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPermission.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
+            this.dgvListRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvListRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -682,10 +637,10 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPermission.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvPermission.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvPermission.Location = new System.Drawing.Point(12, 277);
-            this.dgvPermission.Name = "dgvPermission";
+            this.dgvListRoom.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvListRoom.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvListRoom.Location = new System.Drawing.Point(12, 277);
+            this.dgvListRoom.Name = "dgvListRoom";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -693,36 +648,18 @@
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPermission.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvPermission.RowHeadersVisible = false;
-            this.dgvPermission.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvListRoom.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvListRoom.RowHeadersVisible = false;
+            this.dgvListRoom.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPermission.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvPermission.RowTemplate.Height = 50;
-            this.dgvPermission.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPermission.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvPermission.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPermission.Size = new System.Drawing.Size(487, 674);
-            this.dgvPermission.TabIndex = 237;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID Food";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 95;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Name";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Price";
-            this.Column3.Name = "Column3";
+            this.dgvListRoom.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvListRoom.RowTemplate.Height = 50;
+            this.dgvListRoom.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListRoom.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvListRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListRoom.Size = new System.Drawing.Size(487, 674);
+            this.dgvListRoom.TabIndex = 237;
             // 
             // btPayment
             // 
@@ -807,7 +744,7 @@
             this.btSignIn.Name = "btSignIn";
             this.btSignIn.Size = new System.Drawing.Size(1914, 40);
             this.btSignIn.TabIndex = 233;
-            this.btSignIn.Text = "Check of Invoices - Restaurant Area";
+            this.btSignIn.Text = "Check of Invoices - Hotel Area";
             this.btSignIn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btSignIn.UseVisualStyleBackColor = false;
             // 
@@ -826,27 +763,81 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Invoice to";
             // 
-            // InvoiceServicesUC
+            // dgvInvoiceService
+            // 
+            this.dgvInvoiceService.AllowUserToAddRows = false;
+            this.dgvInvoiceService.AllowUserToDeleteRows = false;
+            this.dgvInvoiceService.AllowUserToResizeColumns = false;
+            this.dgvInvoiceService.AllowUserToResizeRows = false;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInvoiceService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvInvoiceService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvInvoiceService.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvInvoiceService.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInvoiceService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvInvoiceService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInvoiceService.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvInvoiceService.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvInvoiceService.Location = new System.Drawing.Point(505, 587);
+            this.dgvInvoiceService.Name = "dgvInvoiceService";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInvoiceService.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvInvoiceService.RowHeadersVisible = false;
+            this.dgvInvoiceService.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInvoiceService.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvInvoiceService.RowTemplate.Height = 50;
+            this.dgvInvoiceService.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInvoiceService.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvInvoiceService.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInvoiceService.Size = new System.Drawing.Size(921, 364);
+            this.dgvInvoiceService.TabIndex = 241;
+            // 
+            // InvoiceHotelUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.dgvInvoiceService);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvInvoiceRoom);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dgvPermission);
+            this.Controls.Add(this.dgvListRoom);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btSignIn);
             this.Controls.Add(this.groupBox1);
-            this.Name = "InvoiceServicesUC";
+            this.Name = "InvoiceHotelUC";
             this.Size = new System.Drawing.Size(1914, 964);
+            this.Load += new System.EventHandler(this.InvoiceHotelUC_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPermission)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListRoom)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceService)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -884,12 +875,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label26;
-        public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        public System.Windows.Forms.DataGridView dgvInvoiceRoom;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
@@ -900,15 +886,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button3;
-        public System.Windows.Forms.DataGridView dgvPermission;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        public System.Windows.Forms.DataGridView dgvListRoom;
         private System.Windows.Forms.Button btPayment;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox9;
         public System.Windows.Forms.Button btSignIn;
         private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.DataGridView dgvInvoiceService;
     }
 }

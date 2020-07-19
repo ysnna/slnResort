@@ -16,5 +16,10 @@ namespace slnMaResort.ParkUC
         {
             InitializeComponent();
         }
+
+        private void btEdit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
