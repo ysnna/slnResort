@@ -63,6 +63,7 @@
     <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\FoodDAL.cs" />
     <Compile Include="DAL\InvoiceDAL.cs" />
+    <Compile Include="DAL\PictureDAL.cs" />
     <Compile Include="DAL\RoomDAL.cs" />
     <Compile Include="DAL\ServicesDAL.cs" />
     <Compile Include="DAL\TableDAL.cs" />
@@ -186,6 +187,7 @@
     <Compile Include="Invoices\InvoicesUC.Designer.cs">
       <DependentUpon>InvoicesUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyPic.cs" />
     <Compile Include="MY_DB.cs" />
     <Compile Include="ParkUC\AddTicketUC.cs">
       <SubType>UserControl</SubType>
