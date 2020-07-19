@@ -120,5 +120,31 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
+
+        //Vương viết
+        //public void insertBookRoom(string idCard, string idRoom, DateTime dateBooked, DateTime dateCheckin, DateTime dateCheckout, string state)
+        //{
+        //    string sql = @"EXEC INSERTBOOKTABLE '" + idCard + "','" + idRoom + "','" + dateBooked + "','" + dateCheckin
+        //        + "','" + dateCheckout + "','" + state + "'";
+        //    MY_DB.Instance.executeQuery(sql);
+        //}
+
+        public void updateStateRoom(string idRoom, string state)
+        {
+            string sql = @"EXEC UPDATESTATEROOM '" + idRoom + "','" + state + "'";
+            MY_DB.Instance.executeQuery(sql);
+        }
+
+        public void updateStateBookRoom(string idRoom, string state)
+        {
+            string sql = @"EXEC UPDATESTATEBOOKROOM '" + idRoom + "','" + state + "'";
+            MY_DB.Instance.executeQuery(sql);
+        }
+
+        public void deleteBookRoom(string idRoom)
+        {
+            string sql = @"EXEC DELETEBOOKROOM '" + idRoom + "'";
+            MY_DB.Instance.executeQuery(sql);
+        }
     }
 }

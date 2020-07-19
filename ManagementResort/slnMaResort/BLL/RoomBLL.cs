@@ -107,5 +107,9 @@ namespace slnMaResort.BLL
         {
             RoomDAL.Instance.insertBookRoom(idCard, idRoom, dateBooked, dateCheckin, dateCheckOut, state);
         }
+        public void updateStateRoom(string idRoom, string state)
+        {
+            RoomDAL.Instance.updateStateRoom(idRoom, state);
+        }
     }
 }

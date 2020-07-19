@@ -26,5 +26,15 @@ namespace slnMaResort.BLL
             DataTable dt = CustomerDAL.Instance.createIDCustomer();
             return dt;
         }
+         
+        public void insertCustomerRoom(string idCustomer, string idRoom)
+        {
+            CustomerDAL.Instance.insertCustomerRoom(idCustomer, idRoom);
+        }
+
+        public void insertCustomer(string IDCustomer, string name, DateTime birthday, string gender, string phone, string IDCard)
+        {
+            CustomerDAL.Instance.insertCustomer(IDCustomer, name, birthday, gender, phone, IDCard);
+        }
     }
 }

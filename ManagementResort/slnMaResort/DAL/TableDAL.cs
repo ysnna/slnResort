@@ -114,5 +114,24 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
+
+        //Vương viết
+        public void updateStateTables(int idTable, string state)
+        {
+            string sql = @"EXEC UPDATESTATETABLES '" + idTable + "','" + state + "'";
+            MY_DB.Instance.executeQuery(sql);
+        }
+
+        public void updateStateBookTable(int idTable, string state)
+        {
+            string sql = @"EXEC UPDATESTATEBOOKTABLE '" + idTable + "','" + state + "'";
+            MY_DB.Instance.executeQuery(sql);
+        }
+
+        public void deleteBookTable(int idTable)
+        {
+            string sql = @"EXEC DELETEBOOKTABLE '" + idTable + "'";
+            MY_DB.Instance.executeQuery(sql);
+        }
     }
 }

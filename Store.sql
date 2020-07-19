@@ -1019,7 +1019,7 @@ begin
 
 	select top 1 @idInvoice = IDInvoice
 	from INVOICE
-	where IDCustomer = @idCustomer and Payment is null and Type = 'Food'
+	where IDCustomer = @idCustomer and Payment = 0 and Type = 'Food'
 	order by IDInvoice desc
 
 	select @idTable as IDTable, @state as State, @idCustomer as IDCustomer, @customer as NameCustomer, * 
@@ -1069,7 +1069,7 @@ begin
 
 		select top 1 @checkInvoice = IDInvoice
 		from INVOICE
-		where IDCustomer = @checkIdCustomer and Payment is null and Type = 'Service'
+		where IDCustomer = @checkIdCustomer and Payment = 0 and Type = 'Service'
 
 		declare @priceService float
 		select  @priceService = Price 
@@ -1099,7 +1099,7 @@ begin
 
 	select @idInvoice = IDInvoice
 	from INVOICE
-	where IDCustomer = @idcustomer and Payment is null and Type = 'Room'
+	where IDCustomer = @idcustomer and Payment = 0 and Type = 'Room'
 
 	select @dateCheckin = DateBooked , @dateCheckout = DateCheckOut
 	from DETAILINVOICEROOM
@@ -1124,6 +1124,172 @@ begin
 	where IDRoom =@id
 end
 go
+
+--49. insert customer
+if OBJECT_ID('INSERTCUSTOMER') is not null drop PROC INSERTCUSTOMER
+go
+
+create PROC INSERTCUSTOMER
+@idCustomer varchar(50),
+@name nvarchar(100),
+@birthday date,
+@gender bit,
+@phone varchar(10),
+@idCard varchar(10)
+as
+begin
+	Insert into CUSTOMER (IDCustomer, Name, Birthday, Gender , Phone, IDCard)
+	values (@idCustomer, @name, @birthday, @gender, @phone, @idCard)
+end
+go
+
+if OBJECT_ID('INSERTCUSTOMERROOM') is not null drop PROC INSERTCUSTOMERROOM
+go
+
+create PROC INSERTCUSTOMERROOM
+@idCustomer varchar(50),
+@idRoom varchar(50)
+as
+begin
+	Insert into CUSTOMER_ROOM(IDCustomer, IDRoom)
+	values (@idCustomer, @idRoom)
+end
+go
+
+--51. Insert Invoice
+if OBJECT_ID('INSERTINVOICE') is not null drop PROC INSERTINVOICE
+go
+
+create PROC INSERTINVOICE
+@idInvoice varchar(50),
+@idCustomer varchar(50),
+@idEmployee varchar(50),
+@type nvarchar(200),
+@datePayment datetime,
+@total float,
+@idVoucher int,
+@totalDiscount float,
+@payment float,
+@change float,
+@state nvarchar(200)
+as
+begin 
+	INSERT into INVOICE (IDInvoice, IDCustomer, IDEmployee, Type,
+	DatePayment, Total, IDVoucher, TotalDiscount, Payment, Change, State)
+	values (@idInvoice, @idCustomer, @idEmployee, @type, @datePayment, 
+	@total, @idVoucher, @totalDiscount, @payment, @change, @state)
+end
+go
+
+--52. Insert Invoice DetailFood
+if OBJECT_ID('INSERTDETAILFOOD') is not null drop PROC INSERTDETAILFOOD
+go
+
+create PROC INSERTDETAILFOOD
+@idInvoice varchar(50),
+@food int,
+@quantity int,
+@price float
+as
+begin
+	declare @checkExist bit
+	select @checkExist = 1
+	from INVOICE
+	where IDInvoice = @idInvoice
+
+	if(@checkExist is not null)
+		Insert into DETAILINVOICEFOOD (IDInvoice, Food, Quantity, Price)
+		values (@idInvoice, @food, @quantity, @price)
+	else
+		throw 50000 ,'Not exist Invoice', 0;
+end
+go
+
+--53. Insert Invoice DetailRoom
+if OBJECT_ID('INSERTDETAILROOM') is not null drop PROC INSERTDETAILROOM
+go
+
+create PROC INSERTDETAILROOM
+@idInvoice varchar(50),
+@idRoom varchar(50),
+@dateBooked datetime,
+@dateCheckOut datetime,
+@checkOut datetime,
+@price float
+as
+begin
+	declare @checkExist bit
+	select @checkExist = 1
+	from INVOICE
+	where IDInvoice = @idInvoice
+
+	if(@checkExist is not null)
+		Insert into DETAILINVOICEROOM (IDInvoice, IDRoom, DateBooked, DateCheckOut, CheckedOut, Price)
+		values (@idInvoice, @idRoom, @dateBooked, @dateCheckOut, @checkOut, @price)
+	else
+		throw 50000 ,'Not exist Invoice', 0;
+end
+go
+
+--54. Insert Invoice DetailService
+if OBJECT_ID('INSERTDETAILSERVICE') is not null drop PROC INSERTDETAILSERVICE
+go
+
+create PROC INSERTDETAILSERVICE
+@idInvoice varchar(50),
+@name int,
+@quantity int,
+@price float
+as
+begin
+	declare @checkExist bit
+	select @checkExist = 1
+	from INVOICE
+	where IDInvoice = @idInvoice
+	if(@checkExist is not null)
+		INSERT into DETAILINVOICESERVICES (IDInvoice, Name, Quantity, Price)
+		values (@idInvoice, @name, @quantity, @price)
+	else
+		throw 50000 ,'Not exist Invoice', 0;
+end
+go
+
+--55. Insert Invoice DetailPark
+if OBJECT_ID('INSERTDETAILPARK') is not null drop PROC INSERTDETAILPARK
+go
+
+create PROC INSERTDETAILPARK
+@idInvoice varchar(50),
+@ticket int,
+@quantity int,
+@price float
+as
+begin
+	declare @checkExist bit
+	select @checkExist = 1
+	from INVOICE
+	where IDInvoice = @idInvoice
+	if(@checkExist is not null)
+		INSERT into DETAILINVOICEPARK (IDInvoice, Ticket, Quantity, Price)
+		values (@idInvoice, @ticket, @quantity, @price)
+	else
+		throw 50000 ,'Not exist Invoice', 0;
+end
+go
+
+--45. update State trong bảng Rooms
+if OBJECT_ID('UPDATESTATEROOM') is not null drop PROC UPDATESTATEROOM
+go
+
+create PROC UPDATESTATEROOM
+@idRoom	varchar(50),
+@state nvarchar(200)
+as
+begin
+	UPDATE ROOMS SET State = @state where IDRoom = @idRoom	
+end
+go
+
 
 
 
