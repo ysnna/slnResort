@@ -12,7 +12,8 @@ namespace slnMaResort
     {
 
         //SqlConnection conn = new SqlConnection(@"Data Source=192.168.43.252,1433;Initial Catalog=DBMS;Persist Security Info=True;User ID=ysnna;Password=123456");
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-TAAGMFB\NNA;Initial Catalog=ManagementResort;Integrated Security=True");
+        // SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-TAAGMFB\NNA;Initial Catalog=ManagementResort;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=MSI\SQLEXPRESS;Initial Catalog=ManagementResort;Integrated Security=True");
 
         public SqlConnection getConnection
         {

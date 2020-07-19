@@ -7,6 +7,8 @@ using System.Data;
 using System.Windows.Forms;
 using slnMaResort.DAL;
 using slnMaResort.DTO;
+using System.IO;
+using System.Drawing;
 
 namespace slnMaResort.BLL
 {
@@ -34,7 +36,7 @@ namespace slnMaResort.BLL
             }
             dgv.DataSource = dt1;
         }
-
+       
         public DataTable loadAllTicket()
         {
 
@@ -106,6 +108,79 @@ namespace slnMaResort.BLL
                 i++;
             }
             return subtotal;
+        }
+        public void loadpicket(DataGridView dgv)
+        {
+            dgv.RowTemplate.Height = 40;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+
+            DataTable dt = TicketDAL.Instance.loadAllTicket();
+            dgv.DataSource = dt;
+            DataGridViewImageColumn pic = new DataGridViewImageColumn();
+            pic = (DataGridViewImageColumn)dgv.Columns[3];
+            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
+
+   
+        }
+
+        public void insertTicket(int IDticket, string Name, float price, MemoryStream Picture, int Available)
+        {
+            TicketDAL.Instance.insertTicket(IDticket, Name, price, Picture, Available);
+        }
+        public void updateTicket(int IDticket, string Name, float price, MemoryStream Picture, int Available)
+        {
+            TicketDAL.Instance.updateTicket(IDticket, Name, price, Picture, Available);
+        }
+        public void deleteTicket(int ID)
+        {
+            TicketDAL.Instance.deleteTicket(ID);
+        }
+        public DataTable loadticketbyId(int id)
+        {
+            DataTable dt = TicketDAL.Instance.loadTicketByID(id);
+            return dt;
+        }
+        public void LoadPicTicket(FlowLayoutPanel flp)
+        {
+            flp.Controls.Clear();
+            List<TicketssDTO> ticketssDTOs = new List<TicketssDTO>();
+            DataTable dt = new DataTable();
+            dt = TicketDAL.Instance.loadAllTicket();
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    TicketssDTO ticketssDTO = new TicketssDTO(item);
+                    ticketssDTOs.Add(ticketssDTO);
+                }
+                foreach (TicketssDTO item in ticketssDTOs)
+                {
+                    // 145, 221
+                    Button bt = new Button()
+                    {
+                        Width = TicketssDTO.width,
+                        Height = TicketssDTO.height
+                    };
+                    bt.Font = new Font("Times New Roman", 22F, FontStyle.Regular, GraphicsUnit.Point);
+
+                    bt.ForeColor = Color.Navy;
+                    bt.BackColor = flp.BackColor;
+                    bt.FlatAppearance.BorderColor = Color.Navy;
+                    bt.FlatAppearance.BorderSize = 5;
+                    bt.FlatStyle = FlatStyle.Flat;
+
+                    bt.Text = item.ID.ToString();
+                    bt.BackgroundImage = item.Pic;
+                    bt.BackgroundImageLayout = ImageLayout.Zoom;
+
+                    flp.Controls.Add(bt);
+                    flp.Refresh();
+                }
+            }
+
+
         }
     }
 }

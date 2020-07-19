@@ -33,5 +33,26 @@ namespace slnMaResort.DAL
                 return false;
             }
         }
+
+        public bool updateTicker(int id, string name, float price,  MemoryStream pic, int amount)
+        {
+            SqlCommand cmd = new SqlCommand("update TICKETBOOKING set Name=@name, Picture=@pic, Price=@price, Available=@amt where IDTicketbooking=@id", myPic.getConnection);
+            cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
+            cmd.Parameters.Add("@pic", SqlDbType.Image).Value = pic.ToArray();
+            cmd.Parameters.Add("@price", SqlDbType.Float).Value = price;
+            cmd.Parameters.Add("@amt", SqlDbType.Int).Value = amount;
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            myPic.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                myPic.closeConnection();
+                return true;
+            }
+            else
+            {
+                myPic.closeConnection();
+                return false;
+            }
+        }
     }
 }

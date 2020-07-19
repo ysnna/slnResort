@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTicketUC));
             this.dgvTickets = new System.Windows.Forms.DataGridView();
             this.btRefresh = new System.Windows.Forms.Button();
@@ -51,8 +51,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btSignIn = new System.Windows.Forms.Button();
+            this.flTicket = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAvailable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTicket)).BeginInit();
@@ -65,40 +65,41 @@
             this.dgvTickets.AllowUserToDeleteRows = false;
             this.dgvTickets.AllowUserToResizeColumns = false;
             this.dgvTickets.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTickets.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTickets.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTickets.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvTickets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvTickets.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTickets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTickets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTickets.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvTickets.Location = new System.Drawing.Point(14, 592);
             this.dgvTickets.Name = "dgvTickets";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTickets.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTickets.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTickets.RowHeadersVisible = false;
             this.dgvTickets.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTickets.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTickets.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvTickets.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTickets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvTickets.Size = new System.Drawing.Size(1348, 358);
             this.dgvTickets.TabIndex = 249;
+            this.dgvTickets.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTickets_CellClick);
             // 
             // btRefresh
             // 
@@ -129,6 +130,7 @@
             this.btEdit.Size = new System.Drawing.Size(34, 35);
             this.btEdit.TabIndex = 270;
             this.btEdit.UseVisualStyleBackColor = false;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btAdd
             // 
@@ -144,6 +146,7 @@
             this.btAdd.Size = new System.Drawing.Size(39, 35);
             this.btAdd.TabIndex = 271;
             this.btAdd.UseVisualStyleBackColor = false;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // btDelete
             // 
@@ -159,6 +162,7 @@
             this.btDelete.Size = new System.Drawing.Size(40, 35);
             this.btDelete.TabIndex = 272;
             this.btDelete.UseVisualStyleBackColor = false;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // txtPrice
             // 
@@ -272,6 +276,7 @@
             this.btUploadImage.TabIndex = 219;
             this.btUploadImage.Text = "Upload image";
             this.btUploadImage.UseVisualStyleBackColor = false;
+            this.btUploadImage.Click += new System.EventHandler(this.btUploadImage_Click);
             // 
             // picTicket
             // 
@@ -333,23 +338,13 @@
             this.label2.TabIndex = 227;
             this.label2.Text = "Price (VN)";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(14, 46);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1348, 540);
-            this.groupBox1.TabIndex = 247;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tickets";
-            // 
             // btSignIn
             // 
             this.btSignIn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btSignIn.BackColor = System.Drawing.Color.MidnightBlue;
             this.btSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSignIn.Font = new System.Drawing.Font("UVN Chinh Luan", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSignIn.ForeColor = System.Drawing.Color.White;
             this.btSignIn.Location = new System.Drawing.Point(0, 0);
             this.btSignIn.Name = "btSignIn";
@@ -359,16 +354,24 @@
             this.btSignIn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btSignIn.UseVisualStyleBackColor = false;
             // 
+            // flTicket
+            // 
+            this.flTicket.Location = new System.Drawing.Point(14, 72);
+            this.flTicket.Name = "flTicket";
+            this.flTicket.Size = new System.Drawing.Size(1348, 514);
+            this.flTicket.TabIndex = 250;
+            // 
             // AddTicketUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
+            this.Controls.Add(this.flTicket);
             this.Controls.Add(this.dgvTickets);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btSignIn);
             this.Name = "AddTicketUC";
             this.Size = new System.Drawing.Size(1914, 964);
+            this.Load += new System.EventHandler(this.AddTicketUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAvailable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTicket)).EndInit();
@@ -398,7 +401,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Button btSignIn;
+        private System.Windows.Forms.FlowLayoutPanel flTicket;
     }
 }

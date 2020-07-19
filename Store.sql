@@ -628,6 +628,24 @@ end
 go
 
 
+--17
+if OBJECT_ID('INSERTTICKET') is not null drop PROC INSERTTICKET
+go
+
+create PROC INSERTTICKET
+@idTicketbooking int,
+@Name nvarchar(50),
+@price float,
+@picture image,
+@available int
+as
+begin
+	insert into TICKETBOOKING(IDTicketbooking, Name, Price, Picture, Available)
+	values (@idTicketbooking,@Name,@price,@picture,@available)
+end
+go
+
+
 --24.1 AUTO INCREMENT Field Customer
 if OBJECT_ID('AUTOINCREMENTCUSTOMER') is not null drop PROC AUTOINCREMENTCUSTOMER
 go
