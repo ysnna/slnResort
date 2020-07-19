@@ -167,6 +167,7 @@
             this.btDelete.Size = new System.Drawing.Size(40, 35);
             this.btDelete.TabIndex = 272;
             this.btDelete.UseVisualStyleBackColor = false;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // txtPrice
             // 
@@ -320,6 +321,10 @@
             this.picFood.Location = new System.Drawing.Point(89, 55);
             this.picFood.Name = "picFood";
             this.picFood.Size = new System.Drawing.Size(347, 283);
+<<<<<<< Updated upstream
+=======
+            this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+>>>>>>> Stashed changes
             this.picFood.TabIndex = 0;
             this.picFood.TabStop = false;
             // 

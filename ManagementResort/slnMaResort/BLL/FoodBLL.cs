@@ -41,7 +41,18 @@ namespace slnMaResort.BLL
            // pict.ImageLayout = DataGridViewImageCellLayout.Zoom;
             DataTable dt = FoodDAL.Instance.loadMenuFood();
             dgv.DataSource = dt;
+<<<<<<< Updated upstream
             
+=======
+
+            dgv.RowTemplate.Height = 40;
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DataGridViewImageColumn pic = new DataGridViewImageColumn();
+            pic = (DataGridViewImageColumn)dgv.Columns[4];
+            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
+>>>>>>> Stashed changes
         }
         public DataTable loadfoodbyid(int id)
         {
@@ -88,5 +99,16 @@ namespace slnMaResort.BLL
         {
             FoodDAL.Instance.insertFood(id, name, price, description, pic, available);
         }
+<<<<<<< Updated upstream
+=======
+        public void updateFood(int id, string name, int price, string description, MemoryStream pic, int available)
+        {
+            FoodDAL.Instance.updateFood(id, name, price, description, pic, available);
+        }
+        public void deleteFood(int id)
+        {
+            FoodDAL.Instance.deleteFood(id);
+        }
+>>>>>>> Stashed changes
     }
 }
