@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace slnMaResort.HotelUC
 {
-    public partial class InvoiceServicesUC : UserControl
+    public partial class DetailsInvoiceHotelUC : UserControl
     {
-        public InvoiceServicesUC()
+        public DetailsInvoiceHotelUC()
         {
             InitializeComponent();
+        }
+
+        private void DetailsInvoiceHotelUC_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

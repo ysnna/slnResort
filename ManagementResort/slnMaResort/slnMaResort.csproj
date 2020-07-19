@@ -163,17 +163,17 @@
     <Compile Include="HotelUC\CheckinRoomUC.Designer.cs">
       <DependentUpon>CheckinRoomUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="HotelUC\InvoiceRoomUC.cs">
+    <Compile Include="HotelUC\DetailsInvoiceHotelUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HotelUC\InvoiceRoomUC.Designer.cs">
-      <DependentUpon>InvoiceRoomUC.cs</DependentUpon>
+    <Compile Include="HotelUC\DetailsInvoiceHotelUC.Designer.cs">
+      <DependentUpon>DetailsInvoiceHotelUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="HotelUC\InvoiceServicesUC.cs">
+    <Compile Include="HotelUC\InvoiceHotelUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HotelUC\InvoiceServicesUC.Designer.cs">
-      <DependentUpon>InvoiceServicesUC.cs</DependentUpon>
+    <Compile Include="HotelUC\InvoiceHotelUC.Designer.cs">
+      <DependentUpon>InvoiceHotelUC.cs</DependentUpon>
     </Compile>
     <Compile Include="HotelUC\RoomUC.cs">
       <SubType>UserControl</SubType>
@@ -270,11 +270,11 @@
     <EmbeddedResource Include="HotelUC\CheckinRoomUC.resx">
       <DependentUpon>CheckinRoomUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HotelUC\InvoiceRoomUC.resx">
-      <DependentUpon>InvoiceRoomUC.cs</DependentUpon>
+    <EmbeddedResource Include="HotelUC\DetailsInvoiceHotelUC.resx">
+      <DependentUpon>DetailsInvoiceHotelUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HotelUC\InvoiceServicesUC.resx">
-      <DependentUpon>InvoiceServicesUC.cs</DependentUpon>
+    <EmbeddedResource Include="HotelUC\InvoiceHotelUC.resx">
+      <DependentUpon>InvoiceHotelUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HotelUC\RoomUC.resx">
       <DependentUpon>RoomUC.cs</DependentUpon>

@@ -43,18 +43,6 @@ namespace slnMaResort.BLL
             pic = (DataGridViewImageColumn)dgv.Columns[4];
             pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
 
-            //public void loadServiceMachine()
-            //{
-            //    dgvMachines.DataSource = mc.getMACHINE();
-            //    dgvMachines.RowTemplate.Height = 70;
-            //    dgvMachines.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            //    dgvMachines.AllowUserToAddRows = false;
-            //    dgvMachines.EditMode = DataGridViewEditMode.EditProgrammatically;
-            //    DataGridViewImageColumn pic = new DataGridViewImageColumn();
-            //    pic = (DataGridViewImageColumn)dgvMachines.Columns[2];
-            //    pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            //}
-
         }
         public DataTable loadfoodbyid(int id)
         {
