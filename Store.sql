@@ -1317,6 +1317,71 @@ end
 go
 
 
+--58. Select Invoice DetailService của Room. input(idRoom).
+if OBJECT_ID('SELECTDETAILINVOICESERVICEFORROOM') is not null drop PROC SELECTDETAILINVOICESERVICEFORROOM
+go
+
+create PROC SELECTDETAILINVOICESERVICEFORROOM
+@idRoom varchar(50)
+as
+begin
+	declare @idcustomer varchar(50),
+	@idInvoice varchar(50)
+	select @idcustomer = IDCustomer
+	from CUSTOMER_ROOM
+	where IDRoom = @idRoom
+
+	select @idInvoice = IDInvoice
+	from INVOICE
+	where IDCustomer = @idcustomer and Payment=0 and Type = 'Service'
+
+	select *
+	from DETAILINVOICESERVICES
+	where IDInvoice = @idInvoice
+end
+go
+
+--59. Select Invoice DetailService của Room. input(idRoom).
+if OBJECT_ID('SELECTDETAILINVOICEROOMFORROOM') is not null drop PROC SELECTDETAILINVOICEROOMFORROOM
+go
+
+create PROC SELECTDETAILINVOICEROOMFORROOM
+@idRoom varchar(50)
+as
+begin
+	declare @idcustomer varchar(50),
+	@idInvoice varchar(50)
+	select @idcustomer = IDCustomer
+	from CUSTOMER_ROOM
+	where IDRoom = @idRoom
+
+	select @idInvoice = IDInvoice
+	from INVOICE
+	where IDCustomer = @idcustomer and Payment=0 and Type = 'Room'
+
+	select *
+	from DETAILINVOICEROOM
+	where IDInvoice = @idInvoice
+end
+go
+
+
+if OBJECT_ID('CUSTOMER_ROOM') is not null drop table CUSTOMER_ROOM
+go
+create table CUSTOMER_ROOM
+(
+IDCustomer varchar(50),
+IDRoom varchar(50)
+);
+go
+insert into CUSTOMER_ROOM(IDCustomer, IDRoom)
+values
+('C0001','R0001'),
+('C0002','R0006'),
+('C0003','R0009'),
+('C0004','R0003'),
+('C0005','R0010'),
+('C0006','R0011')
 
 --exec LOADACCOUNT 
 --exec LOADAREA

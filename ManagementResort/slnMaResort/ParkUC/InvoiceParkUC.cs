@@ -106,5 +106,10 @@ namespace slnMaResort.ParkUC
             }
             else txtTotal.Text = (Convert.ToDecimal(txtOthers.Text.Trim()) + Convert.ToDecimal(txtSubtotal.Text.Trim())).ToString();
         }
+
+        private void dgvListTicket_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

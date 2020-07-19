@@ -20,7 +20,7 @@ namespace slnMaResort.HotelUC
 
         private void InvoiceHotelUC_Load(object sender, EventArgs e)
         {
-            RoomBLL.Instance.loadListRoom();
+           // RoomBLL.Instance.loadListRoom(dgv);
         }
     }
 }

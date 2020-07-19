@@ -39,7 +39,6 @@ namespace slnMaResort.BLL
             pict.ImageLayout = DataGridViewImageCellLayout.Zoom;
             DataTable dt = EmployeeDAL.Instance.loadEmp();
             dgv.DataSource = dt;
-
         }
         //Load nhân viên của Khách Sạn
         public void loadEmpbyArea(DataGridView dgv,int area)
