@@ -42,7 +42,11 @@ namespace slnMaResort.DAL
         public void insertFood(int ID,string Name,int Price,string Des, MemoryStream Picture,int Available)
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             string sql = @"EXEC INSERTFOOD'" + ID + "'" + Name + "'" + Price + "'" + Des + "'" + Picture + "'" + Available + "'";
+=======
+            string sql = @"EXEC INSERTFOOD'" + ID + "','" + Name + "','" + Price + "','" + Des + "','" + Picture + "','" + Available + "'";
+>>>>>>> Stashed changes
 =======
             string sql = @"EXEC INSERTFOOD'" + ID + "','" + Name + "','" + Price + "','" + Des + "','" + Picture + "','" + Available + "'";
 >>>>>>> Stashed changes

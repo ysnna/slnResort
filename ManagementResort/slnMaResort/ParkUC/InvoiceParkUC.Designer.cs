@@ -76,7 +76,10 @@
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.dgvTicketBooking = new System.Windows.Forms.DataGridView();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
             this.IdTicketBooking = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -114,6 +117,9 @@
 <<<<<<< Updated upstream
 =======
             this.dgvListTicket = new System.Windows.Forms.DataGridView();
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1046,6 +1052,9 @@
             this.dgvListTicket.TabIndex = 260;
             this.dgvListTicket.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListTicket_CellDoubleClick);
             // 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             // InvoiceParkUC
             // 
