@@ -41,12 +41,12 @@ namespace slnMaResort.DAL
 
         public void insertFood(int ID, string Name, int Price, string Des, MemoryStream Picture, int Available)
         {
-            string sql = @"EXEC INSERTFOOD'" + ID + "'" + Name + "'" + Price + "'" + Des + "'" + Picture + "'" + Available + "'";
+            string sql = @"EXEC INSERTFOOD'" + ID + "','" + Name + "','" + Price + "','" + Des + "','" + Picture + "','" + Available + "'";
             MY_DB.Instance.executeQuery(sql);
         }
         public void updateFood(int ID, string Name, int Price, string Des, MemoryStream Picture, int Available)
         {
-            string sql = @"EXEC UPDATEFOOD'" + ID + "'" + Name + "'" + Price + "'" + Des + "'" + Picture + "'" + Available + "'";
+            string sql = @"EXEC UPDATEFOOD'" + ID + "','" + Name + "','" + Price + "','" + Des + "','" + Picture + "','" + Available + "'";
             MY_DB.Instance.executeQuery(sql);
         }
         public void deleteFood(int ID)

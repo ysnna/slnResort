@@ -56,6 +56,7 @@
     <Compile Include="BLL\ServicesBLL.cs" />
     <Compile Include="BLL\TableBLL.cs" />
     <Compile Include="BLL\TableOrderBLL.cs" />
+    <Compile Include="BLL\TicketBLL.cs" />
     <Compile Include="BLL\VoucherBLL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\CustomerDAL.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="DAL\RoomDAL.cs" />
     <Compile Include="DAL\ServicesDAL.cs" />
     <Compile Include="DAL\TableDAL.cs" />
+    <Compile Include="DAL\TicketDAL.cs" />
     <Compile Include="DAL\VoucherDAL.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\BookRoomDTO.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="DTO\RoomDTO.cs" />
     <Compile Include="DTO\ServicesDTO.cs" />
     <Compile Include="DTO\TableDTO.cs" />
+    <Compile Include="DTO\TicketDTO.cs" />
     <Compile Include="Forms\ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>

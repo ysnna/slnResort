@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvoiceParkUC));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -70,11 +70,20 @@
             this.label18 = new System.Windows.Forms.Label();
             this.btCheckVoucher = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btUncheck = new System.Windows.Forms.Button();
+            this.btCheck = new System.Windows.Forms.Button();
+            this.btSearchCustomer = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtSearchCustomer = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.txtInvoiceNo = new System.Windows.Forms.Label();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.dgvTicketBooking = new System.Windows.Forms.DataGridView();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btSignIn = new System.Windows.Forms.Button();
@@ -91,15 +100,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtSearchCustomer = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btSearchCustomer = new System.Windows.Forms.Button();
-            this.btCheck = new System.Windows.Forms.Button();
-            this.btUncheck = new System.Windows.Forms.Button();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.numAvailable = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
@@ -321,6 +321,7 @@
             this.txtPaid.TabIndex = 215;
             this.txtPaid.Text = "2.000.000";
             this.txtPaid.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPaid.TextChanged += new System.EventHandler(this.txtPaid_TextChanged);
             // 
             // txtTotal
             // 
@@ -343,6 +344,7 @@
             this.txtOthers.TabIndex = 215;
             this.txtOthers.Text = "500.000";
             this.txtOthers.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOthers.TextChanged += new System.EventHandler(this.txtOthers_TextChanged);
             // 
             // lbCheckVoucher
             // 
@@ -424,6 +426,7 @@
             this.txtDiscount.TabIndex = 215;
             this.txtDiscount.Text = "0";
             this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             // 
             // label18
             // 
@@ -481,6 +484,71 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Invoice informations";
             // 
+            // btUncheck
+            // 
+            this.btUncheck.BackColor = System.Drawing.Color.Transparent;
+            this.btUncheck.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btUncheck.BackgroundImage")));
+            this.btUncheck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btUncheck.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btUncheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btUncheck.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btUncheck.ForeColor = System.Drawing.Color.White;
+            this.btUncheck.Location = new System.Drawing.Point(770, 135);
+            this.btUncheck.Name = "btUncheck";
+            this.btUncheck.Size = new System.Drawing.Size(27, 25);
+            this.btUncheck.TabIndex = 276;
+            this.btUncheck.UseVisualStyleBackColor = false;
+            // 
+            // btCheck
+            // 
+            this.btCheck.BackColor = System.Drawing.Color.Transparent;
+            this.btCheck.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btCheck.BackgroundImage")));
+            this.btCheck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btCheck.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCheck.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCheck.ForeColor = System.Drawing.Color.White;
+            this.btCheck.Location = new System.Drawing.Point(770, 135);
+            this.btCheck.Name = "btCheck";
+            this.btCheck.Size = new System.Drawing.Size(27, 25);
+            this.btCheck.TabIndex = 275;
+            this.btCheck.UseVisualStyleBackColor = false;
+            // 
+            // btSearchCustomer
+            // 
+            this.btSearchCustomer.BackColor = System.Drawing.Color.White;
+            this.btSearchCustomer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSearchCustomer.BackgroundImage")));
+            this.btSearchCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btSearchCustomer.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btSearchCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSearchCustomer.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSearchCustomer.ForeColor = System.Drawing.Color.White;
+            this.btSearchCustomer.Location = new System.Drawing.Point(734, 135);
+            this.btSearchCustomer.Name = "btSearchCustomer";
+            this.btSearchCustomer.Size = new System.Drawing.Size(27, 25);
+            this.btSearchCustomer.TabIndex = 274;
+            this.btSearchCustomer.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(377, 135);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(170, 25);
+            this.label4.TabIndex = 230;
+            this.label4.Text = "Search Customer:";
+            // 
+            // txtSearchCustomer
+            // 
+            this.txtSearchCustomer.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchCustomer.ForeColor = System.Drawing.Color.Black;
+            this.txtSearchCustomer.Location = new System.Drawing.Point(562, 131);
+            this.txtSearchCustomer.Name = "txtSearchCustomer";
+            this.txtSearchCustomer.Size = new System.Drawing.Size(202, 32);
+            this.txtSearchCustomer.TabIndex = 229;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -525,6 +593,7 @@
             this.txtSubtotal.TabIndex = 215;
             this.txtSubtotal.Text = "1.200.000";
             this.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSubtotal.TextChanged += new System.EventHandler(this.txtSubtotal_TextChanged);
             // 
             // dgvTicketBooking
             // 
@@ -532,55 +601,80 @@
             this.dgvTicketBooking.AllowUserToDeleteRows = false;
             this.dgvTicketBooking.AllowUserToResizeColumns = false;
             this.dgvTicketBooking.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTicketBooking.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTicketBooking.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
             this.dgvTicketBooking.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTicketBooking.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvTicketBooking.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTicketBooking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTicketBooking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
             this.dgvTicketBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTicketBooking.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column4,
             this.Column5,
             this.Column6,
             this.Column7});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTicketBooking.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle43.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTicketBooking.DefaultCellStyle = dataGridViewCellStyle43;
             this.dgvTicketBooking.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvTicketBooking.Location = new System.Drawing.Point(914, 277);
             this.dgvTicketBooking.Name = "dgvTicketBooking";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTicketBooking.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTicketBooking.RowHeadersDefaultCellStyle = dataGridViewCellStyle44;
             this.dgvTicketBooking.RowHeadersVisible = false;
             this.dgvTicketBooking.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTicketBooking.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTicketBooking.RowsDefaultCellStyle = dataGridViewCellStyle45;
             this.dgvTicketBooking.RowTemplate.Height = 50;
             this.dgvTicketBooking.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTicketBooking.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvTicketBooking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTicketBooking.Size = new System.Drawing.Size(512, 674);
             this.dgvTicketBooking.TabIndex = 254;
+            this.dgvTicketBooking.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTicketBooking_CellDoubleClick);
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "ID Food";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 95;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.HeaderText = "Name";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Quantity";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 104;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.HeaderText = "Price";
+            this.Column7.Name = "Column7";
             // 
             // label1
             // 
@@ -626,53 +720,54 @@
             this.dgvListTicket.AllowUserToDeleteRows = false;
             this.dgvListTicket.AllowUserToResizeColumns = false;
             this.dgvListTicket.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListTicket.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListTicket.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
             this.dgvListTicket.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvListTicket.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListTicket.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListTicket.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
             this.dgvListTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListTicket.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListTicket.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle48.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListTicket.DefaultCellStyle = dataGridViewCellStyle48;
             this.dgvListTicket.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListTicket.Location = new System.Drawing.Point(421, 277);
             this.dgvListTicket.Name = "dgvListTicket";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListTicket.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle49.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle49.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListTicket.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
             this.dgvListTicket.RowHeadersVisible = false;
             this.dgvListTicket.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListTicket.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListTicket.RowsDefaultCellStyle = dataGridViewCellStyle50;
             this.dgvListTicket.RowTemplate.Height = 50;
             this.dgvListTicket.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListTicket.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvListTicket.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListTicket.Size = new System.Drawing.Size(487, 674);
             this.dgvListTicket.TabIndex = 253;
+            this.dgvListTicket.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListTicket_CellDoubleClick);
             // 
             // Column1
             // 
@@ -814,95 +909,6 @@
             this.label14.TabIndex = 214;
             this.label14.Text = "VND";
             // 
-            // txtSearchCustomer
-            // 
-            this.txtSearchCustomer.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchCustomer.ForeColor = System.Drawing.Color.Black;
-            this.txtSearchCustomer.Location = new System.Drawing.Point(562, 131);
-            this.txtSearchCustomer.Name = "txtSearchCustomer";
-            this.txtSearchCustomer.Size = new System.Drawing.Size(202, 32);
-            this.txtSearchCustomer.TabIndex = 229;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(377, 135);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 25);
-            this.label4.TabIndex = 230;
-            this.label4.Text = "Search Customer:";
-            // 
-            // btSearchCustomer
-            // 
-            this.btSearchCustomer.BackColor = System.Drawing.Color.White;
-            this.btSearchCustomer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSearchCustomer.BackgroundImage")));
-            this.btSearchCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btSearchCustomer.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btSearchCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSearchCustomer.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSearchCustomer.ForeColor = System.Drawing.Color.White;
-            this.btSearchCustomer.Location = new System.Drawing.Point(734, 135);
-            this.btSearchCustomer.Name = "btSearchCustomer";
-            this.btSearchCustomer.Size = new System.Drawing.Size(27, 25);
-            this.btSearchCustomer.TabIndex = 274;
-            this.btSearchCustomer.UseVisualStyleBackColor = false;
-            // 
-            // btCheck
-            // 
-            this.btCheck.BackColor = System.Drawing.Color.Transparent;
-            this.btCheck.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btCheck.BackgroundImage")));
-            this.btCheck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btCheck.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCheck.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCheck.ForeColor = System.Drawing.Color.White;
-            this.btCheck.Location = new System.Drawing.Point(770, 135);
-            this.btCheck.Name = "btCheck";
-            this.btCheck.Size = new System.Drawing.Size(27, 25);
-            this.btCheck.TabIndex = 275;
-            this.btCheck.UseVisualStyleBackColor = false;
-            // 
-            // btUncheck
-            // 
-            this.btUncheck.BackColor = System.Drawing.Color.Transparent;
-            this.btUncheck.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btUncheck.BackgroundImage")));
-            this.btUncheck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btUncheck.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btUncheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btUncheck.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btUncheck.ForeColor = System.Drawing.Color.White;
-            this.btUncheck.Location = new System.Drawing.Point(770, 135);
-            this.btUncheck.Name = "btUncheck";
-            this.btUncheck.Size = new System.Drawing.Size(27, 25);
-            this.btUncheck.TabIndex = 276;
-            this.btUncheck.UseVisualStyleBackColor = false;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "ID Food";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 95;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.HeaderText = "Name";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Quantity";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 104;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column7.HeaderText = "Price";
-            this.Column7.Name = "Column7";
-            // 
             // groupBox4
             // 
             this.groupBox4.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -965,6 +971,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "InvoiceParkUC";
             this.Size = new System.Drawing.Size(1914, 966);
+            this.Load += new System.EventHandler(this.InvoiceParkUC_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);

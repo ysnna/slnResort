@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btSignIn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.flFood = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btRefresh = new System.Windows.Forms.Button();
             this.btEdit = new System.Windows.Forms.Button();
@@ -55,7 +56,6 @@
             this.picFood = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dgvMenu = new System.Windows.Forms.DataGridView();
-            this.flFood = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAvailable)).BeginInit();
@@ -89,6 +89,17 @@
             this.groupBox1.TabIndex = 243;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu Food";
+            // 
+            // flFood
+            // 
+            this.flFood.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flFood.AutoScroll = true;
+            this.flFood.Location = new System.Drawing.Point(6, 19);
+            this.flFood.Name = "flFood";
+            this.flFood.Size = new System.Drawing.Size(1336, 515);
+            this.flFood.TabIndex = 163;
             // 
             // groupBox2
             // 
@@ -148,6 +159,7 @@
             this.btEdit.Size = new System.Drawing.Size(34, 35);
             this.btEdit.TabIndex = 270;
             this.btEdit.UseVisualStyleBackColor = false;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btAdd
             // 
@@ -179,6 +191,7 @@
             this.btDelete.Size = new System.Drawing.Size(40, 35);
             this.btDelete.TabIndex = 272;
             this.btDelete.UseVisualStyleBackColor = false;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // txtPrice
             // 
@@ -391,17 +404,6 @@
             this.dgvMenu.Size = new System.Drawing.Size(1348, 358);
             this.dgvMenu.TabIndex = 245;
             this.dgvMenu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMenu_CellClick);
-            // 
-            // flFood
-            // 
-            this.flFood.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flFood.AutoScroll = true;
-            this.flFood.Location = new System.Drawing.Point(6, 19);
-            this.flFood.Name = "flFood";
-            this.flFood.Size = new System.Drawing.Size(1336, 515);
-            this.flFood.TabIndex = 163;
             // 
             // AddMenuFoodUC
             // 

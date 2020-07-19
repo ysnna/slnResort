@@ -1290,7 +1290,31 @@ begin
 end
 go
 
-
+--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+--17 Load dữ liệu bảng ticketbooking 
+if OBJECT_ID('LOADTICKETBOOKING') is not null drop PROC LOADTICKETBOOKING
+go
+create PROC LOADTICKETBOOKING
+as
+begin 
+	select *
+	from TICKETBOOKING	
+	order by IDTicketbooking, Name	
+end
+go
+--EXEC LOADTICKETBOOKING
+--17.1 Load dữ liệu bảng ticketbooking by ID
+if OBJECT_ID('LOADTICKETBOOKINGBYID') is not null drop PROC LOADTICKETBOOKINGBYID
+go
+create PROC LOADTICKETBOOKINGBYID
+@id int
+as
+begin 
+	select *
+	from TICKETBOOKING
+	where IDTicketbooking = @id
+end
+go
 
 
 

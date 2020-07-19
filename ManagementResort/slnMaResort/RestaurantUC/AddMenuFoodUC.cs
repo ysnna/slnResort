@@ -44,6 +44,7 @@ namespace slnMaResort.RestaurantUC
             txtPrice.Text = dt.Rows[0][2].ToString();
             txtDescriptions.Text = dt.Rows[0][3].ToString();
             //picFood.Image = dt.Rows[0][4].
+
             try
             {
                 byte[] picPD;
@@ -57,20 +58,42 @@ namespace slnMaResort.RestaurantUC
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            MemoryStream picture = new MemoryStream();
-            try
-            {
-                picFood.Image.Save(picture, picFood.Image.RawFormat);
-            }
-            catch (Exception Exc)
-            {
-                MessageBox.Show("Please insert an Avatar");
-            }
+            MemoryStream ms = new MemoryStream();
+            picFood.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            byte[] pic = ms.ToArray();
+
             FoodBLL.Instance.insertFood(int.Parse(txtIDFood.Text),
                 txtNameFood.Text,
                 int.Parse(txtPrice.Text),
-                txtDescriptions.Text,
-                picture, int.Parse(numAvailable.Value.ToString()));
+                txtDescriptions.Text, ms
+                , int.Parse(numAvailable.Value.ToString()));
+        }
+
+        private void btEdit_Click(object sender, EventArgs e)
+        {
+            MemoryStream ms = new MemoryStream();
+            picFood.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            byte[] pic = ms.ToArray();
+
+            FoodDAL.Instance.updateFood(int.Parse(txtIDFood.Text),
+                txtNameFood.Text,
+                int.Parse(txtPrice.Text),
+                txtDescriptions.Text, ms
+                , int.Parse(numAvailable.Value.ToString()));
+        }
+        public byte[] imgToByteArray(Image img)
+        {
+            using (MemoryStream mStream = new MemoryStream())
+            {
+                img.Save(mStream, img.RawFormat);
+                return mStream.ToArray();
+            }
+        }
+
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+            int ID = int.Parse(txtIDFood.Text);
+            FoodBLL.Instance.deleteFood(ID);
         }
     }
 }

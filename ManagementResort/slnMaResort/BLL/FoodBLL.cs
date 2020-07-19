@@ -36,9 +36,9 @@ namespace slnMaResort.BLL
             dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgv.AllowUserToAddRows = false;
             dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
-            DataGridViewImageColumn pict = new DataGridViewImageColumn();
-            // pict = (DataGridViewImageColumn)dgv.Columns[4];
-            // pict.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            DataGridViewImageColumn pic = new DataGridViewImageColumn();
+            pic = (DataGridViewImageColumn)dgv.Columns[4];
+            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
             DataTable dt = FoodDAL.Instance.loadMenuFood();
             dgv.DataSource = dt;
 
@@ -87,6 +87,14 @@ namespace slnMaResort.BLL
         public void insertFood(int id, string name, int price, string description, MemoryStream pic, int available)
         {
             FoodDAL.Instance.insertFood(id, name, price, description, pic, available);
+        }
+        public void updateFood(int id, string name, int price, string description, MemoryStream pic, int available)
+        {
+            FoodDAL.Instance.updateFood(id, name, price, description, pic, available);
+        }
+        public void deleteFood(int id)
+        {
+            FoodDAL.Instance.deleteFood(id);
         }
     }
 }
