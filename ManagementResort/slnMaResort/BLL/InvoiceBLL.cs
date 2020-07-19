@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace slnMaResort.BLL
 {
@@ -46,6 +47,26 @@ namespace slnMaResort.BLL
         public void insertDetailInvoicePark(string idInvoice, int ticket, int quantity, float price)
         {
             InvoiceDAL.Instance.insertDetailInvoicePark(idInvoice, ticket, quantity, price);
+        }
+
+        public void loadDetailsRoom(DataGridView dgv, string id)
+        {
+            dgv.DataSource = null;
+            dgv.RowTemplate.Height = 40;
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DataTable dt = InvoiceDAL.Instance.loadDetailsRoom(id);
+            dgv.DataSource = dt;
+        }
+
+        public void loadDetailsService(DataGridView dgv, string id)
+        {
+            dgv.DataSource = null;
+            dgv.RowTemplate.Height = 40;
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DataTable dt = InvoiceDAL.Instance.loadDetailsService(id);
+            dgv.DataSource = dt;
         }
     }
 }

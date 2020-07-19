@@ -12,5 +12,6 @@ namespace slnMaResort.DTO
         public int Amount { set; get; }
         public string name { set; get; }
         public float price { set; get; }
+
     }
 }
