@@ -53,17 +53,14 @@
     <Compile Include="BLL\FoodBLL.cs" />
     <Compile Include="BLL\TableBLL.cs" />
     <Compile Include="BLL\TableOrderBLL.cs" />
-    <Compile Include="BLL\TicketBLL.cs" />
     <Compile Include="BLL\VoucherBLL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\FoodDAL.cs" />
     <Compile Include="DAL\TableDAL.cs" />
-    <Compile Include="DAL\TicketDAL.cs" />
     <Compile Include="DAL\VoucherDAL.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\CustomerDTO.cs" />
-    <Compile Include="DTO\TicketDTO.cs" />
     <Compile Include="DTO\EmployeeDTO.cs" />
     <Compile Include="DTO\FoodDTO.cs" />
     <Compile Include="DTO\TableDTO.cs" />

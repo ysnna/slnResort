@@ -321,7 +321,6 @@
             this.picFood.Location = new System.Drawing.Point(89, 55);
             this.picFood.Name = "picFood";
             this.picFood.Size = new System.Drawing.Size(347, 283);
-            this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFood.TabIndex = 0;
             this.picFood.TabStop = false;
             // 

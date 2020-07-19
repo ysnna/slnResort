@@ -85,11 +85,11 @@ namespace slnMaResort.BLL
 
             
         }
-        public void insertFood(int id,string name,int price,string description,Byte[] pic,int available)
+        public void insertFood(int id,string name,int price,string description,MemoryStream pic,int available)
         {
             FoodDAL.Instance.insertFood(id, name, price, description, pic, available);
         }
-        public void updateFood(int id, string name, int price, string description, Byte[] pic, int available)
+        public void updateFood(int id, string name, int price, string description, MemoryStream pic, int available)
         {
             FoodDAL.Instance.updateFood(id, name, price, description, pic, available);
         }
