@@ -36,11 +36,24 @@ namespace slnMaResort.BLL
             dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgv.AllowUserToAddRows = false;
             dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+            
+            DataTable dt = FoodDAL.Instance.loadMenuFood();
+            dgv.DataSource = dt;
             DataGridViewImageColumn pic = new DataGridViewImageColumn();
             pic = (DataGridViewImageColumn)dgv.Columns[4];
             pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            DataTable dt = FoodDAL.Instance.loadMenuFood();
-            dgv.DataSource = dt;
+
+            //public void loadServiceMachine()
+            //{
+            //    dgvMachines.DataSource = mc.getMACHINE();
+            //    dgvMachines.RowTemplate.Height = 70;
+            //    dgvMachines.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            //    dgvMachines.AllowUserToAddRows = false;
+            //    dgvMachines.EditMode = DataGridViewEditMode.EditProgrammatically;
+            //    DataGridViewImageColumn pic = new DataGridViewImageColumn();
+            //    pic = (DataGridViewImageColumn)dgvMachines.Columns[2];
+            //    pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            //}
 
         }
         public DataTable loadfoodbyid(int id)
@@ -50,6 +63,7 @@ namespace slnMaResort.BLL
         }
         public void LoadFoody(FlowLayoutPanel flp)
         {
+            flp.Controls.Clear();
             List<FoodDTO> foodDTOs = new List<FoodDTO>();
             DataTable dt = new DataTable();
             dt = FoodDAL.Instance.loadMenuFood();
@@ -77,6 +91,10 @@ namespace slnMaResort.BLL
                     bt.FlatStyle = FlatStyle.Flat;
                     bt.Text = item.Name.ToString();
                     bt.Text = item.Price.ToString();
+
+                    bt.BackgroundImage = item.Avata;
+                    bt.BackgroundImageLayout = ImageLayout.Zoom;
+
                     flp.Controls.Add(bt);
                     flp.Refresh();
                 }
