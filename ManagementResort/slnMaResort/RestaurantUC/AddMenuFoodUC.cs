@@ -21,6 +21,9 @@ namespace slnMaResort.RestaurantUC
             FoodBLL.Instance.LoadFoody(flFood);
         }
 
+        MyPic myPic = new MyPic();
+        PictureDAL pictureDAL = new PictureDAL();
+
         private void btUploadImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -71,15 +74,30 @@ namespace slnMaResort.RestaurantUC
 
         private void btEdit_Click(object sender, EventArgs e)
         {
-            MemoryStream ms = new MemoryStream();
-            picFood.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            byte[] pic = ms.ToArray();
+            //MemoryStream ms = new MemoryStream();
+            //picFood.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            //byte[] pic = ms.ToArray();
 
-            FoodDAL.Instance.updateFood(int.Parse(txtIDFood.Text),
-                txtNameFood.Text,
-                int.Parse(txtPrice.Text),
-                txtDescriptions.Text, ms
-                , int.Parse(numAvailable.Value.ToString()));
+            //FoodDAL.Instance.updateFood(int.Parse(txtIDFood.Text),
+            //    txtNameFood.Text,
+            //    int.Parse(txtPrice.Text),
+            //    txtDescriptions.Text, ms
+            //    , int.Parse(numAvailable.Value.ToString()));
+            int idFood = Convert.ToInt32(txtIDFood.Text);
+            string name = txtNameFood.Text;
+            float price = Convert.ToSingle(txtPrice.Text);
+            string description = txtDescriptions.Text;
+            int amount =Convert.ToInt32(numAvailable.Value);
+            MemoryStream pic = new MemoryStream();
+            picFood.Image.Save(pic, picFood.Image.RawFormat);
+
+            if (pictureDAL.updateMenuFood(idFood, name, price, description, pic, amount))
+            {
+                //loadServiceMachine();
+                MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //ClearFormAddMachine();
+            }
+            else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         public byte[] imgToByteArray(Image img)
         {
