@@ -179,6 +179,17 @@ begin
 end
 go
 
+if OBJECT_ID('LOADALLROOM') is not null drop PROC LOADALLROOM
+go
+create PROC LOADALLROOM
+as
+begin 
+	select *
+	from ROOMS
+	order by IDRoom
+end
+go
+
 if OBJECT_ID('LOADROOMSNOTREQUIMENT') is not null drop PROC LOADROOMSNOTREQUIMENT
 go
 create PROC LOADROOMSNOTREQUIMENT
@@ -208,7 +219,7 @@ go
 create PROC LOADSERVICE
 as
 begin
-	select *
+	select IDService, Name, Available, Price, Description
 	from SERVICES
 	order by Name
 end
@@ -927,6 +938,25 @@ begin
 end
 go
 
+--40. insert bookroom.
+if OBJECT_ID('INSERTBOOKROOM') is not null drop PROC INSERTBOOKROOM
+go
+
+create PROC INSERTBOOKROOM
+@idCard varchar(10),
+@idRoom varchar(50),
+@dateBooked datetime,
+@dateCheckin datetime,
+@dateCheckout datetime,
+@state nvarchar(200)
+as
+begin
+	insert into BOOK_ROOM(IDCard,IDRoom,DateBooked,DateCheckin,DateCheckout, State)
+values (@idCard,@idRoom, @dateBooked, @dateCheckin, @dateCheckout, @state)
+end
+go
+
+
 --42. Insert BookTable
 If OBJECT_ID('INSERTBOOKTABLE') is not null drop PROC INSERTBOOKTABLE
 go
@@ -1045,16 +1075,53 @@ begin
 		select  @priceService = Price 
 		from SERVICES
 		where IDService = @idService
-
-		select @checkDetailService = 1
-		from DETAILINVOICESERVICES
-		where IDInvoice = @checkInvoice
-			if (@checkDetailService is not null)
-				Insert into DETAILINVOICESERVICES (IDInvoice, Name, Quantity, Price)
-				values (@checkInvoice, @idService, 1, @priceService)
-			else
-				throw 5000, 'Not find Invoice of customer',0;
+		Insert into DETAILINVOICESERVICES (IDInvoice, Name, Quantity, Price)
+		values (@checkInvoice, @idService, 1, @priceService)
 	end
+end
+go
+
+--62. Thông tin khách hàng đã ở Room input(idRoom)
+if OBJECT_ID('SELECTCUSTOMERFORROOM') is not null drop PROC SELECTCUSTOMERFORROOM
+go
+
+create PROC SELECTCUSTOMERFORROOM
+@idRoom varchar(50)
+as
+begin
+	declare @idcustomer varchar(50),
+	@idInvoice varchar(50),
+	@dateCheckin Datetime,
+	@dateCheckout Datetime
+	select @idcustomer = IDCustomer
+	from CUSTOMER_ROOM
+	where IDRoom = @idRoom
+
+	select @idInvoice = IDInvoice
+	from INVOICE
+	where IDCustomer = @idcustomer and Payment is null and Type = 'Room'
+
+	select @dateCheckin = DateBooked , @dateCheckout = DateCheckOut
+	from DETAILINVOICEROOM
+	where IDInvoice = @idInvoice and IDRoom = @idRoom
+
+	select * , @dateCheckin as DateBooked, @dateCheckout as DateCheckout
+	from CUSTOMER
+	where IDCustomer = @idcustomer
+end
+go
+
+
+if OBJECT_ID('SEARCHPRICEROOM') is not null drop PROC SEARCHPRICEROOM
+go
+
+create PROC SEARCHPRICEROOM
+@id varchar(50)
+as
+begin
+	select *
+	From ROOMS
+	where IDRoom =@id
 end
 go
 

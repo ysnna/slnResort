@@ -807,7 +807,7 @@
             this.btSignIn.Name = "btSignIn";
             this.btSignIn.Size = new System.Drawing.Size(1914, 40);
             this.btSignIn.TabIndex = 233;
-            this.btSignIn.Text = "Check of Invoices - Restaurant Area";
+            this.btSignIn.Text = "Check of Invoices - Hotel Area";
             this.btSignIn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btSignIn.UseVisualStyleBackColor = false;
             // 

@@ -22,7 +22,15 @@ namespace slnMaResort.BLL
             }
             private set => RoomBLL.instance = value;
         }
-
+        public void loadListRoom(DataGridView dgv)
+        {
+            dgv.DataSource = null;
+            dgv.RowTemplate.Height = 40;
+            dgv.AllowUserToAddRows = false;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DataTable dt = RoomDAL.Instance.loadListRoom();
+            dgv.DataSource = dt;
+        }
         public void loadTableDGV(DataGridView dgv)
         {
             dgv.DataSource = null;
@@ -76,6 +84,16 @@ namespace slnMaResort.BLL
             DataTable dt = RoomDAL.Instance.loadRequimentID(ID);
             return dt;
         }
+        public DataTable searchPriceRoom(string ID)
+        {
+            DataTable dt = RoomDAL.Instance.searchPriceRoom(ID);
+            return dt;
+        }
+        public DataTable searchCustomer(string ID)
+        {
+            DataTable dt = RoomDAL.Instance.searchCustomer(ID);
+            return dt;
+        }
         public DataTable searchDataBookRoom(string ID)
         {
             DataTable dt = RoomDAL.Instance.searchDataBookRoom(ID);
@@ -84,6 +102,10 @@ namespace slnMaResort.BLL
         public void updateServiceState(string idRoom, int idService, string state)
         {
             RoomDAL.Instance.updateServiceState(idRoom, idService, state);
+        }
+        public void insertBookRoom(string idCard, string idRoom, DateTime dateBooked, DateTime dateCheckin, DateTime dateCheckOut, string state)
+        {
+            RoomDAL.Instance.insertBookRoom(idCard, idRoom, dateBooked, dateCheckin, dateCheckOut, state);
         }
     }
 }

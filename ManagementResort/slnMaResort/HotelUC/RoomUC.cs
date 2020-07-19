@@ -19,11 +19,21 @@ namespace slnMaResort.HotelUC
         {
             InitializeComponent();
         }
+
         string IDRoom = "";
         int IDService = 0;
+
         private void btBooking_Click(object sender, EventArgs e)
         {
-
+            string booked = dtpDataBooked.Value.ToShortDateString() + " " + dtpTimeBooked.Value.ToLongTimeString();
+            DateTime dateBooked = Convert.ToDateTime(booked);
+            string checkin = dtpArrivalDate.Value.ToShortDateString() + " " + dtpArrivalTime.Value.ToLongTimeString();
+            DateTime dateCheckin = Convert.ToDateTime(checkin);
+            string checkout = dtpCheckoutDate.Value.ToShortDateString() + " " + dtpCheckoutTime.Value.ToLongTimeString();
+            DateTime dateCheckout = Convert.ToDateTime(checkout);
+            RoomBLL.Instance.insertBookRoom(txtIDCardCustomer.Text, IDRoom, dateBooked, dateCheckin, dateCheckout, "Booked");
+            MessageBox.Show("Booked");
+            RoomBLL.Instance.loadBooked(dgvRoomBooked);
         }
 
         private void RoomUC_Load(object sender, EventArgs e)
@@ -33,6 +43,7 @@ namespace slnMaResort.HotelUC
             RoomBLL.Instance.loadBooked(dgvRoomBooked);
             btBooking.Enabled = false;
         }
+
         public void LoadRoom(FlowLayoutPanel flp)
         {
             List<RoomDTO> roomDTOs = new List<RoomDTO>();
@@ -84,6 +95,7 @@ namespace slnMaResort.HotelUC
             txtRoomID.Text = RoomID.ToString();
             IDRoom = RoomID;
             RoomBLL.Instance.loadServiceAvailable(dgvServiceAvailable, RoomID);
+            DataTable dt = (DataTable)dgvServiceAvailable.DataSource;
             //DataTable timeCheckin = TableDAL.Instance.searchCheckinTime(TableID);
             //if (stateNull == "Pre order")
             //{
@@ -112,7 +124,9 @@ namespace slnMaResort.HotelUC
                 if (checkState == "Empty")
                     btBooking.Enabled = true;
                 else btBooking.Enabled = false;
+                RoomBLL.Instance.loadServiceAvailable(dgvServiceAvailable, txtRoomID.Text);
             }
+            IDRoom = txtRoomID.Text;
         }
         private void txtSearchIDCard_KeyUp(object sender, KeyEventArgs e)
         {
@@ -154,14 +168,7 @@ namespace slnMaResort.HotelUC
 
         private void btBookOrService_Click(object sender, EventArgs e)
         {
-            if (dgvBookRoom.Visible == true)
-            {
-                dgvBookRoom.Visible = false;
-            }
-            else
-            {
-                dgvBookRoom.Visible = true;
-            }
+            
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
@@ -178,6 +185,11 @@ namespace slnMaResort.HotelUC
         private void dgvServiceAvailable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             IDService = Convert.ToInt32(dgvServiceAvailable.CurrentRow.Cells[0].Value);
+        }
+
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

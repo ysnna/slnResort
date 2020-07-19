@@ -10,6 +10,7 @@ namespace slnMaResort.DTO
     class RoomDTO
     {
         public string ID { get; set; }
+        public string Price { get; set; }
         public string State { get; set; }
         public static int width = 210;
         public static int height = 229;
