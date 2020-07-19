@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -108,6 +109,24 @@ namespace slnMaResort.DAL
         {
             string sql = @"EXEC INSERTDETAILPARK '" + idInvoice + "','" + ticket + "','" + quantity + "','" + price + "'";
             MY_DB.Instance.executeQuery(sql);
+        }
+
+        public DataTable loadDetailsRoom(string id)
+        {
+            string sql = @"EXEC SELECTDETAILINVOICEROOMFORROOM";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
+
+        public DataTable loadDetailsService(string id)
+        {
+            string sql = @"EXEC SELECTDETAILINVOICESERVICEFORROOM";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
         }
     }
 }

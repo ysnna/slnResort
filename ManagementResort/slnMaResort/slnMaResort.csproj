@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BLL\AccountBLL.cs" />
     <Compile Include="BLL\CustomerBLL.cs" />
+    <Compile Include="BLL\DetailsInvoiceHotelBLL.cs" />
     <Compile Include="BLL\EmployeeBLL.cs" />
     <Compile Include="BLL\FoodBLL.cs" />
     <Compile Include="BLL\InvoiceBLL.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="BLL\VoucherBLL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\CustomerDAL.cs" />
+    <Compile Include="DAL\DetailsInvoiceHotelDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\FoodDAL.cs" />
     <Compile Include="DAL\InvoiceDAL.cs" />
@@ -78,6 +80,7 @@
     <Compile Include="DTO\ServicesDTO.cs" />
     <Compile Include="DTO\TableDTO.cs" />
     <Compile Include="DTO\TicketDTO.cs" />
+    <Compile Include="DTO\TicketssDTO.cs" />
     <Compile Include="Forms\ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>

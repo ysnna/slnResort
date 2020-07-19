@@ -44,8 +44,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -92,6 +92,8 @@
             this.btSignIn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvInvoiceService = new System.Windows.Forms.DataGridView();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoiceRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListRoom)).BeginInit();
@@ -111,32 +113,32 @@
             this.textBox8.Text = "1.700.000";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox1
+            // txt
             // 
-            this.textBox1.Font = new System.Drawing.Font("UVN Thoi Nay", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(16, 70);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(453, 59);
-            this.textBox1.TabIndex = 107;
+            this.txt.Font = new System.Drawing.Font("UVN Thoi Nay", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt.ForeColor = System.Drawing.Color.Black;
+            this.txt.Location = new System.Drawing.Point(115, 31);
+            this.txt.Multiline = true;
+            this.txt.Name = "txt";
+            this.txt.Size = new System.Drawing.Size(354, 36);
+            this.txt.TabIndex = 107;
             // 
-            // textBox2
+            // txtPhone
             // 
-            this.textBox2.Font = new System.Drawing.Font("UVN Thoi Nay", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(316, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(153, 33);
-            this.textBox2.TabIndex = 107;
+            this.txtPhone.Font = new System.Drawing.Font("UVN Thoi Nay", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.ForeColor = System.Drawing.Color.Black;
+            this.txtPhone.Location = new System.Drawing.Point(316, 31);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(153, 33);
+            this.txtPhone.TabIndex = 107;
             // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("UVN Thoi Nay", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.Black;
-            this.txtName.Location = new System.Drawing.Point(16, 31);
+            this.txtName.Location = new System.Drawing.Point(115, 31);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(294, 33);
+            this.txtName.Size = new System.Drawing.Size(195, 33);
             this.txtName.TabIndex = 107;
             // 
             // textBox6
@@ -660,6 +662,7 @@
             this.dgvListRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListRoom.Size = new System.Drawing.Size(487, 674);
             this.dgvListRoom.TabIndex = 237;
+            this.dgvListRoom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListRoom_CellClick);
             // 
             // btPayment
             // 
@@ -750,9 +753,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label28);
+            this.groupBox1.Controls.Add(this.label27);
             this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txt);
+            this.groupBox1.Controls.Add(this.txtPhone);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
@@ -814,6 +819,28 @@
             this.dgvInvoiceService.Size = new System.Drawing.Size(921, 364);
             this.dgvInvoiceService.TabIndex = 241;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.Location = new System.Drawing.Point(22, 37);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(60, 23);
+            this.label27.TabIndex = 242;
+            this.label27.Text = "Name";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.Location = new System.Drawing.Point(22, 90);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(60, 23);
+            this.label28.TabIndex = 243;
+            this.label28.Text = "Name";
+            // 
             // InvoiceHotelUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -846,8 +873,8 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -894,5 +921,7 @@
         public System.Windows.Forms.Button btSignIn;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.DataGridView dgvInvoiceService;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
     }
 }

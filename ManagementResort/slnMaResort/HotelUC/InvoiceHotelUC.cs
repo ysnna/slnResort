@@ -20,7 +20,27 @@ namespace slnMaResort.HotelUC
 
         private void InvoiceHotelUC_Load(object sender, EventArgs e)
         {
-            RoomBLL.Instance.loadListRoom();
+            RoomBLL.Instance.loadListRoom(dgvListRoom);
+        }
+
+        private void dgvListRoom_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string id;
+            id = dgvListRoom.CurrentRow.Cells[0].Value.ToString();
+            DataTable dt = DetailsInvoiceHotelBLL.Instance.LoadDetailRoom(id);
+            dgvInvoiceRoom.DataSource = dt;
+
+            DataTable dt1 = DetailsInvoiceHotelBLL.Instance.LoadDetailService(id);
+            if (dt1.Rows.Count != null)
+            {
+                dgvInvoiceService.DataSource = dt1;
+            }
+            else
+            {
+
+            }
+            // InvoiceBLL.Instance.loadDetailsRoom(dgvInvoiceRoom, id);
+            //InvoiceBLL.Instance.loadDetailsService(dgvInvoiceService, id);
         }
     }
 }

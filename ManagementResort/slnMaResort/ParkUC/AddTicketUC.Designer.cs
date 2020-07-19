@@ -47,16 +47,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.btUploadImage = new System.Windows.Forms.Button();
-            this.picTicket = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.picTicket = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.flTicket = new System.Windows.Forms.FlowLayoutPanel();
             this.btSignIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAvailable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTicket)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTicket)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvTickets
@@ -99,6 +101,7 @@
             this.dgvTickets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvTickets.Size = new System.Drawing.Size(1348, 358);
             this.dgvTickets.TabIndex = 249;
+            this.dgvTickets.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTickets_CellClick);
             // 
             // btRefresh
             // 
@@ -145,6 +148,7 @@
             this.btAdd.Size = new System.Drawing.Size(39, 35);
             this.btAdd.TabIndex = 271;
             this.btAdd.UseVisualStyleBackColor = false;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // btDelete
             // 
@@ -160,6 +164,7 @@
             this.btDelete.Size = new System.Drawing.Size(40, 35);
             this.btDelete.TabIndex = 272;
             this.btDelete.UseVisualStyleBackColor = false;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // txtPrice
             // 
@@ -273,14 +278,7 @@
             this.btUploadImage.TabIndex = 219;
             this.btUploadImage.Text = "Upload image";
             this.btUploadImage.UseVisualStyleBackColor = false;
-            // 
-            // picTicket
-            // 
-            this.picTicket.Location = new System.Drawing.Point(89, 55);
-            this.picTicket.Name = "picTicket";
-            this.picTicket.Size = new System.Drawing.Size(347, 283);
-            this.picTicket.TabIndex = 0;
-            this.picTicket.TabStop = false;
+            this.btUploadImage.Click += new System.EventHandler(this.btUploadImage_Click);
             // 
             // button2
             // 
@@ -299,6 +297,7 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.picTicket);
             this.groupBox2.Controls.Add(this.btRefresh);
             this.groupBox2.Controls.Add(this.btEdit);
             this.groupBox2.Controls.Add(this.btAdd);
@@ -313,7 +312,6 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.btUploadImage);
-            this.groupBox2.Controls.Add(this.picTicket);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(1380, 46);
@@ -322,6 +320,16 @@
             this.groupBox2.TabIndex = 248;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Details";
+            // 
+            // picTicket
+            // 
+            this.picTicket.Image = ((System.Drawing.Image)(resources.GetObject("picTicket.Image")));
+            this.picTicket.Location = new System.Drawing.Point(89, 55);
+            this.picTicket.Name = "picTicket";
+            this.picTicket.Size = new System.Drawing.Size(347, 283);
+            this.picTicket.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTicket.TabIndex = 274;
+            this.picTicket.TabStop = false;
             // 
             // label2
             // 
@@ -336,6 +344,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.flTicket);
             this.groupBox1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(14, 46);
             this.groupBox1.Name = "groupBox1";
@@ -343,6 +352,13 @@
             this.groupBox1.TabIndex = 247;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tickets";
+            // 
+            // flTicket
+            // 
+            this.flTicket.Location = new System.Drawing.Point(6, 29);
+            this.flTicket.Name = "flTicket";
+            this.flTicket.Size = new System.Drawing.Size(1336, 505);
+            this.flTicket.TabIndex = 0;
             // 
             // btSignIn
             // 
@@ -370,11 +386,13 @@
             this.Controls.Add(this.btSignIn);
             this.Name = "AddTicketUC";
             this.Size = new System.Drawing.Size(1914, 964);
+            this.Load += new System.EventHandler(this.AddTicketUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAvailable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTicket)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTicket)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -395,11 +413,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btUploadImage;
-        private System.Windows.Forms.PictureBox picTicket;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Button btSignIn;
+        private System.Windows.Forms.FlowLayoutPanel flTicket;
+        private System.Windows.Forms.PictureBox picTicket;
     }
 }
