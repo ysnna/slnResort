@@ -323,6 +323,10 @@
             this.picFood.Size = new System.Drawing.Size(347, 283);
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+            this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+>>>>>>> Stashed changes
 =======
             this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 >>>>>>> Stashed changes

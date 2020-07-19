@@ -53,6 +53,9 @@ namespace slnMaResort.BLL
             pic = (DataGridViewImageColumn)dgv.Columns[4];
             pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -104,7 +107,10 @@ namespace slnMaResort.BLL
         }
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
         public void updateFood(int id, string name, int price, string description, MemoryStream pic, int available)
@@ -116,6 +122,9 @@ namespace slnMaResort.BLL
             FoodDAL.Instance.deleteFood(id);
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

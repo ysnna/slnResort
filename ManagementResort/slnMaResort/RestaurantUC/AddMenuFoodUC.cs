@@ -32,6 +32,7 @@ namespace slnMaResort.RestaurantUC
             int id;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             id = Convert.ToInt32(dgvMenu.CurrentRow.Cells[0].Value);
             DataTable dt = FoodBLL.Instance.loadfoodbyid(id);
             txtIDFood.Text = dt.Rows[0][0].ToString();
@@ -46,11 +47,18 @@ namespace slnMaResort.RestaurantUC
             id = Convert.ToInt32(dgvMenu.CurrentRow.Cells[0].Value.ToString());
             DataTable dt = FoodBLL.Instance.loadfoodbyid(id);
 >>>>>>> Stashed changes
+=======
+            id = Convert.ToInt32(dgvMenu.CurrentRow.Cells[0].Value.ToString());
+            DataTable dt = FoodBLL.Instance.loadfoodbyid(id);
+>>>>>>> Stashed changes
                 txtIDFood.Text = dt.Rows[0][0].ToString();
                 txtNameFood.Text = dt.Rows[0][1].ToString();
                 txtPrice.Text = dt.Rows[0][2].ToString();
                 txtDescriptions.Text = dt.Rows[0][3].ToString();         
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -69,12 +77,15 @@ namespace slnMaResort.RestaurantUC
         {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "select image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
             if (open.ShowDialog() == DialogResult.OK)
                 picFood.Image = Image.FromFile(open.FileName);
         }
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -85,6 +96,9 @@ namespace slnMaResort.RestaurantUC
                 picFood.Image = Image.FromFile(open.FileName);
             }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -93,6 +107,7 @@ namespace slnMaResort.RestaurantUC
        
         private void btAdd_Click(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
             MemoryStream picture = new MemoryStream();
@@ -119,6 +134,8 @@ namespace slnMaResort.RestaurantUC
                 txtNameFood.Text,
                 int.Parse(txtPrice.Text),
 =======
+=======
+>>>>>>> Stashed changes
             MemoryStream ms = new MemoryStream();
             picFood.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
             byte[] pic = ms.ToArray();
@@ -126,6 +143,9 @@ namespace slnMaResort.RestaurantUC
             FoodBLL.Instance.insertFood(int.Parse(txtIDFood.Text),
                 txtNameFood.Text,
                 int.Parse(txtPrice.Text),
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                 txtDescriptions.Text,ms
                 , int.Parse( numAvailable.Value.ToString()));
@@ -161,6 +181,9 @@ namespace slnMaResort.RestaurantUC
             FoodBLL.Instance.deleteFood(ID);
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

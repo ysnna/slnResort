@@ -77,7 +77,10 @@
             this.dgvTicketBooking = new System.Windows.Forms.DataGridView();
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
             this.IdTicketBooking = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,6 +121,9 @@
 =======
             this.dgvListTicket = new System.Windows.Forms.DataGridView();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1053,6 +1059,9 @@
             this.dgvListTicket.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListTicket_CellDoubleClick);
             // 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
