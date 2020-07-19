@@ -1316,6 +1316,71 @@ begin
 end
 go
 
+if OBJECT_ID('INSERTTICKET') is not null drop PROC INSERTTICKET
+go
+
+create PROC INSERTTICKET
+@idTicketbooking int,
+@Name nvarchar(50),
+@price float,
+@picture image,
+@available int
+as
+begin
+	insert into TICKETBOOKING(IDTicketbooking, Name, Price, Picture, Available)
+	values (@idTicketbooking,@Name,@price,@picture,@available)
+end
+go
+
+--59. Select Invoice DetailService của Room. input(idRoom).
+if OBJECT_ID('SELECTDETAILINVOICEROOMFORROOM') is not null drop PROC SELECTDETAILINVOICEROOMFORROOM
+go
+
+create PROC SELECTDETAILINVOICEROOMFORROOM
+@idRoom varchar(50)
+as
+begin
+	declare @idcustomer varchar(50),
+	@idInvoice varchar(50)
+	select @idcustomer = IDCustomer
+	from CUSTOMER_ROOM
+	where IDRoom = @idRoom
+
+	select @idInvoice = IDInvoice
+	from INVOICE
+	where IDCustomer = @idcustomer and Payment = 0 and Type = 'Room'
+
+	select *
+	from DETAILINVOICEROOM
+	where IDInvoice = @idInvoice
+end
+go
+
+--58. Select Invoice DetailService của Room. input(idRoom).
+if OBJECT_ID('SELECTDETAILINVOICESERVICEFORROOM') is not null drop PROC SELECTDETAILINVOICESERVICEFORROOM
+go
+
+create PROC SELECTDETAILINVOICESERVICEFORROOM
+@idRoom varchar(50)
+as
+begin
+	declare @idcustomer varchar(50),
+	@idInvoice varchar(50)
+	select @idcustomer = IDCustomer
+	from CUSTOMER_ROOM
+	where IDRoom = @idRoom
+
+	select @idInvoice = IDInvoice
+	from INVOICE
+	where IDCustomer = @idcustomer and Payment = 0 and Type = 'Service'
+
+	select *
+	from DETAILINVOICESERVICES
+	where IDInvoice = @idInvoice
+end
+go
+
+
 
 
 --exec LOADACCOUNT 

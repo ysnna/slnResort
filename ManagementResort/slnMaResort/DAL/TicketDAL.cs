@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Windows.Forms;
+using System.IO;
+
 namespace slnMaResort.DAL
 {
     public class TicketDAL
@@ -36,6 +38,21 @@ namespace slnMaResort.DAL
             if (dt.Rows.Count > 0)
                 return dt;
             return null;
+        }
+        public void insertTicket(int IDticket, string Name, float price, MemoryStream Picture, int Available)
+        {
+            string sql = @"INSERTTICKET'" + IDticket + "','" + Name + "','" + price + "','" + Picture + "','" + Available + "'";
+            MY_DB.Instance.executeQuery(sql);
+        }
+        public void updateTicket(int IDticket, string Name, float price, MemoryStream Picture, int Available)
+        {
+            string sql = @"UPDATETICKET'" + IDticket + "','" + Name + "','" + price + "','" + Picture + "','" + Available + "'";
+            MY_DB.Instance.executeQuery(sql);
+        }
+        public void deleteTicket(int ID)
+        {
+            string sql = @"EXEC DELETETICKET'" + ID + "'";
+            MY_DB.Instance.executeQuery(sql);
         }
     }
 }

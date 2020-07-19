@@ -65,6 +65,8 @@ namespace slnMaResort.RestaurantUC
             picFood.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
             byte[] pic = ms.ToArray();
 
+            
+
             FoodBLL.Instance.insertFood(int.Parse(txtIDFood.Text),
                 txtNameFood.Text,
                 int.Parse(txtPrice.Text),
