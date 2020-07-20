@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{31BBFF64-EBF4-46AE-892D-C98DED5D1199}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>slnMaResort</RootNamespace>
+    <AssemblyName>slnMaResort</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\AccountBLL.cs" />
+    <Compile Include="BLL\EmployeeBLL.cs" />
+    <Compile Include="BLL\FoodBLL.cs" />
+    <Compile Include="BLL\TableBLL.cs" />
+    <Compile Include="BLL\TableOrderBLL.cs" />
+    <Compile Include="BLL\VoucherBLL.cs" />
+    <Compile Include="DAL\AccountDAL.cs" />
+    <Compile Include="DAL\EmployeeDAL.cs" />
+    <Compile Include="DAL\FoodDAL.cs" />
+    <Compile Include="DAL\TableDAL.cs" />
+    <Compile Include="DAL\VoucherDAL.cs" />
+    <Compile Include="DTO\AccountDTO.cs" />
+    <Compile Include="DTO\CustomerDTO.cs" />
+    <Compile Include="DTO\EmployeeDTO.cs" />
+    <Compile Include="DTO\FoodDTO.cs" />
+    <Compile Include="DTO\TableDTO.cs" />
+    <Compile Include="Forms\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HomeMemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HomeMemberForm.Designer.cs">
+      <DependentUpon>HomeMemberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MAmusementParkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MAmusementParkForm.Designer.cs">
+      <DependentUpon>MAmusementParkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MHotelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MHotelForm.Designer.cs">
+      <DependentUpon>MHotelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MRestaurantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MRestaurantForm.Designer.cs">
+      <DependentUpon>MRestaurantForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GLOBAL.cs" />
+    <Compile Include="HomeUC\HomeVoucherUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\HomeVoucherUC.Designer.cs">
+      <DependentUpon>HomeVoucherUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUC\ServicesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\ServicesUC.Designer.cs">
+      <DependentUpon>ServicesUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUC\ucEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\ucEmployee.Designer.cs">
+      <DependentUpon>ucEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUC\ucListEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\ucListEmployee.Designer.cs">
+      <DependentUpon>ucListEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUC\StatisticsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUC\StatisticsUC.Designer.cs">
+      <DependentUpon>StatisticsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelUC\CheckinRoomUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelUC\CheckinRoomUC.Designer.cs">
+      <DependentUpon>CheckinRoomUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelUC\InvoiceRoomUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelUC\InvoiceRoomUC.Designer.cs">
+      <DependentUpon>InvoiceRoomUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelUC\InvoiceServicesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelUC\InvoiceServicesUC.Designer.cs">
+      <DependentUpon>InvoiceServicesUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelUC\RoomUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HotelUC\RoomUC.Designer.cs">
+      <DependentUpon>RoomUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices\InvoicesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoices\InvoicesUC.Designer.cs">
+      <DependentUpon>InvoicesUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MY_DB.cs" />
+    <Compile Include="ParkUC\AddTicketUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParkUC\AddTicketUC.Designer.cs">
+      <DependentUpon>AddTicketUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkUC\InvoiceParkUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParkUC\InvoiceParkUC.Designer.cs">
+      <DependentUpon>InvoiceParkUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestaurantUC\AddMenuFoodUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RestaurantUC\AddMenuFoodUC.Designer.cs">
+      <DependentUpon>AddMenuFoodUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantUC\CheckOrderUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RestaurantUC\CheckOrderUC.Designer.cs">
+      <DependentUpon>CheckOrderUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantUC\InvoiceFoodUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RestaurantUC\InvoiceFoodUC.Designer.cs">
+      <DependentUpon>InvoiceFoodUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantUC\TablesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RestaurantUC\TablesUC.Designer.cs">
+      <DependentUpon>TablesUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="table.cs" />
+    <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HomeMemberForm.resx">
+      <DependentUpon>HomeMemberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MAmusementParkForm.resx">
+      <DependentUpon>MAmusementParkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MHotelForm.resx">
+      <DependentUpon>MHotelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MRestaurantForm.resx">
+      <DependentUpon>MRestaurantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\HomeVoucherUC.resx">
+      <DependentUpon>HomeVoucherUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\ServicesUC.resx">
+      <DependentUpon>ServicesUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\ucEmployee.resx">
+      <DependentUpon>ucEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\ucListEmployee.resx">
+      <DependentUpon>ucListEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUC\StatisticsUC.resx">
+      <DependentUpon>StatisticsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelUC\CheckinRoomUC.resx">
+      <DependentUpon>CheckinRoomUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelUC\InvoiceRoomUC.resx">
+      <DependentUpon>InvoiceRoomUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelUC\InvoiceServicesUC.resx">
+      <DependentUpon>InvoiceServicesUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelUC\RoomUC.resx">
+      <DependentUpon>RoomUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\InvoicesUC.resx">
+      <DependentUpon>InvoicesUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkUC\AddTicketUC.resx">
+      <DependentUpon>AddTicketUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkUC\InvoiceParkUC.resx">
+      <DependentUpon>InvoiceParkUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RestaurantUC\AddMenuFoodUC.resx">
+      <DependentUpon>AddMenuFoodUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestaurantUC\CheckOrderUC.resx">
+      <DependentUpon>CheckOrderUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestaurantUC\InvoiceFoodUC.resx">
+      <DependentUpon>InvoiceFoodUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestaurantUC\TablesUC.resx">
+      <DependentUpon>TablesUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
