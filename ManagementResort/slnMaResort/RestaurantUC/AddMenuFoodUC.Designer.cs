@@ -321,6 +321,7 @@
             this.picFood.Name = "picFood";
             this.picFood.Size = new System.Drawing.Size(347, 283);
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -333,6 +334,8 @@
 =======
             this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 98e49a8... commit
 =======
 >>>>>>> parent of 98e49a8... commit
             this.picFood.TabIndex = 0;

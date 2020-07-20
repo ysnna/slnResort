@@ -76,6 +76,7 @@
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.dgvTicketBooking = new System.Windows.Forms.DataGridView();
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -90,6 +91,8 @@
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TicketBookingBinding = new System.Windows.Forms.BindingSource(this.components);
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 98e49a8... commit
 =======
 >>>>>>> parent of 98e49a8... commit
             this.label1 = new System.Windows.Forms.Label();
@@ -121,6 +124,7 @@
             this.numAvailable = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
             this.dgvListTicket = new System.Windows.Forms.DataGridView();
@@ -131,6 +135,8 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 98e49a8... commit
 =======
 >>>>>>> parent of 98e49a8... commit
             this.groupBox1.SuspendLayout();
@@ -979,6 +985,7 @@
             this.label5.Text = "Quantity";
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
             // dgvListTicket
@@ -1039,6 +1046,8 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 98e49a8... commit
 =======
 >>>>>>> parent of 98e49a8... commit
             // InvoiceParkUC

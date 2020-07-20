@@ -34,9 +34,12 @@ namespace slnMaResort.RestaurantUC
         {
             int id;
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of 98e49a8... commit
 =======
 >>>>>>> parent of 98e49a8... commit
             id = Convert.ToInt32(dgvMenu.CurrentRow.Cells[0].Value);
@@ -46,6 +49,7 @@ namespace slnMaResort.RestaurantUC
             txtPrice.Text = dt.Rows[0][2].ToString();
             txtDescriptions.Text = dt.Rows[0][3].ToString();
             //picFood.Image = dt.Rows[0][4].
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
             id = Convert.ToInt32(dgvMenu.CurrentRow.Cells[0].Value.ToString());
@@ -71,6 +75,8 @@ namespace slnMaResort.RestaurantUC
 >>>>>>> Stashed changes
 =======
 >>>>>>> parent of 98e49a8... commit
+=======
+>>>>>>> parent of 98e49a8... commit
             try
             {
                 byte[] picPD;
@@ -85,9 +91,12 @@ namespace slnMaResort.RestaurantUC
         private void btUploadImage_Click(object sender, EventArgs e)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of 98e49a8... commit
 =======
 >>>>>>> parent of 98e49a8... commit
             OpenFileDialog open = new OpenFileDialog();
@@ -95,6 +104,7 @@ namespace slnMaResort.RestaurantUC
             if (open.ShowDialog() == DialogResult.OK)
                 picFood.Image = Image.FromFile(open.FileName);
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -126,6 +136,11 @@ namespace slnMaResort.RestaurantUC
 <<<<<<< Updated upstream
 =======
 >>>>>>> parent of 98e49a8... commit
+=======
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+>>>>>>> parent of 98e49a8... commit
             MemoryStream picture = new MemoryStream();
             try
             {
@@ -141,6 +156,7 @@ namespace slnMaResort.RestaurantUC
                 txtDescriptions.Text,
                 picture,int.Parse( numAvailable.Value.ToString()));
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
             MemoryStream ms = new MemoryStream();
@@ -204,6 +220,8 @@ namespace slnMaResort.RestaurantUC
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 98e49a8... commit
 =======
 >>>>>>> parent of 98e49a8... commit
     }

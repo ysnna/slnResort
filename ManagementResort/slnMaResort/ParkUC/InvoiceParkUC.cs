@@ -17,6 +17,7 @@ namespace slnMaResort.ParkUC
             InitializeComponent();
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 
@@ -86,6 +87,8 @@ namespace slnMaResort.ParkUC
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 98e49a8... commit
 =======
 >>>>>>> parent of 98e49a8... commit
     }
