@@ -41,6 +41,7 @@ namespace slnMaResort.DAL
 
         public void insertFood(int ID,string Name,int Price,string Des, MemoryStream Picture,int Available)
         {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -54,6 +55,9 @@ namespace slnMaResort.DAL
 =======
             string sql = @"EXEC INSERTFOOD'" + ID + "','" + Name + "','" + Price + "','" + Des + "','" + Picture + "','" + Available + "'";
 >>>>>>> Stashed changes
+=======
+            string sql = @"EXEC INSERTFOOD'" + ID + "'" + Name + "'" + Price + "'" + Des + "'" + Picture + "'" + Available + "'";
+>>>>>>> parent of 98e49a8... commit
             MY_DB.Instance.executeQuery(sql);
         }
         public void updateFood(int ID, string Name, int Price, string Des, MemoryStream Picture, int Available)

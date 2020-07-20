@@ -75,6 +75,7 @@
             this.txtInvoiceNo = new System.Windows.Forms.Label();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.dgvTicketBooking = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -89,6 +90,8 @@
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TicketBookingBinding = new System.Windows.Forms.BindingSource(this.components);
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 98e49a8... commit
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btSignIn = new System.Windows.Forms.Button();
@@ -117,6 +120,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.numAvailable = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
             this.dgvListTicket = new System.Windows.Forms.DataGridView();
@@ -127,6 +131,8 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 98e49a8... commit
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicketBooking)).BeginInit();
@@ -345,7 +351,6 @@
             this.txtPaid.TabIndex = 215;
             this.txtPaid.Text = "2.000.000";
             this.txtPaid.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPaid.TextChanged += new System.EventHandler(this.txtPaid_TextChanged);
             // 
             // txtTotal
             // 
@@ -366,9 +371,8 @@
             this.txtOthers.Name = "txtOthers";
             this.txtOthers.Size = new System.Drawing.Size(186, 37);
             this.txtOthers.TabIndex = 215;
-            this.txtOthers.Text = "0";
+            this.txtOthers.Text = "500.000";
             this.txtOthers.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtOthers.TextChanged += new System.EventHandler(this.txtOthers_TextChanged);
             // 
             // lbCheckVoucher
             // 
@@ -450,7 +454,6 @@
             this.txtDiscount.TabIndex = 215;
             this.txtDiscount.Text = "0";
             this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             // 
             // label18
             // 
@@ -550,9 +553,8 @@
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.Size = new System.Drawing.Size(186, 37);
             this.txtSubtotal.TabIndex = 215;
-            this.txtSubtotal.Text = "0";
+            this.txtSubtotal.Text = "1.200.000";
             this.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtSubtotal.TextChanged += new System.EventHandler(this.txtSubtotal_TextChanged);
             // 
             // dgvTicketBooking
             // 
@@ -609,35 +611,6 @@
             this.dgvTicketBooking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTicketBooking.Size = new System.Drawing.Size(512, 674);
             this.dgvTicketBooking.TabIndex = 254;
-            this.dgvTicketBooking.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTicketBooking_CellDoubleClick);
-            // 
-            // IdTicketBooking
-            // 
-            this.IdTicketBooking.DataPropertyName = "idTicketbooking";
-            this.IdTicketBooking.HeaderText = "ID";
-            this.IdTicketBooking.Name = "IdTicketBooking";
-            this.IdTicketBooking.Width = 55;
-            // 
-            // Name
-            // 
-            this.Name.DataPropertyName = "name";
-            this.Name.HeaderText = "Name";
-            this.Name.Name = "Name";
-            this.Name.Width = 81;
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "price";
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            this.Price.Width = 75;
-            // 
-            // Amount
-            // 
-            this.Amount.DataPropertyName = "Amount";
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.Width = 98;
             // 
             // label1
             // 
@@ -1005,6 +978,7 @@
             this.label5.TabIndex = 259;
             this.label5.Text = "Quantity";
             // 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
             // dgvListTicket
@@ -1065,6 +1039,8 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 98e49a8... commit
             // InvoiceParkUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;

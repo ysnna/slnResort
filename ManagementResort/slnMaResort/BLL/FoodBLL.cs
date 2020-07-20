@@ -41,8 +41,8 @@ namespace slnMaResort.BLL
            // pict.ImageLayout = DataGridViewImageCellLayout.Zoom;
             DataTable dt = FoodDAL.Instance.loadMenuFood();
             dgv.DataSource = dt;
-<<<<<<< Updated upstream
             
+<<<<<<< HEAD
 =======
 
             dgv.RowTemplate.Height = 40;
@@ -59,6 +59,8 @@ namespace slnMaResort.BLL
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 98e49a8... commit
         }
         public DataTable loadfoodbyid(int id)
         {
@@ -105,6 +107,7 @@ namespace slnMaResort.BLL
         {
             FoodDAL.Instance.insertFood(id, name, price, description, pic, available);
         }
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -128,5 +131,7 @@ namespace slnMaResort.BLL
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 98e49a8... commit
     }
 }

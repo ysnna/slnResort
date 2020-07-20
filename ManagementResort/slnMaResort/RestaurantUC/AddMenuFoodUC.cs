@@ -25,14 +25,20 @@ namespace slnMaResort.RestaurantUC
             FoodBLL.Instance.loadmenufood(dgvMenu);
         }
 
+        private void gbs_Enter(object sender, EventArgs e)
+        {
 
+        }
 
         private void dgvMenu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int id;
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of 98e49a8... commit
             id = Convert.ToInt32(dgvMenu.CurrentRow.Cells[0].Value);
             DataTable dt = FoodBLL.Instance.loadfoodbyid(id);
             txtIDFood.Text = dt.Rows[0][0].ToString();
@@ -40,6 +46,7 @@ namespace slnMaResort.RestaurantUC
             txtPrice.Text = dt.Rows[0][2].ToString();
             txtDescriptions.Text = dt.Rows[0][3].ToString();
             //picFood.Image = dt.Rows[0][4].
+<<<<<<< HEAD
 =======
             id = Convert.ToInt32(dgvMenu.CurrentRow.Cells[0].Value.ToString());
             DataTable dt = FoodBLL.Instance.loadfoodbyid(id);
@@ -62,6 +69,8 @@ namespace slnMaResort.RestaurantUC
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 98e49a8... commit
             try
             {
                 byte[] picPD;
@@ -75,14 +84,18 @@ namespace slnMaResort.RestaurantUC
 
         private void btUploadImage_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of 98e49a8... commit
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "select image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
             if (open.ShowDialog() == DialogResult.OK)
                 picFood.Image = Image.FromFile(open.FileName);
         }
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> Stashed changes
@@ -102,14 +115,17 @@ namespace slnMaResort.RestaurantUC
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 98e49a8... commit
 
-        }
-       
         private void btAdd_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of 98e49a8... commit
             MemoryStream picture = new MemoryStream();
             try
             {
@@ -125,6 +141,7 @@ namespace slnMaResort.RestaurantUC
                 txtDescriptions.Text,
                 picture,int.Parse( numAvailable.Value.ToString()));
         }
+<<<<<<< HEAD
 =======
             MemoryStream ms = new MemoryStream();
             picFood.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
@@ -187,5 +204,7 @@ namespace slnMaResort.RestaurantUC
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 98e49a8... commit
     }
 }
