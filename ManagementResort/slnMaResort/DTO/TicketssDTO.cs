@@ -23,11 +23,11 @@ namespace slnMaResort.DTO
         }
         public TicketssDTO(DataRow row)
         {
-            //this.ID = Convert.ToInt32(row["IDTicketbooking"].ToString());
-            //byte[] picPD;
-            //picPD = (byte[])row["Picture"];
-            //MemoryStream pica = new MemoryStream(picPD);
-            //this.Pic = Image.FromStream(pica);
+            this.ID = Convert.ToInt32(row["IDTicketbooking"].ToString());
+            byte[] picPD;
+            picPD = (byte[])row["Picture"];
+            MemoryStream pica = new MemoryStream(picPD);
+            this.Pic = Image.FromStream(pica);
         }
         public int ID { get; set; }
         public Image Pic { get; set; }

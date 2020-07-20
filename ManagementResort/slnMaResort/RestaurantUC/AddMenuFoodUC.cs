@@ -123,6 +123,7 @@ namespace slnMaResort.RestaurantUC
         {
             int ID = int.Parse(txtIDFood.Text);
             FoodBLL.Instance.deleteFood(ID);
+            MessageBox.Show("Delete successful");
             FoodBLL.Instance.loadmenufood(dgvMenu);
             FoodBLL.Instance.LoadFoody(flFood);
         }

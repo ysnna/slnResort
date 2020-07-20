@@ -157,7 +157,7 @@ namespace slnMaResort.BLL
                 }
                 foreach (TicketssDTO item in ticketssDTOs)
                 {
-                    // 145, 221
+                
                     Button bt = new Button()
                     {
                         Width = TicketssDTO.width,

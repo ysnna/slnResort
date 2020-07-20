@@ -29,14 +29,22 @@ namespace slnMaResort.ParkUC
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            MemoryStream ms = new MemoryStream();
-            picTicket.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            byte[] pic = ms.ToArray();
+            int idFood = Convert.ToInt32(txtIDTicket.Text);
+            string name = txtName.Text;
+            float price = Convert.ToSingle(txtPrice.Text);
+            int amount = Convert.ToInt32(numAvailable.Value);
+            MemoryStream pic = new MemoryStream();
+            picTicket.Image.Save(pic, picTicket.Image.RawFormat);
 
-            TicketBLL.Instance.insertTicket(int.Parse(txtIDTicket.Text),
-                txtName.Text,
-                int.Parse(txtPrice.Text), ms,
-                Convert.ToInt32(numAvailable.Text));
+            if (pictureDAL.insertTicket(idFood, name, price, pic, amount))
+            {
+                //loadServiceMachine();
+                MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //ClearFormAddMachine();
+                TicketBLL.Instance.LoadPicTicket(flTicket);
+                TicketBLL.Instance.loadpicket(dgvTickets);
+            }
+            else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btEdit_Click(object sender, EventArgs e)
@@ -53,6 +61,8 @@ namespace slnMaResort.ParkUC
                 //loadServiceMachine();
                 MessageBox.Show("Update to database successful", "Edited..", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //ClearFormAddMachine();
+                TicketBLL.Instance.LoadPicTicket(flTicket);
+                TicketBLL.Instance.loadpicket(dgvTickets);
             }
             else MessageBox.Show("Invalid information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -61,6 +71,8 @@ namespace slnMaResort.ParkUC
         {
             int ID = int.Parse(txtIDTicket.Text);
             TicketBLL.Instance.deleteTicket(ID);
+            TicketBLL.Instance.LoadPicTicket(flTicket);
+            TicketBLL.Instance.loadpicket(dgvTickets);
         }
 
         private void dgvTickets_CellClick(object sender, DataGridViewCellEventArgs e)
