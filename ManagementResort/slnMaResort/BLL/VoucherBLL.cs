@@ -7,13 +7,17 @@ using System.Data;
 using System.IO;
 using System.Windows.Forms;
 using slnMaResort.DAL;
-
+using slnMaResort.DTO;
 namespace slnMaResort.BLL
 {
     public class VoucherBLL
     {
+
+
+        List<VoucherBLL> listvoucher = new List<VoucherBLL>();
         private static VoucherBLL instance;
         private VoucherBLL() { }
+
         public static VoucherBLL Instance
         {
             get
@@ -34,10 +38,6 @@ namespace slnMaResort.BLL
             DataTable dt = VoucherDAL.Instance.loadVoucher();
             return dt;
         }
-        public void inserVoucher(int IdVoucher, string Area, string NameVoucher, DateTime startDate, DateTime expriration, int precent)
-        {
-            VoucherDAL.Instance.insertVou(IdVoucher, Area, NameVoucher, startDate, expriration, precent);
-        }
 
 
         public void loadAllVouDGV(DataGridView dgv)
@@ -54,7 +54,7 @@ namespace slnMaResort.BLL
 
         }
         //Them voucher moi
-        public void insertVou(int ID, string Area, string Name, DateTime StartDate, DateTime Expriration, int Percents)
+        public void insertVou(int ID, int Area, string Name, DateTime StartDate, DateTime Expriration, int Percents)
         {
             VoucherDAL.Instance.insertVou(ID, Area, Name, StartDate, Expriration, Percents);
         }
@@ -64,10 +64,11 @@ namespace slnMaResort.BLL
             VoucherDAL.Instance.deleteVou(ID);
         }
 
-        public void updateVou(int ID, string Area, string Name, DateTime StartDate, DateTime Expriration, int Percents)
+        public void updateVou(int ID, int Area, string Name, DateTime StartDate, DateTime Expriration, int Percents)
         {
             VoucherDAL.Instance.updateVou(ID, Area, Name, StartDate, Expriration, Percents);
         }
+
         public void DeleteVoucher(int ID, DataGridView dgv)
         {
 
@@ -75,6 +76,29 @@ namespace slnMaResort.BLL
             MessageBox.Show("Delete succsessed");
             VoucherBLL.Instance.loadAllVouDGV(dgv);
 
+        }
+
+        public DataTable loadVoucherByArea(int area)
+        {
+            DataTable dt = VoucherDAL.Instance.loadVoucherbyArea(area);
+            return dt;
+        }
+        public void ObserUpdateVoucher(string NameVoucher, int Area, DateTime starDate, DateTime expriration)
+        {
+            int j = 0;
+            //VoucherDTO vou = new VoucherDTO("Tên voucher: " + NameVoucher + "Thuộc khu vực:" + Area + "Ngày bắt đầu" + starDate + "Ngày kết thúc: " + expriration);
+            //DataTable dt1 = VoucherBLL.Instance.loadVoucherByArea(Area);
+
+            //for (j = 0; j < dt1.Rows.Count; j++)
+            //{
+            //    int id1 = int.Parse(dt1.Rows[j]["IDArea"].ToString());
+            //    string idemp = dt1.Rows[j]["IDEmployee"].ToString();
+
+            //    string email = dt1.Rows[j]["email"].ToString();
+            //    EmployeeDTO emp = new EmployeeDTO(idemp, id1, email);
+            //    vou.addemp(emp);
+            //}
+            //vou.ObserverInfo("");
         }
     }
 }

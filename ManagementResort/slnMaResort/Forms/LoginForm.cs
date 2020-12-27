@@ -29,7 +29,7 @@ namespace slnMaResort.Forms
             string pass = txtPassword.Text.ToString().Trim();
             string usrname = txtUsername.Text.ToString().Trim();
             if (AccountBLL.Instance.DefinePass(pass, usrname) &&
-                AccountBLL.Instance.DefineState(usrname) == "Đang làm việc")
+                AccountBLL.Instance.DefineState(usrname) == "Working")
             {
                 MessageBox.Show("Dang nhap  thanh cong");
                 AccountBLL.Instance.callForm(usrname);

@@ -33,7 +33,7 @@ namespace slnMaResort.DAL
         }
         public DataTable CheckPer(string user)
         {
-            string sql = @"exec CHECKGROUP '" + user + "'";
+            string sql = @"exec CHECKGROUPACCOUNT '" + user + "'";
             MY_DB.Instance.executeQuery(sql);
             DataTable dt = MY_DB.Instance.createTable(sql);
             if (dt.Rows.Count > 0)

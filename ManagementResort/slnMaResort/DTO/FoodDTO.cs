@@ -30,10 +30,10 @@ namespace slnMaResort.DTO
         {
             this.Name = row["Name"].ToString();
             this.Price = Convert.ToInt32(row["Price"]);
-            byte[] picPD;
-            picPD = (byte[])row["Picture"];
-            MemoryStream pic = new MemoryStream(picPD);
-            this.Avata = Image.FromStream(pic);
+         //   byte[] picPD;
+          //  picPD = (byte[])row["Picture"];
+         //   MemoryStream pic = new MemoryStream(picPD);
+       //     this.Avata = Image.FromStream(pic);
         }
         public int Idfood { get => _idfood; set => _idfood = value; }
         public string Name { get => _name; set => _name = value; }

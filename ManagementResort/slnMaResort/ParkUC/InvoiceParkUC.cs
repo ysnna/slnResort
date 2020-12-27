@@ -17,6 +17,7 @@ namespace slnMaResort.ParkUC
         public InvoiceParkUC()
         {
             InitializeComponent();
+            TicketBLL.Instance.LoadPicTicket(flTickerPicture);
         }
 
         private void InvoiceParkUC_Load(object sender, EventArgs e)

@@ -33,13 +33,13 @@ namespace slnMaResort.DAL
         //Load nhân viên theo Khu Vuc
         public DataTable loadEmpbyArea(int area)
         {
-            string sql = @"EXEC LOADEMPOYEETOAREA "+area+"'";
+            string sql = @"EXEC LOADEMPOYEETOAREA '" + area + "'";
             DataTable dt = MY_DB.Instance.createTable(sql);
             if (dt.Rows.Count > 0)
                 return dt;
             return null;
         }
-       
+
         public DataTable loadEmpbyID(string id)
         {
             string sql = @"EXEC CHECKLOGIN  '" + id + "' ";
@@ -48,11 +48,11 @@ namespace slnMaResort.DAL
                 return dt;
             return null;
         }
-        public void insertEmployee(string ID, string fullName, MemoryStream ava, DateTime birthday, int Gender,string add, string idcard,string phone,
-           int IDBaseSalary, int Area, string state) 
+        public void insertEmployee(string ID, string fullName, MemoryStream ava, DateTime birthday, int Gender, string add, string idcard, string phone,
+           int IDBaseSalary, int Area, string state)
         {
-            string sql = @"EXEC INSERTEMPLOYEE '"+ID+"'"+fullName+"'"+ava+"'"+birthday+"'"+Gender+"'"+add+"'"
-                +idcard+"'"+phone+"'"+IDBaseSalary+"'"+Area+"'"+state+"'";
+            string sql = @"EXEC INSERTEMPLOYEE '" + ID + "','" + fullName + "','" + ava + "','" + birthday + "','" + Gender + "','" + add + "','"
+                + idcard + "','" + phone + "','" + IDBaseSalary + "','" + Area + "'" + state + "','";
             MY_DB.Instance.executeQuery(sql);
         }
         public void updateEmployee(string ID, string fullName, MemoryStream ava, DateTime birthday, int Gender, string add, string idcard, string phone,
@@ -63,10 +63,27 @@ namespace slnMaResort.DAL
             MY_DB.Instance.executeQuery(sql);
         }
 
-        public void updateEmployee(string ID)
+        public void deleteEmployee(string ID)
         {
             string sql = @"EXEC UPDATEEMPLOYEE '" + ID + "'";
             MY_DB.Instance.executeQuery(sql);
+        }
+        public DataTable createIDEmp()
+        {
+            string sql = @"EXEC AUTOINCREMENTEMPLOYEE";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
+        }
+
+        public DataTable searchEmp(string ID, string name)
+        {
+            string sql = @"EXEC SEARCHEMPLOYEE '" + ID + "','" + name + "'";
+            DataTable dt = MY_DB.Instance.createTable(sql);
+            if (dt.Rows.Count > 0)
+                return dt;
+            return null;
         }
     }
 }

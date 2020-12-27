@@ -47,7 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="abObser.cs" />
     <Compile Include="BLL\AccountBLL.cs" />
+    <Compile Include="BLL\conCreateHotelEmp.cs" />
+    <Compile Include="BLL\conCreateParkEMp.cs" />
+    <Compile Include="BLL\conCreateResEmp.cs" />
+    <Compile Include="BLL\conMaHotel.cs" />
+    <Compile Include="BLL\conMaPark.cs" />
+    <Compile Include="BLL\conMaRes.cs" />
     <Compile Include="BLL\CustomerBLL.cs" />
     <Compile Include="BLL\DetailsInvoiceHotelBLL.cs" />
     <Compile Include="BLL\EmployeeBLL.cs" />
@@ -71,16 +78,19 @@
     <Compile Include="DAL\TableDAL.cs" />
     <Compile Include="DAL\TicketDAL.cs" />
     <Compile Include="DAL\VoucherDAL.cs" />
+    <Compile Include="DTO\abManager.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\BookRoomDTO.cs" />
     <Compile Include="DTO\CustomerDTO.cs" />
     <Compile Include="DTO\EmployeeDTO.cs" />
     <Compile Include="DTO\FoodDTO.cs" />
+    <Compile Include="DTO\IEmployee.cs" />
     <Compile Include="DTO\RoomDTO.cs" />
     <Compile Include="DTO\ServicesDTO.cs" />
     <Compile Include="DTO\TableDTO.cs" />
     <Compile Include="DTO\TicketDTO.cs" />
     <Compile Include="DTO\TicketssDTO.cs" />
+    <Compile Include="DTO\VoucherDTO.cs" />
     <Compile Include="Forms\ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>

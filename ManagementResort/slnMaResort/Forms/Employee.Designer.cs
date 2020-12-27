@@ -33,7 +33,7 @@
             // 
             // ucEmployee1
             // 
-            this.ucEmployee1.Location = new System.Drawing.Point(8, 1);
+            this.ucEmployee1.Location = new System.Drawing.Point(10, 0);
             this.ucEmployee1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.ucEmployee1.Name = "ucEmployee1";
             this.ucEmployee1.Size = new System.Drawing.Size(671, 519);

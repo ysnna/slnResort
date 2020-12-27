@@ -96,11 +96,13 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.numAvailable = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
+            this.flTickerPicture = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicketBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListTicket)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAvailable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -853,6 +855,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.flTickerPicture);
             this.groupBox4.Font = new System.Drawing.Font("Imprint MT Shadow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(12, 251);
             this.groupBox4.Name = "groupBox4";
@@ -896,6 +899,13 @@
             this.label5.TabIndex = 259;
             this.label5.Text = "Quantity";
             // 
+            // flTickerPicture
+            // 
+            this.flTickerPicture.Location = new System.Drawing.Point(6, 28);
+            this.flTickerPicture.Name = "flTickerPicture";
+            this.flTickerPicture.Size = new System.Drawing.Size(391, 628);
+            this.flTickerPicture.TabIndex = 0;
+            // 
             // InvoiceParkUC
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -922,6 +932,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListTicket)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numAvailable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -987,5 +998,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.NumericUpDown numAvailable;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.FlowLayoutPanel flTickerPicture;
     }
 }

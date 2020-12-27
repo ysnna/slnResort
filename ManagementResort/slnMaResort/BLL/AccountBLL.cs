@@ -80,25 +80,25 @@ namespace slnMaResort.BLL
             string group = DefineGroup(usr);
             switch (group)
             {
-                case "GROUPA":
+                case "GROUPAD":
                     {
                         HomeForm f = new HomeForm();
                         f.ShowDialog();
                         break;
                     }
-                case "GROUPH":
+                case "GROUPMH":
                     {
                         MHotelForm f = new MHotelForm();
                         f.ShowDialog();
                         break;
                     }
-                case "GROUPR":
+                case "GROUPMR":
                     {
                         MRestaurantForm f = new MRestaurantForm();
                         f.ShowDialog();
                         break;
                     }
-                case "GROUPP":
+                case "GROUPMP":
                     {
                         MAmusementParkForm f = new MAmusementParkForm();
                         f.ShowDialog();
